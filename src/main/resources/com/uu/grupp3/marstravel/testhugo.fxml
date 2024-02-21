@@ -5,7 +5,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uu.grupp3.marstravel.Testhugo">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uu.grupp3.marstravel.controllers.testhugo">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d99d2e" height="406.0" layoutX="-1.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="628.0" />
       <Text fill="#09fb0d" layoutX="31.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mars Travel">
