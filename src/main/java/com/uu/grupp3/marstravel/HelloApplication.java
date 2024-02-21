@@ -11,7 +11,7 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sparaKund-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("Mars Travel MMXXI - Welcome to Mars");
         stage.setScene(scene);
@@ -19,7 +19,7 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) throws ClassNotFoundException {
-        DatabaseHandler.getConnection(); // Startar DatabaseHandler
+        //DatabaseHandler.getConnection(); // Startar DatabaseHandler
         launch();
     }
 }

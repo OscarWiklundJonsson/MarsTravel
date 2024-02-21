@@ -8,8 +8,9 @@ public class DatabaseHandler {
 
     /**
      * Connects to the database and returns the connection
-     * @return Connection
-     * @throws ClassNotFoundException
+     *
+     * @return
+     * @throws ClassNotFoundException if the class is not found
      * @author Oscar
      */
     public static Connection getConnection() throws ClassNotFoundException {
