@@ -27,6 +27,8 @@ public class SparaKundController {
 
     /**
      * Method to save a customer to the database
+     * Checks if all fields are filled, if not, an error message is displayed
+     * .If all fields are filled, the customer is saved to the database using a prepared statement
      * @throws SQLException
      * @throws ClassNotFoundException
      * @author Oscar
@@ -50,6 +52,7 @@ public class SparaKundController {
 
         String sql = "INSERT INTO KundInformation (Förnamn, Efternamn, Telefonnummer, Mail) VALUES (?, ?, ?, ?)";
 
+        // Try to connect to the database and save the customer
         try (Connection conn = DatabaseHandler.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
@@ -74,17 +77,18 @@ public class SparaKundController {
 
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
+            System.out.println("AJ AJ AJ! Something went wrong!");
 
             // Display error message
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Hur många gånger ska jag säga det?");
+            alert.setTitle("Error osv");
             alert.setHeaderText(null);
             alert.setContentText("AJ AJ AJ! Something went wrong!");
             alert.showAndWait();
         }
     }
 
-    // Method to continue to the main page
+    // Method to continue to the main page(?) after saving a customer
     public void continueToMain() {
 
     }

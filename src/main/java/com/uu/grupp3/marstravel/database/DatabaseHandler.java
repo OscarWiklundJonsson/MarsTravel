@@ -3,13 +3,12 @@ package com.uu.grupp3.marstravel.database;
 import java.sql.*;
 
 public class DatabaseHandler {
-    private static final String URL = "jdbc:sqlite:src/main/resources/database/mars_travel.db";
+    private static final String URL = "jdbc:sqlite:src/main/resources/database/mars_travel.db"; // Path to the database
     private static Connection connection;
 
     /**
      * Connects to the database and returns the connection
-     *
-     * @return
+     * @return the connection to the database
      * @throws ClassNotFoundException if the class is not found
      * @author Oscar
      */
