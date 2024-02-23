@@ -1,16 +1,16 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.scene.shape.Circle;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.Objects;
 
 public class HytterController {
 
@@ -31,6 +31,39 @@ public class HytterController {
 
     @FXML
     private Button btnSvitInfo;
+
+    @FXML
+    private Button btnVALJAbetalkort;
+
+    @FXML
+    private Button btnVALJAevenemangdit;
+
+    @FXML
+    private Button btnVALJAevenemanghem;
+
+    @FXML
+    private Button btnVALJAhalsoforsakring;
+
+    @FXML
+    private Button btnVALJAhotellmars;
+
+    @FXML
+    private Button btnVALJAhyttdit;
+
+    @FXML
+    private Button btnVALJAhytthem;
+
+    @FXML
+    private Button btnVALJAkundinfo;
+
+    @FXML
+    private Button btnVALJAmatpaketdit;
+
+    @FXML
+    private Button btnVALJAmatpakethem;
+
+    @FXML
+    private Button btnVALJAresedatum;
 
     @FXML
     private Circle cVarukorgen;
@@ -74,9 +107,8 @@ public class HytterController {
     @FXML
     private RadioButton rbtnSvit;
 
-    String filePath = "";
 
-    public void initialize() {
+public void initialize() {
         btnNASTA.setOnAction(event -> {
             try {
                 // Load the FXML file for the new scene
@@ -93,5 +125,4 @@ public class HytterController {
             }
         });
     }
-
 }

@@ -105,15 +105,16 @@
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="btnVALJAkundinfo" layoutY="666.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="KUNDINFORMATION" />
-      <Button fx:id="btnVALJAbetalkort" layoutY="612.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="BETALKORT" />
-      <Button fx:id="btnVALJAhalsoforsakring" layoutY="559.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="HÄLSOFÖRSÄKRING" />
-      <Button fx:id="btnVALJAevenemanghem" layoutY="505.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="EVENEMANG HEM" />
-      <Button fx:id="btnVALJAmatpakethem" layoutY="452.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="MATPAKET HEM" />
-      <Button fx:id="btnVALJAhytthem" layoutY="399.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="HYTTER HEM" />
-      <Button fx:id="btnVALJAhotellmars" layoutY="350.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="HOTELL MARS" />
-      <Button fx:id="btnVALJAevenemangdit" layoutY="296.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="EVENEMANG" />
-      <Button fx:id="btnVALJAmatpaketdit" layoutY="242.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="MATPAKET" />
-      <Button fx:id="btnVALJAhyttdit" layoutY="188.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="HYTTER" />
+      <Button fx:id="btnVALJAkundinfo" layoutY="666.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="KUNDINFORMATION" />
+      <Button fx:id="btnVALJAbetalkort" layoutY="612.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="BETALKORT" />
+      <Button fx:id="btnVALJAhalsoforsakring" layoutY="559.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="HÄLSOFÖRSÄKRING" />
+      <Button fx:id="btnVALJAevenemanghem" layoutY="505.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="EVENEMANG HEM" />
+      <Button fx:id="btnVALJAmatpakethem" layoutY="452.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="MATPAKET HEM" />
+      <Button fx:id="btnVALJAhytthem" layoutY="399.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="HYTTER HEM" />
+      <Button fx:id="btnVALJAhotellmars" layoutY="350.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="HOTELL MARS" />
+      <Button fx:id="btnVALJAevenemangdit" layoutY="296.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="EVENEMANG" />
+      <Button fx:id="btnVALJAmatpaketdit" layoutY="242.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="MATPAKET" />
+      <Button fx:id="btnVALJAhyttdit" layoutY="188.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="HYTTER" />
+      <Button fx:id="btnVALJAresedatum" layoutY="134.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="RESEDATUM" />
    </children>
 </AnchorPane>
