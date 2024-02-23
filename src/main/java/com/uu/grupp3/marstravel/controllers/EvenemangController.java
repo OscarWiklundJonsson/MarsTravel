@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ForkopsalternativController {
+public class EvenemangController {
 
     @FXML
     private Button btnFilmInfo;
@@ -91,7 +91,7 @@ public void initialize() {
         btnNASTA.setOnAction(event -> {
             try {
                 // Load the FXML file for the new scene
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("src/main/resources/com/uu/grupp3/marstravel/forkopsalternativ.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("src/main/resources/com/uu/grupp3/marstravel/evenemang.fxml"));
                 Parent root = loader.load();
                 // Create a new scene
                 Scene scene = new Scene(root);

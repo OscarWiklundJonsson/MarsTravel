@@ -162,7 +162,7 @@ public class MatPaketController {
         btnNÄSTA.setOnAction(event -> {
             try {
                 // Load the FXML file for the new scene
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/uu/grupp3/marstravel/forkopsalternativ.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/uu/grupp3/marstravel/evenemang.fxml"));
                 Parent root = loader.load();
                 // Create a new scene
                 Scene scene = new Scene(root);
