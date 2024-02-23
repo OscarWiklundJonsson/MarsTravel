@@ -150,9 +150,9 @@ public class MatPaketController {
         btnMellan1.setOnAction(event -> showInfoFromDB("mellan1", "Mellan 1"));
         btnMellan2.setOnAction(event -> showInfoFromDB("mellan2", "Mellan 2"));
         btnMellan3.setOnAction(event -> showInfoFromDB("mellan3", "Mellan 3"));
-        btnMellan1.setOnAction(event -> showInfoFromDB("lyx1", "Lyx 1"));
-        btnMellan2.setOnAction(event -> showInfoFromDB("lyx2", "Lyx 2"));
-        btnMellan3.setOnAction(event -> showInfoFromDB("lyx3", "Lyx 3"));
+        btnLyx1.setOnAction(event -> showInfoFromDB("lyx1", "Lyx 1"));
+        btnLyx2.setOnAction(event -> showInfoFromDB("lyx2", "Lyx 2"));
+        btnLyx3.setOnAction(event -> showInfoFromDB("lyx3", "Lyx 3"));
     }
 
     private void showInfoFromDB(String matpaket, String title) {
