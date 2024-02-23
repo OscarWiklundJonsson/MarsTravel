@@ -117,9 +117,9 @@ public class EvenemangController {
 
     private void showConcertInfoPopup() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Concert Information");
-        alert.setHeaderText("Concert Details");
-        alert.setContentText("Additional concert information goes here.");
+        alert.setTitle("Konsert Information");
+        alert.setHeaderText(null);
+        alert.setContentText("Info from DB");
         alert.showAndWait();
     }
 }
