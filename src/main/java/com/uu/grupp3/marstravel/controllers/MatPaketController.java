@@ -145,17 +145,14 @@ public class MatPaketController {
     public void initialize() {
         //Pop-Up for EcoInformation
         btnBudget1.setOnAction(event -> showInfoFromDB("budget1", "Budget 1"));
-        //Pop-Up for MatPaketInformation
         btnBudget2.setOnAction(event -> showInfoFromDB("budget2", "Budget 2"));
-        //Pop-Up for MatPaketInformation
         btnBudget3.setOnAction(event -> showInfoFromDB("budget3", "Budget 3"));
-        //Pop-Up for MatPaketInformation
         btnMellan1.setOnAction(event -> showInfoFromDB("mellan1", "Mellan 1"));
-        //Pop-Up for MatPaketInformation
         btnMellan2.setOnAction(event -> showInfoFromDB("mellan2", "Mellan 2"));
-        //Pop-Up for MatPaketInformation
-        btnMellan3.setOnAction(event -> showInfoFromDB("mellan2", "Mellan 3"));
-
+        btnMellan3.setOnAction(event -> showInfoFromDB("mellan3", "Mellan 3"));
+        btnMellan1.setOnAction(event -> showInfoFromDB("lyx1", "Lyx 1"));
+        btnMellan2.setOnAction(event -> showInfoFromDB("lyx2", "Lyx 2"));
+        btnMellan3.setOnAction(event -> showInfoFromDB("lyx3", "Lyx 3"));
     }
 
     private void showInfoFromDB(String matpaket, String title) {
