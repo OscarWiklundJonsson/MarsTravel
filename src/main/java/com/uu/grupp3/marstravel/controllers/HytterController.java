@@ -1,6 +1,8 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.database.DatabaseHandler;
+import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
+import com.uu.grupp3.marstravel.services.NextButton;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -114,72 +116,38 @@ public class HytterController {
 
 
 public void initialize() {
-        //Pop-Up for EcoInformation
-        btnEcoInfo.setOnAction(event -> showInfoFromDB("Economy", "Hytt Economy"));
-        //Pop-Up for InsideInformation
-        btnInsideInfo.setOnAction(event -> showInfoFromDB("Inside", "Hytt Inside"));
-        //Pop-Up for SleepInformation, Sömnkapsel
-        btnSleepInfo.setOnAction(event -> showInfoFromDB("Sömnkapsel", "Sömnkapsel"));
-        //Pop-Up for hytt Inside
-        btnSpacesideInfo.setOnAction(event -> showInfoFromDB("Spaceside", "Hytt Spaceside"));
-        //Pop-Up for hytt Svit
-        btnSvitInfo.setOnAction(event -> showInfoFromDB("Svit", "Hytt Svit"));
+    DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
 
-        // Funktion för att endast välja en radioknapp
-        ToggleGroup group = new ToggleGroup();
-        rbtnEco.setToggleGroup(group);
-        rbtnInside.setToggleGroup(group);
-        rbtnSleep.setToggleGroup(group);
-        rbtnSpaceside.setToggleGroup(group);
-        rbtnSvit.setToggleGroup(group);
+    //Pop-Up for EcoInformation
+    btnEcoInfo.setOnAction(event -> dbInfo.showInfoFromDB("Economy", "Hytt Economy", "HyttInformation",1));
+    //Pop-Up for InsideInformation
+    btnInsideInfo.setOnAction(event -> dbInfo.showInfoFromDB("Inside", "Hytt Inside", "HyttInformation",1));
+    //Pop-Up for SleepInformation, Sömnkapsel
+    btnSleepInfo.setOnAction(event -> dbInfo.showInfoFromDB("Sömnkapsel", "Sömnkapsel", "HyttInformation",1));
+    //Pop-Up for hytt Inside
+    btnSpacesideInfo.setOnAction(event -> dbInfo.showInfoFromDB("Spaceside", "Hytt Spaceside", "HyttInformation",1));
+    //Pop-Up for hytt Svit
+    btnSvitInfo.setOnAction(event -> dbInfo.showInfoFromDB("Svit", "Hytt Svit", "HyttInformation",1));
 
-        btnNASTA.setDisable(true);
+    // Funktion för att endast välja en radioknapp
+    ToggleGroup group = new ToggleGroup();
+    rbtnEco.setToggleGroup(group);
+    rbtnInside.setToggleGroup(group);
+    rbtnSleep.setToggleGroup(group);
+    rbtnSpaceside.setToggleGroup(group);
+    rbtnSvit.setToggleGroup(group);
 
-        group.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
-            if (group.getSelectedToggle() != null) {
-                btnNASTA.setDisable(false);
-            }
-        });
-        btnNASTA.setOnAction(event -> {
-            try {
-                // Load the FXML file for the new scene
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/uu/grupp3/marstravel/matpaket.fxml"));
-                Parent root = loader.load();
-                // Create a new scene
-                Scene scene = new Scene(root);
-                // Get the stage from the button and set the new scene
-                Stage stage = (Stage) btnNASTA.getScene().getWindow();
-                stage.setScene(scene);
-                stage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+    btnNASTA.setDisable(true);
 
-    }
-
-    private void showInfoFromDB(String hyttType, String title) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(null); // Ändra denna till något mer passande :D
-
-        Connection connection = null;
-        try {
-            connection = DatabaseHandler.getConnection();
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT Information FROM HyttInformation WHERE Namn = '" + hyttType + "'");
-
-            if (resultSet.next()) {
-                String info = resultSet.getString(1);
-                alert.setContentText(info);
-            }
-
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        } finally {
-            System.out.println("Something went right or wrong, but it's over now.");
+    group.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+        if (group.getSelectedToggle() != null) {
+            btnNASTA.setDisable(false);
         }
-
-        alert.showAndWait();
+    });
+    btnNASTA.setOnAction(event -> {
+        NextButton nextButton = new NextButton();
+        Stage stage = (Stage) btnNASTA.getScene().getWindow();
+        nextButton.nextButton("/com/uu/grupp3/marstravel/matpaket.fxml", stage);
+    });
     }
 }

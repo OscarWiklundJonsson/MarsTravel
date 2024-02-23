@@ -1,6 +1,8 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.database.DatabaseHandler;
+import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
+import com.uu.grupp3.marstravel.services.NextButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -164,58 +166,24 @@ public class MatPaketController {
             }
         });
 
-
+        DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
         //Pop-Up for MatpaketInformation
-        btnBudget1.setOnAction(event -> showInfoFromDB("budget1", "Budget 1"));
-        btnBudget2.setOnAction(event -> showInfoFromDB("budget2", "Budget 2"));
-        btnBudget3.setOnAction(event -> showInfoFromDB("budget3", "Budget 3"));
-        btnMellan1.setOnAction(event -> showInfoFromDB("mellan1", "Mellan 1"));
-        btnMellan2.setOnAction(event -> showInfoFromDB("mellan2", "Mellan 2"));
-        btnMellan3.setOnAction(event -> showInfoFromDB("mellan3", "Mellan 3"));
-        btnLyx1.setOnAction(event -> showInfoFromDB("lyx1", "Lyx 1"));
-        btnLyx2.setOnAction(event -> showInfoFromDB("lyx2", "Lyx 2"));
-        btnLyx3.setOnAction(event -> showInfoFromDB("lyx3", "Lyx 3"));
+        btnBudget1.setOnAction(event -> dbInfo.showInfoFromDB("budget1", "Budget 1", "MatpaketInformation", 1));
+        btnBudget2.setOnAction(event -> dbInfo.showInfoFromDB("budget2", "Budget 2", "MatpaketInformation", 1));
+        btnBudget3.setOnAction(event -> dbInfo.showInfoFromDB("budget3", "Budget 3", "MatpaketInformation", 1));
+        btnMellan1.setOnAction(event -> dbInfo.showInfoFromDB("mellan1", "Mellan 1", "MatpaketInformation", 1));
+        btnMellan2.setOnAction(event -> dbInfo.showInfoFromDB("mellan2", "Mellan 2", "MatpaketInformation", 1));
+        btnMellan3.setOnAction(event -> dbInfo.showInfoFromDB("mellan3", "Mellan 3", "MatpaketInformation", 1));
+        btnLyx1.setOnAction(event -> dbInfo.showInfoFromDB("lyx1", "Lyx 1", "MatpaketInformation", 1));
+        btnLyx2.setOnAction(event -> dbInfo.showInfoFromDB("lyx2", "Lyx 2", "MatpaketInformation", 1));
+        btnLyx3.setOnAction(event -> dbInfo.showInfoFromDB("lyx3", "Lyx 3", "MatpaketInformation", 1));
 
+        // Nästa knappen. Skickar användaren till nästa sida. (evenemang). Använder sig av NextButton klassen som är en service klass.
         btnNÄSTA.setOnAction(event -> {
-            try {
-                // Load the FXML file for the new scene
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/uu/grupp3/marstravel/evenemang.fxml"));
-                Parent root = loader.load();
-                // Create a new scene
-                Scene scene = new Scene(root);
-                // Get the stage from the button and set the new scene
-                Stage stage = (Stage) btnNÄSTA.getScene().getWindow();
-                stage.setScene(scene);
-                stage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            NextButton nextButton = new NextButton();
+            Stage stage = (Stage) btnNÄSTA.getScene().getWindow();
+            nextButton.nextButton("/com/uu/grupp3/marstravel/evenemang.fxml", stage);
         });
 
-    }
-
-    private void showInfoFromDB(String matpaket, String title) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(null); // Ändra denna till något mer passande :D
-
-        Connection connection = null;
-        try {
-            connection = DatabaseHandler.getConnection();
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT Information FROM MatpaketInformation WHERE Namn = '" + matpaket + "'");
-
-            if (resultSet.next()) {
-                String info = resultSet.getString(1);
-                alert.setContentText(info);
-            }
-
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        } finally {
-            System.out.println("Something went right or wrong, but it's over now.");
-        }
-
-        alert.showAndWait();
     }
 }

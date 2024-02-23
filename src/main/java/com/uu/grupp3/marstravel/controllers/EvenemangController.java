@@ -1,6 +1,8 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.database.DatabaseHandler;
+import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
+import com.uu.grupp3.marstravel.services.NextButton;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -96,52 +98,19 @@ public class EvenemangController {
 
 
     public void initialize() {
-        //Pop-Up info concert
-        btnConcertInfo.setOnAction(event -> showInfoFromDB("Konsert", ""));{
+        DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
 
-        };
+        //Pop-Up info concert // Det här är broken, det är fredag, pallar inte
+        btnConcertInfo.setOnAction(event -> dbInfo.showInfoFromDB("Konsert", "Konserter", "EvenemangInformation", 1));{
+        btnFilmInfo.setOnAction(event -> dbInfo.showInfoFromDB("Film", "Film", "EvenemangInformation", 1));
+        //btnTheatreInfo.setOnAction(event -> dbInfo.showInfoFromDB("Teater", "Teater", "EvenemangInformation", 1));
+        }
 
 
         btnNASTA.setOnAction(event -> {
-            try {
-                // Load the FXML file for the new scene
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/uu/grupp3/marstravel/sparaKundInformation.fxml"));
-                Parent root = loader.load();
-                // Create a new scene
-                Scene scene = new Scene(root);
-                // Get the stage from the button and set the new scene
-                Stage stage = (Stage) btnNASTA.getScene().getWindow();
-                stage.setScene(scene);
-                stage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            NextButton nextButton = new NextButton();
+            Stage stage = (Stage) btnNASTA.getScene().getWindow();
+            nextButton.nextButton("/com/uu/grupp3/marstravel/sparaKundInformation.fxml", stage);
         });
-    }
-
-
-    private void showInfoFromDB(String evenemangType, String title) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(null); // Ändra denna till något mer passande
-
-        Connection connection = null;
-        try {
-            connection = DatabaseHandler.getConnection();
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT Information FROM EvenemangInformation WHERE Namn = '" + evenemangType + "'");
-
-            if (resultSet.next()) {
-                String info = resultSet.getString(1);
-                alert.setContentText(info);
-            }
-
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        } finally {
-            System.out.println("Something went right or wrong, but it's over now.");
-        }
-
-        alert.showAndWait();
     }
 }
