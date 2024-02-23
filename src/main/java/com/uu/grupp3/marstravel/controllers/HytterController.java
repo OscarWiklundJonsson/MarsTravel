@@ -147,6 +147,17 @@ public void initialize() {
             alert.showAndWait();
         }
     });
+    //Pop-Up för hytt Inside
+    btnSpacesideInfo.setOnAction(new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent actionEvent) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Hytt Spaceside");
+            alert.setHeaderText(null);
+            alert.setContentText("Information om hytt Spaceside");
+            alert.showAndWait();
+        }
+    });
         btnNASTA.setOnAction(event -> {
             try {
                 // Load the FXML file for the new scene
