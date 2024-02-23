@@ -106,7 +106,7 @@ public class EvenemangController {
         //btnTheatreInfo.setOnAction(event -> dbInfo.showInfoFromDB("Teater", "Teater", "EvenemangInformation", 1));
         }
 
-
+        // Nästa knappen. Skickar användaren vidare till nästa sida
         btnNASTA.setOnAction(event -> {
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnNASTA.getScene().getWindow();

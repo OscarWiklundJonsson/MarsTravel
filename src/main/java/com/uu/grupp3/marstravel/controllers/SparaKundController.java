@@ -31,8 +31,6 @@ public class SparaKundController {
      * .If all fields are filled, the customer is saved to the database using a prepared statement
      * @throws SQLException
      * @throws ClassNotFoundException
-     * @author Oscar
-     *
      */
     public void saveCustomer() {
         String firstName = firstNameField.getText();

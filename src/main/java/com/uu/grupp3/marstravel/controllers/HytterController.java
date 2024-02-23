@@ -1,23 +1,11 @@
 package com.uu.grupp3.marstravel.controllers;
 
-import com.uu.grupp3.marstravel.database.DatabaseHandler;
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
 import com.uu.grupp3.marstravel.services.NextButton;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
-
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 public class HytterController {
 
@@ -149,5 +137,9 @@ public void initialize() {
         Stage stage = (Stage) btnNASTA.getScene().getWindow();
         nextButton.nextButton("/com/uu/grupp3/marstravel/matpaket.fxml", stage);
     });
+
+
+
+
     }
 }

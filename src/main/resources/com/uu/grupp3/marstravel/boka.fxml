@@ -23,8 +23,5 @@
             <Font size="96.0" />
          </font>
       </Label>
-      <ImageView>
-         <Image url="https://upload.wikimedia.org/wikipedia/commons/7/76/Mars_Hubble.jpg"/>
-      </ImageView>
    </children>
 </AnchorPane>
