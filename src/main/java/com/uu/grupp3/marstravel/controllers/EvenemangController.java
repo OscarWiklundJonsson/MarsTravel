@@ -1,9 +1,12 @@
 package com.uu.grupp3.marstravel.controllers;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -87,7 +90,14 @@ public class EvenemangController {
     private RadioButton rbtnFilm;
 
 
-public void initialize() {
+    public void initialize() {
+        //Pop-Up info concert
+        btnConcertInfo.setOnAction(event -> {
+            //Visa Concert Information pop-up
+            showConcertInfoPopup();
+        });
+
+
         btnNASTA.setOnAction(event -> {
             try {
                 // Load the FXML file for the new scene
@@ -103,5 +113,13 @@ public void initialize() {
                 e.printStackTrace();
             }
         });
+    }
+
+    private void showConcertInfoPopup() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Concert Information");
+        alert.setHeaderText("Concert Details");
+        alert.setContentText("Additional concert information goes here.");
+        alert.showAndWait();
     }
 }
