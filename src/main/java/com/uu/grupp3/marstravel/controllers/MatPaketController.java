@@ -1,44 +1,49 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.database.DatabaseHandler;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.shape.Circle;
-import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class HytterController {
+public class MatPaketController {
 
     @FXML
-    private Button btnEcoInfo;
+    private Button btnBudget1;
 
     @FXML
-    private Button btnInsideInfo;
+    private Button btnBudget2;
 
     @FXML
-    private Button btnNASTA;
+    private Button btnBudget3;
 
     @FXML
-    private Button btnSleepInfo;
+    private Button btnLyx1;
 
     @FXML
-    private Button btnSpacesideInfo;
+    private Button btnLyx2;
 
     @FXML
-    private Button btnSvitInfo;
+    private Button btnLyx3;
+
+    @FXML
+    private Button btnMellan1;
+
+    @FXML
+    private Button btnMellan2;
+
+    @FXML
+    private Button btnMellan3;
+
+    @FXML
+    private Button btnNÄSTA;
 
     @FXML
     private Button btnVALJAbetalkort;
@@ -71,16 +76,25 @@ public class HytterController {
     private Button btnVALJAmatpakethem;
 
     @FXML
-    private Button btnVALJAresedatum;
-
-    @FXML
     private Circle cVarukorgen;
 
     @FXML
     private Label lblEcoPris;
 
     @FXML
+    private Label lblEcoPris1;
+
+    @FXML
+    private Label lblEcoPris2;
+
+    @FXML
+    private Label lblEcoPris21;
+
+    @FXML
     private Label lblInsidePris;
+
+    @FXML
+    private Label lblInsidePris1;
 
     @FXML
     private Label lblMTheader;
@@ -104,7 +118,19 @@ public class HytterController {
     private RadioButton rbtnEco;
 
     @FXML
+    private RadioButton rbtnEco1;
+
+    @FXML
+    private RadioButton rbtnEco11;
+
+    @FXML
+    private RadioButton rbtnEco2;
+
+    @FXML
     private RadioButton rbtnInside;
+
+    @FXML
+    private RadioButton rbtnInside1;
 
     @FXML
     private RadioButton rbtnSleep;
@@ -116,35 +142,20 @@ public class HytterController {
     private RadioButton rbtnSvit;
 
 
-public void initialize() {
+    public void initialize() {
         //Pop-Up for EcoInformation
-        btnEcoInfo.setOnAction(event -> showInfoFromDB("Economy", "Hytt Economy"));
-        //Pop-Up for InsideInformation
-        btnInsideInfo.setOnAction(event -> showInfoFromDB("Inside", "Hytt Inside"));
-        //Pop-Up for SleepInformation, Sömnkapsel
-        btnSleepInfo.setOnAction(event -> showInfoFromDB("Sömnkapsel", "Sömnkapsel"));
-        //Pop-Up for hytt Inside
-        btnSpacesideInfo.setOnAction(event -> showInfoFromDB("Spaceside", "Hytt Spaceside"));
-        //Pop-Up for hytt Svit
-        btnSvitInfo.setOnAction(event -> showInfoFromDB("Svit", "Hytt Svit"));
-        btnNASTA.setOnAction(event -> {
-            try {
-                // Load the FXML file for the new scene
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/uu/grupp3/marstravel/testhugo.fxml"));
-                Parent root = loader.load();
-                // Create a new scene
-                Scene scene = new Scene(root);
-                // Get the stage from the button and set the new scene
-                Stage stage = (Stage) btnNASTA.getScene().getWindow();
-                stage.setScene(scene);
-                stage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+        btnBudget1.setOnAction(event -> showInfoFromDB("budget1", "Budget 1"));
+        btnBudget2.setOnAction(event -> showInfoFromDB("budget2", "Budget 2"));
+        btnBudget3.setOnAction(event -> showInfoFromDB("budget3", "Budget 3"));
+        btnMellan1.setOnAction(event -> showInfoFromDB("mellan1", "Mellan 1"));
+        btnMellan2.setOnAction(event -> showInfoFromDB("mellan2", "Mellan 2"));
+        btnMellan3.setOnAction(event -> showInfoFromDB("mellan3", "Mellan 3"));
+        btnMellan1.setOnAction(event -> showInfoFromDB("lyx1", "Lyx 1"));
+        btnMellan2.setOnAction(event -> showInfoFromDB("lyx2", "Lyx 2"));
+        btnMellan3.setOnAction(event -> showInfoFromDB("lyx3", "Lyx 3"));
     }
 
-    private void showInfoFromDB(String hyttType, String title) {
+    private void showInfoFromDB(String matpaket, String title) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setHeaderText(null); // Ändra denna till något mer passande :D
@@ -153,7 +164,7 @@ public void initialize() {
         try {
             connection = DatabaseHandler.getConnection();
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT Information FROM HyttInformation WHERE Namn = '" + hyttType + "'");
+            ResultSet resultSet = statement.executeQuery("SELECT Information FROM MatpaketInformation WHERE Namn = '" + matpaket + "'");
 
             if (resultSet.next()) {
                 String info = resultSet.getString(1);

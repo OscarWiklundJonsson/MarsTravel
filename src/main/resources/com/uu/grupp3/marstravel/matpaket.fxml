@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uu.grupp3.marstravel.controllers.HytterController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uu.grupp3.marstravel.controllers.MatPaketController">
     <children>
         <Label fx:id="lblMTheader" layoutX="47.0" layoutY="33.0" prefHeight="105.0" prefWidth="370.0" text="Mars Travel">
             <font>
@@ -72,27 +74,27 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <Button fx:id="btnSleepInfo" layoutX="760.0" layoutY="250.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnBudget1" layoutX="760.0" layoutY="250.0" mnemonicParsing="false" text=" i ">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnSvitInfo" layoutX="760.0" layoutY="285.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnBudget2" layoutX="760.0" layoutY="285.0" mnemonicParsing="false" text=" i ">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnSpacesideInfo" layoutX="760.0" layoutY="370.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnMellan1" layoutX="760.0" layoutY="370.0" mnemonicParsing="false" text=" i ">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnInsideInfo" layoutX="760.0" layoutY="320.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnBudget3" layoutX="760.0" layoutY="320.0" mnemonicParsing="false" text=" i ">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnEcoInfo" layoutX="760.0" layoutY="405.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnMellan2" layoutX="760.0" layoutY="405.0" mnemonicParsing="false" text=" i ">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
@@ -113,7 +115,7 @@
         <Button fx:id="btnVALJAevenemangdit" layoutY="296.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="EVENEMANG" />
         <Button fx:id="btnVALJAmatpaketdit" layoutY="242.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="MATPAKET" />
         <Button fx:id="btnVALJAhyttdit" layoutY="188.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="HYTTER" />
-      <RadioButton fx:id="rbtnEco1" layoutX="230.0" layoutY="440.0" mnemonicParsing="false" text="Mellan 2">
+      <RadioButton fx:id="rbtnEco1" layoutX="230.0" layoutY="440.0" mnemonicParsing="false" text="Mellan 3">
          <font>
             <Font size="20.0" />
          </font>
@@ -153,22 +155,22 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnEcoInfo1" layoutX="760.0" layoutY="440.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnMellan3" layoutX="760.0" layoutY="440.0" mnemonicParsing="false" text=" i ">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnEcoInfo11" layoutX="760.0" layoutY="490.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnLyx1" layoutX="760.0" layoutY="490.0" mnemonicParsing="false" text=" i ">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnEcoInfo111" layoutX="760.0" layoutY="525.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnLyx2" layoutX="760.0" layoutY="525.0" mnemonicParsing="false" text=" i ">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnEcoInfo1111" layoutX="760.0" layoutY="560.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnLyx3" layoutX="760.0" layoutY="560.0" mnemonicParsing="false" text=" i ">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
