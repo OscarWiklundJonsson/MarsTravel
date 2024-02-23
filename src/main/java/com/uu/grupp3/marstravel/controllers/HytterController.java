@@ -1,9 +1,13 @@
 package com.uu.grupp3.marstravel.controllers;
 
+import com.uu.grupp3.marstravel.database.DatabaseHandler;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -11,6 +15,10 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class HytterController {
 
@@ -109,6 +117,16 @@ public class HytterController {
 
 
 public void initialize() {
+        //Pop-Up for EcoInformation
+        btnEcoInfo.setOnAction(event -> showInfoFromDB("Economy", "Hytt Economy"));
+        //Pop-Up for InsideInformation
+        btnInsideInfo.setOnAction(event -> showInfoFromDB("Inside", "Hytt Inside"));
+        //Pop-Up for SleepInformation, Sömnkapsel
+        btnSleepInfo.setOnAction(event -> showInfoFromDB("Sömnkapsel", "Sömnkapsel"));
+        //Pop-Up for hytt Inside
+        btnSpacesideInfo.setOnAction(event -> showInfoFromDB("Spaceside", "Hytt Spaceside"));
+        //Pop-Up for hytt Svit
+        btnSvitInfo.setOnAction(event -> showInfoFromDB("Svit", "Hytt Svit"));
         btnNASTA.setOnAction(event -> {
             try {
                 // Load the FXML file for the new scene
@@ -124,5 +142,30 @@ public void initialize() {
                 e.printStackTrace();
             }
         });
+    }
+
+    private void showInfoFromDB(String hyttType, String title) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+
+        Connection connection = null;
+        try {
+            connection = DatabaseHandler.getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT Information FROM HyttInformation WHERE Namn = '" + hyttType + "'");
+
+            if (resultSet.next()) {
+                String info = resultSet.getString(1);
+                alert.setContentText(info);
+            }
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        } finally {
+            System.out.println("Something went right or wrong, but it's over now.");
+        }
+
+        alert.showAndWait();
     }
 }

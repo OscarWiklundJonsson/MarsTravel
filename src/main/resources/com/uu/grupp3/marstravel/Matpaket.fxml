@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uu.grupp3.marstravel.controllers.HytterController">
+    <children>
+        <Label fx:id="lblMTheader" layoutX="47.0" layoutY="33.0" prefHeight="105.0" prefWidth="370.0" text="Mars Travel">
+            <font>
+                <Font size="72.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblhyttalternativ" layoutX="230.0" layoutY="183.0" text="Matpaket">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </Label>
+        <RadioButton fx:id="rbtnSleep" layoutX="230.0" layoutY="250.0" mnemonicParsing="false" text="Budget 1">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="rbtnSvit" layoutX="230.0" layoutY="285.0" mnemonicParsing="false" text="Budget 2">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="rbtnSpaceside" layoutX="230.0" layoutY="320.0" mnemonicParsing="false" text="Budget 3">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="rbtnInside" layoutX="230.0" layoutY="370.0" mnemonicParsing="false" text="Mellan 1">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="rbtnEco" layoutX="230.0" layoutY="405.0" mnemonicParsing="false" text="Mellan 2">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </RadioButton>
+        <Label fx:id="lblPris" layoutX="480.0" layoutY="183.0" text="Pris">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblSleepPris" layoutX="480.0" layoutY="250.0" text="27 000 kr/person">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblSvitPris" layoutX="480.0" layoutY="285.0" text="40 000 kr/person">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblSpacesidePris" layoutX="480.0" layoutY="320.0" text="54 000 kr/person">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblInsidePris" layoutX="480.0" layoutY="370.0" text="76 000 kr/person">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblEcoPris" layoutX="480.0" layoutY="405.0" text="90 000 kr/person">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnSleepInfo" layoutX="760.0" layoutY="250.0" mnemonicParsing="false" text=" i ">
+            <font>
+                <Font name="Book Antiqua" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnSvitInfo" layoutX="760.0" layoutY="285.0" mnemonicParsing="false" text=" i ">
+            <font>
+                <Font name="Book Antiqua" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnSpacesideInfo" layoutX="760.0" layoutY="370.0" mnemonicParsing="false" text=" i ">
+            <font>
+                <Font name="Book Antiqua" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnInsideInfo" layoutX="760.0" layoutY="320.0" mnemonicParsing="false" text=" i ">
+            <font>
+                <Font name="Book Antiqua" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnEcoInfo" layoutX="760.0" layoutY="405.0" mnemonicParsing="false" text=" i ">
+            <font>
+                <Font name="Book Antiqua" size="13.0" />
+            </font>
+        </Button>
+        <Circle fx:id="cVarukorgen" fill="WHITE" layoutX="1225.0" layoutY="53.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+        <Button fx:id="btnNÄSTA" layoutX="1109.0" layoutY="620.0" mnemonicParsing="false" text="NÄSTA">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnVALJAkundinfo" layoutY="666.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="KUNDFINFORMATION" />
+        <Button fx:id="btnVALJAbetalkort" layoutY="612.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="BETALKORT" />
+        <Button fx:id="btnVALJAhalsoforsakring" layoutY="559.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="HÄLSOFÖRSÄKRING" />
+        <Button fx:id="btnVALJAevenemanghem" layoutY="505.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="EVENEMANG HEM" />
+        <Button fx:id="btnVALJAmatpakethem" layoutY="452.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="MATPAKET HEM" />
+        <Button fx:id="btnVALJAhytthem" layoutY="399.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="HYTTER HEM" />
+        <Button fx:id="btnVALJAhotellmars" layoutY="350.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="HOTELL MARS" />
+        <Button fx:id="btnVALJAevenemangdit" layoutY="296.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="EVENEMANG" />
+        <Button fx:id="btnVALJAmatpaketdit" layoutY="242.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="MATPAKET" />
+        <Button fx:id="btnVALJAhyttdit" layoutY="188.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="124.0" text="HYTTER" />
+      <RadioButton fx:id="rbtnEco1" layoutX="230.0" layoutY="440.0" mnemonicParsing="false" text="Mellan 2">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </RadioButton>
+      <Label fx:id="lblEcoPris1" layoutX="480.0" layoutY="440.0" text="100 000 kr/person">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="rbtnInside1" layoutX="230.0" layoutY="490.0" mnemonicParsing="false" text="Lyx 1">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="rbtnEco2" layoutX="230.0" layoutY="525.0" mnemonicParsing="false" text="Lyx 2">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="rbtnEco11" layoutX="230.0" layoutY="560.0" mnemonicParsing="false" text="Lyx 3">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </RadioButton>
+      <Label fx:id="lblInsidePris1" layoutX="480.0" layoutY="490.0" text="120 000 kr/person">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblEcoPris2" layoutX="480.0" layoutY="525.0" text="150 000 kr/person">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblEcoPris21" layoutX="480.0" layoutY="560.0" text="200 000 kr/person">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnEcoInfo1" layoutX="760.0" layoutY="440.0" mnemonicParsing="false" text=" i ">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnEcoInfo11" layoutX="760.0" layoutY="490.0" mnemonicParsing="false" text=" i ">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnEcoInfo111" layoutX="760.0" layoutY="525.0" mnemonicParsing="false" text=" i ">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnEcoInfo1111" layoutX="760.0" layoutY="560.0" mnemonicParsing="false" text=" i ">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font>
+      </Button>
+    </children>
+</AnchorPane>
