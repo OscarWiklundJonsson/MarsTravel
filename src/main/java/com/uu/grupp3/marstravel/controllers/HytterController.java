@@ -124,8 +124,9 @@ public void initialize() {
         btnSpacesideInfo.setOnAction(event -> showInfoFromDB("Spaceside", "Hytt Spaceside"));
         //Pop-Up for hytt Svit
         btnSvitInfo.setOnAction(event -> showInfoFromDB("Svit", "Hytt Svit"));
-        ToggleGroup group = new ToggleGroup();
 
+        // Funktion för att endast välja en radioknapp
+        ToggleGroup group = new ToggleGroup();
         rbtnEco.setToggleGroup(group);
         rbtnInside.setToggleGroup(group);
         rbtnSleep.setToggleGroup(group);
