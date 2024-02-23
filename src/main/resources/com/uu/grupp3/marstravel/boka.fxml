@@ -5,7 +5,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import java.net.URL?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uu.grupp3.marstravel.controllers.BokaController">
+   <stylesheets>
+      <URL value="@styles.css" />
+   </stylesheets>
    <children>
       <Button fx:id="btnBoka" layoutX="593.0" layoutY="493.0" mnemonicParsing="false" text="BOKA">
          <font>
@@ -17,5 +23,8 @@
             <Font size="96.0" />
          </font>
       </Label>
+      <ImageView>
+         <Image url="https://upload.wikimedia.org/wikipedia/commons/7/76/Mars_Hubble.jpg"/>
+      </ImageView>
    </children>
 </AnchorPane>
