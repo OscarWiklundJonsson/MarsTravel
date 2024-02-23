@@ -1,5 +1,6 @@
 package com.uu.grupp3.marstravel.controllers;
 
+import com.uu.grupp3.marstravel.database.DatabaseHandler;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -14,6 +15,10 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class EvenemangController {
 
@@ -92,10 +97,9 @@ public class EvenemangController {
 
     public void initialize() {
         //Pop-Up info concert
-        btnConcertInfo.setOnAction(event -> {
-            //Visa Concert Information pop-up
-            showConcertInfoPopup();
-        });
+        btnConcertInfo.setOnAction(event -> showInfoFromDB("Konsert", ""));{
+
+        };
 
 
         btnNASTA.setOnAction(event -> {
@@ -115,11 +119,29 @@ public class EvenemangController {
         });
     }
 
-    private void showConcertInfoPopup() {
+
+    private void showInfoFromDB(String evenemangType, String title) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Konsert Information");
-        alert.setHeaderText(null);
-        alert.setContentText("Info from DB");
+        alert.setTitle(title);
+        alert.setHeaderText(null); // Ändra denna till något mer passande
+
+        Connection connection = null;
+        try {
+            connection = DatabaseHandler.getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT Information FROM EvenemangInformation WHERE Namn = '" + evenemangType + "'");
+
+            if (resultSet.next()) {
+                String info = resultSet.getString(1);
+                alert.setContentText(info);
+            }
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        } finally {
+            System.out.println("Something went right or wrong, but it's over now.");
+        }
+
         alert.showAndWait();
     }
 }
