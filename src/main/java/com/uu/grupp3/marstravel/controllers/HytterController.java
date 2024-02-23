@@ -112,7 +112,7 @@ public class HytterController {
 
 
 public void initialize() {
-    //Pop-Up för hyttinformation
+    //Pop-Up för EcoInformation
     btnEcoInfo.setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent actionEvent) {
@@ -122,6 +122,17 @@ public void initialize() {
             alert.setContentText("Insideshytt med 4 bäddar (två under- och överbäddar) där\n" +
                     "underbäddarna kan ändras till soffa dagtid. Dusch finns till hytten, men toaletter\n" +
                     "finns i korridoren.");
+            alert.showAndWait();
+        }
+    });
+    //Pop-Up för InsideInformation
+    btnInsideInfo.setOnAction(new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent actionEvent) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Hytt Inside");
+            alert.setHeaderText(null);
+            alert.setContentText("Information om hytt Inside");
             alert.showAndWait();
         }
     });
