@@ -91,7 +91,7 @@ public void initialize() {
         btnNASTA.setOnAction(event -> {
             try {
                 // Load the FXML file for the new scene
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("src/main/resources/com/uu/grupp3/marstravel/evenemang.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/uu/grupp3/marstravel/sparaKundInformation.fxml"));
                 Parent root = loader.load();
                 // Create a new scene
                 Scene scene = new Scene(root);

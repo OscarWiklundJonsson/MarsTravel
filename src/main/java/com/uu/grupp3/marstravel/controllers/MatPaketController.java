@@ -5,10 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
+import javafx.scene.control.*;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
@@ -19,7 +16,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class MatPaketController {
-
     @FXML
     private Button btnBudget1;
 
@@ -120,35 +116,56 @@ public class MatPaketController {
     private Label lblhyttalternativ;
 
     @FXML
-    private RadioButton rbtnEco;
+    private RadioButton rbtnBudget1;
 
     @FXML
-    private RadioButton rbtnEco1;
+    private RadioButton rbtnBudget2;
 
     @FXML
-    private RadioButton rbtnEco11;
+    private RadioButton rbtnBudget3;
 
     @FXML
-    private RadioButton rbtnEco2;
+    private RadioButton rbtnLyx1;
 
     @FXML
-    private RadioButton rbtnInside;
+    private RadioButton rbtnLyx2;
 
     @FXML
-    private RadioButton rbtnInside1;
+    private RadioButton rbtnLyx3;
 
     @FXML
-    private RadioButton rbtnSleep;
+    private RadioButton rbtnMellan1;
 
     @FXML
-    private RadioButton rbtnSpaceside;
+    private RadioButton rbtnMellan2;
 
     @FXML
-    private RadioButton rbtnSvit;
+    private RadioButton rbtnMellan3;
 
 
     public void initialize() {
-        //Pop-Up for EcoInformation
+        // Funktion för att endast välja en radioknapp för mat
+        ToggleGroup group = new ToggleGroup();
+        rbtnBudget1.setToggleGroup(group);
+        rbtnBudget2.setToggleGroup(group);
+        rbtnBudget3.setToggleGroup(group);
+        rbtnLyx1.setToggleGroup(group);
+        rbtnLyx2.setToggleGroup(group);
+        rbtnLyx3.setToggleGroup(group);
+        rbtnMellan1.setToggleGroup(group);
+        rbtnMellan2.setToggleGroup(group);
+        rbtnMellan3.setToggleGroup(group);
+
+        btnNÄSTA.setDisable(true);
+
+        group.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            if (group.getSelectedToggle() != null) {
+                btnNÄSTA.setDisable(false);
+            }
+        });
+
+
+        //Pop-Up for MatpaketInformation
         btnBudget1.setOnAction(event -> showInfoFromDB("budget1", "Budget 1"));
         btnBudget2.setOnAction(event -> showInfoFromDB("budget2", "Budget 2"));
         btnBudget3.setOnAction(event -> showInfoFromDB("budget3", "Budget 3"));

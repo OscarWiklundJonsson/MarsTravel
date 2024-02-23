@@ -97,6 +97,6 @@ public class ResedatumController implements Initializable {
         int monthsDifference = returnMonthIndex - departureMonthIndex;
 
 
-        return monthsDifference >= 6;
+        return monthsDifference >= 6; // Detta fungerar inte, måste kolla år också!
     }
 }
