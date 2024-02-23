@@ -158,6 +158,16 @@ public void initialize() {
             alert.showAndWait();
         }
     });
+    btnSvitInfo.setOnAction(new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent actionEvent) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Hytt Svit");
+            alert.setHeaderText(null);
+            alert.setContentText("Information om hytt Svit");
+            alert.showAndWait();
+        }
+    });
         btnNASTA.setOnAction(event -> {
             try {
                 // Load the FXML file for the new scene
