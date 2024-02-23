@@ -21,7 +21,7 @@ public class HytterController {
     private Button btnInsideInfo;
 
     @FXML
-    private Button btnNÄSTA;
+    private Button btnNASTA;
 
     @FXML
     private Button btnSleepInfo;
@@ -77,7 +77,7 @@ public class HytterController {
     String filePath = "";
 
     public void initialize() {
-        btnNÄSTA.setOnAction(event -> {
+        btnNASTA.setOnAction(event -> {
             try {
                 // Load the FXML file for the new scene
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/uu/grupp3/marstravel/testhugo.fxml"));
@@ -85,7 +85,7 @@ public class HytterController {
                 // Create a new scene
                 Scene scene = new Scene(root);
                 // Get the stage from the button and set the new scene
-                Stage stage = (Stage) btnNÄSTA.getScene().getWindow();
+                Stage stage = (Stage) btnNASTA.getScene().getWindow();
                 stage.setScene(scene);
                 stage.show();
             } catch (IOException e) {
