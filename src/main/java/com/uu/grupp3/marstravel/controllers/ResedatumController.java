@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HytterController {
+public class ResedatumController {
 
     @FXML
     private Button btnEcoInfo;
@@ -108,7 +108,7 @@ public class HytterController {
     private RadioButton rbtnSvit;
 
 
-public void initialize() {
+    public void initialize() {
         btnNASTA.setOnAction(event -> {
             try {
                 // Load the FXML file for the new scene
