@@ -147,7 +147,7 @@ public void initialize() {
     private void showInfoFromDB(String hyttType, String title) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
-        alert.setHeaderText(null);
+        alert.setHeaderText(null); // Ändra denna till något mer passande :D
 
         Connection connection = null;
         try {
