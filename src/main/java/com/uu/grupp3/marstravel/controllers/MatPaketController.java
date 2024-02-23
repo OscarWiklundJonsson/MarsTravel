@@ -1,42 +1,49 @@
 package com.uu.grupp3.marstravel.controllers;
 
+import com.uu.grupp3.marstravel.database.DatabaseHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.shape.Circle;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 public class MatPaketController {
 
     @FXML
-    private Button btnEcoInfo;
+    private Button btnBudget1;
 
     @FXML
-    private Button btnEcoInfo1;
+    private Button btnBudget2;
 
     @FXML
-    private Button btnEcoInfo11;
+    private Button btnBudget3;
 
     @FXML
-    private Button btnEcoInfo111;
+    private Button btnLyx1;
 
     @FXML
-    private Button btnEcoInfo1111;
+    private Button btnLyx2;
 
     @FXML
-    private Button btnInsideInfo;
+    private Button btnLyx3;
+
+    @FXML
+    private Button btnMellan1;
+
+    @FXML
+    private Button btnMellan2;
+
+    @FXML
+    private Button btnMellan3;
 
     @FXML
     private Button btnNÄSTA;
-
-    @FXML
-    private Button btnSleepInfo;
-
-    @FXML
-    private Button btnSpacesideInfo;
-
-    @FXML
-    private Button btnSvitInfo;
 
     @FXML
     private Button btnVALJAbetalkort;
@@ -134,4 +141,42 @@ public class MatPaketController {
     @FXML
     private RadioButton rbtnSvit;
 
+
+    public void initialize() {
+        //Pop-Up for EcoInformation
+        btnBudget1.setOnAction(event -> showInfoFromDB("budget1", "Budget 1"));
+        btnBudget2.setOnAction(event -> showInfoFromDB("budget2", "Budget 2"));
+        btnBudget3.setOnAction(event -> showInfoFromDB("budget3", "Budget 3"));
+        btnMellan1.setOnAction(event -> showInfoFromDB("mellan1", "Mellan 1"));
+        btnMellan2.setOnAction(event -> showInfoFromDB("mellan2", "Mellan 2"));
+        btnMellan3.setOnAction(event -> showInfoFromDB("mellan3", "Mellan 3"));
+        btnLyx1.setOnAction(event -> showInfoFromDB("lyx1", "Lyx 1"));
+        btnLyx2.setOnAction(event -> showInfoFromDB("lyx2", "Lyx 2"));
+        btnLyx3.setOnAction(event -> showInfoFromDB("lyx3", "Lyx 3"));
+    }
+
+    private void showInfoFromDB(String matpaket, String title) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null); // Ändra denna till något mer passande :D
+
+        Connection connection = null;
+        try {
+            connection = DatabaseHandler.getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT Information FROM MatpaketInformation WHERE Namn = '" + matpaket + "'");
+
+            if (resultSet.next()) {
+                String info = resultSet.getString(1);
+                alert.setContentText(info);
+            }
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        } finally {
+            System.out.println("Something went right or wrong, but it's over now.");
+        }
+
+        alert.showAndWait();
+    }
 }
