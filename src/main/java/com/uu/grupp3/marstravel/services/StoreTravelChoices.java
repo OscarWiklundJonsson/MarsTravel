@@ -14,8 +14,9 @@ public class StoreTravelChoices {
     /**
      * Stores the travel choices in a file.
      */
+    String fileName = "travelChoices.txt";
     public void storeTravelChoices() {
-        Path path = Paths.get("travelChoices.txt");
+        Path path = Paths.get(fileName);
 
         try {
             if (!Files.exists(path)) {
@@ -32,5 +33,25 @@ public class StoreTravelChoices {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public void writeFile(String filePath, String text) {
+        Path path = Paths.get(filePath);
+
+        try {
+            if (!Files.exists(path)) {
+                Files.createFile(path);
+            }
+
+            try (BufferedWriter writer = Files.newBufferedWriter(path)) {
+                writer.write(text);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void hyttAlternativ() {
+        String text = "Hytt Alternativ...";
+        writeFile(fileName, text);
     }
 }
