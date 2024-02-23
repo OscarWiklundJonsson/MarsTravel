@@ -7,10 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
+import javafx.scene.control.*;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
@@ -127,6 +124,22 @@ public void initialize() {
         btnSpacesideInfo.setOnAction(event -> showInfoFromDB("Spaceside", "Hytt Spaceside"));
         //Pop-Up for hytt Svit
         btnSvitInfo.setOnAction(event -> showInfoFromDB("Svit", "Hytt Svit"));
+
+        // Funktion för att endast välja en radioknapp
+        ToggleGroup group = new ToggleGroup();
+        rbtnEco.setToggleGroup(group);
+        rbtnInside.setToggleGroup(group);
+        rbtnSleep.setToggleGroup(group);
+        rbtnSpaceside.setToggleGroup(group);
+        rbtnSvit.setToggleGroup(group);
+
+        btnNASTA.setDisable(true);
+
+        group.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            if (group.getSelectedToggle() != null) {
+                btnNASTA.setDisable(false);
+            }
+        });
         btnNASTA.setOnAction(event -> {
             try {
                 // Load the FXML file for the new scene
@@ -142,6 +155,7 @@ public void initialize() {
                 e.printStackTrace();
             }
         });
+
     }
 
     private void showInfoFromDB(String hyttType, String title) {
