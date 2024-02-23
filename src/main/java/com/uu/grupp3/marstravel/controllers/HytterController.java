@@ -1,9 +1,12 @@
 package com.uu.grupp3.marstravel.controllers;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -109,6 +112,19 @@ public class HytterController {
 
 
 public void initialize() {
+    //Pop-Up för hyttinformation
+    btnEcoInfo.setOnAction(new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent actionEvent) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Hytt Economy");
+            alert.setHeaderText(null);
+            alert.setContentText("Insideshytt med 4 bäddar (två under- och överbäddar) där\n" +
+                    "underbäddarna kan ändras till soffa dagtid. Dusch finns till hytten, men toaletter\n" +
+                    "finns i korridoren.");
+            alert.showAndWait();
+        }
+    });
         btnNASTA.setOnAction(event -> {
             try {
                 // Load the FXML file for the new scene
