@@ -22,6 +22,7 @@ public class BokaController {
                         Stage stage = (Stage) btnBoka.getScene().getWindow();
                         nextButton.nextButton("/com/uu/grupp3/marstravel/hytter.fxml", stage);
                 });
+
         }
 
 }

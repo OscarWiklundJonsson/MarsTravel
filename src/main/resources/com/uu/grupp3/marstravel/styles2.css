@@ -1,0 +1,5 @@
+.root{
+    -fx-background-image: url("MTbg.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: stretch;
+}

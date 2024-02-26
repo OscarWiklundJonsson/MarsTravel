@@ -7,6 +7,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * Hämtar hem information från databasen baserat på givna args
+ * @param , type, title, tableName, columnNumber
+ * type = vilken information som skall hämtas, budget1, svit osv
+ * title = Vad ska info fönstret heta ?
+ * tableName = från vilken tabell ska det hämtas?
+ * columnNumber = Från vilken kolumn ska det hämtas ifrån(?)
+ */
 public class DatabaseReciveInformation {
     public void showInfoFromDB(String type, String title, String tableName, int columnNumber) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

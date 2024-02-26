@@ -18,7 +18,7 @@
             <Font size="24.0" />
          </font>
       </Button>
-      <Label fx:id="HeaderMT" layoutX="396.0" layoutY="98.0" text="Mars Travel">
+      <Label fx:id="HeaderMT" id="marsTravelHeader" layoutX="396.0" layoutY="98.0" text="Mars Travel">
          <font>
             <Font size="96.0" />
          </font>
