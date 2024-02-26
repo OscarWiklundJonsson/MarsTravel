@@ -1,57 +1,45 @@
 package com.uu.grupp3.marstravel.services;
 
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.RadioButton;
+
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
-
-/**
- * Spara resvalen i en textfil, för att sedan kunna skicka vidare valda alternativ till databasen + betalning.
- */
 public class StoreTravelChoices {
+    private static boolean isFirstRun = true;
+
     /**
-     * Stores the travel choices in a file.
+     * Stores the selected radio button in a file
+     * @param group (ToggleGroup) the group of radio buttons
      */
-    String fileName = "travelChoices.txt";
-    public void storeTravelChoices() {
+    public void storeSelectedRadioButton(ToggleGroup group) {
+        RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
+        String selectedRadioButtonValue = selectedRadioButton == null ? "Ingen radio knapp har valts" : selectedRadioButton.getText();
+        writeToFile(selectedRadioButtonValue);
+    }
+
+    /**
+     * Writes the content to a file
+     * @param content (String) the content to write to the file (HyttAlternativ, MatPaket osv)
+     */
+    private void writeToFile(String content) {
+        String fileName = "travelChoices.txt";
         Path path = Paths.get(fileName);
+        int kundNr = 1;
 
-        try {
-            if (!Files.exists(path)) {
-                Files.createFile(path);
+        try (BufferedWriter writer = Files.newBufferedWriter(path, StandardOpenOption.APPEND)) {
+            if (isFirstRun) {
+                writer.write("---------Kund-" + kundNr + "----------\n");
+                isFirstRun = false;
             }
-
-            try (BufferedWriter writer = Files.newBufferedWriter(path)) {
-                // Replace this with the actual travel choices
-                String travelChoices = "Travel Choices...";
-                String travelChoices2 = "Travel Choices 2...";
-
-                writer.write(travelChoices);
-            }
+            writer.write(content + "\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-    public void writeFile(String filePath, String text) {
-        Path path = Paths.get(filePath);
-
-        try {
-            if (!Files.exists(path)) {
-                Files.createFile(path);
-            }
-
-            try (BufferedWriter writer = Files.newBufferedWriter(path)) {
-                writer.write(text);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void hyttAlternativ() {
-        String text = "Hytt Alternativ...";
-        writeFile(fileName, text);
     }
 }

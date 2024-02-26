@@ -3,6 +3,7 @@ package com.uu.grupp3.marstravel.controllers;
 import com.uu.grupp3.marstravel.database.DatabaseHandler;
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
 import com.uu.grupp3.marstravel.services.NextButton;
+import com.uu.grupp3.marstravel.services.StoreTravelChoices;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -167,6 +168,8 @@ public class MatPaketController {
         });
 
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
+        StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
+
         //Pop-Up for MatpaketInformation
         btnBudget1.setOnAction(event -> dbInfo.showInfoFromDB("budget1", "Budget 1", "MatpaketInformation", 1));
         btnBudget2.setOnAction(event -> dbInfo.showInfoFromDB("budget2", "Budget 2", "MatpaketInformation", 1));
@@ -180,6 +183,7 @@ public class MatPaketController {
 
         // Nästa knappen. Skickar användaren till nästa sida. (evenemang). Använder sig av NextButton klassen som är en service klass.
         btnNÄSTA.setOnAction(event -> {
+            storeTravelChoices.storeSelectedRadioButton(group); // Save it to a file
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnNÄSTA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/evenemang.fxml", stage);

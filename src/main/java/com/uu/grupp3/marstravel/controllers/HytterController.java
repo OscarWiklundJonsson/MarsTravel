@@ -1,6 +1,7 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
+import com.uu.grupp3.marstravel.services.StoreTravelChoices;
 import com.uu.grupp3.marstravel.services.NextButton;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -105,6 +106,7 @@ public class HytterController {
 
 public void initialize() {
     DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
+    StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
 
     //Pop-Up for EcoInformation
     btnEcoInfo.setOnAction(event -> dbInfo.showInfoFromDB("Economy", "Hytt Economy", "HyttInformation",1));
@@ -133,6 +135,7 @@ public void initialize() {
         }
     });
     btnNASTA.setOnAction(event -> {
+        storeTravelChoices.storeSelectedRadioButton(group); // Save it to a file
         NextButton nextButton = new NextButton();
         Stage stage = (Stage) btnNASTA.getScene().getWindow();
         nextButton.nextButton("/com/uu/grupp3/marstravel/matpaket.fxml", stage);
