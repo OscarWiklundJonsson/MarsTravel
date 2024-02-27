@@ -179,6 +179,5 @@ public class MatPaketController {
             Stage stage = (Stage) btnNÄSTA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/evenemang.fxml", stage);
         });
-
     }
 }
