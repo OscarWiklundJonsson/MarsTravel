@@ -17,10 +17,10 @@ public class StoreTravelChoices {
      * Stores the selected radio button in a file
      * @param group (ToggleGroup) the group of radio buttons
      */
-    public void storeSelectedRadioButton(ToggleGroup group) {
+    public void storeSelectedRadioButton(ToggleGroup group, String prefix) {
         RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
         String selectedRadioButtonValue = selectedRadioButton == null ? "Ingen radio knapp har valts" : selectedRadioButton.getText();
-        writeToFile(selectedRadioButtonValue);
+        writeToFile(prefix + selectedRadioButtonValue);
     }
     public void storeDate(String date) {
         writeToFile(date);
@@ -30,7 +30,7 @@ public class StoreTravelChoices {
      * Writes the content to a file
      * @param content (String) the content to write to the file (HyttAlternativ, MatPaket osv)
      */
-    private void writeToFile(String content) {
+    public void writeToFile(String content) {
         String fileName = "travelChoices.txt";
         Path path = Paths.get(fileName);
         int kundNr = 1; // TODO: anpassa till något lämpligt
