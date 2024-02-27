@@ -20,6 +20,7 @@ import javafx.scene.Node;
 
 import com.uu.grupp3.marstravel.services.SideBarButtons;
 
+
 public class ResedatumController implements Initializable {
     @FXML
     private ChoiceBox<String> Avresa_ar;
@@ -110,7 +111,10 @@ public class ResedatumController implements Initializable {
             felAlert.showAndWait();
             return;
         }
-
+        // check if there is already a date stored, if yes remove the old date
+        if (storeTravelChoices.getDate() != null) {
+            storeTravelChoices.removeDate();
+        }
         String chosenDate = Avresa_ar.getValue() + "-" + Avresa_manad.getValue() + " till " + Hemresa_ar.getValue() + "-" + HemresaMånad.getValue();
         storeTravelChoices.storeDate(chosenDate);
 
