@@ -129,12 +129,16 @@ public class ResedatumController implements Initializable {
 
         if (event.getSource() == btnVALJAevenemangdit) {
             fxmlPath = "/com/uu/grupp3/marstravel/evenemang.fxml";
+            System.out.println("Evenemang");
         } else if (event.getSource() == btnVALJAmatpaketdit) {
             fxmlPath = "/com/uu/grupp3/marstravel/matpaket.fxml";
+            System.out.println("Matpaket");
         } else if (event.getSource() == btnVALJAhyttdit) {
             fxmlPath = "/com/uu/grupp3/marstravel/hytter.fxml";
+            System.out.println("Hytter");
         } else if (event.getSource() == btnVALJAresedatum) {
             fxmlPath = "/com/uu/grupp3/marstravel/resedatum.fxml";
+            System.out.println("Resedatum");
         }
 
         if (fxmlPath != null) {
