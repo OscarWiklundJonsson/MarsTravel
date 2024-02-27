@@ -17,7 +17,7 @@ import java.sql.SQLException;
 public class SparaKundController {
 
     @FXML
-    private Button btnNASTA;
+    private Button btnKASSA;
 
     @FXML
     private Button btnVALJAbetalkort;
@@ -135,9 +135,9 @@ public class SparaKundController {
     }
     //nästa knapp, skickar vidare till hytterHem sidan.
     public void initialize() {
-        btnNASTA.setOnAction(event -> {
+        btnKASSA.setOnAction(event -> {
             NextButton nextButton = new NextButton();
-            Stage stage = (Stage) btnNASTA.getScene().getWindow();
+            Stage stage = (Stage) btnKASSA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/boka.fxml", stage); //ska skickas till varukorgen sen.
         });
     }
