@@ -30,7 +30,7 @@ public class StoreTravelChoices {
     private void writeToFile(String content) {
         String fileName = "travelChoices.txt";
         Path path = Paths.get(fileName);
-        int kundNr = 1;
+        int kundNr = 1; // TODO: anpassa till något lämpligt
 
         try (BufferedWriter writer = Files.newBufferedWriter(path, StandardOpenOption.APPEND)) {
             if (isFirstRun) {

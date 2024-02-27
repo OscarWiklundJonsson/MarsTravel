@@ -9,7 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-public class MatPaketController {
+public class MatpaketHemController {
     @FXML
     private Button btnBudget1;
 
@@ -177,7 +177,7 @@ public class MatPaketController {
             storeTravelChoices.storeSelectedRadioButton(group); // Save it to a file
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnNÄSTA.getScene().getWindow();
-            nextButton.nextButton("/com/uu/grupp3/marstravel/evenemang.fxml", stage);
+            nextButton.nextButton("/com/uu/grupp3/marstravel/evenemangHem.fxml", stage);
         });
     }
 }

@@ -31,7 +31,6 @@ public class DatabaseHandler {
 
     /**
      * Closes the connection to the database
-     * @author Oscar
      */
     public static void closeConnection() {
         if (connection != null) {

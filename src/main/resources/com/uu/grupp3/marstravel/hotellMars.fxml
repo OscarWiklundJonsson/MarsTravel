@@ -1,106 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
-<?import java.net.URL?>
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uu.grupp3.marstravel.controllers.HotellMarsController">
     <stylesheets>
         <URL value="@styles2.css" />
     </stylesheets>
     <children>
-        <Label fx:id="lblMTheader" layoutX="47.0" layoutY="33.0" prefHeight="105.0" prefWidth="370.0" text="Mars Travel">
-            <font>
-                <Font size="72.0" />
-            </font>
-        </Label>
-        <Label fx:id="lblhotellalternativ" layoutX="232.0" layoutY="173.0" text="Hotellalternativ">
+        <Label fx:id="lblhotellalternativ" layoutX="252.0" layoutY="173.0" text="Hotellalternativ" textFill="#c7511b">
             <font>
                 <Font size="36.0" />
             </font>
         </Label>
-        <RadioButton fx:id="rbtnWeilders" layoutX="232.0" layoutY="295.0" mnemonicParsing="false" text="Polar Wielders">
+        <RadioButton fx:id="rbtnWeilders" layoutX="252.0" layoutY="285.0" mnemonicParsing="false" text="Polar Wielders" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnLansdorp" layoutX="232.0" layoutY="259.0" mnemonicParsing="false" text="Polar Lansdorp">
+        <RadioButton fx:id="rbtnLansdorp" layoutX="252.0" layoutY="249.0" mnemonicParsing="false" text="Polar Lansdorp" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnPhobosDubbel" layoutX="232.0" layoutY="413.0" mnemonicParsing="false" text="Dubbelrum">
+        <RadioButton fx:id="rbtnPhobosDubbel" layoutX="252.0" layoutY="403.0" mnemonicParsing="false" text="Dubbelrum" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnPhobosEnkel" layoutX="232.0" layoutY="378.0" mnemonicParsing="false" text="Enkelrum">
+        <RadioButton fx:id="rbtnPhobosEnkel" layoutX="252.0" layoutY="368.0" mnemonicParsing="false" text="Enkelrum" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnDeimosEnkel" layoutX="232.0" layoutY="482.0" mnemonicParsing="false" text="Enkelrum">
+        <RadioButton fx:id="rbtnDeimosEnkel" layoutX="252.0" layoutY="472.0" mnemonicParsing="false" text="Enkelrum" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <Label fx:id="lblPrismånad" layoutX="529.0" layoutY="173.0" text="Pris (månad)">
+        <Label fx:id="lblPrismånad" layoutX="549.0" layoutY="173.0" text="Pris (månad)" textFill="#c7511b">
             <font>
                 <Font size="36.0" />
             </font>
         </Label>
-        <Label fx:id="lblLansdorpPris" layoutX="529.0" layoutY="260.0" text="3500kr/bädd">
+        <Label fx:id="lblLansdorpPris" layoutX="549.0" layoutY="250.0" text="3500kr/bädd" textFill="WHITE">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label fx:id="lblWeildersPris" layoutX="529.0" layoutY="296.0" text="5000kr/bädd">
+        <Label fx:id="lblWeildersPris" layoutX="549.0" layoutY="286.0" text="5000kr/bädd" textFill="WHITE">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label fx:id="lblPhobosEnkelPris" layoutX="529.0" layoutY="379.0" text="7500kr">
+        <Label fx:id="lblPhobosEnkelPris" layoutX="549.0" layoutY="369.0" text="7500kr" textFill="WHITE">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label fx:id="lblPhobosDubbelPris" layoutX="529.0" layoutY="414.0" text="12 000kr">
+        <Label fx:id="lblPhobosDubbelPris" layoutX="549.0" layoutY="404.0" text="12 000kr" textFill="WHITE">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label fx:id="lblDeimosEnkelPris" layoutX="529.0" layoutY="483.0" text="7500kr">
+        <Label fx:id="lblDeimosEnkelPris" layoutX="549.0" layoutY="473.0" text="7500kr" textFill="WHITE">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Button fx:id="btnLansdorpInfo" layoutX="774.0" layoutY="261.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnLansdorpInfo" layoutX="784.0" layoutY="251.0" mnemonicParsing="false" text=" i ">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnWeildersInfo" layoutX="774.0" layoutY="297.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnWeildersInfo" layoutX="784.0" layoutY="287.0" mnemonicParsing="false" text=" i ">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnPhobosEnkelInfo" layoutX="774.0" layoutY="380.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnPhobosEnkelInfo" layoutX="784.0" layoutY="370.0" mnemonicParsing="false" text=" i ">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnPhobosDubbelInfo" layoutX="774.0" layoutY="415.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnPhobosDubbelInfo" layoutX="784.0" layoutY="405.0" mnemonicParsing="false" text=" i ">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnDeimosEnkelInfo" layoutX="774.0" layoutY="484.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnDeimosEnkelInfo" layoutX="784.0" layoutY="474.0" mnemonicParsing="false" text=" i ">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
@@ -127,72 +122,72 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblHotelPhobos" layoutX="233.0" layoutY="348.0" text="Hotel Phobos">
+      <Label fx:id="lblHotelPhobos" layoutX="253.0" layoutY="338.0" text="Hotel Phobos" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblHotelDeimos" layoutX="233.0" layoutY="455.0" text="Hotel Deimos">
+      <Label fx:id="lblHotelDeimos" layoutX="253.0" layoutY="445.0" text="Hotel Deimos" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <RadioButton fx:id="rbtnDeimosDubbel" layoutX="232.0" layoutY="517.0" mnemonicParsing="false" text="Dubbelrum">
+      <RadioButton fx:id="rbtnDeimosDubbel" layoutX="252.0" layoutY="507.0" mnemonicParsing="false" text="Dubbelrum" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </RadioButton>
-      <Label fx:id="lblDeimosDubbelPris" layoutX="529.0" layoutY="518.0" text="12 00kr">
+      <Label fx:id="lblDeimosDubbelPris" layoutX="549.0" layoutY="508.0" text="12 00kr" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblRoyalCity" layoutX="233.0" layoutY="557.0" text="Royal City">
+      <Label fx:id="lblRoyalCity" layoutX="253.0" layoutY="547.0" text="Royal City" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <RadioButton fx:id="rbtnRoyalEnkel" layoutX="232.0" layoutY="584.0" mnemonicParsing="false" text="Enkel Lyx">
+      <RadioButton fx:id="rbtnRoyalEnkel" layoutX="252.0" layoutY="574.0" mnemonicParsing="false" text="Enkel Lyx" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="rbtnRoyalDubbel" layoutX="232.0" layoutY="618.0" mnemonicParsing="false" text="Dubbel Lyx">
+      <RadioButton fx:id="rbtnRoyalDubbel" layoutX="252.0" layoutY="608.0" mnemonicParsing="false" text="Dubbel Lyx" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="rbtnRoyalSvit" layoutX="232.0" layoutY="652.0" mnemonicParsing="false" text="Svit">
+      <RadioButton fx:id="rbtnRoyalSvit" layoutX="252.0" layoutY="642.0" mnemonicParsing="false" text="Svit" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </RadioButton>
-      <Label fx:id="lblRoyalEnkelPris" layoutX="529.0" layoutY="585.0" text="20 000kr">
+      <Label fx:id="lblRoyalEnkelPris" layoutX="549.0" layoutY="575.0" text="20 000kr" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblRoyalDubbelPris" layoutX="529.0" layoutY="619.0" text="35 000kr">
+      <Label fx:id="lblRoyalDubbelPris" layoutX="549.0" layoutY="609.0" text="35 000kr" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblRoyalSvitPris" layoutX="529.0" layoutY="653.0" text="50 000kr">
+      <Label fx:id="lblRoyalSvitPris" layoutX="549.0" layoutY="643.0" text="50 000kr" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnDeimosDubbelInfo" layoutX="774.0" layoutY="519.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnDeimosDubbelInfo" layoutX="784.0" layoutY="509.0" mnemonicParsing="false" text=" i ">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnRoyalEnkelInfo" layoutX="774.0" layoutY="586.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnRoyalEnkelInfo" layoutX="784.0" layoutY="576.0" mnemonicParsing="false" text=" i ">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnRoyalDubbelInfo" layoutX="774.0" layoutY="620.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnRoyalDubbelInfo" layoutX="784.0" layoutY="610.0" mnemonicParsing="false" text=" i ">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
@@ -202,7 +197,7 @@
                 <Image url="@../../../../image/CartIcon.png" />
             </image>
         </ImageView>
-      <Button fx:id="btnRoyalSvitInfo" layoutX="774.0" layoutY="654.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnRoyalSvitInfo" layoutX="784.0" layoutY="644.0" mnemonicParsing="false" text=" i ">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>

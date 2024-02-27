@@ -10,5 +10,4 @@ public class MarsTravelController {
 
     @FXML
     private Label lblMarsTravel;
-
 }
