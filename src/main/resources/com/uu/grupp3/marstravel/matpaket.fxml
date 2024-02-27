@@ -13,87 +13,87 @@
         <URL value="@styles2.css" />
     </stylesheets>
     <children>
-        <Label fx:id="lblhyttalternativ" layoutX="230.0" layoutY="183.0" text="Matpaket" textFill="#c7511b">
+        <Label fx:id="lblhyttalternativ" layoutX="260.0" layoutY="183.0" text="Matpaket" textFill="#c7511b">
             <font>
                 <Font size="36.0" />
             </font>
         </Label>
-        <RadioButton fx:id="rbtnBudget1" layoutX="230.0" layoutY="250.0" mnemonicParsing="false" text="Budget 1" textFill="WHITE">
+        <RadioButton fx:id="rbtnBudget1" layoutX="260.0" layoutY="250.0" mnemonicParsing="false" text="Budget 1" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnBudget2" layoutX="230.0" layoutY="285.0" mnemonicParsing="false" text="Budget 2" textFill="WHITE">
+        <RadioButton fx:id="rbtnBudget2" layoutX="260.0" layoutY="285.0" mnemonicParsing="false" text="Budget 2" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnBudget3" layoutX="230.0" layoutY="320.0" mnemonicParsing="false" text="Budget 3" textFill="WHITE">
+        <RadioButton fx:id="rbtnBudget3" layoutX="260.0" layoutY="320.0" mnemonicParsing="false" text="Budget 3" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnMellan1" layoutX="230.0" layoutY="370.0" mnemonicParsing="false" text="Mellan 1" textFill="WHITE">
+        <RadioButton fx:id="rbtnMellan1" layoutX="260.0" layoutY="370.0" mnemonicParsing="false" text="Mellan 1" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnMellan2" layoutX="230.0" layoutY="405.0" mnemonicParsing="false" text="Mellan 2" textFill="WHITE">
+        <RadioButton fx:id="rbtnMellan2" layoutX="260.0" layoutY="405.0" mnemonicParsing="false" text="Mellan 2" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <Label fx:id="lblPris" layoutX="480.0" layoutY="183.0" text="Pris" textFill="#c7511b">
+        <Label fx:id="lblPris" layoutX="510.0" layoutY="183.0" text="Pris" textFill="#c7511b">
             <font>
                 <Font size="36.0" />
             </font>
         </Label>
-        <Label fx:id="lblSleepPris" layoutX="480.0" layoutY="250.0" text="27 000 kr/person" textFill="WHITE">
+        <Label fx:id="lblSleepPris" layoutX="510.0" layoutY="250.0" text="27 000 kr/person" textFill="WHITE">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label fx:id="lblSvitPris" layoutX="480.0" layoutY="285.0" text="40 000 kr/person" textFill="WHITE">
+        <Label fx:id="lblSvitPris" layoutX="510.0" layoutY="285.0" text="40 000 kr/person" textFill="WHITE">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label fx:id="lblSpacesidePris" layoutX="480.0" layoutY="320.0" text="54 000 kr/person" textFill="WHITE">
+        <Label fx:id="lblSpacesidePris" layoutX="510.0" layoutY="320.0" text="54 000 kr/person" textFill="WHITE">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label fx:id="lblInsidePris" layoutX="480.0" layoutY="370.0" text="76 000 kr/person" textFill="WHITE">
+        <Label fx:id="lblInsidePris" layoutX="510.0" layoutY="370.0" text="76 000 kr/person" textFill="WHITE">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label fx:id="lblEcoPris" layoutX="480.0" layoutY="405.0" text="90 000 kr/person" textFill="WHITE">
+        <Label fx:id="lblEcoPris" layoutX="510.0" layoutY="405.0" text="90 000 kr/person" textFill="WHITE">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Button fx:id="btnBudget1" layoutX="760.0" layoutY="250.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnBudget1" layoutX="790.0" layoutY="250.0" mnemonicParsing="false" text=" i ">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnBudget2" layoutX="760.0" layoutY="285.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnBudget2" layoutX="790.0" layoutY="285.0" mnemonicParsing="false" text=" i ">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnMellan1" layoutX="760.0" layoutY="370.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnMellan1" layoutX="790.0" layoutY="370.0" mnemonicParsing="false" text=" i ">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnBudget3" layoutX="760.0" layoutY="320.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnBudget3" layoutX="790.0" layoutY="320.0" mnemonicParsing="false" text=" i ">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnMellan2" layoutX="760.0" layoutY="405.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnMellan2" layoutX="790.0" layoutY="405.0" mnemonicParsing="false" text=" i ">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
@@ -115,62 +115,62 @@
         <Button fx:id="btnVALJAmatpaketdit" layoutX="47.0" layoutY="252.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="MATPAKET" />
         <Button fx:id="btnVALJAhyttdit" layoutX="47.0" layoutY="203.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HYTTER" />
         <Button fx:id="btnVALJAresedatum" layoutX="47.0" layoutY="155.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="RESEDATUM" />
-      <RadioButton fx:id="rbtnMellan3" layoutX="230.0" layoutY="440.0" mnemonicParsing="false" text="Mellan 3" textFill="WHITE">
+      <RadioButton fx:id="rbtnMellan3" layoutX="260.0" layoutY="440.0" mnemonicParsing="false" text="Mellan 3" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </RadioButton>
-      <Label fx:id="lblEcoPris1" layoutX="480.0" layoutY="440.0" text="100 000 kr/person" textFill="WHITE">
+      <Label fx:id="lblEcoPris1" layoutX="510.0" layoutY="440.0" text="100 000 kr/person" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <RadioButton fx:id="rbtnLyx1" layoutX="230.0" layoutY="490.0" mnemonicParsing="false" text="Lyx 1" textFill="WHITE">
+      <RadioButton fx:id="rbtnLyx1" layoutX="260.0" layoutY="490.0" mnemonicParsing="false" text="Lyx 1" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="rbtnLyx2" layoutX="230.0" layoutY="525.0" mnemonicParsing="false" text="Lyx 2" textFill="WHITE">
+      <RadioButton fx:id="rbtnLyx2" layoutX="260.0" layoutY="525.0" mnemonicParsing="false" text="Lyx 2" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="rbtnLyx3" layoutX="230.0" layoutY="560.0" mnemonicParsing="false" text="Lyx 3" textFill="WHITE">
+      <RadioButton fx:id="rbtnLyx3" layoutX="260.0" layoutY="560.0" mnemonicParsing="false" text="Lyx 3" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </RadioButton>
-      <Label fx:id="lblInsidePris1" layoutX="480.0" layoutY="490.0" text="120 000 kr/person" textFill="WHITE">
+      <Label fx:id="lblInsidePris1" layoutX="510.0" layoutY="490.0" text="120 000 kr/person" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblEcoPris2" layoutX="480.0" layoutY="525.0" text="150 000 kr/person" textFill="WHITE">
+      <Label fx:id="lblEcoPris2" layoutX="510.0" layoutY="525.0" text="150 000 kr/person" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblEcoPris21" layoutX="480.0" layoutY="560.0" text="200 000 kr/person" textFill="WHITE">
+      <Label fx:id="lblEcoPris21" layoutX="510.0" layoutY="560.0" text="200 000 kr/person" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnMellan3" layoutX="760.0" layoutY="440.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnMellan3" layoutX="790.0" layoutY="440.0" mnemonicParsing="false" text=" i ">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnLyx1" layoutX="760.0" layoutY="490.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnLyx1" layoutX="790.0" layoutY="490.0" mnemonicParsing="false" text=" i ">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnLyx2" layoutX="760.0" layoutY="525.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnLyx2" layoutX="790.0" layoutY="525.0" mnemonicParsing="false" text=" i ">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnLyx3" layoutX="760.0" layoutY="560.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnLyx3" layoutX="790.0" layoutY="560.0" mnemonicParsing="false" text=" i ">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
