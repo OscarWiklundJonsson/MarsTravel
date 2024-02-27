@@ -100,11 +100,12 @@ public class EvenemangController {
     public void initialize() {
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
 
-        //Pop-Up info concert // Det här är broken, det är fredag, pallar inte @todo
-        btnConcertInfo.setOnAction(event -> dbInfo.showInfoFromDB("Konsert", "Konserter", "EvenemangInformation", 1));{
+        //Pop-Up for Koncert
+        btnConcertInfo.setOnAction(event -> dbInfo.showInfoFromDB("Konsert", "Konserter", "EvenemangInformation", 1));
+        //Pop-Up for Film
         btnFilmInfo.setOnAction(event -> dbInfo.showInfoFromDB("Film", "Film", "EvenemangInformation", 1));
-        //btnTheatreInfo.setOnAction(event -> dbInfo.showInfoFromDB("Teater", "Teater", "EvenemangInformation", 1));
-        }
+        //Pop-Up for Teater
+        btnTheatreInfo.setOnAction(event -> dbInfo.showInfoFromDB("Teater", "Teater", "EvenemangInformation", 1));
 
         // Nästa knappen. Skickar användaren vidare till nästa sida
         btnNASTA.setOnAction(event -> {
