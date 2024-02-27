@@ -22,6 +22,9 @@ public class StoreTravelChoices {
         String selectedRadioButtonValue = selectedRadioButton == null ? "Ingen radio knapp har valts" : selectedRadioButton.getText();
         writeToFile(selectedRadioButtonValue);
     }
+    public void storeDate(String date) {
+        writeToFile(date);
+    }
 
     /**
      * Writes the content to a file

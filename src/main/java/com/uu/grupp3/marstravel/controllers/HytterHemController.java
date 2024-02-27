@@ -4,9 +4,14 @@ import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
 import com.uu.grupp3.marstravel.services.StoreTravelChoices;
 import com.uu.grupp3.marstravel.services.NextButton;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class HytterHemController {
 
@@ -138,7 +143,14 @@ public class HytterHemController {
             storeTravelChoices.storeSelectedRadioButton(group); // Spara valt alternativ till fil.
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnNASTA.getScene().getWindow();
-            nextButton.nextButton("com/uu/grupp3/marstravel/matpaketHem.fxml", stage);
+
+            RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
+            if (selectedRadioButton != null && "Sömnkapsel".equals(selectedRadioButton.getText())) {
+                nextButton.nextButton("/com/uu/grupp3/marstravel/boka.fxml", stage); // Ändra till nästa sida
+            } else {
+                nextButton.nextButton("/com/uu/grupp3/marstravel/matpaketHem.fxml", stage);
+            }
         });
     }
+
 }
