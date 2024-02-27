@@ -101,11 +101,11 @@ public class EvenemangController {
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
 
         //Pop-Up for Concert
-        btnConcertInfo.setOnAction(event -> dbInfo.showInfoFromDB("Konsert", "Konserter", "EvenemangInformation", 1));
+        btnConcertInfo.setOnAction(event -> dbInfo.showInfoFromDB("Konserter", "Konserter", "EvenemangInformation", 1));
         //Pop-Up for Film
-        btnFilmInfo.setOnAction(event -> dbInfo.showInfoFromDB("Film", "Film", "EvenemangInformation", 1));
+        btnFilmInfo.setOnAction(event -> dbInfo.showInfoFromDB("Filmpremiärer", "Filmpremiärer", "EvenemangInformation", 1));
         //Pop-Up for Teater
-        btnTheatreInfo.setOnAction(event -> dbInfo.showInfoFromDB("Teater", "Teater", "EvenemangInformation", 1));
+        //btnTheatreInfo.setOnAction(event -> dbInfo.showInfoFromDB("Teaterpremiärer", "Teaterpremiärer", "EvenemangInformation", 1));
 
 
         // Nästa knappen. Skickar användaren vidare till nästa sida
