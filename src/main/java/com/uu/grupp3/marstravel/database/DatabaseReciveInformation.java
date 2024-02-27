@@ -1,6 +1,8 @@
 package com.uu.grupp3.marstravel.database;
 
 import javafx.scene.control.Alert;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextArea;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -32,7 +34,16 @@ public class DatabaseReciveInformation {
 
             if (resultSet.next()) {
                 String info = resultSet.getString(columnNumber);
-                alert.setContentText(info);
+
+                TextArea textArea = new TextArea(info);
+                textArea.setEditable(false);
+                textArea.setWrapText(true);
+
+                ScrollPane scrollPane = new ScrollPane(textArea);
+                scrollPane.setFitToWidth(true);
+                scrollPane.setFitToHeight(true);
+
+                alert.getDialogPane().setContent(scrollPane);
             }
 
         } catch (ClassNotFoundException | SQLException e) {
