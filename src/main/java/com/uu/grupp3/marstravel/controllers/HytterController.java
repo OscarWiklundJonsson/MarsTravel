@@ -138,12 +138,14 @@ public void initialize() {
         }
     });
     btnNASTA.setOnAction(event -> {
+
         storeTravelChoices.storeSelectedRadioButton(group, "Hytt: "); // Spara valt alternativ till fil.
         NextButton nextButton = new NextButton();
         Stage stage = (Stage) btnNASTA.getScene().getWindow();
 
         RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
         if (selectedRadioButton != null && "Sömnkapsel".equals(selectedRadioButton.getText())) {
+            
             storeTravelChoices.writeToFile("Matpaket: -----");
             storeTravelChoices.writeToFile("Evenemang: -----");
             nextButton.nextButton("/com/uu/grupp3/marstravel/hytterHem.fxml", stage); // Ändra till nästa sida
@@ -152,7 +154,7 @@ public void initialize() {
         }
     });
     }
-    private SideBarButtons sideBarButtons = new SideBarButtons();
+    private final SideBarButtons sideBarButtons = new SideBarButtons();
 
     @FXML
     private void SideBarButtons(ActionEvent event) {
