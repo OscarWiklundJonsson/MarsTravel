@@ -1,22 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-
-
 <?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uu.grupp3.marstravel.controllers.SparaKundController">
     <stylesheets>
         <URL value="@styles2.css" />
     </stylesheets>
     <children>
-         <TextField fx:id="firstNameField" layoutX="30.0" layoutY="135.0" promptText="Förnamn" />
-         <TextField fx:id="lastNameField" layoutX="30.0" layoutY="165.0" promptText="Efternamn" />
-         <TextField fx:id="phoneField" layoutX="30.0" layoutY="195.0" promptText="Telefon" />
-         <TextField fx:id="emailField" layoutX="30.0" layoutY="225.0" promptText="Mail" />
-         <Button layoutX="190.0" layoutY="288.0" mnemonicParsing="false" text="Spara" onAction="#saveCustomer"/>
-      </children>
+        <Label fx:id="lblhyttalternativ" layoutX="252.0" layoutY="193.0" text="Hyttalternativ" textFill="#c7511b">
+            <font>
+                <Font name="Century Gothic" size="36.0" />
+            </font>
+        </Label>
+        <RadioButton fx:id="rbtnSleep" layoutX="252.0" layoutY="276.0" mnemonicParsing="false" text="Sömnkapsel" textFill="#fbf7f7">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="rbtnSvit" layoutX="252.0" layoutY="342.0" mnemonicParsing="false" text="Svit" textFill="#f2ecec">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="rbtnSpaceside" layoutX="252.0" layoutY="408.0" mnemonicParsing="false" text="Spaceside" textFill="#f2efef">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="rbtnInside" layoutX="252.0" layoutY="474.0" mnemonicParsing="false" text="Inside" textFill="#fbf8f8">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="rbtnEco" layoutX="252.0" layoutY="541.0" mnemonicParsing="false" text="Economy" textFill="#fdfafa">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </RadioButton>
+        <Label fx:id="lblPris" layoutX="549.0" layoutY="193.0" text="Pris" textFill="#c7511b">
+            <font>
+                <Font name="Century Gothic" size="36.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblSleepPris" layoutX="549.0" layoutY="280.0" text="2 500 000 kr/person" textFill="#f4f3f3">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblSvitPris" layoutX="549.0" layoutY="346.0" text="1 200 000 kr/person" textFill="#f6f6f6">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblSpacesidePris" layoutX="549.0" layoutY="412.0" text="700 000 kr/person" textFill="#f4efef">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblInsidePris" layoutX="549.0" layoutY="478.0" text="300 000 kr/person" textFill="#f6f5f5">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblEcoPris" layoutX="549.0" layoutY="545.0" text="180 000 kr/person" textFill="#f8f7f7">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnSleepInfo" layoutX="804.0" layoutY="281.0" mnemonicParsing="false" text=" i ">
+            <font>
+                <Font name="Book Antiqua" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnSvitInfo" layoutX="804.0" layoutY="347.0" mnemonicParsing="false" text=" i ">
+            <font>
+                <Font name="Book Antiqua" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnSpacesideInfo" layoutX="804.0" layoutY="413.0" mnemonicParsing="false" text=" i ">
+            <font>
+                <Font name="Book Antiqua" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnInsideInfo" layoutX="804.0" layoutY="479.0" mnemonicParsing="false" text=" i ">
+            <font>
+                <Font name="Book Antiqua" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnEcoInfo" layoutX="804.0" layoutY="546.0" mnemonicParsing="false" text=" i ">
+            <font>
+                <Font name="Book Antiqua" size="13.0" />
+            </font>
+        </Button>
+        <Circle fx:id="cVarukorgen" fill="WHITE" layoutX="1225.0" layoutY="53.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+        <Button fx:id="btnNASTA" layoutX="1109.0" layoutY="620.0" mnemonicParsing="false" text="NÄSTA">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnVALJAkundinfo" layoutX="47.0" layoutY="637.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="KUNDINFORMATION" />
+        <Button fx:id="btnVALJAbetalkort" layoutX="47.0" layoutY="589.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="BETALKORT" />
+        <Button fx:id="btnVALJAhalsoforsakring" layoutX="47.0" layoutY="541.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HÄLSOFÖRSÄKRING" />
+        <Button fx:id="btnVALJAevenemanghem" layoutX="47.0" layoutY="492.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="EVENEMANG HEM" />
+        <Button fx:id="btnVALJAmatpakethem" layoutX="47.0" layoutY="443.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="MATPAKET HEM" />
+        <Button fx:id="btnVALJAhytthem" layoutX="47.0" layoutY="396.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HYTTER HEM" />
+        <Button fx:id="btnVALJAhotellmars" layoutX="47.0" layoutY="348.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HOTELL MARS" />
+        <Button fx:id="btnVALJAevenemangdit" layoutX="47.0" layoutY="300.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="EVENEMANG" />
+        <Button fx:id="btnVALJAmatpaketdit" layoutX="47.0" layoutY="252.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="MATPAKET" />
+        <Button fx:id="btnVALJAhyttdit" layoutX="47.0" layoutY="203.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HYTTER" />
+        <Button fx:id="btnVALJAresedatum" layoutX="47.0" layoutY="155.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="RESEDATUM" />
+        <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="1203.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../image/CartIcon.png" />
+            </image>
+        </ImageView>
+    </children>
 </AnchorPane>
