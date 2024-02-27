@@ -179,6 +179,9 @@ public class MatpaketHemController {
 
         // Nästa knappen. Skickar användaren till nästa sida. (evenemang). Använder sig av NextButton klassen som är en service klass.
         btnNÄSTA.setOnAction(event -> {
+            if (storeTravelChoices.getMatHem() != null) {
+                storeTravelChoices.removeMatHem();
+            }
             storeTravelChoices.storeSelectedRadioButton(group, "MatpaketHem: ");
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnNÄSTA.getScene().getWindow();

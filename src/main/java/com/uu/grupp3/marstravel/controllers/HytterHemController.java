@@ -143,6 +143,9 @@ public class HytterHemController {
             }
         });
         btnNASTA.setOnAction(event -> {
+            if (storeTravelChoices.getHyttHem() != null) {
+                storeTravelChoices.removeHyttHem();
+            }
             storeTravelChoices.storeSelectedRadioButton(group, "HyttHem: ");
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnNASTA.getScene().getWindow();

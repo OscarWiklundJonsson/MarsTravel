@@ -138,7 +138,9 @@ public void initialize() {
         }
     });
     btnNASTA.setOnAction(event -> {
-
+        if (storeTravelChoices.getHytt() != null) {
+            storeTravelChoices.removeHytt();
+        }
         storeTravelChoices.storeSelectedRadioButton(group, "Hytt: "); // Spara valt alternativ till fil.
         NextButton nextButton = new NextButton();
         Stage stage = (Stage) btnNASTA.getScene().getWindow();
