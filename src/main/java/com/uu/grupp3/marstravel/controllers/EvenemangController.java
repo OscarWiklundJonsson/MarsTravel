@@ -104,7 +104,7 @@ public class EvenemangController {
         btnConcertInfo.setOnAction(event -> dbInfo.showInfoFromDB("Konserter", "Konserter", "EvenemangInformation", 1));
         //Pop-Up for Film
         btnFilmInfo.setOnAction(event -> dbInfo.showInfoFromDB("Filmpremiärer", "Filmpremiärer", "EvenemangInformation", 1));
-
+        //Pop-Up for Teater
         btnTheatreInfo.setOnAction(event -> dbInfo.showInfoFromDB("Teaterpremiärer", "Teaterpremiärer", "EvenemangInformation", 1));
 
 
