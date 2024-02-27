@@ -1,26 +1,16 @@
 package com.uu.grupp3.marstravel.controllers;
 
-import com.uu.grupp3.marstravel.database.DatabaseHandler;
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
 import com.uu.grupp3.marstravel.services.NextButton;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
+import javafx.scene.control.*;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class EvenemangController {
 
@@ -96,8 +86,43 @@ public class EvenemangController {
     @FXML
     private RadioButton rbtnFilm;
 
+    @FXML
+    private ChoiceBox<String> cboxFilmpremiarer;
+    @FXML
+    private ChoiceBox<String> cboxConcert;
+    @FXML
+    private ChoiceBox<String> cboxTheaterpremiarer;
+
+
+    @FXML
+    private Label lblFilmpremiarer;
+    @FXML
+    private Label lblTheaterpremiarer;
+    @FXML
+    private Label lblConcert;
+    @FXML
+    private Label lblAntal;
+
 
     public void initialize() {
+
+        //ChoiceBox Filmpremiarer
+        ObservableList<String> filmpremiarerAlternativ = FXCollections.observableArrayList(
+                "1", "2", "3", "4", "5", "6"
+        );
+        cboxFilmpremiarer.setItems(filmpremiarerAlternativ);
+        //ChoiceBox Konsert
+        ObservableList<String> concertAlternativ = FXCollections.observableArrayList(
+                "1", "2", "3"
+        );
+        cboxConcert.setItems(concertAlternativ);
+        //ChoiceBox Teater
+        ObservableList<String> theaterpremiarerAlternativ = FXCollections.observableArrayList(
+                "1", "2", "3"
+        );
+        cboxTheaterpremiarer.setItems(theaterpremiarerAlternativ);
+
+
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
 
         //Pop-Up for Concert
@@ -106,6 +131,7 @@ public class EvenemangController {
         btnFilmInfo.setOnAction(event -> dbInfo.showInfoFromDB("Filmpremiärer", "Filmpremiärer", "EvenemangInformation", 1));
         //Pop-Up for Teater
         btnTheatreInfo.setOnAction(event -> dbInfo.showInfoFromDB("Teaterpremiärer", "Teaterpremiärer", "EvenemangInformation", 1));
+
 
 
         // Nästa knappen. Skickar användaren vidare till nästa sida
