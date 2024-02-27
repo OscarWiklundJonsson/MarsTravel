@@ -1,5 +1,6 @@
 package com.uu.grupp3.marstravel.controllers;
 
+import com.uu.grupp3.marstravel.services.NextButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -158,19 +159,9 @@ public class HotellMarsController {
 
     public void initialize() {
         btnNASTA.setOnAction(event -> {
-            try {
-                // Load the FXML file for the new scene
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/uu/grupp3/marstravel/testhugo.fxml"));
-                Parent root = loader.load();
-                // Create a new scene
-                Scene scene = new Scene(root);
-                // Get the stage from the button and set the new scene
-                Stage stage = (Stage) btnNASTA.getScene().getWindow();
-                stage.setScene(scene);
-                stage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            NextButton nextButton = new NextButton();
+            Stage stage = (Stage) btnNASTA.getScene().getWindow();
+            nextButton.nextButton("/com/uu/grupp3/marstravel/boka.fxml", stage);
         });
     }
 }
