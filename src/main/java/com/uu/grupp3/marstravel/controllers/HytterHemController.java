@@ -8,7 +8,7 @@ import javafx.scene.control.*;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-public class HytterController {
+public class HytterHemController {
 
     @FXML
     private Button btnEcoInfo;
