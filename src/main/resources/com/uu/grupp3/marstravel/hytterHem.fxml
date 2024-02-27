@@ -122,7 +122,7 @@
                 <Image url="@../../../../image/CartIcon.png" />
             </image>
         </ImageView>
-      <Label fx:id="lblhyttalternativ1" layoutX="252.0" layoutY="185.0" text="Hem" textFill="#c7511b">
+      <Label fx:id="lblhytthem" layoutX="252.0" layoutY="185.0" text="Hem" textFill="#c7511b">
          <font>
             <Font name="Century Gothic" size="30.0" />
          </font>

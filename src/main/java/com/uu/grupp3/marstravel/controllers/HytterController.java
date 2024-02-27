@@ -141,7 +141,7 @@ public void initialize() {
 
         RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
         if (selectedRadioButton != null && "Sömnkapsel".equals(selectedRadioButton.getText())) {
-            nextButton.nextButton("/com/uu/grupp3/marstravel/boka.fxml", stage); // Ändra till nästa sida
+            nextButton.nextButton("/com/uu/grupp3/marstravel/hytterHem.fxml", stage); // Ändra till nästa sida
         } else {
             nextButton.nextButton("/com/uu/grupp3/marstravel/matpaket.fxml", stage);
         }
