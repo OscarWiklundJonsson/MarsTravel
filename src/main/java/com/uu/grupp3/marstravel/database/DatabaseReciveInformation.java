@@ -27,7 +27,7 @@ public class DatabaseReciveInformation {
         try {
             connection = DatabaseHandler.getConnection();
             Statement statement = connection.createStatement();
-            String query = "SELECT Information FROM " + tableName + " WHERE Namn = '" + type + "'";
+            String query = "SELECT Information FROM " + tableName + " WHERE Namn = '" + type + "'"; // Borde inte vara namn, men nu är det de
             ResultSet resultSet = statement.executeQuery(query); // Unsafe? gråt då
 
             if (resultSet.next()) {
