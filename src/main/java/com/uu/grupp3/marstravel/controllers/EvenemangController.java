@@ -12,9 +12,6 @@ import javafx.scene.control.*;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
 public class EvenemangController {
 
     @FXML
@@ -177,13 +174,13 @@ public class EvenemangController {
             fxmlPath = "/com/uu/grupp3/marstravel/evenemanghem.fxml";
             System.out.println("Evenemang hem");
         } else if (event.getSource() == btnVALJAmatpakethem) {
-            fxmlPath = "/com/uu/grupp3/marstravel/matpakethem.fxml";
+            fxmlPath = "/com/uu/grupp3/marstravel/matpaketHem.fxml";
             System.out.println("Matpaket hem");
         } else if (event.getSource() == btnVALJAhytthem) {
-            fxmlPath = "/com/uu/grupp3/marstravel/hytterhem.fxml";
+            fxmlPath = "/com/uu/grupp3/marstravel/hytterHem.fxml";
             System.out.println("Hytter hem");
         } else if (event.getSource() == btnVALJAhotellmars) {
-            fxmlPath = "/com/uu/grupp3/marstravel/hotellmars.fxml";
+            fxmlPath = "/com/uu/grupp3/marstravel/hotellMars.fxml";
             System.out.println("Hotell Mars");
         }
 

@@ -1,55 +1,7 @@
-------
-Svit
-Mellan 3
 ---------Kund-1----------
-Svit
-Mellan 1
----------Kund-1----------
-Spaceside
-Mellan 3
-Sömnkapsel
----------Kund-1----------
-Inside
-Lyx 1
----------Kund-1----------
-Svit
----------Kund-1----------
-Economy
----------Kund-1----------
-Spaceside
----------Kund-1----------
-Spaceside
----------Kund-1----------
-Svit
-Mellan 3
----------Kund-1----------
-Svit
----------Kund-1----------
-Svit
----------Kund-1----------
-Inside
----------Kund-1----------
-Spaceside
----------Kund-1----------
-Inside
----------Kund-1----------
-Inside
----------Kund-1----------
-Sömnkapsel
-Sömnkapsel
----------Kund-1----------
-Svit
-Budget 2
----------Kund-1----------
-Svit
-Lyx 3
----------Kund-1----------
-Economy
-Lyx 3
-Svit
-Mellan 3
----------Kund-1----------
-2024-Februari till 2027-Februari
+2024-Februari till 2025-April
+Matpaket: Mellan 1
 Hytt: Sömnkapsel
 Matpaket: -----
 Evenemang: -----
+HyttHem: Economy
