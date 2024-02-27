@@ -16,6 +16,9 @@ import java.util.ResourceBundle;
 import javafx.scene.control.Alert;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
+
+import com.uu.grupp3.marstravel.services.SideBarButtons;
+
 public class ResedatumController implements Initializable {
     @FXML
     private ChoiceBox<String> Avresa_ar;
@@ -118,6 +121,8 @@ public class ResedatumController implements Initializable {
         return månaderSkillnad >= 6;
     }
 
+    // är bara denna kod som behöver kopieras till andra controllers
+    private SideBarButtons sideBarButtons = new SideBarButtons();
     @FXML
     private void SideBarButtons(ActionEvent event) {
         String fxmlPath = null;
@@ -134,19 +139,7 @@ public class ResedatumController implements Initializable {
 
         if (fxmlPath != null) {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            SideBarButtons(fxmlPath, stage);
-        }
-    }
-
-    public void SideBarButtons(String pathToNextFXML, Stage stage) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(pathToNextFXML));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+            sideBarButtons.sideBarButton(fxmlPath, stage);
         }
     }
 }
