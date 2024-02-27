@@ -1,5 +1,6 @@
 package com.uu.grupp3.marstravel.controllers;
 
+import com.uu.grupp3.marstravel.services.StoreTravelChoices;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -67,9 +68,30 @@ public class ResedatumController implements Initializable {
 
     @FXML
     private Button btnVALJAresedatum;
+    @FXML
+    private Button btnVALJAkundinfo;
 
     @FXML
+    private Button btnVALJAbetalkort;
+
+    @FXML
+    private Button btnVALJAhalsoforsakring;
+
+    @FXML
+    private Button btnVALJAevenemanghem;
+
+    @FXML
+    private Button btnVALJAmatpakethem;
+
+    @FXML
+    private Button btnVALJAhytthem;
+
+    @FXML
+    private Button btnVALJAhotellmars;
+    @FXML
     private void handleNastaButtonClick() {
+
+        StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
 
         if (Avresa_ar.getValue() == null || Avresa_manad.getValue() == null || Hemresa_ar.getValue() == null || HemresaMånad.getValue() == null) {
             Alert felAlert = new Alert(Alert.AlertType.ERROR);
@@ -88,6 +110,9 @@ public class ResedatumController implements Initializable {
             felAlert.showAndWait();
             return;
         }
+
+        String chosenDate = Avresa_ar.getValue() + "-" + Avresa_manad.getValue() + " till " + Hemresa_ar.getValue() + "-" + HemresaMånad.getValue();
+        storeTravelChoices.storeDate(chosenDate);
 
         try {
             FXMLLoader laddare = new FXMLLoader(getClass().getResource("/com/uu/grupp3/marstravel/hytter.fxml"));
@@ -123,6 +148,7 @@ public class ResedatumController implements Initializable {
 
     // är bara denna kod som behöver kopieras till andra controllers
     private SideBarButtons sideBarButtons = new SideBarButtons();
+
     @FXML
     private void SideBarButtons(ActionEvent event) {
         String fxmlPath = null;
@@ -139,6 +165,27 @@ public class ResedatumController implements Initializable {
         } else if (event.getSource() == btnVALJAresedatum) {
             fxmlPath = "/com/uu/grupp3/marstravel/resedatum.fxml";
             System.out.println("Resedatum");
+        } else if (event.getSource() == btnVALJAkundinfo) {
+            fxmlPath = "/com/uu/grupp3/marstravel/kundinformation.fxml";
+            System.out.println("Kundinformation");
+        } else if (event.getSource() == btnVALJAbetalkort) {
+            fxmlPath = "/com/uu/grupp3/marstravel/betalkort.fxml";
+            System.out.println("Betalkort");
+        } else if (event.getSource() == btnVALJAhalsoforsakring) {
+            fxmlPath = "/com/uu/grupp3/marstravel/halsoforsakring.fxml";
+            System.out.println("Hälsförsäkring");
+        } else if (event.getSource() == btnVALJAevenemanghem) {
+            fxmlPath = "/com/uu/grupp3/marstravel/evenemanghem.fxml";
+            System.out.println("Evenemang hem");
+        } else if (event.getSource() == btnVALJAmatpakethem) {
+            fxmlPath = "/com/uu/grupp3/marstravel/matpakethem.fxml";
+            System.out.println("Matpaket hem");
+        } else if (event.getSource() == btnVALJAhytthem) {
+            fxmlPath = "/com/uu/grupp3/marstravel/hytterhem.fxml";
+            System.out.println("Hytter hem");
+        } else if (event.getSource() == btnVALJAhotellmars) {
+            fxmlPath = "/com/uu/grupp3/marstravel/hotellmars.fxml";
+            System.out.println("Hotell Mars");
         }
 
         if (fxmlPath != null) {
