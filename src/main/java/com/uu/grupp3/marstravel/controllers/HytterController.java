@@ -138,7 +138,13 @@ public void initialize() {
         storeTravelChoices.storeSelectedRadioButton(group); // Spara valt alternativ till fil.
         NextButton nextButton = new NextButton();
         Stage stage = (Stage) btnNASTA.getScene().getWindow();
-        nextButton.nextButton("/com/uu/grupp3/marstravel/matpaket.fxml", stage);
+
+        RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
+        if (selectedRadioButton != null && "Sömnkapsel".equals(selectedRadioButton.getText())) {
+            nextButton.nextButton("/com/uu/grupp3/marstravel/boka.fxml", stage); // Ändra till nästa sida
+        } else {
+            nextButton.nextButton("/com/uu/grupp3/marstravel/matpaket.fxml", stage);
+        }
     });
     }
 }
