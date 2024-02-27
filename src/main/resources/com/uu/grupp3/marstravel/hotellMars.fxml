@@ -15,9 +15,9 @@
         <URL value="@styles2.css" />
     </stylesheets>
     <children>
-        <Label fx:id="lblhotellalternativ" layoutX="252.0" layoutY="173.0" text="Hotellalternativ" textFill="#c7511b">
+        <Label fx:id="lblhotellalternativ" layoutX="252.0" layoutY="183.0" text="Hotellalternativ" textFill="#c7511b">
             <font>
-                <Font size="36.0" />
+                <Font name="Century Gothic" size="36.0" />
             </font>
         </Label>
         <RadioButton fx:id="rbtnWeilders" layoutX="252.0" layoutY="285.0" mnemonicParsing="false" text="Polar Wielders" textFill="WHITE">
@@ -45,9 +45,9 @@
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <Label fx:id="lblPrismånad" layoutX="549.0" layoutY="173.0" text="Pris (månad)" textFill="#c7511b">
+        <Label fx:id="lblPrismånad" layoutX="549.0" layoutY="183.0" text="Pris (månad)" textFill="#c7511b">
             <font>
-                <Font size="36.0" />
+                <Font name="Century Gothic" size="36.0" />
             </font>
         </Label>
         <Label fx:id="lblLansdorpPris" layoutX="549.0" layoutY="250.0" text="3500kr/bädd" textFill="WHITE">
