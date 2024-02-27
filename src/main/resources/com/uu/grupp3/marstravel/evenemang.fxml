@@ -68,7 +68,7 @@
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnTheatrenfo" layoutX="774.0" layoutY="413.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnTheatreInfo" layoutX="774.0" layoutY="413.0" mnemonicParsing="false" text=" i ">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
