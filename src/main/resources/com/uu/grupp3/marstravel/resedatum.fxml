@@ -29,12 +29,21 @@
         <Button fx:id="btnVALJAmatpakethem" layoutX="47.0" layoutY="443.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="MATPAKET HEM" />
         <Button fx:id="btnVALJAhytthem" layoutX="47.0" layoutY="396.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HYTTER HEM" />
         <Button fx:id="btnVALJAhotellmars" layoutX="47.0" layoutY="348.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HOTELL MARS" />
+<<<<<<< HEAD
+        <Button fx:id="btnVALJAevenemangdit" onAction="#SideBarButtons" layoutX="47.0" layoutY="300.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="EVENEMANG" />
+        <Button fx:id="btnVALJAmatpaketdit" onAction="#SideBarButtons" layoutX="47.0" layoutY="252.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="MATPAKET" />
+        <Button fx:id="btnVALJAhyttdit" onAction="#SideBarButtons" layoutX="47.0" layoutY="203.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HYTTER" />
+        <Button fx:id="btnVALJAresedatum" onAction="#SideBarButtons" layoutX="47.0" layoutY="155.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="RESEDATUM" />
+      <ChoiceBox fx:id="Avresa_ar" layoutX="232.0" layoutY="283.0" prefWidth="150.0" />
+      <Text fx:id="Avresatext" fill="#c7511b" layoutX="269.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avresa ">
+=======
         <Button fx:id="btnVALJAevenemangdit" layoutX="47.0" layoutY="300.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="EVENEMANG" />
         <Button fx:id="btnVALJAmatpaketdit" layoutX="47.0" layoutY="252.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="MATPAKET" />
         <Button fx:id="btnVALJAhyttdit" layoutX="47.0" layoutY="203.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HYTTER" />
         <Button fx:id="btnVALJAresedatum" layoutX="47.0" layoutY="155.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="RESEDATUM" />
       <ChoiceBox fx:id="Avresa_ar" layoutX="282.0" layoutY="307.0" prefWidth="150.0" />
       <Text fx:id="Avresatext" fill="#c7511b" layoutX="319.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avresa ">
+>>>>>>> 2fe5c956b614f0aa41e160d9c52f47cd767b4302
          <font>
             <Font size="24.0" />
          </font>

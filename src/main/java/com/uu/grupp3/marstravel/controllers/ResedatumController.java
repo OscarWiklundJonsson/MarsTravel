@@ -14,7 +14,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.scene.control.Alert;
-
+import javafx.event.ActionEvent;
+import javafx.scene.Node;
 public class ResedatumController implements Initializable {
     @FXML
     private ChoiceBox<String> Avresa_ar;
@@ -51,6 +52,18 @@ public class ResedatumController implements Initializable {
 
     @FXML
     private Button btnNASTA;
+
+    @FXML
+    private Button btnVALJAevenemangdit;
+
+    @FXML
+    private Button btnVALJAmatpaketdit;
+
+    @FXML
+    private Button btnVALJAhyttdit;
+
+    @FXML
+    private Button btnVALJAresedatum;
 
     @FXML
     private void handleNastaButtonClick() {
@@ -103,5 +116,37 @@ public class ResedatumController implements Initializable {
         int månaderSkillnad = (returÅr - avreseÅr) * 12 + (returMånadsIndex - avreseMånadsIndex);
 
         return månaderSkillnad >= 6;
+    }
+
+    @FXML
+    private void SideBarButtons(ActionEvent event) {
+        String fxmlPath = null;
+
+        if (event.getSource() == btnVALJAevenemangdit) {
+            fxmlPath = "/com/uu/grupp3/marstravel/evenemang.fxml";
+        } else if (event.getSource() == btnVALJAmatpaketdit) {
+            fxmlPath = "/com/uu/grupp3/marstravel/matpaket.fxml";
+        } else if (event.getSource() == btnVALJAhyttdit) {
+            fxmlPath = "/com/uu/grupp3/marstravel/hytter.fxml";
+        } else if (event.getSource() == btnVALJAresedatum) {
+            fxmlPath = "/com/uu/grupp3/marstravel/resedatum.fxml";
+        }
+
+        if (fxmlPath != null) {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            SideBarButtons(fxmlPath, stage);
+        }
+    }
+
+    public void SideBarButtons(String pathToNextFXML, Stage stage) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(pathToNextFXML));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
