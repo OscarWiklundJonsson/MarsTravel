@@ -24,7 +24,7 @@ public class DatabaseWriteInformation {
         }
     }
 
-    // Stuff som borde göras om.
+    // Stuff som borde göras om. @todo
     private void writeLineToDB(Connection connection, String line) throws SQLException {
         String sql = "INSERT INTO your_table (column_name) VALUES (?)"; // ändra detta till korrekt
 

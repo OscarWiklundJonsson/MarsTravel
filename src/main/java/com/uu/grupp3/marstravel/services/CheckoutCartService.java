@@ -4,7 +4,7 @@ public class CheckoutCartService {
 
     public void checkoutCartPriceCalculator() {
         /*
-        This method should calculate the total price of the items in the cart.
+        This method should calculate the total price of the items in the cart.x
 
         hytt  + mat  +  aktiviteter  +  försäkring  +  betalkort = totalpris
         eller
@@ -15,7 +15,6 @@ public class CheckoutCartService {
 
     public void checkoutCartClearCart() {
         /*
-        This method should clear the cart.
         Ta bort alla valda alternativ från varukorgen genom att radera den temporära filen.
          */
     }

@@ -8,3 +8,6 @@ Mellan 1
 Spaceside
 Mellan 3
 Sömnkapsel
+---------Kund-1----------
+Inside
+Lyx 1

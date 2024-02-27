@@ -1,74 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
-
 <?import java.net.URL?>
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uu.grupp3.marstravel.controllers.ResedatumController">
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uu.grupp3.marstravel.controllers.ResedatumController">
     <stylesheets>
         <URL value="@styles2.css" />
     </stylesheets>
     <children>
-        <Label fx:id="lblMTheader" layoutX="47.0" layoutY="33.0" prefHeight="105.0" prefWidth="370.0" text="Mars Travel">
-            <font>
-                <Font size="72.0" />
-            </font>
-        </Label>
 
 
         <Circle fx:id="cVarukorgen" fill="WHITE" layoutX="1225.0" layoutY="53.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
-        <Button fx:id="btnNASTA" layoutX="1109.0" layoutY="620.0" mnemonicParsing="false" text="NÄSTA" onAction="#handleNastaButtonClick">
+        <Button fx:id="btnNASTA" layoutX="1109.0" layoutY="620.0" mnemonicParsing="false" onAction="#handleNastaButtonClick" text="NÄSTA">
             <font>
                 <Font size="24.0" />
             </font>
         </Button>
-        <Button fx:id="btnVALJAkundinfo" layoutY="666.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="KUNDINFORMATION" />
-        <Button fx:id="btnVALJAbetalkort" layoutY="612.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="BETALKORT" />
-        <Button fx:id="btnVALJAhalsoforsakring" layoutY="559.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="HÄLSOFÖRSÄKRING" />
-        <Button fx:id="btnVALJAevenemanghem" layoutY="505.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="EVENEMANG HEM" />
-        <Button fx:id="btnVALJAmatpakethem" layoutY="452.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="MATPAKET HEM" />
-        <Button fx:id="btnVALJAhytthem" layoutY="399.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="HYTTER HEM" />
-        <Button fx:id="btnVALJAhotellmars" layoutY="350.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="HOTELL MARS" />
-        <Button fx:id="btnVALJAevenemangdit" layoutY="296.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="EVENEMANG" />
-        <Button fx:id="btnVALJAmatpaketdit" layoutY="242.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="MATPAKET" />
-        <Button fx:id="btnVALJAhyttdit" layoutY="188.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="HYTTER" />
-        <Button fx:id="btnVALJAresedatum" layoutY="134.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="130.0" text="RESEDATUM" />
-      <ChoiceBox fx:id="Avresa_ar" layoutX="232.0" layoutY="283.0" prefWidth="150.0" />
-      <Text fx:id="Avresatext" layoutX="269.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avresa ">
+        <Button fx:id="btnVALJAkundinfo" layoutX="47.0" layoutY="637.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="KUNDINFORMATION" />
+        <Button fx:id="btnVALJAbetalkort" layoutX="47.0" layoutY="589.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="BETALKORT" />
+        <Button fx:id="btnVALJAhalsoforsakring" layoutX="47.0" layoutY="541.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HÄLSOFÖRSÄKRING" />
+        <Button fx:id="btnVALJAevenemanghem" layoutX="47.0" layoutY="492.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="EVENEMANG HEM" />
+        <Button fx:id="btnVALJAmatpakethem" layoutX="47.0" layoutY="443.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="MATPAKET HEM" />
+        <Button fx:id="btnVALJAhytthem" layoutX="47.0" layoutY="396.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HYTTER HEM" />
+        <Button fx:id="btnVALJAhotellmars" layoutX="47.0" layoutY="348.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HOTELL MARS" />
+        <Button fx:id="btnVALJAevenemangdit" layoutX="47.0" layoutY="300.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="EVENEMANG" />
+        <Button fx:id="btnVALJAmatpaketdit" layoutX="47.0" layoutY="252.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="MATPAKET" />
+        <Button fx:id="btnVALJAhyttdit" layoutX="47.0" layoutY="203.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HYTTER" />
+        <Button fx:id="btnVALJAresedatum" layoutX="47.0" layoutY="155.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="RESEDATUM" />
+      <ChoiceBox fx:id="Avresa_ar" layoutX="282.0" layoutY="307.0" prefWidth="150.0" />
+      <Text fx:id="Avresatext" fill="#c7511b" layoutX="319.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avresa ">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Line endX="215.33331298828125" endY="509.66668701171875" layoutX="333.0" layoutY="171.0" startX="215.33331298828125" startY="10.66668701171875" />
-      <Text layoutX="296.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="År:">
+      <Line endX="215.33331298828125" endY="509.66668701171875" layoutX="353.0" layoutY="171.0" startX="215.33331298828125" startY="10.66668701171875" />
+      <Text fill="#f2eeee" layoutX="346.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="År:">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text layoutX="275.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månad: ">
+      <Text fill="#f6f4f4" layoutX="325.0" layoutY="478.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månad: ">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <ChoiceBox fx:id="Avresa_manad" layoutX="232.0" layoutY="519.0" prefWidth="150.0" />
-      <Text fx:id="Hemresatext" layoutX="736.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hemresa">
+      <ChoiceBox fx:id="Avresa_manad" layoutX="282.0" layoutY="499.0" prefWidth="150.0" />
+      <Text fx:id="Hemresatext" fill="#c7511b" layoutX="736.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hemresa">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Text layoutX="783.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="År:">
+      <Text fill="#f6f2f2" layoutX="773.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="År:">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <ChoiceBox fx:id="Hemresa_ar" layoutX="719.0" layoutY="282.0" prefWidth="150.0" />
-      <Text layoutX="764.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månad:">
+      <ChoiceBox fx:id="Hemresa_ar" layoutX="709.0" layoutY="307.0" prefWidth="150.0" />
+      <Text fill="#f4f2f2" layoutX="754.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månad:">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <ChoiceBox fx:id="HemresaMånad" layoutX="719.0" layoutY="519.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="HemresaMånad" layoutX="709.0" layoutY="499.0" prefWidth="150.0" />
     </children>
 </AnchorPane>
