@@ -138,7 +138,7 @@ public class HytterHemController {
             storeTravelChoices.storeSelectedRadioButton(group); // Spara valt alternativ till fil.
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnNASTA.getScene().getWindow();
-            nextButton.nextButton("/com/uu/grupp3/marstravel/matpaketHem.fxml", stage);
+            nextButton.nextButton("com/uu/grupp3/marstravel/matpaketHem.fxml", stage);
         });
     }
 }

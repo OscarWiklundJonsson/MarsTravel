@@ -11,3 +11,11 @@ Sömnkapsel
 ---------Kund-1----------
 Inside
 Lyx 1
+---------Kund-1----------
+Svit
+---------Kund-1----------
+Economy
+---------Kund-1----------
+Spaceside
+---------Kund-1----------
+Spaceside
