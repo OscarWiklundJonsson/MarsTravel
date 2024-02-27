@@ -15,7 +15,7 @@
       <URL value="@styles2.css" />
    </stylesheets>
    <children>
-      <Label fx:id="lblhyttalternativ" layoutX="252.0" layoutY="183.0" text="Hyttalternativ" textFill="#c7511b">
+      <Label fx:id="lblhyttalternativ" layoutX="252.0" layoutY="193.0" text="Hyttalternativ" textFill="#c7511b">
          <font>
             <Font name="Century Gothic" size="36.0" />
          </font>
@@ -45,7 +45,7 @@
             <Font size="24.0" />
          </font>
       </RadioButton>
-      <Label fx:id="lblPris" layoutX="549.0" layoutY="183.0" text="Pris" textFill="#c7511b">
+      <Label fx:id="lblPris" layoutX="549.0" layoutY="193.0" text="Pris" textFill="#c7511b">
          <font>
             <Font name="Century Gothic" size="36.0" />
          </font>
