@@ -140,13 +140,15 @@ public class HytterHemController {
             }
         });
         btnNASTA.setOnAction(event -> {
-            storeTravelChoices.storeSelectedRadioButton(group); // Spara valt alternativ till fil.
+            storeTravelChoices.storeSelectedRadioButton(group, "HyttHem: ");
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnNASTA.getScene().getWindow();
 
             RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
             if (selectedRadioButton != null && "Sömnkapsel".equals(selectedRadioButton.getText())) {
-                nextButton.nextButton("/com/uu/grupp3/marstravel/boka.fxml", stage); // Ändra till nästa sida
+                storeTravelChoices.writeToFile("Matpaket: -----");
+                storeTravelChoices.writeToFile("Evenemang: -----");
+                nextButton.nextButton("/com/uu/grupp3/marstravel/sparaKundInformation.fxml", stage); // Ändra till nästa sida
             } else {
                 nextButton.nextButton("/com/uu/grupp3/marstravel/matpaketHem.fxml", stage);
             }

@@ -1,5 +1,6 @@
 package com.uu.grupp3.marstravel.controllers;
 
+import com.uu.grupp3.marstravel.services.StoreTravelChoices;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -71,6 +72,8 @@ public class ResedatumController implements Initializable {
     @FXML
     private void handleNastaButtonClick() {
 
+        StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
+
         if (Avresa_ar.getValue() == null || Avresa_manad.getValue() == null || Hemresa_ar.getValue() == null || HemresaMånad.getValue() == null) {
             Alert felAlert = new Alert(Alert.AlertType.ERROR);
             felAlert.setTitle("Felaktigt datumval");
@@ -88,6 +91,9 @@ public class ResedatumController implements Initializable {
             felAlert.showAndWait();
             return;
         }
+
+        String chosenDate = Avresa_ar.getValue() + "-" + Avresa_manad.getValue() + " till " + Hemresa_ar.getValue() + "-" + HemresaMånad.getValue();
+        storeTravelChoices.storeDate(chosenDate);
 
         try {
             FXMLLoader laddare = new FXMLLoader(getClass().getResource("/com/uu/grupp3/marstravel/hytter.fxml"));

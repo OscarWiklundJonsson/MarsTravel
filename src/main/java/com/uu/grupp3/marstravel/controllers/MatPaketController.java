@@ -174,7 +174,7 @@ public class MatPaketController {
 
         // Nästa knappen. Skickar användaren till nästa sida. (evenemang). Använder sig av NextButton klassen som är en service klass.
         btnNÄSTA.setOnAction(event -> {
-            storeTravelChoices.storeSelectedRadioButton(group); // Save it to a file
+            storeTravelChoices.storeSelectedRadioButton(group, "Matpaket: ");
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnNÄSTA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/evenemang.fxml", stage);
