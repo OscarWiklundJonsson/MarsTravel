@@ -5,18 +5,9 @@ import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
 import com.uu.grupp3.marstravel.services.NextButton;
 import com.uu.grupp3.marstravel.services.StoreTravelChoices;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
-
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 public class MatPaketController {
     @FXML
@@ -147,7 +138,7 @@ public class MatPaketController {
 
 
     public void initialize() {
-        // Funktion för att endast välja en radioknapp för mat
+        // Funktion för att endast välja en radioknapp för mat ( @TODO gör om till en generell funktion )
         ToggleGroup group = new ToggleGroup();
         rbtnBudget1.setToggleGroup(group);
         rbtnBudget2.setToggleGroup(group);
@@ -170,7 +161,7 @@ public class MatPaketController {
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
         StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
 
-        //Pop-Up for MatpaketInformation
+        //Pop-Up for MatpaketInformation, detta borde man ju kunna göra bättre? @todo
         btnBudget1.setOnAction(event -> dbInfo.showInfoFromDB("budget1", "Budget 1", "MatpaketInformation", 1));
         btnBudget2.setOnAction(event -> dbInfo.showInfoFromDB("budget2", "Budget 2", "MatpaketInformation", 1));
         btnBudget3.setOnAction(event -> dbInfo.showInfoFromDB("budget3", "Budget 3", "MatpaketInformation", 1));

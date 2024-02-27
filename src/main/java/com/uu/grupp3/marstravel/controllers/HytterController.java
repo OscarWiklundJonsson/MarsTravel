@@ -135,7 +135,7 @@ public void initialize() {
         }
     });
     btnNASTA.setOnAction(event -> {
-        storeTravelChoices.storeSelectedRadioButton(group); // Save it to a file
+        storeTravelChoices.storeSelectedRadioButton(group); // Spara valt alternativ till fil.
         NextButton nextButton = new NextButton();
         Stage stage = (Stage) btnNASTA.getScene().getWindow();
         nextButton.nextButton("/com/uu/grupp3/marstravel/matpaket.fxml", stage);

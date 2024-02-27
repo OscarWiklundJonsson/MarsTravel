@@ -4,16 +4,21 @@ import java.sql.*;
 
 public class DatabaseHandler {
     private static final String URL = "jdbc:sqlite:src/main/resources/database/mars_travel.db"; // Path to the database
+    private static final String DRIVER = "org.sqlite.JDBC";
+
+    // Ifall man vill använda en databas som är online
+    private static final String USER = " ";
+    private static final String PASSWORD = " ";
+
     private static Connection connection;
 
     /**
      * Connects to the database and returns the connection
      * @return the connection to the database
      * @throws ClassNotFoundException if the class is not found
-     * @author Oscar
      */
     public static Connection getConnection() throws ClassNotFoundException {
-        Class.forName("org.sqlite.JDBC");
+        Class.forName(DRIVER);
         if (connection == null) {
             try {
                 connection = DriverManager.getConnection(URL);

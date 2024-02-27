@@ -14,6 +14,8 @@ import java.sql.Statement;
  * title = Vad ska info fönstret heta ?
  * tableName = från vilken tabell ska det hämtas?
  * columnNumber = Från vilken kolumn ska det hämtas ifrån(?)
+ *
+ * pilla inte, då går allt sönder, och det är ju inte kul
  */
 public class DatabaseReciveInformation {
     public void showInfoFromDB(String type, String title, String tableName, int columnNumber) {
@@ -26,7 +28,7 @@ public class DatabaseReciveInformation {
             connection = DatabaseHandler.getConnection();
             Statement statement = connection.createStatement();
             String query = "SELECT Information FROM " + tableName + " WHERE Namn = '" + type + "'";
-            ResultSet resultSet = statement.executeQuery(query);
+            ResultSet resultSet = statement.executeQuery(query); // Unsafe? gråt då
 
             if (resultSet.next()) {
                 String info = resultSet.getString(columnNumber);

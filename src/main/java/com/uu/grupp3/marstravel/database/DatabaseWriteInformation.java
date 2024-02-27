@@ -26,7 +26,7 @@ public class DatabaseWriteInformation {
 
     // Stuff som borde göras om.
     private void writeLineToDB(Connection connection, String line) throws SQLException {
-        String sql = "INSERT INTO your_table (column_name) VALUES (?)";
+        String sql = "INSERT INTO your_table (column_name) VALUES (?)"; // ändra detta till korrekt
 
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, line);
