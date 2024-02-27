@@ -106,6 +106,8 @@ public class EvenemangController {
 
     public void initialize() {
 
+        //Lägg till 0 för varje samt korrigera pris TODO
+
         //ChoiceBox Filmpremiarer
         ObservableList<String> filmpremiarerAlternativ = FXCollections.observableArrayList(
                 "1", "2", "3", "4", "5", "6"
