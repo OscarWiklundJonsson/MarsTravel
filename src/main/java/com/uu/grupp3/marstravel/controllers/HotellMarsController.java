@@ -160,7 +160,7 @@ public class HotellMarsController {
         btnNASTA.setOnAction(event -> {
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnNASTA.getScene().getWindow();
-            nextButton.nextButton("/com/uu/grupp3/marstravel/boka.fxml", stage);
+            nextButton.nextButton("/com/uu/grupp3/marstravel/hytterHem.fxml", stage);
         });
     }
 }

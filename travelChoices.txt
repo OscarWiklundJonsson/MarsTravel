@@ -37,3 +37,14 @@ Inside
 ---------Kund-1----------
 Sömnkapsel
 Sömnkapsel
+---------Kund-1----------
+Svit
+Budget 2
+---------Kund-1----------
+Svit
+Lyx 3
+---------Kund-1----------
+Economy
+Lyx 3
+Svit
+Mellan 3
