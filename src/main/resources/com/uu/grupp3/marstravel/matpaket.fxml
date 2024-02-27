@@ -15,7 +15,7 @@
     <children>
         <Label fx:id="lblhyttalternativ" layoutX="260.0" layoutY="183.0" text="Matpaket" textFill="#c7511b">
             <font>
-                <Font size="36.0" />
+                <Font name="Century Gothic" size="36.0" />
             </font>
         </Label>
         <RadioButton fx:id="rbtnBudget1" layoutX="260.0" layoutY="250.0" mnemonicParsing="false" text="Budget 1" textFill="WHITE">
@@ -45,7 +45,7 @@
         </RadioButton>
         <Label fx:id="lblPris" layoutX="510.0" layoutY="183.0" text="Pris" textFill="#c7511b">
             <font>
-                <Font size="36.0" />
+                <Font name="Century Gothic" size="36.0" />
             </font>
         </Label>
         <Label fx:id="lblSleepPris" layoutX="510.0" layoutY="250.0" text="27 000 kr/person" textFill="WHITE">
