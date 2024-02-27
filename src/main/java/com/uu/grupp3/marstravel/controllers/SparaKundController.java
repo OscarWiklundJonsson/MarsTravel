@@ -85,9 +85,7 @@ public class SparaKundController {
             alert.showAndWait();
         }
     }
-
     // Method to continue to the main page(?) after saving a customer
     public void continueToMain() {
-
     }
 }

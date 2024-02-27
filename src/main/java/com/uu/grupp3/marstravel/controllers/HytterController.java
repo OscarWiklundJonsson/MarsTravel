@@ -146,9 +146,5 @@ public void initialize() {
             nextButton.nextButton("/com/uu/grupp3/marstravel/matpaket.fxml", stage);
         }
     });
-
-
-
-
     }
 }

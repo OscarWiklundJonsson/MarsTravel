@@ -156,7 +156,6 @@ public class HotellMarsController {
     @FXML
     private RadioButton rbtnWeilders;
 
-
     public void initialize() {
         btnNASTA.setOnAction(event -> {
             NextButton nextButton = new NextButton();
