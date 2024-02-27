@@ -13,7 +13,7 @@
         <URL value="@styles2.css" />
     </stylesheets>
     <children>
-        <Label fx:id="lblhyttalternativ" layoutX="260.0" layoutY="203.0" text="Matpaket" textFill="#c7511b">
+        <Label fx:id="lblmatpaket" layoutX="260.0" layoutY="203.0" text="Matpaket" textFill="#c7511b">
             <font>
                 <Font name="Century Gothic" size="36.0" />
             </font>
@@ -43,7 +43,7 @@
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <Label fx:id="lblPris" layoutX="510.0" layoutY="193.0" text="Pris" textFill="#c7511b">
+        <Label fx:id="lblmathemPris" layoutX="510.0" layoutY="203.0" text="Pris" textFill="#c7511b">
             <font>
                 <Font name="Century Gothic" size="36.0" />
             </font>
@@ -175,7 +175,7 @@
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-      <Label fx:id="lblhytthem" layoutX="260.0" layoutY="177.0" text="Hem" textFill="#c7511b">
+      <Label fx:id="lblmathem" layoutX="260.0" layoutY="177.0" text="Hem" textFill="#c7511b">
          <font>
             <Font name="Century Gothic" size="30.0" />
          </font>
