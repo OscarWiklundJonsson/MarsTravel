@@ -29,44 +29,45 @@
         <Button fx:id="btnVALJAmatpakethem" layoutX="47.0" layoutY="443.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="MATPAKET HEM" />
         <Button fx:id="btnVALJAhytthem" layoutX="47.0" layoutY="396.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HYTTER HEM" />
         <Button fx:id="btnVALJAhotellmars" layoutX="47.0" layoutY="348.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HOTELL MARS" />
-        <Button fx:id="btnVALJAevenemangdit" layoutX="47.0" layoutY="300.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="EVENEMANG" />
-        <Button fx:id="btnVALJAmatpaketdit" layoutX="47.0" layoutY="252.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="MATPAKET" />
-        <Button fx:id="btnVALJAhyttdit" layoutX="47.0" layoutY="203.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HYTTER" />
-        <Button fx:id="btnVALJAresedatum" layoutX="47.0" layoutY="155.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="RESEDATUM" />
-      <ChoiceBox fx:id="Avresa_ar" layoutX="282.0" layoutY="307.0" prefWidth="150.0" />
-      <Text fx:id="Avresatext" fill="#c7511b" layoutX="319.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avresa ">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
-      <Line endX="215.33331298828125" endY="509.66668701171875" layoutX="353.0" layoutY="171.0" startX="215.33331298828125" startY="10.66668701171875" />
-      <Text fill="#f2eeee" layoutX="346.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="År:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
-      <Text fill="#f6f4f4" layoutX="325.0" layoutY="478.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månad: ">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
-      <ChoiceBox fx:id="Avresa_manad" layoutX="282.0" layoutY="499.0" prefWidth="150.0" />
-      <Text fx:id="Hemresatext" fill="#c7511b" layoutX="736.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hemresa">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
-      <Text fill="#f6f2f2" layoutX="773.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="År:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
-      <ChoiceBox fx:id="Hemresa_ar" layoutX="709.0" layoutY="307.0" prefWidth="150.0" />
-      <Text fill="#f4f2f2" layoutX="754.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månad:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
-      <ChoiceBox fx:id="HemresaMånad" layoutX="709.0" layoutY="499.0" prefWidth="150.0" />
+        <Button fx:id="btnVALJAevenemangdit" onAction="#SideBarButtons" layoutX="47.0" layoutY="300.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="EVENEMANG" />
+        <Button fx:id="btnVALJAmatpaketdit" onAction="#SideBarButtons" layoutX="47.0" layoutY="252.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="MATPAKET" />
+        <Button fx:id="btnVALJAhyttdit" onAction="#SideBarButtons" layoutX="47.0" layoutY="203.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HYTTER" />
+        <Button fx:id="btnVALJAresedatum" onAction="#SideBarButtons" layoutX="47.0" layoutY="155.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="RESEDATUM" />
+        <ChoiceBox fx:id="Avresa_ar" layoutX="232.0" layoutY="283.0" prefWidth="150.0" />
+        <Text fx:id="Avresatext" fill="#c7511b" layoutX="269.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avresa ">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Text>
+        <Line endX="215.33331298828125" endY="509.66668701171875" layoutX="333.0" layoutY="171.0" startX="215.33331298828125" startY="10.66668701171875" />
+        <Text fill="#f2eeee" layoutX="296.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="År:">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Text>
+        <Text fill="#f6f4f4" layoutX="275.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månad: ">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Text>
+        <ChoiceBox fx:id="Avresa_manad" layoutX="232.0" layoutY="519.0" prefWidth="150.0" />
+        <Text fx:id="Hemresatext" fill="#c7511b" layoutX="736.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hemresa">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Text>
+        <Text fill="#f6f2f2" layoutX="783.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="År:">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Text>
+        <ChoiceBox fx:id="Hemresa_ar" layoutX="719.0" layoutY="282.0" prefWidth="150.0" />
+        <Text fill="#f4f2f2" layoutX="764.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månad:">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Text>
+        <ChoiceBox fx:id="HemresaMånad" layoutX="719.0" layoutY="519.0" prefWidth="150.0" />
     </children>
 </AnchorPane>
+

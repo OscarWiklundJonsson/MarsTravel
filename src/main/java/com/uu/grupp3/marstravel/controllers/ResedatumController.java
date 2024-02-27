@@ -14,6 +14,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.scene.control.Alert;
+import javafx.event.ActionEvent;
+import javafx.scene.Node;
+
+import com.uu.grupp3.marstravel.services.SideBarButtons;
 
 public class ResedatumController implements Initializable {
     @FXML
@@ -51,6 +55,18 @@ public class ResedatumController implements Initializable {
 
     @FXML
     private Button btnNASTA;
+
+    @FXML
+    private Button btnVALJAevenemangdit;
+
+    @FXML
+    private Button btnVALJAmatpaketdit;
+
+    @FXML
+    private Button btnVALJAhyttdit;
+
+    @FXML
+    private Button btnVALJAresedatum;
 
     @FXML
     private void handleNastaButtonClick() {
@@ -103,5 +119,31 @@ public class ResedatumController implements Initializable {
         int månaderSkillnad = (returÅr - avreseÅr) * 12 + (returMånadsIndex - avreseMånadsIndex);
 
         return månaderSkillnad >= 6;
+    }
+
+    // är bara denna kod som behöver kopieras till andra controllers
+    private SideBarButtons sideBarButtons = new SideBarButtons();
+    @FXML
+    private void SideBarButtons(ActionEvent event) {
+        String fxmlPath = null;
+
+        if (event.getSource() == btnVALJAevenemangdit) {
+            fxmlPath = "/com/uu/grupp3/marstravel/evenemang.fxml";
+            System.out.println("Evenemang");
+        } else if (event.getSource() == btnVALJAmatpaketdit) {
+            fxmlPath = "/com/uu/grupp3/marstravel/matpaket.fxml";
+            System.out.println("Matpaket");
+        } else if (event.getSource() == btnVALJAhyttdit) {
+            fxmlPath = "/com/uu/grupp3/marstravel/hytter.fxml";
+            System.out.println("Hytter");
+        } else if (event.getSource() == btnVALJAresedatum) {
+            fxmlPath = "/com/uu/grupp3/marstravel/resedatum.fxml";
+            System.out.println("Resedatum");
+        }
+
+        if (fxmlPath != null) {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            sideBarButtons.sideBarButton(fxmlPath, stage);
+        }
     }
 }

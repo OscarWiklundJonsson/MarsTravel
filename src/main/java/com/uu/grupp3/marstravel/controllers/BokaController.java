@@ -18,7 +18,7 @@ public class BokaController {
                 btnBoka.setOnAction(event -> {
                         NextButton nextButton = new NextButton();
                         Stage stage = (Stage) btnBoka.getScene().getWindow();
-                        nextButton.nextButton("/com/uu/grupp3/marstravel/hytter.fxml", stage);
+                        nextButton.nextButton("/com/uu/grupp3/marstravel/resedatum.fxml", stage);
                 });
         }
 }

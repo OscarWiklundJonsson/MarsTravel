@@ -105,7 +105,7 @@ public class EvenemangController {
         //Pop-Up for Film
         btnFilmInfo.setOnAction(event -> dbInfo.showInfoFromDB("Filmpremiärer", "Filmpremiärer", "EvenemangInformation", 1));
         //Pop-Up for Teater
-        //btnTheatreInfo.setOnAction(event -> dbInfo.showInfoFromDB("Teaterpremiärer", "Teaterpremiärer", "EvenemangInformation", 1));
+        btnTheatreInfo.setOnAction(event -> dbInfo.showInfoFromDB("Teaterpremiärer", "Teaterpremiärer", "EvenemangInformation", 1));
 
 
         // Nästa knappen. Skickar användaren vidare till nästa sida
