@@ -159,6 +159,7 @@ public class HotellMarsController {
     @FXML
     private RadioButton rbtnWeilders;
 
+    //nästa knapp, skickar vidare till hytterHem sidan.
     public void initialize() {
         btnNASTA.setOnAction(event -> {
             NextButton nextButton = new NextButton();
