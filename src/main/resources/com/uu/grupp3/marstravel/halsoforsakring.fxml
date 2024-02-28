@@ -13,12 +13,12 @@
         <URL value="@styles2.css" />
     </stylesheets>
     <children>
-        <Label fx:id="lblhalsoforsakring" layoutX="260.0" layoutY="193.0" text="Häsloförsäkring" textFill="#c7511b">
+        <Label fx:id="lblhalsoforsakring" layoutX="260.0" layoutY="193.0" text="Hälsoförsäkring" textFill="#c7511b">
             <font>
                 <Font name="Century Gothic" size="36.0" />
             </font>
         </Label>
-        <RadioButton fx:id="rbtnhalsof" layoutX="260.0" layoutY="300.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="217.0" text="Häsoförsäkring" textFill="WHITE">
+        <RadioButton fx:id="rbtnhalsof" layoutX="260.0" layoutY="300.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="217.0" text="Hälsoförsäkring" textFill="WHITE">
             <font>
                 <Font size="24.0" />
             </font>
