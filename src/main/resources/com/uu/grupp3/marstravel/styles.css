@@ -10,13 +10,13 @@
 
 }
 .buttonBoka{
-    -fx-background-color: #C24C0F;
-    -fx-border-color: #FFFFFF;
+    -fx-background-color: #C7511B;
+    -fx-border-color: #EED2A7;
     -fx-background-radius: 40;
     -fx-border-radius: 40;
 }
 
 .buttonBoka:hover{
-    -fx-background-color: #FFF6E6;
-    -fx-border-color: #FFFFFF;
+    -fx-background-color: #363230;
+    -fx-border-color: #EED2A7;
 }
