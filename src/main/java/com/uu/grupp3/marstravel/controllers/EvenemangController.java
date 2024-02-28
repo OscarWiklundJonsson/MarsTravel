@@ -110,17 +110,17 @@ public class EvenemangController {
 
         //ChoiceBox Filmpremiarer
         ObservableList<String> filmpremiarerAlternativ = FXCollections.observableArrayList(
-                "1", "2", "3", "4", "5", "6"
+                "0","1", "2", "3", "4", "5", "6"
         );
         cboxFilmpremiarer.setItems(filmpremiarerAlternativ);
         //ChoiceBox Konsert
         ObservableList<String> concertAlternativ = FXCollections.observableArrayList(
-                "1", "2", "3"
+                "0","1", "2", "3"
         );
         cboxConcert.setItems(concertAlternativ);
         //ChoiceBox Teater
         ObservableList<String> theaterpremiarerAlternativ = FXCollections.observableArrayList(
-                "1", "2", "3"
+                "0","1", "2", "3"
         );
         cboxTheaterpremiarer.setItems(theaterpremiarerAlternativ);
 
