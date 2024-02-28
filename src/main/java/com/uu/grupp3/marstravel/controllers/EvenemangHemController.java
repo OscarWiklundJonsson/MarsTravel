@@ -152,8 +152,8 @@ public class EvenemangHemController {
         // Nästa knappen. Skickar användaren vidare till nästa sida
         btnNASTA.setOnAction(event -> {
             StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
-            if (storeTravelChoices.getEvenemang() != null) {
-                storeTravelChoices.removeEvenemang();
+            if (storeTravelChoices.getEvenemangHem() != null) {
+                storeTravelChoices.removeEvenemangHem   ();
             }
             storeTravelChoices.storeChoiceBox("Filmpremiarer: ", cboxFilmpremiarer);
             storeTravelChoices.storeChoiceBox("Teaterpremiarer: ", cboxTheaterpremiarer);
