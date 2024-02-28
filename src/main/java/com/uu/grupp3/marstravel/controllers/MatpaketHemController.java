@@ -186,7 +186,7 @@ public class MatpaketHemController {
             Stage stage = (Stage) btnNÄSTA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/evenemangHem.fxml", stage);
         });
-
+btnVALJAmatpakethem.setDisable(true);
     }
 
     private SideBarButtons sideBarButtons = new SideBarButtons();
@@ -208,7 +208,7 @@ public class MatpaketHemController {
             fxmlPath = "/com/uu/grupp3/marstravel/resedatum.fxml";
             System.out.println("Resedatum");
         } else if (event.getSource() == btnVALJAkundinfo) {
-            fxmlPath = "/com/uu/grupp3/marstravel/kundinformation.fxml";
+            fxmlPath = "/com/uu/grupp3/marstravel/sparaKundinformation.fxml";
             System.out.println("Kundinformation");
         } else if (event.getSource() == btnVALJAbetalkort) {
             fxmlPath = "/com/uu/grupp3/marstravel/betalkort.fxml";
