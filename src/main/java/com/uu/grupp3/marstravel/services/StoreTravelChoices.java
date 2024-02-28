@@ -60,7 +60,7 @@ public class StoreTravelChoices {
                 writer.write("---------Kund-" + kundNr + "----------\n");
                 isFirstRun = false;
             }
-            writer.write(STR."\{content}\n");
+            writer.write(content + "\n");
         } catch (IOException e) {
             e.printStackTrace(); // Robust logging? nej tack
         }
