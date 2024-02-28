@@ -13,12 +13,12 @@
       <URL value="@styles2.css" />
    </stylesheets>
    <children>
-      <Label fx:id="lblEvenemang" layoutX="232.0" layoutY="183.0" text="Evenemang" textFill="#c7511b">
+      <Label fx:id="lblEvenemang" layoutX="252.0" layoutY="203.0" text="Evenemang" textFill="#c7511b">
          <font>
-            <Font size="36.0" />
+            <Font name="Century Gothic" size="36.0" />
          </font>
       </Label>
-      <Label fx:id="lblFilmpremiarer" layoutX="232.0" layoutY="283.0" text="Filmpremiärer" textFill="WHITE">
+      <Label fx:id="lblFilmpremiarer" layoutX="252.0" layoutY="303.0" text="Filmpremiärer" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
@@ -26,43 +26,43 @@
             <ChoiceBox fx:id="cboxFilmpremiarer" prefHeight="33.0" prefWidth="16.0" />
          </graphic>
       </Label>
-      <Label fx:id="lblTillagPris" layoutX="529.0" layoutY="183.0" text="Pris" textFill="#c7511b">
+      <Label fx:id="lblTillagPris" layoutX="549.0" layoutY="203.0" text="Pris" textFill="#c7511b">
          <font>
-            <Font size="36.0" />
+            <Font name="Century Gothic" size="36.0" />
          </font>
       </Label>
-      <Label fx:id="lblFilmPris" layoutX="529.0" layoutY="280.0" text="25 000 kr/biljett" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblConcertPris" layoutX="529.0" layoutY="346.0" text="30 000 kr/biljett" textFill="WHITE">
+      <Label fx:id="lblFilmPris" layoutX="549.0" layoutY="300.0" text="25 000 kr/biljett" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblTheatrePris" layoutX="529.0" layoutY="412.0" text="28 000 kr/biljett" textFill="WHITE">
+      <Label fx:id="lblConcertPris" layoutX="549.0" layoutY="366.0" text="30 000 kr/biljett" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnFilmInfo" layoutX="774.0" layoutY="281.0" mnemonicParsing="false" text=" i ">
+      <Label fx:id="lblTheatrePris" layoutX="549.0" layoutY="432.0" text="28 000 kr/biljett" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnFilmInfo" layoutX="794.0" layoutY="301.0" mnemonicParsing="false" text=" i ">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnConcertInfo" layoutX="774.0" layoutY="347.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnConcertInfo" layoutX="794.0" layoutY="367.0" mnemonicParsing="false" text=" i ">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnTheatreInfo" layoutX="774.0" layoutY="413.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnTheatreInfo" layoutX="794.0" layoutY="433.0" mnemonicParsing="false" text=" i ">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
       <Circle fx:id="cVarukorgen" fill="WHITE" layoutX="1225.0" layoutY="53.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
-      <Button fx:id="btnNASTA" layoutX="1109.0" layoutY="620.0" mnemonicParsing="false" text="NÄSTA">
+      <Button fx:id="btnNASTA" layoutX="1117.0" layoutY="620.0" mnemonicParsing="false" text="NÄSTA">
          <font>
             <Font size="24.0" />
          </font>
@@ -78,7 +78,7 @@
       <Button fx:id="btnVALJAmatpaketdit" layoutX="47.0" layoutY="252.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="MATPAKET" />
       <Button fx:id="btnVALJAhyttdit" layoutX="47.0" layoutY="203.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="HYTTER" />
       <Button fx:id="btnVALJAresedatum" layoutX="47.0" layoutY="155.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="RESEDATUM" />
-      <Label fx:id="lblConcert" layoutX="232.0" layoutY="343.0" text="Konserter" textFill="WHITE">
+      <Label fx:id="lblConcert" layoutX="252.0" layoutY="363.0" text="Konserter" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
@@ -86,7 +86,7 @@
             <ChoiceBox fx:id="cboxConcert" prefHeight="33.0" prefWidth="43.0" />
          </graphic>
       </Label>
-      <Label fx:id="lblTheaterpremiarer" layoutX="232.0" layoutY="408.0" text="Teaterpremiärer" textFill="WHITE">
+      <Label fx:id="lblTheaterpremiarer" layoutX="252.0" layoutY="428.0" text="Teaterpremiärer" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
@@ -94,7 +94,7 @@
             <ChoiceBox fx:id="cboxTheaterpremiarer" prefHeight="33.0" prefWidth="43.0" />
          </graphic>
       </Label>
-      <Label fx:id="lblAntal" layoutX="222.0" layoutY="260.0" text="VÄLJ ANTAL" textFill="WHITE">
+      <Label fx:id="lblAntal" layoutX="242.0" layoutY="280.0" text="VÄLJ ANTAL" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
