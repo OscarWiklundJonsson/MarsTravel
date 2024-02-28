@@ -7,11 +7,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
+import javafx.scene.control.Alert;
 
 // @todo extract method osv
 public class CheckoutCartService {
     DatabaseReciveInformation databaseReciveInformation = new DatabaseReciveInformation();
-    public void calculateTotalPrice() throws IOException {
+    public double calculateTotalPrice() throws IOException {
         String fileName = "travelChoices.txt";
         Path path = Paths.get(fileName);
         double totalPrice = 0;
@@ -165,25 +166,25 @@ public class CheckoutCartService {
                     }
 
                     // Evenemang
-                } else if (line.contains("Konserter: ")) {
+                }             else if (line.contains("Konserter: ")) {
                     String[] parts = line.split(": ");
                     if (parts.length > 1) {
                         String evenemangType = parts[1].split(" ")[0]; // this is the text after "Konserter: "
-                        int numberOfTickets = Integer.parseInt(parts[1].split(" ")[1]);
+                        int numberOfTickets = Integer.parseInt(parts[1].trim());
                         totalPrice += numberOfTickets * 30000;
                     }
                 } else if (line.contains("Teaterpremiarer: ")) {
                     String[] parts = line.split(": ");
                     if (parts.length > 1) {
                         String evenemangType = parts[1].split(" ")[0]; // this is the text after "Teaterpremiarer: "
-                        int numberOfTickets = Integer.parseInt(parts[1].split(" ")[1]);
+                        int numberOfTickets = Integer.parseInt(parts[1].trim());
                         totalPrice += numberOfTickets * 28000;
                     }
                 } else if (line.contains("Filmpremiarer: ")) {
                     String[] parts = line.split(": ");
                     if (parts.length > 1) {
                         String evenemangType = parts[1].split(" ")[0]; // this is the text after "Filmpremiarer: "
-                        int numberOfTickets = Integer.parseInt(parts[1].split(" ")[1]);
+                        int numberOfTickets = Integer.parseInt(parts[1].trim());
                         totalPrice += numberOfTickets * 25000;
                     }
                 }
@@ -192,7 +193,8 @@ public class CheckoutCartService {
             e.printStackTrace();
         }
 
-        System.out.println("Total price: " + totalPrice);
+        System.out.println("Totalt pris: " + totalPrice);
+        return totalPrice;
     }
 
     public void checkoutCartClearCart() {
@@ -204,5 +206,39 @@ public class CheckoutCartService {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void showCheckoutCart() {
+        // read the file "travelChoices.txt" and collect the contents
+        String fileName = "travelChoices.txt";
+        Path path = Paths.get(fileName);
+        StringBuilder contents = new StringBuilder();
+        try (BufferedReader reader = Files.newBufferedReader(path)) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                contents.append(line).append("\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // calculate total price
+        double totalPrice = 0;
+        try {
+            totalPrice = calculateTotalPrice();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // append total price to contents
+        contents.append("Totalt pris: ").append(totalPrice);
+
+        // create an info dialog and display the contents
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Checkout Cart");
+        alert.setHeaderText(null);
+        alert.setContentText(contents.toString());
+
+        alert.showAndWait();
     }
 }
