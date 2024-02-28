@@ -9,3 +9,12 @@
 
 
 }
+.button{
+    -fx-background-color: #FFF6E6;
+    -fx-border-color: #FFFFFF;
+}
+
+.button:hover{
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #FFFFFF;
+}
