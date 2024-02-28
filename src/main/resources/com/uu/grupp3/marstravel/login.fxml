@@ -11,7 +11,7 @@
       <URL value="@styles2.css" />
    </stylesheets>
    <children>
-      <Button fx:id="btnloggain" layoutX="586.0" layoutY="461.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="108.0" text="LOGGA IN">
+      <Button fx:id="btnloggain" layoutX="580.0" layoutY="461.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="120.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="buttonLoggainNasta" stylesheets="@styles.css" text="LOGGA IN" textFill="#eed2a7">
          <font>
             <Font size="18.0" />
          </font>

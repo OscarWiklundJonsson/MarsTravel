@@ -20,3 +20,147 @@
     -fx-background-color: #363230;
     -fx-border-color: #EED2A7;
 }
+
+.buttonResedatumNasta{
+    -fx-background-color: #C7511B;
+    -fx-border-color: #EED2A7;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.buttonResedatumNasta:hover{
+    -fx-background-color: #363230;
+    -fx-border-color: #EED2A7;
+}
+
+.buttonHytterNasta{
+    -fx-background-color: #C7511B;
+    -fx-border-color: #EED2A7;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.buttonHytterNasta:hover{
+    -fx-background-color: #363230;
+    -fx-border-color: #EED2A7;
+}
+
+.buttonMatpaketNasta{
+    -fx-background-color: #C7511B;
+    -fx-border-color: #EED2A7;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.buttonMatpaketNasta:hover{
+    -fx-background-color: #363230;
+    -fx-border-color: #EED2A7;
+}
+
+.buttonEvenemangNasta{
+    -fx-background-color: #C7511B;
+    -fx-border-color: #EED2A7;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.buttonEvenemangNasta:hover{
+    -fx-background-color: #363230;
+    -fx-border-color: #EED2A7;
+}
+
+.buttonHotellMarsNasta{
+    -fx-background-color: #C7511B;
+    -fx-border-color: #EED2A7;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.buttonHotellMarsNasta:hover{
+    -fx-background-color: #363230;
+    -fx-border-color: #EED2A7;
+}
+
+.buttonHytterHemNasta{
+    -fx-background-color: #C7511B;
+    -fx-border-color: #EED2A7;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.buttonHytterHemNasta:hover{
+    -fx-background-color: #363230;
+    -fx-border-color: #EED2A7;
+}
+
+.buttonMatpaketHemNasta{
+    -fx-background-color: #C7511B;
+    -fx-border-color: #EED2A7;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.buttonMatpaketHemNasta:hover{
+    -fx-background-color: #363230;
+    -fx-border-color: #EED2A7;
+}
+
+.buttonEvenemangHemNasta{
+    -fx-background-color: #C7511B;
+    -fx-border-color: #EED2A7;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.buttonEvenemangHemNasta:hover{
+    -fx-background-color: #363230;
+    -fx-border-color: #EED2A7;
+}
+
+.buttonHalsoforsakringNasta{
+    -fx-background-color: #C7511B;
+    -fx-border-color: #EED2A7;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.buttonHalsoforsakringNasta:hover{
+    -fx-background-color: #363230;
+    -fx-border-color: #EED2A7;
+}
+
+.buttonBetalkortNasta{
+    -fx-background-color: #C7511B;
+    -fx-border-color: #EED2A7;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.buttonBetalkortNasta:hover{
+    -fx-background-color: #363230;
+    -fx-border-color: #EED2A7;
+}
+
+.buttonKundinfoNasta{
+    -fx-background-color: #C7511B;
+    -fx-border-color: #EED2A7;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.buttonKundinfoNasta:hover{
+    -fx-background-color: #363230;
+    -fx-border-color: #EED2A7;
+}
+
+.buttonLoggainNasta{
+    -fx-background-color: #C7511B;
+    -fx-border-color: #EED2A7;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.buttonLoggainNasta:hover{
+    -fx-background-color: #363230;
+    -fx-border-color: #EED2A7;
+}

@@ -19,7 +19,7 @@
             </font>
         </Label>
         <Circle fx:id="cVarukorgen" fill="WHITE" layoutX="1225.0" layoutY="53.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
-        <Button fx:id="btnNÄSTA" layoutX="1109.0" layoutY="620.0" mnemonicParsing="false" text="NÄSTA">
+        <Button fx:id="btnNÄSTA" layoutX="1114.0" layoutY="618.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="110.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="buttonBetalkortNasta" stylesheets="@styles.css" text="NÄSTA" textFill="#eed2a7">
             <font>
                 <Font size="24.0" />
             </font>
@@ -35,7 +35,7 @@
         <Button fx:id="btnVALJAmatpaketdit" layoutX="47.0" layoutY="252.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="MATPAKET" />
         <Button fx:id="btnVALJAhyttdit" layoutX="47.0" layoutY="203.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="HYTTER" />
         <Button fx:id="btnVALJAresedatum" layoutX="47.0" layoutY="155.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="RESEDATUM" />
-      <TextField fx:id="tfbetalkort" layoutX="550.0" layoutY="400.0" promptText="Total belopp">
+      <TextField fx:id="tfbetalkort" layoutX="550.0" layoutY="400.0" promptText="Totalbelopp">
          <font>
             <Font size="20.0" />
          </font>

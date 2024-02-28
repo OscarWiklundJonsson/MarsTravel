@@ -21,7 +21,7 @@
             </font>
         </Label>
         <Circle fx:id="cVarukorgen" fill="WHITE" layoutX="1225.0" layoutY="53.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
-        <Button fx:id="btnKASSA" layoutX="1121.0" layoutY="620.0" mnemonicParsing="false" text="KASSA">
+        <Button fx:id="btnKASSA" layoutX="1116.0" layoutY="620.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="110.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="buttonKundinfoNasta" stylesheets="@styles.css" text="KASSA" textFill="#eed2a7">
             <font>
                 <Font size="24.0" />
             </font>
