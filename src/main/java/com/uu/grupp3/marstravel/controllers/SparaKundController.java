@@ -150,6 +150,8 @@ public class SparaKundController {
             Stage stage = (Stage) btnKASSA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/boka.fxml", stage); //ska skickas till varukorgen sen.
         });
+
+        // denna beast som visar varukorgen
         varukorg.setOnAction(event -> {
             try {
                 checkoutCartService.showCheckoutCart();
