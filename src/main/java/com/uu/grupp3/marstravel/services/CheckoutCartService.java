@@ -213,7 +213,7 @@ public class CheckoutCartService {
             e.printStackTrace();
         }
 
-        System.out.println(STR."Totalt pris: \{totalPrice}");
+        System.out.println("Totalt pris:"+ totalPrice);
         return totalPrice;
     }
 

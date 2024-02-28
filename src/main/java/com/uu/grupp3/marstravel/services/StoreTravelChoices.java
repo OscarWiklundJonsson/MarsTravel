@@ -57,7 +57,7 @@ public class StoreTravelChoices {
 
         try (BufferedWriter writer = Files.newBufferedWriter(path, StandardOpenOption.APPEND)) {
             if (isFirstRun) {
-                writer.write(STR."---------Kund-\{kundNr}----------\n");
+                writer.write("---------Kund-" + kundNr + "----------\n");
                 isFirstRun = false;
             }
             writer.write(STR."\{content}\n");
