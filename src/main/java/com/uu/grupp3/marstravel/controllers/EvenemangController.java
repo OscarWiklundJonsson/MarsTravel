@@ -142,6 +142,7 @@ public class EvenemangController {
             Stage stage = (Stage) btnNASTA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/sparaKundInformation.fxml", stage);
         });
+        btnVALJAevenemangdit.setDisable(true);
     }
     private SideBarButtons sideBarButtons = new SideBarButtons();
 

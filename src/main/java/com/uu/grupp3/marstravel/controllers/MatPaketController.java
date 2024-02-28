@@ -186,6 +186,7 @@ public class MatPaketController {
             Stage stage = (Stage) btnNÄSTA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/evenemang.fxml", stage);
         });
+        btnVALJAmatpaketdit.setDisable(true);
     }
     private SideBarButtons sideBarButtons = new SideBarButtons();
 

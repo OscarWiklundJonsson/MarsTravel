@@ -143,6 +143,7 @@ public class SparaKundController {
             Stage stage = (Stage) btnKASSA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/boka.fxml", stage); //ska skickas till varukorgen sen.
         });
+        btnVALJAkundinfo.setDisable(true);
     }
     // Method to continue to the main page(?) after saving a customer
     public void continueToMain() {

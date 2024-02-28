@@ -161,6 +161,7 @@ public class HotellMarsController {
             Stage stage = (Stage) btnNASTA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/hytterHem.fxml", stage);
         });
+        btnVALJAhotellmars.setDisable(true);
     }
     private SideBarButtons sideBarButtons = new SideBarButtons();
 

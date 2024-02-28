@@ -154,7 +154,7 @@ public class HytterHemController {
                 nextButton.nextButton("/com/uu/grupp3/marstravel/matpaketHem.fxml", stage);
             }
         });
-
+btnVALJAhytthem.setDisable(true);
 
     }
     private final SideBarButtons sideBarButtons = new SideBarButtons();

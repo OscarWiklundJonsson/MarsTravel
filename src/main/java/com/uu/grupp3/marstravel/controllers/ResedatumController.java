@@ -53,6 +53,7 @@ public class ResedatumController implements Initializable {
         Hemresa_ar.setItems(hemresaArAlternativ);
 
         HemresaMånad.setItems(avresaManadAlternativ);
+        btnVALJAresedatum.setDisable(true);
     }
 
     @FXML

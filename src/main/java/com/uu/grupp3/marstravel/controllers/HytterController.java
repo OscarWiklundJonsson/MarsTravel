@@ -157,6 +157,7 @@ public void initialize() {
             nextButton.nextButton("/com/uu/grupp3/marstravel/matpaket.fxml", stage);
         }
     });
+    btnVALJAhyttdit.setDisable(true);
     }
     private final SideBarButtons sideBarButtons = new SideBarButtons();
 

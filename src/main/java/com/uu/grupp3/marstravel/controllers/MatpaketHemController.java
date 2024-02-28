@@ -186,7 +186,7 @@ public class MatpaketHemController {
             Stage stage = (Stage) btnNÄSTA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/evenemangHem.fxml", stage);
         });
-
+btnVALJAmatpakethem.setDisable(true);
     }
 
     private SideBarButtons sideBarButtons = new SideBarButtons();
