@@ -177,7 +177,7 @@ public void initialize() {
             fxmlPath = "/com/uu/grupp3/marstravel/resedatum.fxml";
             System.out.println("Resedatum");
         } else if (event.getSource() == btnVALJAkundinfo) {
-            fxmlPath = "/com/uu/grupp3/marstravel/kundinformation.fxml";
+            fxmlPath = "/com/uu/grupp3/marstravel/sparaKundinformation.fxml";
             System.out.println("Kundinformation");
         } else if (event.getSource() == btnVALJAbetalkort) {
             fxmlPath = "/com/uu/grupp3/marstravel/betalkort.fxml";
