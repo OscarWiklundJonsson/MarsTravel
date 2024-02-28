@@ -104,17 +104,17 @@
                 <Font size="24.0" />
             </font>
         </Button>
-        <Button fx:id="btnVALJAkundinfo" layoutX="47.0" layoutY="637.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="KUNDINFORMATION" />
-        <Button fx:id="btnVALJAbetalkort" layoutX="47.0" layoutY="589.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="BETALKORT" />
-        <Button fx:id="btnVALJAhalsoforsakring" layoutX="47.0" layoutY="541.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="HÄLSOFÖRSÄKRING" />
-        <Button fx:id="btnVALJAevenemanghem" layoutX="47.0" layoutY="492.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="EVENEMANG HEM" />
-        <Button fx:id="btnVALJAmatpakethem" layoutX="47.0" layoutY="443.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="MATPAKET HEM" />
-        <Button fx:id="btnVALJAhytthem" layoutX="47.0" layoutY="396.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="HYTTER HEM" />
-        <Button fx:id="btnVALJAhotellmars" layoutX="47.0" layoutY="348.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="HOTELL MARS" />
-        <Button fx:id="btnVALJAevenemangdit" layoutX="47.0" layoutY="300.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="EVENEMANG" />
-        <Button fx:id="btnVALJAmatpaketdit" layoutX="47.0" layoutY="252.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="MATPAKET" />
-        <Button fx:id="btnVALJAhyttdit" layoutX="47.0" layoutY="203.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="HYTTER" />
-        <Button fx:id="btnVALJAresedatum" layoutX="47.0" layoutY="155.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="RESEDATUM" />
+        <Button fx:id="btnVALJAkundinfo" layoutX="46.0" layoutY="632.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonKundinfo" stylesheets="@styles.css" text="KUNDINFORMATION" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAbetalkort" layoutX="46.0" layoutY="585.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonBetalkort" stylesheets="@styles.css" text="BETALKORT" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAhalsoforsakring" layoutX="46.0" layoutY="538.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonHalsoforsakring" stylesheets="@styles.css" text="HÄLSOFÖRSÄKRING" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAevenemanghem" layoutX="46.0" layoutY="491.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonEvenemangHem" stylesheets="@styles.css" text="EVENEMANG HEM" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAmatpakethem" layoutX="46.0" layoutY="444.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonMatpaketHem" stylesheets="@styles.css" text="MATPAKET HEM" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAhytthem" layoutX="46.0" layoutY="397.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonHytterHem" stylesheets="@styles.css" text="HYTTER HEM" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAhotellmars" layoutX="46.0" layoutY="350.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonHotelMars" stylesheets="@styles.css" text="HOTELL MARS" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAevenemangdit" layoutX="46.0" layoutY="303.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonEvenemang" stylesheets="@styles.css" text="EVENEMANG" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAmatpaketdit" layoutX="46.0" layoutY="256.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonMatpaket" stylesheets="@styles.css" text="MATPAKET" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAhyttdit" layoutX="46.0" layoutY="209.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonHytter" stylesheets="@styles.css" text="HYTTER" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAresedatum" layoutX="46.0" layoutY="162.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonResedatum" stylesheets="@styles.css" text="RESEDATUM" textFill="#eed2a7" />
         <RadioButton fx:id="rbtnMellan3" layoutX="260.0" layoutY="460.0" mnemonicParsing="false" text="Mellan 3" textFill="WHITE">
             <font>
                 <Font size="20.0" />
