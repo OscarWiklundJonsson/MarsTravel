@@ -1,6 +1,7 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
+import com.uu.grupp3.marstravel.services.CheckoutCartService;
 import com.uu.grupp3.marstravel.services.NextButton;
 import com.uu.grupp3.marstravel.services.SideBarButtons;
 import com.uu.grupp3.marstravel.services.StoreTravelChoices;
@@ -10,6 +11,8 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class MatPaketController {
     @FXML
@@ -183,6 +186,12 @@ public class MatPaketController {
             }
             storeTravelChoices.storeSelectedRadioButton(group, "Matpaket: ");
             NextButton nextButton = new NextButton();
+            CheckoutCartService checkoutCartService = new CheckoutCartService();
+            try {
+                checkoutCartService.calculateTotalPrice();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             Stage stage = (Stage) btnNÄSTA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/evenemang.fxml", stage);
         });

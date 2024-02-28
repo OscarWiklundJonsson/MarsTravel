@@ -3,6 +3,7 @@ package com.uu.grupp3.marstravel.controllers;
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
 import com.uu.grupp3.marstravel.services.NextButton;
 import com.uu.grupp3.marstravel.services.SideBarButtons;
+import com.uu.grupp3.marstravel.services.StoreTravelChoices;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -138,6 +139,13 @@ public class EvenemangController {
 
         // Nästa knappen. Skickar användaren vidare till nästa sida
         btnNASTA.setOnAction(event -> {
+            StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
+            if (storeTravelChoices.getEvenemang() != null) {
+                storeTravelChoices.removeEvenemang();
+            }
+            storeTravelChoices.storeChoiceBox("Filmpremiarer: ", cboxFilmpremiarer);
+            storeTravelChoices.storeChoiceBox("Teaterpremiarer: ", cboxTheaterpremiarer);
+            storeTravelChoices.storeChoiceBox("Konserter: ", cboxConcert);
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnNASTA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/sparaKundInformation.fxml", stage);
