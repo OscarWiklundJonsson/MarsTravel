@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="EvenemangAnchor" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uu.grupp3.marstravel.controllers.EvenemangHemController">
+    <stylesheets>
+        <URL value="@styles2.css" />
+    </stylesheets>
+    <children>
+        <Label fx:id="lblEvenemang" layoutX="252.0" layoutY="203.0" text="Evenemang" textFill="#c7511b">
+            <font>
+                <Font name="Century Gothic" size="36.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblFilmpremiarer" layoutX="252.0" layoutY="303.0" text="Filmpremiärer" textFill="WHITE">
+            <font>
+                <Font size="24.0" />
+            </font>
+            <graphic>
+                <ChoiceBox fx:id="cboxFilmpremiarer" prefHeight="33.0" prefWidth="16.0" />
+            </graphic>
+        </Label>
+        <Label fx:id="lblTillagPris" layoutX="549.0" layoutY="203.0" text="Pris" textFill="#c7511b">
+            <font>
+                <Font name="Century Gothic" size="36.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblFilmPris" layoutX="549.0" layoutY="300.0" text="25 000 kr/biljett" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblConcertPris" layoutX="549.0" layoutY="366.0" text="30 000 kr/biljett" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblTheatrePris" layoutX="549.0" layoutY="432.0" text="28 000 kr/biljett" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnFilmInfo" layoutX="794.0" layoutY="301.0" mnemonicParsing="false" text=" i ">
+            <font>
+                <Font name="Book Antiqua" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnConcertInfo" layoutX="794.0" layoutY="367.0" mnemonicParsing="false" text=" i ">
+            <font>
+                <Font name="Book Antiqua" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnTheatreInfo" layoutX="794.0" layoutY="433.0" mnemonicParsing="false" text=" i ">
+            <font>
+                <Font name="Book Antiqua" size="13.0" />
+            </font>
+        </Button>
+        <Circle fx:id="cVarukorgen" fill="WHITE" layoutX="1225.0" layoutY="53.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+        <Button fx:id="btnNASTA" layoutX="1117.0" layoutY="620.0" mnemonicParsing="false" text="NÄSTA">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnVALJAkundinfo" layoutX="47.0" layoutY="637.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="KUNDINFORMATION" />
+        <Button fx:id="btnVALJAbetalkort" layoutX="47.0" layoutY="589.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="BETALKORT" />
+        <Button fx:id="btnVALJAhalsoforsakring" layoutX="47.0" layoutY="541.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="HÄLSOFÖRSÄKRING" />
+        <Button fx:id="btnVALJAevenemanghem" layoutX="47.0" layoutY="492.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="EVENEMANG HEM" />
+        <Button fx:id="btnVALJAmatpakethem" layoutX="47.0" layoutY="443.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="MATPAKET HEM" />
+        <Button fx:id="btnVALJAhytthem" layoutX="47.0" layoutY="396.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="HYTTER HEM" />
+        <Button fx:id="btnVALJAhotellmars" layoutX="47.0" layoutY="348.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="HOTELL MARS" />
+        <Button fx:id="btnVALJAevenemangdit" layoutX="47.0" layoutY="300.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="EVENEMANG" />
+        <Button fx:id="btnVALJAmatpaketdit" layoutX="47.0" layoutY="252.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="MATPAKET" />
+        <Button fx:id="btnVALJAhyttdit" layoutX="47.0" layoutY="203.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="HYTTER" />
+        <Button fx:id="btnVALJAresedatum" layoutX="47.0" layoutY="155.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="48.0" prefWidth="130.0" text="RESEDATUM" />
+        <Label fx:id="lblConcert" layoutX="252.0" layoutY="363.0" text="Konserter" textFill="WHITE">
+            <font>
+                <Font size="24.0" />
+            </font>
+            <graphic>
+                <ChoiceBox fx:id="cboxConcert" prefHeight="33.0" prefWidth="43.0" />
+            </graphic>
+        </Label>
+        <Label fx:id="lblTheaterpremiarer" layoutX="252.0" layoutY="428.0" text="Teaterpremiärer" textFill="WHITE">
+            <font>
+                <Font size="24.0" />
+            </font>
+            <graphic>
+                <ChoiceBox fx:id="cboxTheaterpremiarer" prefHeight="33.0" prefWidth="43.0" />
+            </graphic>
+        </Label>
+        <Label fx:id="lblAntal" layoutX="242.0" layoutY="280.0" text="VÄLJ ANTAL" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+      <Label fx:id="lblevenemanghem" layoutX="252.0" layoutY="176.0" text="Hem" textFill="#c7511b">
+         <font>
+            <Font name="Century Gothic" size="30.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>
