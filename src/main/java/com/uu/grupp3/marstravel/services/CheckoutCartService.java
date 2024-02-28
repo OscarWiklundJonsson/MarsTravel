@@ -189,6 +189,21 @@ public class CheckoutCartService {
                         int numberOfTickets = Integer.parseInt(parts[1].trim());
                         totalPrice += numberOfTickets * 25000;
                     }
+
+                } else if (line.contains("Hälsoförsäkring: ")) {
+                    String[] parts = line.split(": ");
+                    String matType = parts[1]; // this is the text after "Matpaket: "
+                    switch (matType) {
+                        case "---":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget1", "MatpaketInformation");
+                            totalPrice += 0;
+                            break;
+                        case "Hälsoförsäkring":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
+                            totalPrice += 50000;
+                            break;
+
+                    }
                 }
             }
         } catch (IOException e) {

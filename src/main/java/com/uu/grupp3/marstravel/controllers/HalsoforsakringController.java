@@ -76,13 +76,15 @@ public class HalsoforsakringController {
         StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
 
         //Pop-Up ändra till info on hälsoförsäkring @todo
-        btnhalsofinfo.setOnAction(event -> dbInfo.showInfoFromDB("budget1", "Budget 1", "MatpaketInformation", 1));
+        btnhalsofinfo.setOnAction(event -> dbInfo.showInfoFromDB("Hälsoförsäkring", "Budget 1", "Hälsoförsäkring", 1));
 
+        //rbtnhalsof
+        rbtnhalsof.setToggleGroup(group);
 
         // Nästa knappen. Skickar användaren till nästa sida. (evenemang). Använder sig av NextButton klassen som är en service klass.
         btnNASTA.setOnAction(event -> {
-            if (storeTravelChoices.getMat() != null) {
-                storeTravelChoices.removeMat();
+            if (storeTravelChoices.getHealthIns() != null) {
+                storeTravelChoices.removeHealthIns();
             }
             storeTravelChoices.storeSelectedRadioButton(group, "Hälsoförsäkring: ");
             NextButton nextButton = new NextButton();
