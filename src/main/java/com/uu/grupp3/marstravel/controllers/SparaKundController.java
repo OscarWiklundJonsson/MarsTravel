@@ -1,6 +1,7 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.database.DatabaseHandler;
+import com.uu.grupp3.marstravel.services.CheckoutCartService;
 import com.uu.grupp3.marstravel.services.NextButton;
 import com.uu.grupp3.marstravel.services.SideBarButtons;
 import javafx.event.ActionEvent;
@@ -13,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -72,6 +74,9 @@ public class SparaKundController {
 
     @FXML
     private TextField tfphonenumber;
+
+    @FXML
+    private Button varukorg;
 
 
     // Method to save a customer to the database
@@ -137,11 +142,20 @@ public class SparaKundController {
         }
     }
     //nästa knapp, skickar vidare till hytterHem sidan.
+    private CheckoutCartService checkoutCartService = new CheckoutCartService();
+
     public void initialize() {
         btnKASSA.setOnAction(event -> {
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnKASSA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/boka.fxml", stage); //ska skickas till varukorgen sen.
+        });
+        varukorg.setOnAction(event -> {
+            try {
+                checkoutCartService.showCheckoutCart();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         });
         btnVALJAkundinfo.setDisable(true);
     }

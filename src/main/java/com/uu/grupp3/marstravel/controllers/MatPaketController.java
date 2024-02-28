@@ -186,12 +186,7 @@ public class MatPaketController {
             }
             storeTravelChoices.storeSelectedRadioButton(group, "Matpaket: ");
             NextButton nextButton = new NextButton();
-            CheckoutCartService checkoutCartService = new CheckoutCartService();
-            try {
-                checkoutCartService.calculateTotalPrice();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+
             Stage stage = (Stage) btnNÄSTA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/evenemang.fxml", stage);
         });
