@@ -75,7 +75,7 @@ public class HalsoforsakringController {
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
         StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
 
-        //Pop-Up ändra till info on hälsoförsäkring
+        //Pop-Up ändra till info on hälsoförsäkring @todo
         rbtnhalsof.setOnAction(event -> dbInfo.showInfoFromDB("budget1", "Budget 1", "MatpaketInformation", 1));
 
 
@@ -89,6 +89,7 @@ public class HalsoforsakringController {
             Stage stage = (Stage) btnNASTA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/betalkort.fxml", stage);
         });
+        btnVALJAhalsoforsakring.setDisable(true);
     }
     private SideBarButtons sideBarButtons = new SideBarButtons();
 
@@ -109,7 +110,7 @@ public class HalsoforsakringController {
             fxmlPath = "/com/uu/grupp3/marstravel/resedatum.fxml";
             System.out.println("Resedatum");
         } else if (event.getSource() == btnVALJAkundinfo) {
-            fxmlPath = "/com/uu/grupp3/marstravel/kundinformation.fxml";
+            fxmlPath = "/com/uu/grupp3/marstravel/sparaKundinformation.fxml";
             System.out.println("Kundinformation");
         } else if (event.getSource() == btnVALJAbetalkort) {
             fxmlPath = "/com/uu/grupp3/marstravel/betalkort.fxml";
