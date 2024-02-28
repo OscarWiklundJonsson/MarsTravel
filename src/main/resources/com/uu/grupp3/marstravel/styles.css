@@ -9,12 +9,14 @@
 
 
 }
-.button{
-    -fx-background-color: #FFF6E6;
+.buttonBoka{
+    -fx-background-color: #C24C0F;
     -fx-border-color: #FFFFFF;
+    -fx-background-radius: 40;
+    -fx-border-radius: 40;
 }
 
-.button:hover{
-    -fx-background-color: #FFFFFF;
+.buttonBoka:hover{
+    -fx-background-color: #FFF6E6;
     -fx-border-color: #FFFFFF;
 }
