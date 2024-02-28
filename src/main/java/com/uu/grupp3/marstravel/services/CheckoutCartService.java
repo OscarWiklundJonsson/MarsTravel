@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
 import javafx.scene.control.Alert;
@@ -230,12 +232,13 @@ public class CheckoutCartService {
             e.printStackTrace();
         }
 
-        // append total price to contents
-        contents.append("Totalt pris: ").append(totalPrice);
+        NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.UK);
+        String formattedTotalPrice = numberFormat.format(totalPrice);
 
+        contents.append("Totalt pris: ").append(formattedTotalPrice).append(" kr");
         // create an info dialog and display the contents
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Checkout Cart");
+        alert.setTitle("Varukorgen");
         alert.setHeaderText(null);
         alert.setContentText(contents.toString());
 
