@@ -8,11 +8,17 @@ Evenemang: -----
 Evenemang: -----
 Evenemang: -----
 ---------Kund-1----------
-2024-Oktober till 2025-November
-Hytt: Sömnkapsel
 Evenemang: -----
 Evenemang: -----
 ---------Kund-1----------
-HyttHem: Sömnkapsel
 Evenemang: -----
-Matpaket: Mellan 3
+---------Kund-1----------
+---------Kund-1----------
+MatpaketHem: Mellan 2
+2024-Oktober till 2028-Oktober
+Hytt: Sömnkapsel
+Matpaket: -----
+Evenemang: -----
+HyttHem: Sömnkapsel
+Matpaket: -----
+Evenemang: -----
