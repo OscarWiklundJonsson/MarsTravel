@@ -148,7 +148,7 @@ public class EvenemangController {
             storeTravelChoices.storeChoiceBox("Konserter: ", cboxConcert);
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnNASTA.getScene().getWindow();
-            nextButton.nextButton("/com/uu/grupp3/marstravel/sparaKundInformation.fxml", stage);
+            nextButton.nextButton("/com/uu/grupp3/marstravel/hotellmars.fxml", stage);
         });
         btnVALJAevenemangdit.setDisable(true);
     }
