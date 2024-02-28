@@ -6,9 +6,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class CheckoutCartService {
+import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
 
-    public void checkoutCartPriceCalculator() throws IOException {
+// @todo extract method osv
+public class CheckoutCartService {
+    DatabaseReciveInformation databaseReciveInformation = new DatabaseReciveInformation();
+    public void calculateTotalPrice() throws IOException {
         String fileName = "travelChoices.txt";
         Path path = Paths.get(fileName);
         double totalPrice = 0;
@@ -20,21 +23,27 @@ public class CheckoutCartService {
                     String[] parts = line.split(": ");
                     String hyttType = parts[1]; // this is the text after "Hytt: "
 
+
                     switch (hyttType) {
                         case "Economy":
-                            totalPrice += 70000; // replace with actual price
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("Economy", "HyttInformation");
+                            totalPrice += 180000;
                             break;
                         case "Inside":
-                            totalPrice += 1200000; // replace with actual price
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("Inside", "HyttInformation");
+                            totalPrice += 300000;
                             break;
                         case "Spaceside":
-                            totalPrice += 700000; // replace with actual price
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("Spaceside", "HyttInformation");
+                            totalPrice += 700000;
                             break;
                         case "Svit":
-                            totalPrice += 1200000; // replace with actual price
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("Svit", "HyttInformation");
+                            totalPrice += 1200000;
                             break;
                         case "Sömnkapsel":
-                            totalPrice += 2500000; // replace with actual price
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("Sömnkapsel", "HyttInformation");
+                            totalPrice += 2500000;
                             break;
                         default:
                             totalPrice += 0; // replace with actual price for unknown hytt types
@@ -43,31 +52,89 @@ public class CheckoutCartService {
                 } else if (line.contains("Matpaket: ")) {
                     String[] parts = line.split(": ");
                     String matType = parts[1]; // this is the text after "Matpaket: "
-
                     switch (matType) {
-                        case "Standard":
-                            totalPrice += 50000; // replace with actual price
+                        case "Budget 1":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget1", "MatpaketInformation");
+                            totalPrice += 27000;
                             break;
-                        case "Lyx":
-                            totalPrice += 100000; // replace with actual price
+                        case "Budget 2":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
+                            totalPrice += 40000;
                             break;
+                        case "Budget 3":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget3", "MatpaketInformation");
+                            totalPrice += 54000;
+                            break;
+                        case "Mellan 1":
+                           // totalPrice += databaseReciveInformation.getPriceFromDatabase("mellan1", "MatpaketInformation");
+                            totalPrice += 76000;
+                            break;
+                        case "Mellan 2":
+                           // totalPrice += databaseReciveInformation.getPriceFromDatabase("mellan2", "MatpaketInformation");
+                            totalPrice += 90000;
+                            break;
+                        case "Mellan 3":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("mellan3", "MatpaketInformation");
+                            totalPrice += 108000;
+                            break;
+                        case "Lyx 1":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("lyx1", "MatpaketInformation");
+                            totalPrice += 120000;
+                            break;
+                        case "Lyx 2":
+                            // totalPrice += databaseReciveInformation.getPriceFromDatabase("lyx2", "MatpaketInformation");
+                            totalPrice += 150000;
+                            break;
+                        case "Lyx 3":
+                            totalPrice += 200000;
+                            break;
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("lyx3", "MatpaketInformation");
                         default:
-                            totalPrice += 0; // replace with actual price for unknown mat types
+                            totalPrice += 0; // replace with actual price for unknown hytt types
                             break;
-                    }
+                }
                 } else if (line.contains("MatpaketHem: ")) {
                     String[] parts = line.split(": ");
-                    String matHemType = parts[1]; // this is the text after "MatpaketHem: "
-
-                    switch (matHemType) {
-                        case "Standard":
-                            totalPrice += 50000; // replace with actual price
+                    String matType = parts[1]; // this is the text after "Matpaket: "
+                    switch (matType) {
+                        case "Budget 1":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget1", "MatpaketInformation");
+                            totalPrice += 27000;
                             break;
-                        case "Lyx":
-                            totalPrice += 100000; // replace with actual price
+                        case "Budget 2":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
+                            totalPrice += 40000;
                             break;
+                        case "Budget 3":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget3", "MatpaketInformation");
+                            totalPrice += 54000;
+                            break;
+                        case "Mellan 1":
+                            // totalPrice += databaseReciveInformation.getPriceFromDatabase("mellan1", "MatpaketInformation");
+                            totalPrice += 76000;
+                            break;
+                        case "Mellan 2":
+                            // totalPrice += databaseReciveInformation.getPriceFromDatabase("mellan2", "MatpaketInformation");
+                            totalPrice += 90000;
+                            break;
+                        case "Mellan 3":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("mellan3", "MatpaketInformation");
+                            totalPrice += 108000;
+                            break;
+                        case "Lyx 1":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("lyx1", "MatpaketInformation");
+                            totalPrice += 120000;
+                            break;
+                        case "Lyx 2":
+                            // totalPrice += databaseReciveInformation.getPriceFromDatabase("lyx2", "MatpaketInformation");
+                            totalPrice += 150000;
+                            break;
+                        case "Lyx 3":
+                            totalPrice += 200000;
+                            break;
+                        //totalPrice += databaseReciveInformation.getPriceFromDatabase("lyx3", "MatpaketInformation");
                         default:
-                            totalPrice += 0; // replace with actual price for unknown matHem types
+                            totalPrice += 0; // replace with actual price for unknown hytt types
                             break;
                     }
                 }

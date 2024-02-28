@@ -1,5 +1,6 @@
 package com.uu.grupp3.marstravel.services;
 
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.RadioButton;
 
@@ -15,6 +16,7 @@ import java.util.stream.Collectors;
 
 public class StoreTravelChoices {
     private static boolean isFirstRun = true;
+    String fileName = "travelChoices.txt";
 
     /**
      * Stores the selected radio button in a file
@@ -27,6 +29,11 @@ public class StoreTravelChoices {
     }
     public void storeDate(String date) {
         writeToFile(date);
+    }
+
+    public void storeChoiceBox(String prefix, ChoiceBox<String> choiceBox) {
+        String selectedValue = choiceBox.getValue();
+        writeToFile(prefix + selectedValue);
     }
 
     /**
@@ -124,13 +131,35 @@ public class StoreTravelChoices {
         return null;
     }
     public String getHyttHem(){
-        String fileName = "travelChoices.txt";
         Path path = Paths.get(fileName);
 
         try (BufferedReader reader = Files.newBufferedReader(path)) {
             List<String> lines = reader.lines().collect(Collectors.toList());
             for (String line : lines) {
                 if (line.contains("HyttHem: ")) {
+                    return line;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public String getEvenemang() {
+        Path path = Paths.get(fileName);
+
+        try (BufferedReader reader = Files.newBufferedReader(path)) {
+            List<String> lines = reader.lines().collect(Collectors.toList());
+            for (String line : lines) {
+                if (line.contains("Filmpremiarer: ")) {
+                    return line;
+                }
+                if (line.contains("Teaterpremiarer: ")) {
+                    return line;
+                }
+                if (line.contains("Konserter: ")) {
                     return line;
                 }
             }
@@ -156,7 +185,6 @@ public class StoreTravelChoices {
             e.printStackTrace();
         }
     }
-
     public void removeHytt() {
         String fileName = "travelChoices.txt";
         Path path = Paths.get(fileName);
@@ -206,5 +234,20 @@ public class StoreTravelChoices {
         }
     }
 
+    public void removeEvenemang() {
+        String fileName = "travelChoices.txt";
+        Path path = Paths.get(fileName);
 
+        try {
+            List<String> lines = Files.readAllLines(path);
+            lines.removeIf(line -> line.contains("Filmpremiarer: "));
+            lines.removeIf(line -> line.contains("Teaterpremiarer: "));
+            lines.removeIf(line -> line.contains("Konserter: "));
+            Files.write(path, lines);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
 }
