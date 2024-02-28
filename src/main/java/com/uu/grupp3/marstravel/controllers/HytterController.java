@@ -74,9 +74,6 @@ public class HytterController {
     private Label lblInsidePris;
 
     @FXML
-    private Label lblMTheader;
-
-    @FXML
     private Label lblPris;
 
     @FXML
