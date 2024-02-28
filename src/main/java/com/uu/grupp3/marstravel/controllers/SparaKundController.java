@@ -166,7 +166,7 @@ public class SparaKundController {
     private SideBarButtons sideBarButtons = new SideBarButtons();
 
     @FXML
-    private void SideBarButtons(ActionEvent event) {
+    private void SideBarButtons(ActionEvent event) { // Snälla gör detta till en egen klass, jag ber er.
         String fxmlPath = null;
 
         if (event.getSource() == btnVALJAevenemangdit) {

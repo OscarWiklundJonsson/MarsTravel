@@ -12,8 +12,8 @@
 .buttonBoka{
     -fx-background-color: #C7511B;
     -fx-border-color: #EED2A7;
-    -fx-background-radius: 40;
-    -fx-border-radius: 40;
+    -fx-background-radius: 10; /* Rundar av knappens hörn, var 40 innan */
+    -fx-border-radius: 10;   /* Rundar av knappens hörn, var 40 innan */
 }
 
 .buttonBoka:hover{
