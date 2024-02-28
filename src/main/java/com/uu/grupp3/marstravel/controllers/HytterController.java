@@ -147,8 +147,9 @@ public void initialize() {
             if (storeTravelChoices.getMat() != null) {
                 storeTravelChoices.removeMat();
             }
-            storeTravelChoices.writeToFile("Matpaket: -----");
-            storeTravelChoices.writeToFile("Evenemang: -----");
+            if (storeTravelChoices.getEvenemang() != null) {
+                storeTravelChoices.removeEvenemang();
+            }
             nextButton.nextButton("/com/uu/grupp3/marstravel/hytterHem.fxml", stage); // Ändra till nästa sida
         } else {
             nextButton.nextButton("/com/uu/grupp3/marstravel/matpaket.fxml", stage);

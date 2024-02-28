@@ -147,8 +147,12 @@ public class HytterHemController {
 
             RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
             if (selectedRadioButton != null && "Sömnkapsel".equals(selectedRadioButton.getText())) {
-                storeTravelChoices.writeToFile("Matpaket: -----");
-                storeTravelChoices.writeToFile("Evenemang: -----");
+                if (storeTravelChoices.getMat() != null) {
+                    storeTravelChoices.removeMat();
+                }
+                if (storeTravelChoices.getEvenemang() != null) {
+                    storeTravelChoices.removeEvenemang();
+                }
                 nextButton.nextButton("/com/uu/grupp3/marstravel/sparaKundInformation.fxml", stage); // Ändra till nästa sida
             } else {
                 nextButton.nextButton("/com/uu/grupp3/marstravel/matpaketHem.fxml", stage);
