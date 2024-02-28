@@ -71,6 +71,76 @@ public class StoreTravelChoices {
         return null;
     }
 
+    public String getMat(){
+        String fileName = "travelChoices.txt";
+        Path path = Paths.get(fileName);
+
+        try (BufferedReader reader = Files.newBufferedReader(path)) {
+            List<String> lines = reader.lines().collect(Collectors.toList());
+            for (String line : lines) {
+                if (line.contains("Matpaket: ")) {
+                    return line;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+    public String getMatHem(){
+        String fileName = "travelChoices.txt";
+        Path path = Paths.get(fileName);
+
+        try (BufferedReader reader = Files.newBufferedReader(path)) {
+            List<String> lines = reader.lines().collect(Collectors.toList());
+            for (String line : lines) {
+                if (line.contains("MatpaketHem: ")) {
+                    return line;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public String getHytt(){
+        String fileName = "travelChoices.txt";
+        Path path = Paths.get(fileName);
+
+        try (BufferedReader reader = Files.newBufferedReader(path)) {
+            List<String> lines = reader.lines().collect(Collectors.toList());
+            for (String line : lines) {
+                if (line.contains("Hytt: ")) {
+                    return line;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+    public String getHyttHem(){
+        String fileName = "travelChoices.txt";
+        Path path = Paths.get(fileName);
+
+        try (BufferedReader reader = Files.newBufferedReader(path)) {
+            List<String> lines = reader.lines().collect(Collectors.toList());
+            for (String line : lines) {
+                if (line.contains("HyttHem: ")) {
+                    return line;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
     /**
      * Removes the stored date from the file
      */
@@ -86,4 +156,55 @@ public class StoreTravelChoices {
             e.printStackTrace();
         }
     }
+
+    public void removeHytt() {
+        String fileName = "travelChoices.txt";
+        Path path = Paths.get(fileName);
+
+        try {
+            List<String> lines = Files.readAllLines(path);
+            lines.removeIf(line -> line.contains("Hytt: "));
+            Files.write(path, lines);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void removeHyttHem() {
+        String fileName = "travelChoices.txt";
+        Path path = Paths.get(fileName);
+
+        try {
+            List<String> lines = Files.readAllLines(path);
+            lines.removeIf(line -> line.contains("HyttHem: "));
+            Files.write(path, lines);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void removeMat() {
+        String fileName = "travelChoices.txt";
+        Path path = Paths.get(fileName);
+
+        try {
+            List<String> lines = Files.readAllLines(path);
+            lines.removeIf(line -> line.contains("Matpaket: "));
+            Files.write(path, lines);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void removeMatHem() {
+        String fileName = "travelChoices.txt";
+        Path path = Paths.get(fileName);
+
+        try {
+            List<String> lines = Files.readAllLines(path);
+            lines.removeIf(line -> line.contains("MatpaketHem: "));
+            Files.write(path, lines);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }

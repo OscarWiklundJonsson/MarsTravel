@@ -1,6 +1,5 @@
 package com.uu.grupp3.marstravel.controllers;
 
-import com.uu.grupp3.marstravel.database.DatabaseHandler;
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
 import com.uu.grupp3.marstravel.services.NextButton;
 import com.uu.grupp3.marstravel.services.SideBarButtons;
@@ -179,6 +178,9 @@ public class MatpaketHemController {
 
         // Nästa knappen. Skickar användaren till nästa sida. (evenemang). Använder sig av NextButton klassen som är en service klass.
         btnNÄSTA.setOnAction(event -> {
+            if (storeTravelChoices.getMatHem() != null) {
+                storeTravelChoices.removeMatHem();
+            }
             storeTravelChoices.storeSelectedRadioButton(group, "MatpaketHem: ");
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnNÄSTA.getScene().getWindow();
@@ -218,13 +220,13 @@ public class MatpaketHemController {
             fxmlPath = "/com/uu/grupp3/marstravel/evenemanghem.fxml";
             System.out.println("Evenemang hem");
         } else if (event.getSource() == btnVALJAmatpakethem) {
-            fxmlPath = "/com/uu/grupp3/marstravel/matpakethem.fxml";
+            fxmlPath = "/com/uu/grupp3/marstravel/matpaketHem.fxml";
             System.out.println("Matpaket hem");
         } else if (event.getSource() == btnVALJAhytthem) {
-            fxmlPath = "/com/uu/grupp3/marstravel/hytterhem.fxml";
+            fxmlPath = "/com/uu/grupp3/marstravel/hytterHem.fxml";
             System.out.println("Hytter hem");
         } else if (event.getSource() == btnVALJAhotellmars) {
-            fxmlPath = "/com/uu/grupp3/marstravel/hotellmars.fxml";
+            fxmlPath = "/com/uu/grupp3/marstravel/hotellMars.fxml";
             System.out.println("Hotell Mars");
         }
 

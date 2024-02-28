@@ -21,7 +21,7 @@
             </font>
         </Label>
         <Circle fx:id="cVarukorgen" fill="WHITE" layoutX="1225.0" layoutY="53.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
-        <Button fx:id="btnNASTA" layoutX="1109.0" layoutY="620.0" mnemonicParsing="false" text="NÄSTA">
+        <Button fx:id="btnKASSA" layoutX="1119.0" layoutY="620.0" mnemonicParsing="false" text="KASSA">
             <font>
                 <Font size="24.0" />
             </font>

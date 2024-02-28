@@ -138,14 +138,18 @@ public void initialize() {
         }
     });
     btnNASTA.setOnAction(event -> {
-
+        if (storeTravelChoices.getHytt() != null) {
+            storeTravelChoices.removeHytt();
+        }
         storeTravelChoices.storeSelectedRadioButton(group, "Hytt: "); // Spara valt alternativ till fil.
         NextButton nextButton = new NextButton();
         Stage stage = (Stage) btnNASTA.getScene().getWindow();
 
         RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
         if (selectedRadioButton != null && "Sömnkapsel".equals(selectedRadioButton.getText())) {
-            
+            if (storeTravelChoices.getMat() != null) {
+                storeTravelChoices.removeMat();
+            }
             storeTravelChoices.writeToFile("Matpaket: -----");
             storeTravelChoices.writeToFile("Evenemang: -----");
             nextButton.nextButton("/com/uu/grupp3/marstravel/hytterHem.fxml", stage); // Ändra till nästa sida
@@ -185,13 +189,13 @@ public void initialize() {
             fxmlPath = "/com/uu/grupp3/marstravel/evenemanghem.fxml";
             System.out.println("Evenemang hem");
         } else if (event.getSource() == btnVALJAmatpakethem) {
-            fxmlPath = "/com/uu/grupp3/marstravel/matpakethem.fxml";
+            fxmlPath = "/com/uu/grupp3/marstravel/matpaketHem.fxml";
             System.out.println("Matpaket hem");
         } else if (event.getSource() == btnVALJAhytthem) {
-            fxmlPath = "/com/uu/grupp3/marstravel/hytterhem.fxml";
+            fxmlPath = "/com/uu/grupp3/marstravel/hytterHem.fxml";
             System.out.println("Hytter hem");
         } else if (event.getSource() == btnVALJAhotellmars) {
-            fxmlPath = "/com/uu/grupp3/marstravel/hotellmars.fxml";
+            fxmlPath = "/com/uu/grupp3/marstravel/hotellMars.fxml";
             System.out.println("Hotell Mars");
         }
 
