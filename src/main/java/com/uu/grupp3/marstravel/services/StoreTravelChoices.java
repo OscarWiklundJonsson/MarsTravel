@@ -301,4 +301,19 @@ public class StoreTravelChoices {
             e.printStackTrace();
         }
     }
+    public void removeEvenemangHem() {
+        String fileName = "travelChoices.txt";
+        Path path = Paths.get(fileName);
+
+        try {
+            List<String> lines = Files.readAllLines(path);
+            lines.removeIf(line -> line.contains("FilmpremiarerHem: "));
+            lines.removeIf(line -> line.contains("TeaterpremiarerHem: "));
+            lines.removeIf(line -> line.contains("KonserterHem: "));
+            Files.write(path, lines);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 }
