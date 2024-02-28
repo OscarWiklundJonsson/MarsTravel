@@ -4,6 +4,7 @@ import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
 import com.uu.grupp3.marstravel.services.NextButton;
 import com.uu.grupp3.marstravel.services.SideBarButtons;
 import com.uu.grupp3.marstravel.services.StoreTravelChoices;
+import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -135,7 +136,21 @@ public class EvenemangController {
         //Pop-Up for Teater
         btnTheatreInfo.setOnAction(event -> dbInfo.showInfoFromDB("Teaterpremiärer", "Teaterpremiärer", "EvenemangInformation", 1));
 
+        // Add listeners to the ChoiceBoxes
+        ChangeListener<String> choiceBoxListener = (observable, oldValue, newValue) -> {
+            if (cboxFilmpremiarer.getValue() != null && cboxConcert.getValue() != null && cboxTheaterpremiarer.getValue() != null) {
+                btnNASTA.setDisable(false);
+            } else {
+                btnNASTA.setDisable(true);
+            }
+        };
 
+        cboxFilmpremiarer.getSelectionModel().selectedItemProperty().addListener(choiceBoxListener);
+        cboxConcert.getSelectionModel().selectedItemProperty().addListener(choiceBoxListener);
+        cboxTheaterpremiarer.getSelectionModel().selectedItemProperty().addListener(choiceBoxListener);
+
+        // Initially disable the "Nästa" button
+        btnNASTA.setDisable(true);
 
         // Nästa knappen. Skickar användaren vidare till nästa sida
         btnNASTA.setOnAction(event -> {

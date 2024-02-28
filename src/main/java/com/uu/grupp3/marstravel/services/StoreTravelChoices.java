@@ -24,7 +24,7 @@ public class StoreTravelChoices {
      */
     public void storeSelectedRadioButton(ToggleGroup group, String prefix) {
         RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
-        String selectedRadioButtonValue = selectedRadioButton == null ? "Ingen radio knapp har valts" : selectedRadioButton.getText();
+        String selectedRadioButtonValue = selectedRadioButton == null ? "---" : selectedRadioButton.getText();
         writeToFile(prefix + selectedRadioButtonValue);
     }
     public void storeDate(String date) {
@@ -169,9 +169,49 @@ public class StoreTravelChoices {
 
         return null;
     }
+    public String getEvenemangHem() {
+        Path path = Paths.get(fileName);
+
+        try (BufferedReader reader = Files.newBufferedReader(path)) {
+            List<String> lines = reader.lines().collect(Collectors.toList());
+            for (String line : lines) {
+                if (line.contains("FilmpremiarerHem: ")) {
+                    return line;
+                }
+                if (line.contains("TeaterpremiarerHem: ")) {
+                    return line;
+                }
+                if (line.contains("KonserterHem: ")) {
+                    return line;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public String getHealthIns() {
+        String fileName = "travelChoices.txt";
+        Path path = Paths.get(fileName);
+
+        try (BufferedReader reader = Files.newBufferedReader(path)) {
+            List<String> lines = reader.lines().collect(Collectors.toList());
+            for (String line : lines) {
+                if (line.contains("Hälsoförsäkring: ")) {
+                    return line;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
 
     /**
-     * Removes the stored date from the file
+     * Removes the stored info from the file
      */
     public void removeDate() {
         String fileName = "travelChoices.txt";
@@ -233,7 +273,6 @@ public class StoreTravelChoices {
             e.printStackTrace();
         }
     }
-
     public void removeEvenemang() {
         String fileName = "travelChoices.txt";
         Path path = Paths.get(fileName);
@@ -249,5 +288,17 @@ public class StoreTravelChoices {
         }
 
 
+    }
+    public void removeHealthIns() {
+        String fileName = "travelChoices.txt";
+        Path path = Paths.get(fileName);
+
+        try {
+            List<String> lines = Files.readAllLines(path);
+            lines.removeIf(line -> line.contains("Hälsoförsäkring: "));
+            Files.write(path, lines);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
