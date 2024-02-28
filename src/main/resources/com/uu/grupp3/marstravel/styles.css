@@ -164,3 +164,59 @@
     -fx-background-color: #363230;
     -fx-border-color: #EED2A7;
 }
+
+.sidebuttonResedatum{
+    -fx-background-color: #2d2e2f;
+    -fx-border-color: #EED2A7;
+}
+
+.sidebuttonHytter{
+    -fx-background-color: #2d2e2f;
+    -fx-border-color: #EED2A7;
+}
+
+.sidebuttonMatpaket{
+    -fx-background-color: #2d2e2f;
+    -fx-border-color: #EED2A7;
+}
+
+.sidebuttonEvenemang{
+    -fx-background-color: #2d2e2f;
+    -fx-border-color: #EED2A7;
+}
+
+.sidebuttonHotelMars{
+    -fx-background-color: #2d2e2f;
+    -fx-border-color: #EED2A7;
+}
+
+.sidebuttonHytterHem{
+    -fx-background-color: #2d2e2f;
+    -fx-border-color: #EED2A7;
+}
+
+.sidebuttonMatpaketHem{
+    -fx-background-color: #2d2e2f;
+    -fx-border-color: #EED2A7;
+}
+
+.sidebuttonEvenemangHem{
+    -fx-background-color: #2d2e2f;
+    -fx-border-color: #EED2A7;
+}
+
+.sidebuttonHalsoforsakring{
+    -fx-background-color: #2d2e2f;
+    -fx-border-color: #EED2A7;
+}
+
+.sidebuttonBetalkort{
+    -fx-background-color: #2d2e2f;
+    -fx-border-color: #EED2A7;
+}
+
+.sidebuttonKundinfo{
+    -fx-background-color: #2d2e2f;
+    -fx-border-color: #EED2A7;
+}
+
