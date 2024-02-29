@@ -14,7 +14,6 @@ import javafx.scene.control.Label;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

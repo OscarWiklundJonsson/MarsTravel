@@ -25,7 +25,7 @@ public class DatabaseReciveInformation {
         alert.setTitle(title);
         alert.setHeaderText(null);
 
-        Connection connection = null;
+        Connection connection;
         try {
             connection = DatabaseHandler.getConnection();
             Statement statement = connection.createStatement();
@@ -54,7 +54,6 @@ public class DatabaseReciveInformation {
 
         alert.showAndWait();
     }
-
 
     public double getPriceFromDatabase(String type, String tableName) throws ClassNotFoundException {
         double price = 0;
