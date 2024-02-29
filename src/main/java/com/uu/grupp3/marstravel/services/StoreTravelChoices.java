@@ -16,8 +16,6 @@ import java.util.List;
 
 public class StoreTravelChoices {
     private static final String FILE_NAME = "travelChoices.txt"; // Filnamnet ;)
-    private static boolean isFirstRun = true;
-
     /**
      * Stores the selected radio button in a file
      * @param group the toggle group
@@ -55,13 +53,8 @@ public class StoreTravelChoices {
      */
     public void writeToFile(String content) {
         Path path = Paths.get(FILE_NAME);
-        int kundNr = 1; // TODO: anpassa till något lämpligt sätt att hämta kundnummer
 
         try (BufferedWriter writer = Files.newBufferedWriter(path, StandardOpenOption.APPEND)) {
-            if (isFirstRun) {
-                writer.write("---------Kund-" + kundNr + "----------\n");
-                isFirstRun = false;
-            }
             writer.write(content + "\n");
         } catch (IOException e) {
             e.printStackTrace(); // Robust logging? nej tack
