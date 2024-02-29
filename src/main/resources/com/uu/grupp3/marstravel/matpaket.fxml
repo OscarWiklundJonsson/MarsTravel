@@ -18,27 +18,27 @@
                 <Font name="Century Gothic" size="36.0" />
             </font>
         </Label>
-        <RadioButton fx:id="rbtnBudget1" layoutX="260.0" layoutY="250.0" mnemonicParsing="false" text="Budget 1" textFill="WHITE">
+        <RadioButton fx:id="rbtnBudget1" layoutX="260.0" layoutY="250.0" mnemonicParsing="false" text="Budget 1" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnBudget2" layoutX="260.0" layoutY="285.0" mnemonicParsing="false" text="Budget 2" textFill="WHITE">
+        <RadioButton fx:id="rbtnBudget2" layoutX="260.0" layoutY="285.0" mnemonicParsing="false" text="Budget 2" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnBudget3" layoutX="260.0" layoutY="320.0" mnemonicParsing="false" text="Budget 3" textFill="WHITE">
+        <RadioButton fx:id="rbtnBudget3" layoutX="260.0" layoutY="320.0" mnemonicParsing="false" text="Budget 3" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnMellan1" layoutX="260.0" layoutY="370.0" mnemonicParsing="false" text="Mellan 1" textFill="WHITE">
+        <RadioButton fx:id="rbtnMellan1" layoutX="260.0" layoutY="370.0" mnemonicParsing="false" text="Mellan 1" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnMellan2" layoutX="260.0" layoutY="405.0" mnemonicParsing="false" text="Mellan 2" textFill="WHITE">
+        <RadioButton fx:id="rbtnMellan2" layoutX="260.0" layoutY="405.0" mnemonicParsing="false" text="Mellan 2" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
             <font>
                 <Font size="20.0" />
             </font>
@@ -115,7 +115,7 @@
         <Button fx:id="btnVALJAmatpaketdit" layoutX="46.0" layoutY="256.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="MATPAKET" textFill="#eed2a7" />
         <Button fx:id="btnVALJAhyttdit" layoutX="46.0" layoutY="209.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="HYTTER" textFill="#eed2a7" />
         <Button fx:id="btnVALJAresedatum" layoutX="46.0" layoutY="162.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="RESEDATUM" textFill="#eed2a7" />
-      <RadioButton fx:id="rbtnMellan3" layoutX="260.0" layoutY="440.0" mnemonicParsing="false" text="Mellan 3" textFill="WHITE">
+      <RadioButton fx:id="rbtnMellan3" layoutX="260.0" layoutY="440.0" mnemonicParsing="false" text="Mellan 3" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
          <font>
             <Font size="20.0" />
          </font>
@@ -125,17 +125,17 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <RadioButton fx:id="rbtnLyx1" layoutX="260.0" layoutY="490.0" mnemonicParsing="false" text="Lyx 1" textFill="WHITE">
+      <RadioButton fx:id="rbtnLyx1" layoutX="260.0" layoutY="490.0" mnemonicParsing="false" text="Lyx 1" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
          <font>
             <Font size="20.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="rbtnLyx2" layoutX="260.0" layoutY="525.0" mnemonicParsing="false" text="Lyx 2" textFill="WHITE">
+      <RadioButton fx:id="rbtnLyx2" layoutX="260.0" layoutY="525.0" mnemonicParsing="false" text="Lyx 2" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
          <font>
             <Font size="20.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="rbtnLyx3" layoutX="260.0" layoutY="560.0" mnemonicParsing="false" text="Lyx 3" textFill="WHITE">
+      <RadioButton fx:id="rbtnLyx3" layoutX="260.0" layoutY="560.0" mnemonicParsing="false" text="Lyx 3" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
          <font>
             <Font size="20.0" />
          </font>

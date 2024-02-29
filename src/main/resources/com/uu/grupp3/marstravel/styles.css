@@ -61,3 +61,13 @@
     -fx-background-color: #C7511B;
 }
 
+/*RADIO KNAPPAR*/
+.radioButton .radio {
+    -fx-background-color: #EED2A7;
+    -fx-background-insets: 0;
+}
+.radioButton:selected .radio .dot {
+    -fx-background-color: #363230;
+    -fx-background-insets: 0;
+}
+

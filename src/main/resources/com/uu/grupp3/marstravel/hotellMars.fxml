@@ -20,27 +20,27 @@
                 <Font name="Century Gothic" size="36.0" />
             </font>
         </Label>
-        <RadioButton fx:id="rbtnWeilders" layoutX="252.0" layoutY="292.0" mnemonicParsing="false" text="Polar Wielders" textFill="WHITE">
+        <RadioButton fx:id="rbtnWeilders" layoutX="252.0" layoutY="292.0" mnemonicParsing="false" text="Polar Wielders" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnLansdorp" layoutX="252.0" layoutY="256.0" mnemonicParsing="false" text="Polar Lansdorp" textFill="WHITE">
+        <RadioButton fx:id="rbtnLansdorp" layoutX="252.0" layoutY="256.0" mnemonicParsing="false" text="Polar Lansdorp" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnPhobosDubbel" layoutX="252.0" layoutY="383.0" mnemonicParsing="false" text="Hotel Phobos: Dubbelrum" textFill="WHITE">
+        <RadioButton fx:id="rbtnPhobosDubbel" layoutX="252.0" layoutY="383.0" mnemonicParsing="false" text="Hotel Phobos: Dubbelrum" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnPhobosEnkel" layoutX="252.0" layoutY="348.0" mnemonicParsing="false" text="Hotel Phobos: Enkelrum" textFill="WHITE">
+        <RadioButton fx:id="rbtnPhobosEnkel" layoutX="252.0" layoutY="348.0" mnemonicParsing="false" text="Hotel Phobos: Enkelrum" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnDeimosEnkel" layoutX="252.0" layoutY="441.0" mnemonicParsing="false" text="Hotel Deimos: Enkelrum" textFill="WHITE">
+        <RadioButton fx:id="rbtnDeimosEnkel" layoutX="252.0" layoutY="441.0" mnemonicParsing="false" text="Hotel Deimos: Enkelrum" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
             <font>
                 <Font size="20.0" />
             </font>
@@ -117,7 +117,7 @@
         <Button fx:id="btnVALJAmatpaketdit" layoutX="46.0" layoutY="256.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="MATPAKET" textFill="#eed2a7" />
         <Button fx:id="btnVALJAhyttdit" layoutX="46.0" layoutY="209.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="HYTTER" textFill="#eed2a7" />
         <Button fx:id="btnVALJAresedatum" layoutX="46.0" layoutY="162.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="RESEDATUM" textFill="#eed2a7" />
-      <RadioButton fx:id="rbtnDeimosDubbel" layoutX="252.0" layoutY="476.0" mnemonicParsing="false" text="Hotel Deimos: Dubbelrum" textFill="WHITE">
+      <RadioButton fx:id="rbtnDeimosDubbel" layoutX="252.0" layoutY="476.0" mnemonicParsing="false" text="Hotel Deimos: Dubbelrum" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
          <font>
             <Font size="20.0" />
          </font>
@@ -127,17 +127,17 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <RadioButton fx:id="rbtnRoyalEnkel" layoutX="252.0" layoutY="533.0" mnemonicParsing="false" text="Royal City: Enkel Lyx" textFill="WHITE">
+      <RadioButton fx:id="rbtnRoyalEnkel" layoutX="252.0" layoutY="533.0" mnemonicParsing="false" text="Royal City: Enkel Lyx" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
          <font>
             <Font size="20.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="rbtnRoyalDubbel" layoutX="252.0" layoutY="567.0" mnemonicParsing="false" text="Royal City: Dubbel Lyx" textFill="WHITE">
+      <RadioButton fx:id="rbtnRoyalDubbel" layoutX="252.0" layoutY="567.0" mnemonicParsing="false" text="Royal City: Dubbel Lyx" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
          <font>
             <Font size="20.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="rbtnRoyalSvit" layoutX="252.0" layoutY="601.0" mnemonicParsing="false" text="Royal City: Svit" textFill="WHITE">
+      <RadioButton fx:id="rbtnRoyalSvit" layoutX="252.0" layoutY="601.0" mnemonicParsing="false" text="Royal City: Svit" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
          <font>
             <Font size="20.0" />
          </font>

@@ -20,27 +20,27 @@
                 <Font name="Century Gothic" size="36.0" />
             </font>
         </Label>
-        <RadioButton fx:id="rbtnSleep" layoutX="252.0" layoutY="296.0" mnemonicParsing="false" text="Sömnkapsel" textFill="#fbf7f7">
+        <RadioButton fx:id="rbtnSleep" layoutX="252.0" layoutY="296.0" mnemonicParsing="false" text="Sömnkapsel" textFill="#fbf7f7" styleClass="radioButton" stylesheets="@styles.css">
             <font>
                 <Font size="24.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnSvit" layoutX="252.0" layoutY="362.0" mnemonicParsing="false" text="Svit" textFill="#f2ecec">
+        <RadioButton fx:id="rbtnSvit" layoutX="252.0" layoutY="362.0" mnemonicParsing="false" text="Svit" textFill="#f2ecec" styleClass="radioButton" stylesheets="@styles.css">
             <font>
                 <Font size="24.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnSpaceside" layoutX="252.0" layoutY="428.0" mnemonicParsing="false" text="Spaceside" textFill="#f2efef">
+        <RadioButton fx:id="rbtnSpaceside" layoutX="252.0" layoutY="428.0" mnemonicParsing="false" text="Spaceside" textFill="#f2efef" styleClass="radioButton" stylesheets="@styles.css">
             <font>
                 <Font size="24.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnInside" layoutX="252.0" layoutY="492.0" mnemonicParsing="false" text="Inside" textFill="#fbf8f8">
+        <RadioButton fx:id="rbtnInside" layoutX="252.0" layoutY="492.0" mnemonicParsing="false" text="Inside" textFill="#fbf8f8" styleClass="radioButton" stylesheets="@styles.css">
             <font>
                 <Font size="24.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnEco" layoutX="252.0" layoutY="553.0" mnemonicParsing="false" text="Economy" textFill="#fdfafa">
+        <RadioButton fx:id="rbtnEco" layoutX="252.0" layoutY="553.0" mnemonicParsing="false" text="Economy" textFill="#fdfafa" styleClass="radioButton" stylesheets="@styles.css">
             <font>
                 <Font size="24.0" />
             </font>
