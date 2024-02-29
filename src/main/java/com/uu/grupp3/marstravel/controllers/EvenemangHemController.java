@@ -77,15 +77,6 @@ public class EvenemangHemController {
     private Label lblEvenemang;
 
     @FXML
-    private RadioButton rbtnConcert;
-
-    @FXML
-    private RadioButton rbtnTheatre;
-
-    @FXML
-    private RadioButton rbtnFilm;
-
-    @FXML
     private ChoiceBox<String> cboxFilmpremiarer;
     @FXML
     private ChoiceBox<String> cboxConcert;

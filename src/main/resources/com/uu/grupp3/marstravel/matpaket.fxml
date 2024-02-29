@@ -73,27 +73,27 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <Button fx:id="btnBudget1" layoutX="790.0" layoutY="250.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnBudget1" layoutX="790.0" layoutY="250.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnBudget2" layoutX="790.0" layoutY="285.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnBudget2" layoutX="790.0" layoutY="285.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnMellan1" layoutX="790.0" layoutY="370.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnMellan1" layoutX="790.0" layoutY="370.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnBudget3" layoutX="790.0" layoutY="320.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnBudget3" layoutX="790.0" layoutY="320.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnMellan2" layoutX="790.0" layoutY="405.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnMellan2" layoutX="790.0" layoutY="405.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
@@ -155,22 +155,22 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnMellan3" layoutX="790.0" layoutY="440.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnMellan3" layoutX="790.0" layoutY="440.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnLyx1" layoutX="790.0" layoutY="490.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnLyx1" layoutX="790.0" layoutY="490.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnLyx2" layoutX="790.0" layoutY="525.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnLyx2" layoutX="790.0" layoutY="525.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnLyx3" layoutX="790.0" layoutY="560.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnLyx3" layoutX="790.0" layoutY="560.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>

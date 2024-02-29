@@ -97,9 +97,6 @@ public class MatPaketController {
     private Label lblInsidePris1;
 
     @FXML
-    private Label lblMTheader;
-
-    @FXML
     private Label lblPris;
 
     @FXML

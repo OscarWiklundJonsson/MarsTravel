@@ -75,27 +75,27 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <Button fx:id="btnSleepInfo" layoutX="804.0" layoutY="301.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnSleepInfo" layoutX="804.0" layoutY="301.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnSvitInfo" layoutX="804.0" layoutY="367.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnSvitInfo" layoutX="804.0" layoutY="367.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnSpacesideInfo" layoutX="804.0" layoutY="433.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnSpacesideInfo" layoutX="804.0" layoutY="433.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnInsideInfo" layoutX="804.0" layoutY="497.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnInsideInfo" layoutX="804.0" layoutY="497.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnEcoInfo" layoutX="804.0" layoutY="558.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnEcoInfo" layoutX="804.0" layoutY="558.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>

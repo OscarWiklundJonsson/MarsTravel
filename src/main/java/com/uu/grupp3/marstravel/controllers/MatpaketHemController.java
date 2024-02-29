@@ -96,12 +96,6 @@ public class MatpaketHemController {
     private Label lblInsidePris1;
 
     @FXML
-    private Label lblMTheader;
-
-    @FXML
-    private Label lblPris;
-
-    @FXML
     private Label lblSleepPris;
 
     @FXML
@@ -109,9 +103,6 @@ public class MatpaketHemController {
 
     @FXML
     private Label lblSvitPris;
-
-    @FXML
-    private Label lblhyttalternativ;
 
     @FXML
     private RadioButton rbtnBudget1;

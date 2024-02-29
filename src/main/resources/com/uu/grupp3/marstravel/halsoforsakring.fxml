@@ -23,7 +23,7 @@
                 <Font size="24.0" />
             </font>
         </RadioButton>
-        <Button fx:id="btnhalsofinfo" layoutX="770.0" layoutY="311.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnhalsofinfo" layoutX="770.0" layoutY="311.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>

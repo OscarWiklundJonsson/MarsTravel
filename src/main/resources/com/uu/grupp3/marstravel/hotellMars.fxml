@@ -75,27 +75,27 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <Button fx:id="btnLansdorpInfo" layoutX="814.0" layoutY="258.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnLansdorpInfo" layoutX="814.0" layoutY="258.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnWeildersInfo" layoutX="814.0" layoutY="294.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnWeildersInfo" layoutX="814.0" layoutY="294.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnPhobosEnkelInfo" layoutX="814.0" layoutY="350.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnPhobosEnkelInfo" layoutX="814.0" layoutY="350.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnPhobosDubbelInfo" layoutX="814.0" layoutY="385.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnPhobosDubbelInfo" layoutX="814.0" layoutY="385.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnDeimosEnkelInfo" layoutX="814.0" layoutY="443.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnDeimosEnkelInfo" layoutX="814.0" layoutY="443.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
@@ -157,17 +157,17 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnDeimosDubbelInfo" layoutX="814.0" layoutY="478.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnDeimosDubbelInfo" layoutX="814.0" layoutY="478.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnRoyalEnkelInfo" layoutX="814.0" layoutY="535.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnRoyalEnkelInfo" layoutX="814.0" layoutY="535.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnRoyalDubbelInfo" layoutX="814.0" layoutY="569.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnRoyalDubbelInfo" layoutX="814.0" layoutY="569.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
@@ -177,7 +177,7 @@
                 <Image url="@../../../../image/CartIcon.png" />
             </image>
         </ImageView>
-      <Button fx:id="btnRoyalSvitInfo" layoutX="814.0" layoutY="603.0" mnemonicParsing="false" text=" i ">
+      <Button fx:id="btnRoyalSvitInfo" layoutX="814.0" layoutY="603.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
