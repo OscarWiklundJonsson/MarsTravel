@@ -153,7 +153,7 @@ public class EvenemangHemController {
             Stage stage = (Stage) btnNASTA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/halsoforsakring.fxml", stage);
         });
-        btnVALJAevenemangdit.setDisable(true);
+        btnVALJAevenemanghem.setDisable(true);
     }
     private SideBarButtons sideBarButtons = new SideBarButtons();
 
