@@ -11,6 +11,9 @@ import java.util.Locale;
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
 import javafx.scene.control.Alert;
 
+
+// Akta dig för denna kod, den är skriven av en person som inte kan programmera alls.
+
 // @todo extract method osv
 public class CheckoutCartService {
     DatabaseReciveInformation databaseReciveInformation = new DatabaseReciveInformation();
@@ -210,7 +213,7 @@ public class CheckoutCartService {
             e.printStackTrace();
         }
 
-        System.out.println("Totalt pris: " + totalPrice);
+        System.out.println("Totalt pris:"+ totalPrice);
         return totalPrice;
     }
 

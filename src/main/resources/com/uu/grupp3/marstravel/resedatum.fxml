@@ -17,57 +17,56 @@
 
 
         <Circle fx:id="cVarukorgen" fill="WHITE" layoutX="1225.0" layoutY="53.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
-        <Button fx:id="btnNASTA" layoutX="1109.0" layoutY="620.0" mnemonicParsing="false" onAction="#handleNastaButtonClick" text="NÄSTA">
+        <Button fx:id="btnNASTA" layoutX="1117.0" layoutY="620.0" mnemonicParsing="false" onAction="#handleNastaButtonClick" prefHeight="51.0" prefWidth="110.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="buttonResedatumNasta" stylesheets="@styles.css" text="NÄSTA" textFill="#eed2a7">
             <font>
                 <Font size="24.0" />
             </font>
         </Button>
-        <Button fx:id="btnVALJAkundinfo" onAction="#SideBarButtons" layoutX="47.0" layoutY="637.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="KUNDINFORMATION" />
-        <Button fx:id="btnVALJAbetalkort" onAction="#SideBarButtons" layoutX="47.0" layoutY="589.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="BETALKORT" />
-        <Button fx:id="btnVALJAhalsoforsakring" onAction="#SideBarButtons" layoutX="47.0" layoutY="541.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HÄLSOFÖRSÄKRING" />
-        <Button fx:id="btnVALJAevenemanghem" onAction="#SideBarButtons" layoutX="47.0" layoutY="492.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="EVENEMANG HEM" />
-        <Button fx:id="btnVALJAmatpakethem" onAction="#SideBarButtons" layoutX="47.0" layoutY="443.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="MATPAKET HEM" />
-        <Button fx:id="btnVALJAhytthem" onAction="#SideBarButtons" layoutX="47.0" layoutY="396.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HYTTER HEM" />
-        <Button fx:id="btnVALJAhotellmars" onAction="#SideBarButtons" layoutX="47.0" layoutY="348.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HOTELL MARS" />
-        <Button fx:id="btnVALJAevenemangdit" onAction="#SideBarButtons" layoutX="47.0" layoutY="300.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="EVENEMANG" />
-        <Button fx:id="btnVALJAmatpaketdit" onAction="#SideBarButtons" layoutX="47.0" layoutY="252.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="MATPAKET" />
-        <Button fx:id="btnVALJAhyttdit" onAction="#SideBarButtons" layoutX="47.0" layoutY="203.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HYTTER" />
-        <Button fx:id="btnVALJAresedatum" onAction="#SideBarButtons" layoutX="47.0" layoutY="155.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="RESEDATUM" />
-        <ChoiceBox fx:id="Avresa_ar" layoutX="232.0" layoutY="283.0" prefWidth="150.0" />
-        <Text fx:id="Avresatext" fill="#c7511b" layoutX="269.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avresa ">
+        <Button fx:id="btnVALJAkundinfo" layoutX="46.0" layoutY="632.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonKundinfo" stylesheets="@styles.css" text="KUNDINFORMATION" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAbetalkort" layoutX="46.0" layoutY="585.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonBetalkort" stylesheets="@styles.css" text="BETALKORT" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAhalsoforsakring" layoutX="46.0" layoutY="538.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonHalsoforsakring" stylesheets="@styles.css" text="HÄLSOFÖRSÄKRING" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAevenemanghem" layoutX="46.0" layoutY="491.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonEvenemangHem" stylesheets="@styles.css" text="EVENEMANG HEM" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAmatpakethem" layoutX="46.0" layoutY="444.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonMatpaketHem" stylesheets="@styles.css" text="MATPAKET HEM" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAhytthem" layoutX="46.0" layoutY="397.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonHytterHem" stylesheets="@styles.css" text="HYTTER HEM" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAhotellmars" layoutX="46.0" layoutY="350.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonHotelMars" stylesheets="@styles.css" text="HOTELL MARS" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAevenemangdit" layoutX="46.0" layoutY="303.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonEvenemang" stylesheets="@styles.css" text="EVENEMANG" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAmatpaketdit" layoutX="46.0" layoutY="256.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonMatpaket" stylesheets="@styles.css" text="MATPAKET" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAhyttdit" layoutX="46.0" layoutY="209.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonHytter" stylesheets="@styles.css" text="HYTTER" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAresedatum" layoutX="46.0" layoutY="162.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonResedatum" stylesheets="@styles.css" text="RESEDATUM" textFill="#eed2a7" />
+        <ChoiceBox fx:id="Avresa_ar" layoutX="272.0" layoutY="313.0" prefWidth="150.0" />
+        <Text fx:id="Avresatext" fill="#c7511b" layoutX="289.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avresa ">
             <font>
-                <Font size="24.0" />
+                <Font name="Century Gothic" size="36.0" />
             </font>
         </Text>
-        <Line endX="215.33331298828125" endY="509.66668701171875" layoutX="333.0" layoutY="171.0" startX="215.33331298828125" startY="10.66668701171875" />
-        <Text fill="#f2eeee" layoutX="296.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="År:">
-            <font>
-                <Font size="18.0" />
-            </font>
-        </Text>
-        <Text fill="#f6f4f4" layoutX="275.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månad: ">
+        <Line endX="215.33331298828125" endY="509.66668701171875" layoutX="353.0" layoutY="171.0" startX="215.33331298828125" startY="10.66668701171875" />
+        <Text fill="#f2eeee" layoutX="336.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="År:">
             <font>
                 <Font size="18.0" />
             </font>
         </Text>
-        <ChoiceBox fx:id="Avresa_manad" layoutX="232.0" layoutY="519.0" prefWidth="150.0" />
-        <Text fx:id="Hemresatext" fill="#c7511b" layoutX="736.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hemresa">
-            <font>
-                <Font size="24.0" />
-            </font>
-        </Text>
-        <Text fill="#f6f2f2" layoutX="783.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="År:">
+        <Text fill="#f6f4f4" layoutX="315.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månad: ">
             <font>
                 <Font size="18.0" />
             </font>
         </Text>
-        <ChoiceBox fx:id="Hemresa_ar" layoutX="719.0" layoutY="282.0" prefWidth="150.0" />
-        <Text fill="#f4f2f2" layoutX="764.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månad:">
+        <ChoiceBox fx:id="Avresa_manad" layoutX="272.0" layoutY="489.0" prefWidth="150.0" />
+        <Text fx:id="Hemresatext" fill="#c7511b" layoutX="716.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hemresa">
+            <font>
+                <Font name="Century Gothic" size="36.0" />
+            </font>
+        </Text>
+        <Text fill="#f6f2f2" layoutX="783.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="År:">
             <font>
                 <Font size="18.0" />
             </font>
         </Text>
-        <ChoiceBox fx:id="HemresaMånad" layoutX="719.0" layoutY="519.0" prefWidth="150.0" />
+        <ChoiceBox fx:id="Hemresa_ar" layoutX="718.0" layoutY="313.0" prefWidth="150.0" />
+        <Text fill="#f4f2f2" layoutX="763.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månad:">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Text>
+        <ChoiceBox fx:id="HemresaMånad" layoutX="719.0" layoutY="489.0" prefWidth="150.0" />
     </children>
 </AnchorPane>
-

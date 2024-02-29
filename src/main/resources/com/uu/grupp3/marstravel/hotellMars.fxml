@@ -15,17 +15,17 @@
         <URL value="@styles2.css" />
     </stylesheets>
     <children>
-        <Label fx:id="lblhotellalternativ" layoutX="252.0" layoutY="183.0" text="Hotellalternativ" textFill="#c7511b">
+        <Label fx:id="lblhotellalternativ" layoutX="252.0" layoutY="180.0" text="Hotellalternativ" textFill="#c7511b">
             <font>
                 <Font name="Century Gothic" size="36.0" />
             </font>
         </Label>
-        <RadioButton fx:id="rbtnWeilders" layoutX="252.0" layoutY="285.0" mnemonicParsing="false" text="Polar Wielders" textFill="WHITE">
+        <RadioButton fx:id="rbtnWeilders" layoutX="252.0" layoutY="292.0" mnemonicParsing="false" text="Polar Wielders" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnLansdorp" layoutX="252.0" layoutY="249.0" mnemonicParsing="false" text="Polar Lansdorp" textFill="WHITE">
+        <RadioButton fx:id="rbtnLansdorp" layoutX="252.0" layoutY="256.0" mnemonicParsing="false" text="Polar Lansdorp" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
@@ -45,17 +45,17 @@
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <Label fx:id="lblPrismånad" layoutX="549.0" layoutY="183.0" text="Pris (månad)" textFill="#c7511b">
+        <Label fx:id="lblPrismånad" layoutX="549.0" layoutY="180.0" text="Pris (månad)" textFill="#c7511b">
             <font>
                 <Font name="Century Gothic" size="36.0" />
             </font>
         </Label>
-        <Label fx:id="lblLansdorpPris" layoutX="549.0" layoutY="250.0" text="3500kr/bädd" textFill="WHITE">
+        <Label fx:id="lblLansdorpPris" layoutX="549.0" layoutY="257.0" text="3500kr/bädd" textFill="WHITE">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label fx:id="lblWeildersPris" layoutX="549.0" layoutY="286.0" text="5000kr/bädd" textFill="WHITE">
+        <Label fx:id="lblWeildersPris" layoutX="549.0" layoutY="293.0" text="5000kr/bädd" textFill="WHITE">
             <font>
                 <Font size="18.0" />
             </font>
@@ -75,12 +75,12 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <Button fx:id="btnLansdorpInfo" layoutX="784.0" layoutY="251.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnLansdorpInfo" layoutX="784.0" layoutY="258.0" mnemonicParsing="false" text=" i ">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnWeildersInfo" layoutX="784.0" layoutY="287.0" mnemonicParsing="false" text=" i ">
+        <Button fx:id="btnWeildersInfo" layoutX="784.0" layoutY="294.0" mnemonicParsing="false" text=" i ">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
@@ -101,23 +101,23 @@
             </font>
         </Button>
         <Circle fx:id="cVarukorgen" fill="WHITE" layoutX="1225.0" layoutY="53.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
-        <Button fx:id="btnNASTA" layoutX="1109.0" layoutY="620.0" mnemonicParsing="false" text="NÄSTA">
+        <Button fx:id="btnNASTA" layoutX="1117.0" layoutY="620.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="110.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="buttonHotellMarsNasta" stylesheets="@styles.css" text="NÄSTA" textFill="#eed2a7">
             <font>
                 <Font size="24.0" />
             </font>
         </Button>
-        <Button fx:id="btnVALJAkundinfo" onAction="#SideBarButtons" layoutX="47.0" layoutY="637.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="KUNDINFORMATION" />
-        <Button fx:id="btnVALJAbetalkort" onAction="#SideBarButtons" layoutX="47.0" layoutY="589.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="BETALKORT" />
-        <Button fx:id="btnVALJAhalsoforsakring" onAction="#SideBarButtons" layoutX="47.0" layoutY="541.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HÄLSOFÖRSÄKRING" />
-        <Button fx:id="btnVALJAevenemanghem" onAction="#SideBarButtons" layoutX="47.0" layoutY="492.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="EVENEMANG HEM" />
-        <Button fx:id="btnVALJAmatpakethem" onAction="#SideBarButtons" layoutX="47.0" layoutY="443.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="MATPAKET HEM" />
-        <Button fx:id="btnVALJAhytthem" onAction="#SideBarButtons" layoutX="47.0" layoutY="396.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HYTTER HEM" />
-        <Button fx:id="btnVALJAhotellmars" onAction="#SideBarButtons" layoutX="47.0" layoutY="348.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HOTELL MARS" />
-        <Button fx:id="btnVALJAevenemangdit" onAction="#SideBarButtons" layoutX="47.0" layoutY="300.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="EVENEMANG" />
-        <Button fx:id="btnVALJAmatpaketdit" onAction="#SideBarButtons" layoutX="47.0" layoutY="252.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="MATPAKET" />
-        <Button fx:id="btnVALJAhyttdit" onAction="#SideBarButtons" layoutX="47.0" layoutY="203.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="HYTTER" />
-        <Button fx:id="btnVALJAresedatum" onAction="#SideBarButtons" layoutX="47.0" layoutY="155.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="130.0" text="RESEDATUM" />
-      <Label fx:id="lblEndastBaddar" layoutX="233.0" layoutY="232.0" text="Endast bäddar">
+        <Button fx:id="btnVALJAkundinfo" layoutX="46.0" layoutY="632.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonKundinfo" stylesheets="@styles.css" text="KUNDINFORMATION" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAbetalkort" layoutX="46.0" layoutY="585.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonBetalkort" stylesheets="@styles.css" text="BETALKORT" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAhalsoforsakring" layoutX="46.0" layoutY="538.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonHalsoforsakring" stylesheets="@styles.css" text="HÄLSOFÖRSÄKRING" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAevenemanghem" layoutX="46.0" layoutY="491.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonEvenemangHem" stylesheets="@styles.css" text="EVENEMANG HEM" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAmatpakethem" layoutX="46.0" layoutY="444.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonMatpaketHem" stylesheets="@styles.css" text="MATPAKET HEM" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAhytthem" layoutX="46.0" layoutY="397.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonHytterHem" stylesheets="@styles.css" text="HYTTER HEM" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAhotellmars" layoutX="46.0" layoutY="350.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonHotelMars" stylesheets="@styles.css" text="HOTELL MARS" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAevenemangdit" layoutX="46.0" layoutY="303.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonEvenemang" stylesheets="@styles.css" text="EVENEMANG" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAmatpaketdit" layoutX="46.0" layoutY="256.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonMatpaket" stylesheets="@styles.css" text="MATPAKET" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAhyttdit" layoutX="46.0" layoutY="209.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonHytter" stylesheets="@styles.css" text="HYTTER" textFill="#eed2a7" />
+        <Button fx:id="btnVALJAresedatum" layoutX="46.0" layoutY="162.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttonResedatum" stylesheets="@styles.css" text="RESEDATUM" textFill="#eed2a7" />
+      <Label fx:id="lblEndastBaddar" layoutX="254.0" layoutY="226.0" text="Endast bäddar" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
