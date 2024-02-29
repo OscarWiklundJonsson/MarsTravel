@@ -89,19 +89,7 @@ public class HotellMarsController {
     private Label lblDeimosEnkelPris;
 
     @FXML
-    private Label lblEndastBaddar;
-
-    @FXML
-    private Label lblHotelDeimos;
-
-    @FXML
-    private Label lblHotelPhobos;
-
-    @FXML
     private Label lblLansdorpPris;
-
-    @FXML
-    private Label lblMTheader;
 
     @FXML
     private Label lblPhobosDubbelPris;
@@ -111,9 +99,6 @@ public class HotellMarsController {
 
     @FXML
     private Label lblPrismånad;
-
-    @FXML
-    private Label lblRoyalCity;
 
     @FXML
     private Label lblRoyalDubbelPris;
