@@ -153,7 +153,7 @@ public class HytterHemController {
                 if (storeTravelChoices.getEvenemangHem() != null) {
                     storeTravelChoices.removeEvenemangHem();
                 }
-                nextButton.nextButton("/com/uu/grupp3/marstravel/sparaKundInformation.fxml", stage); // Ändra till nästa sida
+                nextButton.nextButton("/com/uu/grupp3/marstravel/halsoforsakring.fxml", stage); // Ändra till nästa sida
             } else {
                 nextButton.nextButton("/com/uu/grupp3/marstravel/matpaketHem.fxml", stage);
             }
