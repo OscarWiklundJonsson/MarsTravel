@@ -7,9 +7,12 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.control.RadioButton;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+
+import com.uu.grupp3.marstravel.services.StoreTravelChoices;
 
 public class HotellMarsController {
 
@@ -156,7 +159,32 @@ public class HotellMarsController {
 
     //nästa knapp, skickar vidare till hytterHem sidan.
     public void initialize() {
+        ToggleGroup group = new ToggleGroup();
+        StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
+
+        rbtnDeimosDubbel.setToggleGroup(group);
+        rbtnDeimosEnkel.setToggleGroup(group);
+        rbtnLansdorp.setToggleGroup(group);
+        rbtnPhobosDubbel.setToggleGroup(group);
+        rbtnPhobosEnkel.setToggleGroup(group);
+        rbtnRoyalDubbel.setToggleGroup(group);
+        rbtnRoyalEnkel.setToggleGroup(group);
+        rbtnRoyalSvit.setToggleGroup(group);
+        rbtnWeilders.setToggleGroup(group);
+
+        btnNASTA.setDisable(true);
+
+        group.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            if (group.getSelectedToggle() != null) {
+                btnNASTA.setDisable(false);
+            }
+        });
+
         btnNASTA.setOnAction(event -> {
+            if (storeTravelChoices.getHotell() != null) {
+                storeTravelChoices.removeHotell();
+            }
+            storeTravelChoices.storeSelectedRadioButton(group, "Hotell: ");
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnNASTA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/hytterHem.fxml", stage);

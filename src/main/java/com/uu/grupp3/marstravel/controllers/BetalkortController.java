@@ -59,26 +59,33 @@ public class BetalkortController {
         private TextField tfbetalkort;
 
     public void initialize() {
-        // Funktion för att endast välja en radioknapp för mat ( @TODO gör om till en generell funktion )
-        ToggleGroup group = new ToggleGroup();
-
-        btnNÄSTA.setDisable(true);
-
-        group.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
-            if (group.getSelectedToggle() != null) {
-                btnNÄSTA.setDisable(false);
-            }
-        });
 
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
         StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
 
-        // Nästa knappen. Skickar användaren till nästa sida. (evenemang). Använder sig av NextButton klassen som är en service klass.
-        btnNÄSTA.setOnAction(event -> {
-            if (storeTravelChoices.getMat() != null) {
-                storeTravelChoices.removeMat();
+        btnNÄSTA.setDisable(true);
+
+        // Filter
+        tfbetalkort.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                tfbetalkort.setText(newValue.replaceAll("[^\\d]", ""));
             }
-            storeTravelChoices.storeSelectedRadioButton(group, "Betalkort: ");
+        });
+
+        // Add a listener to the TextField
+        tfbetalkort.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.trim().isEmpty() && Integer.parseInt(newValue.trim()) >= 20000) {
+                btnNÄSTA.setDisable(false);
+            } else {
+                btnNÄSTA.setDisable(true);
+            }
+        });
+
+        btnNÄSTA.setOnAction(event -> {
+            if (storeTravelChoices.getBetalkort() != null) {
+                storeTravelChoices.removeBetalkort();
+            }
+            storeTravelChoices.storeTextFieldValue(tfbetalkort.getText(), "Betalkort: ");
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnNÄSTA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/sparaKundInformation.fxml", stage);

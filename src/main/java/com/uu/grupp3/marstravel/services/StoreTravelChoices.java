@@ -46,7 +46,9 @@ public class StoreTravelChoices {
         String selectedValue = choiceBox.getValue();
         writeToFile(prefix + selectedValue);
     }
-
+    public void storeTextFieldValue(String value, String label) {
+        writeToFile(label + value);
+    }
     /**
      * Stores the selected check box in a file
      * @param content the content to be written to the file ( e.g. "Hälsoförsäkring: Hälsoförsäkring" )
@@ -166,6 +168,16 @@ public class StoreTravelChoices {
         return getLineContaining("Hälsoförsäkring: ");
     }
 
+    public String getBetalkort() {
+        return getLineContaining("Betalkort: ");
+    }
+
+
+    public String getHotell() {
+        return getLineContaining("Hotell: ");
+    }
+
+
     public void removeDate() {
         removeLineContaining(" till ");
     }
@@ -201,4 +213,14 @@ public class StoreTravelChoices {
         removeLineContaining("TeaterpremiarerHem: ");
         removeLineContaining("KonserterHem: ");
     }
+
+    public void removeHotell() {
+        removeLineContaining("Hotell: ");
+    }
+
+    public void removeBetalkort() {
+        removeLineContaining("Betalkort: ");
+    }
+
+
 }

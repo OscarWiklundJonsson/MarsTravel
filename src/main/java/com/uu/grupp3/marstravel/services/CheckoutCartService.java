@@ -27,7 +27,7 @@ public class CheckoutCartService {
             while ((line = reader.readLine()) != null) {
                 if (line.contains("Hytt: ")) {
                     String[] parts = line.split(": ");
-                    String hyttType = parts[1]; // this is the text after "Hytt: "
+                    String hyttType = parts[1];
                     switch (hyttType) {
                         case "Economy":
                             //totalPrice += databaseReciveInformation.getPriceFromDatabase("Economy", "HyttInformation");
@@ -55,7 +55,7 @@ public class CheckoutCartService {
                     }
                 } else if (line.contains("HyttHem: ")) {
                     String[] parts = line.split(": ");
-                    String hyttType = parts[1]; // this is the text after "Hytt: "
+                    String hyttType = parts[1];
                     switch (hyttType) {
                         case "Economy":
                             //totalPrice += databaseReciveInformation.getPriceFromDatabase("Economy", "HyttInformation");
@@ -83,7 +83,7 @@ public class CheckoutCartService {
                     }
                 } else if (line.contains("Matpaket: ")) {
                     String[] parts = line.split(": ");
-                    String matType = parts[1]; // this is the text after "Matpaket: "
+                    String matType = parts[1];
                     switch (matType) {
                         case "Budget 1":
                             //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget1", "MatpaketInformation");
@@ -127,7 +127,7 @@ public class CheckoutCartService {
                 }
                 } else if (line.contains("MatpaketHem: ")) {
                     String[] parts = line.split(": ");
-                    String matType = parts[1]; // this is the text after "Matpaket: "
+                    String matType = parts[1];
                     switch (matType) {
                         case "Budget 1":
                             //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget1", "MatpaketInformation");
@@ -174,14 +174,14 @@ public class CheckoutCartService {
                 }             else if (line.contains("Konserter: ")) {
                     String[] parts = line.split(": ");
                     if (parts.length > 1) {
-                        String evenemangType = parts[1].split(" ")[0]; // this is the text after "Konserter: "
+                        String evenemangType = parts[1].split(" ")[0];
                         int numberOfTickets = Integer.parseInt(parts[1].trim());
                         totalPrice += numberOfTickets * 30000;
                     }
                 } else if (line.contains("Teaterpremiarer: ")) {
                     String[] parts = line.split(": ");
                     if (parts.length > 1) {
-                        String evenemangType = parts[1].split(" ")[0]; // this is the text after "Teaterpremiarer: "
+                        String evenemangType = parts[1].split(" ")[0];
                         int numberOfTickets = Integer.parseInt(parts[1].trim());
                         totalPrice += numberOfTickets * 28000;
                     }
@@ -195,8 +195,8 @@ public class CheckoutCartService {
 
                 } else if (line.contains("Hälsoförsäkring: ")) {
                     String[] parts = line.split(": ");
-                    String matType = parts[1]; // this is the text after "Matpaket: "
-                    switch (matType) {
+                    String healthIns = parts[1];
+                    switch (healthIns) {
                         case "---":
                             //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget1", "MatpaketInformation");
                             totalPrice += 0;
@@ -207,6 +207,45 @@ public class CheckoutCartService {
                             break;
 
                     }
+                }else if (line.contains("Hotell: ")) {
+                    String[] parts = line.split(": ");
+                    String hotellType = parts[1]; // this is the text after "Matpaket: "
+                    switch (hotellType) {
+                        case "Polar Lansdorp":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget1", "MatpaketInformation");
+                            totalPrice += 3500;
+                            break;
+                        case "Polar Wielders":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
+                            totalPrice += 5000;
+                            break;
+                        case "Enkelrum":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
+                            totalPrice += 7500;
+                            break;
+                        case "Dubbelrum":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
+                            totalPrice += 12000;
+                            break;
+                        case "Enkel Lyx":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
+                            totalPrice += 20000;
+                            break;
+                        case "Dubbel Lyx":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
+                            totalPrice += 35000;
+                            break;
+                        case "Svit":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
+                            totalPrice += 50000;
+                            break;
+                    }
+
+                }else if (line.contains("Betalkort: ")) {
+                    String[] parts = line.split(": ");
+                    String betalKortAmount = parts[1].trim(); // this is the text after "Betalkort: "
+                    int betalKortAmountInt = Integer.parseInt(betalKortAmount);
+                    totalPrice += betalKortAmountInt;
                 }
             }
         } catch (IOException e) {
