@@ -33,7 +33,7 @@
         <Button fx:id="btnVALJAmatpaketdit" layoutX="46.0" layoutY="256.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="MATPAKET" textFill="#eed2a7" />
         <Button fx:id="btnVALJAhyttdit" layoutX="46.0" layoutY="209.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="HYTTER" textFill="#eed2a7" />
         <Button fx:id="btnVALJAresedatum" layoutX="46.0" layoutY="162.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="RESEDATUM" textFill="#eed2a7" />
-        <ChoiceBox fx:id="Avresa_ar" layoutX="272.0" layoutY="313.0" prefWidth="150.0" />
+        <ChoiceBox fx:id="Avresa_ar" layoutX="272.0" layoutY="313.0" prefWidth="150.0" styleClass="choiceBox" stylesheets="@styles.css"/>
         <Text fx:id="Avresatext" fill="#c7511b" layoutX="289.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avresa ">
             <font>
                 <Font name="Century Gothic" size="36.0" />
@@ -50,7 +50,7 @@
                 <Font size="18.0" />
             </font>
         </Text>
-        <ChoiceBox fx:id="Avresa_manad" layoutX="272.0" layoutY="489.0" prefWidth="150.0" />
+        <ChoiceBox fx:id="Avresa_manad" layoutX="272.0" layoutY="489.0" prefWidth="150.0" styleClass="choiceBox" stylesheets="@styles.css"/>
         <Text fx:id="Hemresatext" fill="#c7511b" layoutX="716.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hemresa">
             <font>
                 <Font name="Century Gothic" size="36.0" />
@@ -61,12 +61,12 @@
                 <Font size="18.0" />
             </font>
         </Text>
-        <ChoiceBox fx:id="Hemresa_ar" layoutX="718.0" layoutY="313.0" prefWidth="150.0" />
+        <ChoiceBox fx:id="Hemresa_ar" layoutX="718.0" layoutY="313.0" prefWidth="150.0" styleClass="choiceBox" stylesheets="@styles.css"/>
         <Text fill="#f4f2f2" layoutX="763.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månad:">
             <font>
                 <Font size="18.0" />
             </font>
         </Text>
-        <ChoiceBox fx:id="HemresaMånad" layoutX="719.0" layoutY="489.0" prefWidth="150.0" />
+        <ChoiceBox fx:id="HemresaMånad" layoutX="719.0" layoutY="489.0" prefWidth="150.0" styleClass="choiceBox" stylesheets="@styles.css"/>
     </children>
 </AnchorPane>

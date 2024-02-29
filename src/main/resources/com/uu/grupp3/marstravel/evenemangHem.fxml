@@ -23,7 +23,7 @@
                 <Font size="24.0" />
             </font>
             <graphic>
-                <ChoiceBox fx:id="cboxFilmpremiarer" prefHeight="33.0" prefWidth="16.0" />
+                <ChoiceBox fx:id="cboxFilmpremiarer" prefHeight="33.0" prefWidth="16.0" styleClass="choiceBox" stylesheets="@styles.css"/>
             </graphic>
         </Label>
         <Label fx:id="lblTillagPris" layoutX="549.0" layoutY="203.0" text="Pris" textFill="#c7511b">
@@ -83,7 +83,7 @@
                 <Font size="24.0" />
             </font>
             <graphic>
-                <ChoiceBox fx:id="cboxConcert" prefHeight="33.0" prefWidth="43.0" />
+                <ChoiceBox fx:id="cboxConcert" prefHeight="33.0" prefWidth="43.0" styleClass="choiceBox" stylesheets="@styles.css"/>
             </graphic>
         </Label>
         <Label fx:id="lblTheaterpremiarer" layoutX="252.0" layoutY="428.0" text="Teaterpremiärer" textFill="WHITE">
@@ -91,7 +91,7 @@
                 <Font size="24.0" />
             </font>
             <graphic>
-                <ChoiceBox fx:id="cboxTheaterpremiarer" prefHeight="33.0" prefWidth="43.0" />
+                <ChoiceBox fx:id="cboxTheaterpremiarer" prefHeight="33.0" prefWidth="43.0" styleClass="choiceBox" stylesheets="@styles.css"/>
             </graphic>
         </Label>
         <Label fx:id="lblAntal" layoutX="242.0" layoutY="280.0" text="VÄLJ ANTAL" textFill="WHITE">
