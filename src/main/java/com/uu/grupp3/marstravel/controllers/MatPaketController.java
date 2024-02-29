@@ -1,7 +1,6 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
-import com.uu.grupp3.marstravel.services.CheckoutCartService;
 import com.uu.grupp3.marstravel.services.NextButton;
 import com.uu.grupp3.marstravel.services.SideBarButtons;
 import com.uu.grupp3.marstravel.services.StoreTravelChoices;
@@ -12,7 +11,6 @@ import javafx.scene.control.*;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 
 public class MatPaketController {
     @FXML
@@ -145,7 +143,7 @@ public class MatPaketController {
 
 
     public void initialize() {
-        // Funktion för att endast välja en radioknapp för mat ( @TODO gör om till en generell funktion )
+        // Funktion för att endast välja en radioknapp för mat ( @TODO gör om till en generell funktion)
         ToggleGroup group = new ToggleGroup();
         rbtnBudget1.setToggleGroup(group);
         rbtnBudget2.setToggleGroup(group);

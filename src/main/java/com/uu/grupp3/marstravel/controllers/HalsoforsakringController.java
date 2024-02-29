@@ -75,8 +75,8 @@ public class HalsoforsakringController {
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
         StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
 
-        //Pop-Up ändra till info on hälsoförsäkring @todo
-        btnhalsofinfo.setOnAction(event -> dbInfo.showInfoFromDB("Hälsoförsäkring", "Budget 1", "Hälsoförsäkring", 1));
+        //Pop-Up ändra till info on hälsoförsäkring
+        btnhalsofinfo.setOnAction(event -> dbInfo.showInfoFromDB("Hälsoförsäkring", "Hälsoförsäkring", "Hälsoförsäkring", 1));
 
         //rbtnhalsof
         rbtnhalsof.setToggleGroup(group);

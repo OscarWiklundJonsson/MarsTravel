@@ -65,14 +65,14 @@ public class BetalkortController {
 
         btnNÄSTA.setDisable(true);
 
-        // Filter
+        // Filter för att endast siffror ska kunna skrivas in i textfältet
         tfbetalkort.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
                 tfbetalkort.setText(newValue.replaceAll("[^\\d]", ""));
             }
         });
 
-        // Add a listener to the TextField
+        // Kontrollerar att summan som ska laddas på betalkortet är minst 20000, är det det så aktiveras knappen NÄSTA
         tfbetalkort.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.trim().isEmpty() && Integer.parseInt(newValue.trim()) >= 20000) {
                 btnNÄSTA.setDisable(false);

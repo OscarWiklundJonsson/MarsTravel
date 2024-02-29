@@ -7,6 +7,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Nästa knapp som tar användaren till nästa fönster
+ */
 public class NextButton {
     public void nextButton(String pathToNextFXML, Stage stage) {
         try {

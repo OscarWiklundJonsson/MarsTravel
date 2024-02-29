@@ -14,7 +14,6 @@ import javafx.scene.control.Alert;
 
 // Akta dig för denna kod, den är skriven av en person som inte kan programmera alls.
 
-// @todo extract method osv
 public class CheckoutCartService {
     DatabaseReciveInformation databaseReciveInformation = new DatabaseReciveInformation();
     public double calculateTotalPrice() throws IOException {
@@ -171,7 +170,7 @@ public class CheckoutCartService {
                     }
 
                     // Evenemang
-                }             else if (line.contains("Konserter: ")) {
+                }else if (line.contains("Konserter: ")) {
                     String[] parts = line.split(": ");
                     if (parts.length > 1) {
                         String evenemangType = parts[1].split(" ")[0];
@@ -257,7 +256,6 @@ public class CheckoutCartService {
     }
 
     public void checkoutCartClearCart() {
-        // delete the file "travelChoices.txt"
         String fileName = "travelChoices.txt";
         Path path = Paths.get(fileName);
         try {

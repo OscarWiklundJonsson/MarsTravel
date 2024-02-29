@@ -16,6 +16,7 @@ import java.util.List;
 
 public class StoreTravelChoices {
     private static final String FILE_NAME = "travelChoices.txt"; // Filnamnet ;)
+
     /**
      * Stores the selected radio button in a file
      * @param group the toggle group
@@ -44,6 +45,12 @@ public class StoreTravelChoices {
         String selectedValue = choiceBox.getValue();
         writeToFile(prefix + selectedValue);
     }
+
+    /**
+     * Stores the selected check box in a file
+     * @param value
+     * @param label
+     */
     public void storeTextFieldValue(String value, String label) {
         writeToFile(label + value);
     }
@@ -165,11 +172,9 @@ public class StoreTravelChoices {
         return getLineContaining("Betalkort: ");
     }
 
-
     public String getHotell() {
         return getLineContaining("Hotell: ");
     }
-
 
     public void removeDate() {
         removeLineContaining(" till ");
