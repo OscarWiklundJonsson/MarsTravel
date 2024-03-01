@@ -1,9 +1,18 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.database.DatabaseHandler;
+import com.uu.grupp3.marstravel.services.CheckoutCartService;
+import com.uu.grupp3.marstravel.services.NextButton;
+import com.uu.grupp3.marstravel.services.SideBarButtons;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,16 +21,62 @@ import java.sql.SQLException;
 public class SparaKundController {
 
     @FXML
-    private TextField firstNameField;
+    private Button btnKASSA;
 
     @FXML
-    private TextField lastNameField;
+    private Button btnVALJAbetalkort;
 
     @FXML
-    private TextField phoneField;
+    private Button btnVALJAevenemangdit;
 
     @FXML
-    private TextField emailField;
+    private Button btnVALJAevenemanghem;
+
+    @FXML
+    private Button btnVALJAhalsoforsakring;
+
+    @FXML
+    private Button btnVALJAhotellmars;
+
+    @FXML
+    private Button btnVALJAhyttdit;
+
+    @FXML
+    private Button btnVALJAhytthem;
+
+    @FXML
+    private Button btnVALJAkundinfo;
+
+    @FXML
+    private Button btnVALJAmatpaketdit;
+
+    @FXML
+    private Button btnVALJAmatpakethem;
+
+    @FXML
+    private Button btnVALJAresedatum;
+
+    @FXML
+    private Circle cVarukorgen;
+
+    @FXML
+    private Label lblkundinfo;
+
+    @FXML
+    private TextField tfemail;
+
+    @FXML
+    private TextField tffirstname;
+
+    @FXML
+    private TextField tflastname;
+
+    @FXML
+    private TextField tfphonenumber;
+
+    @FXML
+    private Button varukorg;
+
 
     // Method to save a customer to the database
 
@@ -33,10 +88,10 @@ public class SparaKundController {
      * @throws ClassNotFoundException
      */
     public void saveCustomer() {
-        String firstName = firstNameField.getText();
-        String lastName = lastNameField.getText();
-        String phone = phoneField.getText();
-        String email = emailField.getText();
+        String firstName = tffirstname.getText();
+        String lastName = tflastname.getText();
+        String phone = tfphonenumber.getText();
+        String email = tfemail.getText();
 
         // Check if all fields are filled
         if (firstName.isEmpty() || lastName.isEmpty() || phone.isEmpty() || email.isEmpty()) {
@@ -68,10 +123,10 @@ public class SparaKundController {
             alert.showAndWait();
 
             // Clear the text fields
-            firstNameField.clear();
-            lastNameField.clear();
-            phoneField.clear();
-            emailField.clear();
+            tffirstname.clear();
+            tflastname.clear();
+            tfphonenumber.clear();
+            tfemail.clear();
 
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -85,7 +140,72 @@ public class SparaKundController {
             alert.showAndWait();
         }
     }
-    // Method to continue to the main page(?) after saving a customer
-    public void continueToMain() {
+    //nästa knapp, skickar vidare till hytterHem sidan.
+    private CheckoutCartService checkoutCartService = new CheckoutCartService();
+
+    public void initialize() {
+        btnKASSA.setOnAction(event -> {
+            NextButton nextButton = new NextButton();
+            Stage stage = (Stage) btnKASSA.getScene().getWindow();
+            // Här skulle min metod för att spara kundinformationen till databasen vara
+            // Men någon, som jag inte vet vem det är, har tagit bort den. Tack.
+            nextButton.nextButton("/com/uu/grupp3/marstravel/boka.fxml", stage); //ska skickas till varukorgen sen.
+        });
+
+        // denna beast som visar varukorgen
+        varukorg.setOnAction(event -> {
+            try {
+                checkoutCartService.showCheckoutCart();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        btnVALJAkundinfo.setDisable(true);
+    }
+    private SideBarButtons sideBarButtons = new SideBarButtons();
+
+    @FXML
+    private void SideBarButtons(ActionEvent event) { // Snälla gör detta till en egen klass, jag ber er.
+        String fxmlPath = null;
+
+        if (event.getSource() == btnVALJAevenemangdit) {
+            fxmlPath = "/com/uu/grupp3/marstravel/evenemang.fxml";
+            System.out.println("Evenemang");
+        } else if (event.getSource() == btnVALJAmatpaketdit) {
+            fxmlPath = "/com/uu/grupp3/marstravel/matpaket.fxml";
+            System.out.println("Matpaket");
+        } else if (event.getSource() == btnVALJAhyttdit) {
+            fxmlPath = "/com/uu/grupp3/marstravel/hytter.fxml";
+            System.out.println("Hytter");
+        } else if (event.getSource() == btnVALJAresedatum) {
+            fxmlPath = "/com/uu/grupp3/marstravel/resedatum.fxml";
+            System.out.println("Resedatum");
+        } else if (event.getSource() == btnVALJAkundinfo) {
+            fxmlPath = "/com/uu/grupp3/marstravel/sparaKundinformation.fxml";
+            System.out.println("Kundinformation");
+        } else if (event.getSource() == btnVALJAbetalkort) {
+            fxmlPath = "/com/uu/grupp3/marstravel/betalkort.fxml";
+            System.out.println("Betalkort");
+        } else if (event.getSource() == btnVALJAhalsoforsakring) {
+            fxmlPath = "/com/uu/grupp3/marstravel/halsoforsakring.fxml";
+            System.out.println("Hälsförsäkring");
+        } else if (event.getSource() == btnVALJAevenemanghem) {
+            fxmlPath = "/com/uu/grupp3/marstravel/evenemanghem.fxml";
+            System.out.println("Evenemang hem");
+        } else if (event.getSource() == btnVALJAmatpakethem) {
+            fxmlPath = "/com/uu/grupp3/marstravel/matpaketHem.fxml";
+            System.out.println("Matpaket hem");
+        } else if (event.getSource() == btnVALJAhytthem) {
+            fxmlPath = "/com/uu/grupp3/marstravel/hytterHem.fxml";
+            System.out.println("Hytter hem");
+        } else if (event.getSource() == btnVALJAhotellmars) {
+            fxmlPath = "/com/uu/grupp3/marstravel/hotellMars.fxml";
+            System.out.println("Hotell Mars");
+        }
+
+        if (fxmlPath != null) {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            sideBarButtons.sideBarButton(fxmlPath, stage);
+        }
     }
 }

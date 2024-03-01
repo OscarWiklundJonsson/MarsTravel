@@ -25,7 +25,7 @@ public class DatabaseReciveInformation {
         alert.setTitle(title);
         alert.setHeaderText(null);
 
-        Connection connection = null;
+        Connection connection;
         try {
             connection = DatabaseHandler.getConnection();
             Statement statement = connection.createStatement();
@@ -53,5 +53,24 @@ public class DatabaseReciveInformation {
         }
 
         alert.showAndWait();
+    }
+
+    public double getPriceFromDatabase(String type, String tableName) throws ClassNotFoundException {
+        double price = 0;
+        Connection connection = DatabaseHandler.getConnection();
+
+        try {
+            Statement statement = connection.createStatement();
+            String query = "SELECT Pris FROM " + tableName + " WHERE Namn = '" + type + "'";
+            ResultSet resultSet = statement.executeQuery(query);
+            if (resultSet.next()) {
+                price = resultSet.getDouble(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DatabaseHandler.closeConnection();
+        }
+        return price;
     }
 }

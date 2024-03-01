@@ -1,9 +1,12 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
+import com.uu.grupp3.marstravel.services.NextButton;
 import com.uu.grupp3.marstravel.services.SideBarButtons;
 import com.uu.grupp3.marstravel.services.StoreTravelChoices;
-import com.uu.grupp3.marstravel.services.NextButton;
+import javafx.beans.value.ChangeListener;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -11,25 +14,19 @@ import javafx.scene.control.*;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-public class HytterHemController {
+public class EvenemangHemController {
 
     @FXML
-    private Button btnEcoInfo;
+    private Button btnFilmInfo;
 
     @FXML
-    private Button btnInsideInfo;
+    private Button btnTheatreInfo;
 
     @FXML
     private Button btnNASTA;
 
     @FXML
-    private Button btnSleepInfo;
-
-    @FXML
-    private Button btnSpacesideInfo;
-
-    @FXML
-    private Button btnSvitInfo;
+    private Button btnConcertInfo;
 
     @FXML
     private Button btnVALJAbetalkort;
@@ -68,97 +65,97 @@ public class HytterHemController {
     private Circle cVarukorgen;
 
     @FXML
-    private Label lblEcoPris;
+    private Label lblFilmPris;
 
     @FXML
-    private Label lblInsidePris;
+    private Label lblTheatrePris;
 
     @FXML
-    private Label lblPris;
+    private Label lblConcertPris;
 
     @FXML
-    private Label lblSleepPris;
+    private Label lblEvenemang;
 
     @FXML
-    private Label lblSpacesidePris;
+    private ChoiceBox<String> cboxFilmpremiarer;
+    @FXML
+    private ChoiceBox<String> cboxConcert;
+    @FXML
+    private ChoiceBox<String> cboxTheaterpremiarer;
+
 
     @FXML
-    private Label lblSvitPris;
-
+    private Label lblFilmpremiarer;
     @FXML
-    private Label lblhyttalternativ;
-
+    private Label lblTheaterpremiarer;
     @FXML
-    private RadioButton rbtnEco;
-
+    private Label lblConcert;
     @FXML
-    private RadioButton rbtnInside;
-
-    @FXML
-    private RadioButton rbtnSleep;
-
-    @FXML
-    private RadioButton rbtnSpaceside;
-
-    @FXML
-    private RadioButton rbtnSvit;
+    private Label lblAntal;
 
 
     public void initialize() {
+
+
+
+        //ChoiceBox Filmpremiarer
+        ObservableList<String> filmpremiarerAlternativ = FXCollections.observableArrayList(
+                "0","1", "2", "3", "4", "5", "6"
+        );
+        cboxFilmpremiarer.setItems(filmpremiarerAlternativ);
+        //ChoiceBox Konsert
+        ObservableList<String> concertAlternativ = FXCollections.observableArrayList(
+                "0","1", "2", "3"
+        );
+        cboxConcert.setItems(concertAlternativ);
+        //ChoiceBox Teater
+        ObservableList<String> theaterpremiarerAlternativ = FXCollections.observableArrayList(
+                "0","1", "2", "3"
+        );
+        cboxTheaterpremiarer.setItems(theaterpremiarerAlternativ);
+
+
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
-        StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
 
-        //Pop-Up for EcoInformation
-        btnEcoInfo.setOnAction(event -> dbInfo.showInfoFromDB("Economy", "Hytt Economy", "HyttInformation",1));
-        //Pop-Up for InsideInformation
-        btnInsideInfo.setOnAction(event -> dbInfo.showInfoFromDB("Inside", "Hytt Inside", "HyttInformation",1));
-        //Pop-Up for SleepInformation, Sömnkapsel
-        btnSleepInfo.setOnAction(event -> dbInfo.showInfoFromDB("Sömnkapsel", "Sömnkapsel", "HyttInformation",1));
-        //Pop-Up for hytt Inside
-        btnSpacesideInfo.setOnAction(event -> dbInfo.showInfoFromDB("Spaceside", "Hytt Spaceside", "HyttInformation",1));
-        //Pop-Up for hytt Svit
-        btnSvitInfo.setOnAction(event -> dbInfo.showInfoFromDB("Svit", "Hytt Svit", "HyttInformation",1));
+        //Pop-Up for Concert
+        btnConcertInfo.setOnAction(event -> dbInfo.showInfoFromDB("Konserter", "Konserter", "EvenemangInformation", 1));
+        //Pop-Up for Film
+        btnFilmInfo.setOnAction(event -> dbInfo.showInfoFromDB("Filmpremiärer", "Filmpremiärer", "EvenemangInformation", 1));
+        //Pop-Up for Teater
+        btnTheatreInfo.setOnAction(event -> dbInfo.showInfoFromDB("Teaterpremiärer", "Teaterpremiärer", "EvenemangInformation", 1));
 
-        // Funktion för att endast välja en radioknapp
-        ToggleGroup group = new ToggleGroup();
-        rbtnEco.setToggleGroup(group);
-        rbtnInside.setToggleGroup(group);
-        rbtnSleep.setToggleGroup(group);
-        rbtnSpaceside.setToggleGroup(group);
-        rbtnSvit.setToggleGroup(group);
+        // Add listeners to the ChoiceBoxes
+        ChangeListener<String> choiceBoxListener = (observable, oldValue, newValue) -> {
+            if (cboxFilmpremiarer.getValue() != null && cboxConcert.getValue() != null && cboxTheaterpremiarer.getValue() != null) {
+                btnNASTA.setDisable(false);
+            } else {
+                btnNASTA.setDisable(true);
+            }
+        };
 
+        cboxFilmpremiarer.getSelectionModel().selectedItemProperty().addListener(choiceBoxListener);
+        cboxConcert.getSelectionModel().selectedItemProperty().addListener(choiceBoxListener);
+        cboxTheaterpremiarer.getSelectionModel().selectedItemProperty().addListener(choiceBoxListener);
+
+        // Initially disable the "Nästa" button
         btnNASTA.setDisable(true);
 
-        group.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
-            if (group.getSelectedToggle() != null) {
-                btnNASTA.setDisable(false);
-            }
-        });
+        // Nästa knappen. Skickar användaren vidare till nästa sida
         btnNASTA.setOnAction(event -> {
-            if (storeTravelChoices.getHyttHem() != null) {
-                storeTravelChoices.removeHyttHem();
+            StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
+            if (storeTravelChoices.getEvenemangHem() != null) {
+                storeTravelChoices.removeEvenemangHem   ();
             }
-            storeTravelChoices.storeSelectedRadioButton(group, "HyttHem: ");
+            storeTravelChoices.storeChoiceBox("Filmpremiarer: ", cboxFilmpremiarer);
+            storeTravelChoices.storeChoiceBox("Teaterpremiarer: ", cboxTheaterpremiarer);
+            storeTravelChoices.storeChoiceBox("Konserter: ", cboxConcert);
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnNASTA.getScene().getWindow();
-
-            RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
-            if (selectedRadioButton != null && "Sömnkapsel".equals(selectedRadioButton.getText())) {
-                if (storeTravelChoices.getMatHem() != null) {
-                    storeTravelChoices.removeMatHem();
-                }
-                if (storeTravelChoices.getEvenemangHem() != null) {
-                    storeTravelChoices.removeEvenemangHem();
-                }
-                nextButton.nextButton("/com/uu/grupp3/marstravel/halsoforsakring.fxml", stage); // Ändra till nästa sida
-            } else {
-                nextButton.nextButton("/com/uu/grupp3/marstravel/matpaketHem.fxml", stage);
-            }
+            nextButton.nextButton("/com/uu/grupp3/marstravel/halsoforsakring.fxml", stage);
         });
-btnVALJAhytthem.setDisable(true);
-
+        btnVALJAevenemanghem.setDisable(true);
     }
-    private final SideBarButtons sideBarButtons = new SideBarButtons();
+    private SideBarButtons sideBarButtons = new SideBarButtons();
 
     @FXML
     private void SideBarButtons(ActionEvent event) {

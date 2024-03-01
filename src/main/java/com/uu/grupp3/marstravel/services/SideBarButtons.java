@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * This class is used to change the scene when a button is clicked in the sidebar.
+ * Sidebar knappar som tar användaren till valfritt fönster
  */
 public class SideBarButtons {
     public void sideBarButton(String pathToNextFXML, Stage stage) {

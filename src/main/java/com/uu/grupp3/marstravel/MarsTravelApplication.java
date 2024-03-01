@@ -18,6 +18,7 @@ public class MarsTravelApplication extends Application {
     }
 
     public static void main(String[] args) {
+        System.out.println("Även ful kod kan vara vacker.");
         launch();
     }
 }

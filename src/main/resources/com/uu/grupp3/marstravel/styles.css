@@ -6,6 +6,91 @@
 #marsTravelHeader {
     -fx-text-fill: white;
     -fx-font-size: 1px;
-
-
 }
+
+/*BOKA KNAPPEN */
+.buttonBoka{
+    -fx-background-color: #C7511B;
+    -fx-border-color: #EED2A7;
+    -fx-background-radius: 10; /* Rundar av knappens hörn, var 40 innan */
+    -fx-border-radius: 10;   /* Rundar av knappens hörn, var 40 innan */
+}
+.buttonBoka:hover{
+    -fx-background-color: #363230;
+    -fx-border-color: #EED2A7;
+}
+
+/* NÄSTA KNAPPAR */
+.buttonNasta{
+    -fx-background-color: #C7511B;
+    -fx-border-color: #EED2A7;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+.buttonNasta:hover{
+    -fx-background-color: #363230;
+    -fx-border-color: #EED2A7;
+}
+
+/* LOGGA IN KNAPPEN */
+.buttonLoggainNasta{
+    -fx-background-color: #C7511B;
+    -fx-border-color: #EED2A7;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+.buttonLoggainNasta:hover{
+    -fx-background-color: #363230;
+    -fx-border-color: #EED2A7;
+}
+
+/* SIDEBAR KNAPPARNA */
+
+.sidebuttons{
+    -fx-background-color: #2d2e2f;
+    -fx-border-color: #EED2A7;
+}
+
+/*INFO KNAPPARNA */
+.buttonInfo{
+    -fx-background-color: #EED2A7;
+    -fx-background-radius: 5;
+        -fx-border-radius: 5;
+}
+.buttonInfo:hover{
+    -fx-background-color: #C7511B;
+}
+
+/*RADIO KNAPPAR*/
+.radioButton .radio {
+    -fx-background-color: #EED2A7;
+    -fx-background-insets: 0;
+}
+.radioButton:selected .radio .dot {
+    -fx-background-color: #363230;
+    -fx-background-insets: 0;
+}
+
+/*CHOICE BOX*/
+/* Bakgrundsfärg för själva ChoiceBox-kontrollen */
+.choiceBox {
+    -fx-background-color: #EED2A7;
+    -fx-mark-color: #363230; /* Pilar färg */
+}
+/* Bakgrundsfärg för hela kontextmenyn */
+.choiceBox .context-menu {
+    -fx-background-color: #EED2A7;
+}
+/* Textfärg för icke-markerade objekt i listan */
+.choiceBox .menu-item > .label {
+    -fx-text-fill: #363230;
+}
+/* Bakgrundsfärg för markerat objekt i listan */
+.choiceBox .menu-item:focused {
+    -fx-background-color: #363230;
+}
+/* Textfärg för markerat objekt i listan */
+.choiceBox .menu-item:focused > .label {
+    -fx-text-fill: #EED2A7;
+}
+

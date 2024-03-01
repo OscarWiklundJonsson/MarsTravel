@@ -1,13 +1,16 @@
 package com.uu.grupp3.marstravel.controllers;
 
-import com.uu.grupp3.marstravel.database.DatabaseHandler;
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
 import com.uu.grupp3.marstravel.services.NextButton;
+import com.uu.grupp3.marstravel.services.SideBarButtons;
 import com.uu.grupp3.marstravel.services.StoreTravelChoices;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+
 
 public class MatPaketController {
     @FXML
@@ -61,6 +64,8 @@ public class MatPaketController {
     @FXML
     private Button btnVALJAhytthem;
 
+    @FXML Button btnVALJAresedatum;
+
     @FXML
     private Button btnVALJAkundinfo;
 
@@ -90,9 +95,6 @@ public class MatPaketController {
 
     @FXML
     private Label lblInsidePris1;
-
-    @FXML
-    private Label lblMTheader;
 
     @FXML
     private Label lblPris;
@@ -138,7 +140,7 @@ public class MatPaketController {
 
 
     public void initialize() {
-        // Funktion för att endast välja en radioknapp för mat ( @TODO gör om till en generell funktion )
+        // Funktion för att endast välja en radioknapp för mat ( @TODO gör om till en generell funktion)
         ToggleGroup group = new ToggleGroup();
         rbtnBudget1.setToggleGroup(group);
         rbtnBudget2.setToggleGroup(group);
@@ -174,10 +176,61 @@ public class MatPaketController {
 
         // Nästa knappen. Skickar användaren till nästa sida. (evenemang). Använder sig av NextButton klassen som är en service klass.
         btnNÄSTA.setOnAction(event -> {
-            storeTravelChoices.storeSelectedRadioButton(group); // Save it to a file
+            if (storeTravelChoices.getMat() != null) {
+                storeTravelChoices.removeMat();
+            }
+            storeTravelChoices.storeSelectedRadioButton(group, "Matpaket: ");
             NextButton nextButton = new NextButton();
+
             Stage stage = (Stage) btnNÄSTA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/evenemang.fxml", stage);
         });
+        btnVALJAmatpaketdit.setDisable(true);
+    }
+    private SideBarButtons sideBarButtons = new SideBarButtons();
+
+    @FXML
+    private void SideBarButtons(ActionEvent event) {
+        String fxmlPath = null;
+
+        if (event.getSource() == btnVALJAevenemangdit) {
+            fxmlPath = "/com/uu/grupp3/marstravel/evenemang.fxml";
+            System.out.println("Evenemang");
+        } else if (event.getSource() == btnVALJAmatpaketdit) {
+            fxmlPath = "/com/uu/grupp3/marstravel/matpaket.fxml";
+            System.out.println("Matpaket");
+        } else if (event.getSource() == btnVALJAhyttdit) {
+            fxmlPath = "/com/uu/grupp3/marstravel/hytter.fxml";
+            System.out.println("Hytter");
+        } else if (event.getSource() == btnVALJAresedatum) {
+            fxmlPath = "/com/uu/grupp3/marstravel/resedatum.fxml";
+            System.out.println("Resedatum");
+        } else if (event.getSource() == btnVALJAkundinfo) {
+            fxmlPath = "/com/uu/grupp3/marstravel/sparaKundinformation.fxml";
+            System.out.println("Kundinformation");
+        } else if (event.getSource() == btnVALJAbetalkort) {
+            fxmlPath = "/com/uu/grupp3/marstravel/betalkort.fxml";
+            System.out.println("Betalkort");
+        } else if (event.getSource() == btnVALJAhalsoforsakring) {
+            fxmlPath = "/com/uu/grupp3/marstravel/halsoforsakring.fxml";
+            System.out.println("Hälsförsäkring");
+        } else if (event.getSource() == btnVALJAevenemanghem) {
+            fxmlPath = "/com/uu/grupp3/marstravel/evenemanghem.fxml";
+            System.out.println("Evenemang hem");
+        } else if (event.getSource() == btnVALJAmatpakethem) {
+            fxmlPath = "/com/uu/grupp3/marstravel/matpaketHem.fxml";
+            System.out.println("Matpaket hem");
+        } else if (event.getSource() == btnVALJAhytthem) {
+            fxmlPath = "/com/uu/grupp3/marstravel/hytterHem.fxml";
+            System.out.println("Hytter hem");
+        } else if (event.getSource() == btnVALJAhotellmars) {
+            fxmlPath = "/com/uu/grupp3/marstravel/hotellMars.fxml";
+            System.out.println("Hotell Mars");
+        }
+
+        if (fxmlPath != null) {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            sideBarButtons.sideBarButton(fxmlPath, stage);
+        }
     }
 }
