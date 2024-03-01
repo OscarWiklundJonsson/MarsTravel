@@ -98,7 +98,8 @@
 .buttonVK {
     -fx-background-radius: 50;
     -fx-background-image: url("CartIcon.png");
-    -fx-background-size: cover;
+    -fx-background-size: 50 50;
     -fx-background-color: #EED2A7;
+    -fx-background-position: center center;
 }
 
