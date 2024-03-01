@@ -1,6 +1,7 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
+import com.uu.grupp3.marstravel.services.CheckoutCartService;
 import com.uu.grupp3.marstravel.services.NextButton;
 import com.uu.grupp3.marstravel.services.SideBarButtons;
 import com.uu.grupp3.marstravel.services.StoreTravelChoices;
@@ -58,6 +59,8 @@ public class BetalkortController {
         @FXML
         private TextField tfbetalkort;
 
+    private CheckoutCartService checkoutCartService = new CheckoutCartService();
+
     public void initialize() {
 
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
@@ -91,6 +94,17 @@ public class BetalkortController {
             nextButton.nextButton("/com/uu/grupp3/marstravel/sparaKundInformation.fxml", stage);
         });
         btnVALJAbetalkort.setDisable(true);
+
+
+
+        // denna beast som visar varukorgen
+        btnVarukorg.setOnAction(event -> {
+            try {
+                checkoutCartService.showCheckoutCart();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
     private SideBarButtons sideBarButtons = new SideBarButtons();
 

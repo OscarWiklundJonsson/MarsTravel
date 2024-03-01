@@ -1,5 +1,6 @@
 package com.uu.grupp3.marstravel.controllers;
 
+import com.uu.grupp3.marstravel.services.CheckoutCartService;
 import com.uu.grupp3.marstravel.services.NextButton;
 import com.uu.grupp3.marstravel.services.SideBarButtons;
 import javafx.event.ActionEvent;
@@ -139,6 +140,8 @@ public class HotellMarsController {
     @FXML
     private RadioButton rbtnWeilders;
 
+    private CheckoutCartService checkoutCartService = new CheckoutCartService();
+
     //nästa knapp, skickar vidare till hytterHem sidan.
     public void initialize() {
         ToggleGroup group = new ToggleGroup();
@@ -172,6 +175,15 @@ public class HotellMarsController {
             nextButton.nextButton("/com/uu/grupp3/marstravel/hytterHem.fxml", stage);
         });
         btnVALJAhotellmars.setDisable(true);
+
+        // denna beast som visar varukorgen
+        btnVarukorg.setOnAction(event -> {
+            try {
+                checkoutCartService.showCheckoutCart();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
     private SideBarButtons sideBarButtons = new SideBarButtons();
 

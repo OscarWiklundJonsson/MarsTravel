@@ -1,6 +1,7 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
+import com.uu.grupp3.marstravel.services.CheckoutCartService;
 import com.uu.grupp3.marstravel.services.SideBarButtons;
 import com.uu.grupp3.marstravel.services.StoreTravelChoices;
 import com.uu.grupp3.marstravel.services.NextButton;
@@ -103,6 +104,8 @@ public class HytterController {
     @FXML
     private RadioButton rbtnSvit;
 
+    private CheckoutCartService checkoutCartService = new CheckoutCartService();
+
 
 public void initialize() {
     DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
@@ -156,6 +159,15 @@ public void initialize() {
         }
     });
     btnVALJAhyttdit.setDisable(true);
+
+    // denna beast som visar varukorgen
+    btnVarukorg.setOnAction(event -> {
+        try {
+            checkoutCartService.showCheckoutCart();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    });
     }
     private final SideBarButtons sideBarButtons = new SideBarButtons();
 

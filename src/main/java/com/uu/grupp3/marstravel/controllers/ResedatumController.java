@@ -1,5 +1,6 @@
 package com.uu.grupp3.marstravel.controllers;
 
+import com.uu.grupp3.marstravel.services.CheckoutCartService;
 import com.uu.grupp3.marstravel.services.StoreTravelChoices;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,6 +35,8 @@ public class ResedatumController implements Initializable {
     @FXML
     private ChoiceBox<String> HemresaMånad;
 
+    private CheckoutCartService checkoutCartService = new CheckoutCartService();
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ObservableList<String> avresaArAlternativ = FXCollections.observableArrayList(
@@ -54,6 +57,15 @@ public class ResedatumController implements Initializable {
 
         HemresaMånad.setItems(avresaManadAlternativ);
         btnVALJAresedatum.setDisable(true);
+
+        // denna beast som visar varukorgen
+        btnVarukorg.setOnAction(event -> {
+            try {
+                checkoutCartService.showCheckoutCart();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     @FXML

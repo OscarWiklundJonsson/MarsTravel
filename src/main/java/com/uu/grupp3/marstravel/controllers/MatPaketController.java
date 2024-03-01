@@ -1,6 +1,7 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
+import com.uu.grupp3.marstravel.services.CheckoutCartService;
 import com.uu.grupp3.marstravel.services.NextButton;
 import com.uu.grupp3.marstravel.services.SideBarButtons;
 import com.uu.grupp3.marstravel.services.StoreTravelChoices;
@@ -138,6 +139,7 @@ public class MatPaketController {
     @FXML
     private RadioButton rbtnMellan3;
 
+    private CheckoutCartService checkoutCartService = new CheckoutCartService();
 
     public void initialize() {
         // Funktion för att endast välja en radioknapp för mat ( @TODO gör om till en generell funktion)
@@ -186,6 +188,15 @@ public class MatPaketController {
             nextButton.nextButton("/com/uu/grupp3/marstravel/evenemang.fxml", stage);
         });
         btnVALJAmatpaketdit.setDisable(true);
+
+        // denna beast som visar varukorgen
+        btnVarukorg.setOnAction(event -> {
+            try {
+                checkoutCartService.showCheckoutCart();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
     private SideBarButtons sideBarButtons = new SideBarButtons();
 
