@@ -94,3 +94,9 @@
     -fx-text-fill: #EED2A7;
 }
 
+
+.buttonVK {
+    -fx-background-radius: 50;
+    -fx-background-image: "../../../../image/CartIcon.png";
+}
+
