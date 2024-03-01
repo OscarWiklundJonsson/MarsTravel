@@ -174,7 +174,7 @@
       </Button>
         <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="1203.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../../image/CartIcon.png" />
+                <Image url="@CartIcon.png" />
             </image>
         </ImageView>
       <Button fx:id="btnRoyalSvitInfo" layoutX="814.0" layoutY="603.0" mnemonicParsing="false" styleClass="buttonInfo" stylesheets="@styles.css" text=" i " textFill="#000000">

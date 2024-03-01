@@ -20,7 +20,7 @@
                 <Font name="Century Gothic" size="36.0" />
             </font>
         </Label>
-        <Circle fx:id="cVarukorgen" fill="WHITE" layoutX="1225.0" layoutY="53.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fx:id="cVarukorgen" fill="WHITE" layoutX="1225.0" layoutY="53.0" radius="32.0" stroke="BLACK" strokeType="INSIDE"/>
         <Button fx:id="btnKASSA" layoutX="1116.0" layoutY="620.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="110.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="buttonNasta" stylesheets="@styles.css" text="KASSA" textFill="#eed2a7">
             <font>
                 <Font size="24.0" />
@@ -39,13 +39,13 @@
         <Button fx:id="btnVALJAresedatum" layoutX="46.0" layoutY="162.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="RESEDATUM" textFill="#eed2a7" />
         <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="1204.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../../image/CartIcon.png" />
+                <Image url="@CartIcon.png" />
             </image>
         </ImageView>
       <TextField fx:id="tffirstname" layoutX="550.0" layoutY="350.0" prefHeight="35.0" prefWidth="250.0" promptText="Förnamn" />
       <TextField fx:id="tflastname" layoutX="550.0" layoutY="400.0" prefHeight="35.0" prefWidth="250.0" promptText="Efternamn" />
       <TextField fx:id="tfphonenumber" layoutX="550.0" layoutY="450.0" prefHeight="35.0" prefWidth="250.0" promptText="Telefon" />
       <TextField fx:id="tfemail" layoutX="550.0" layoutY="500.0" prefHeight="35.0" prefWidth="250.0" promptText="Mail" />
-      <Button fx:id="varukorg" layoutX="1171.0" layoutY="85.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="79.0" style="-fx-background-radius: 50;" text="VK" />
+      <Button fx:id="varukorg" layoutX="1171.0" layoutY="85.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="79.0" style="-fx-background-radius: 50;" text="VK" styleClass="buttonVK" stylesheets="styles.css"/>
     </children>
 </AnchorPane>
