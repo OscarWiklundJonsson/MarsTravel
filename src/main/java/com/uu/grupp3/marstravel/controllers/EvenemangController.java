@@ -62,7 +62,7 @@ public class EvenemangController {
     private Button btnVALJAresedatum;
 
     @FXML
-    private Circle cVarukorgen;
+    private Button btnVarukorg;
 
     @FXML
     private Label lblFilmPris;
@@ -71,22 +71,10 @@ public class EvenemangController {
     private Label lblTheatrePris;
 
     @FXML
-    private Label lblMTheader;
-
-    @FXML
     private Label lblConcertPris;
 
     @FXML
     private Label lblEvenemang;
-
-    @FXML
-    private RadioButton rbtnConcert;
-
-    @FXML
-    private RadioButton rbtnTheatre;
-
-    @FXML
-    private RadioButton rbtnFilm;
 
     @FXML
     private ChoiceBox<String> cboxFilmpremiarer;

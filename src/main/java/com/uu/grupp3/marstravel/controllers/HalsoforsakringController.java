@@ -53,7 +53,7 @@ public class HalsoforsakringController {
         private Button btnhalsofinfo;
 
         @FXML
-        private Circle cVarukorgen;
+        private Button btnVarukorg;
 
         @FXML
         private Label lblHRhalsopris;

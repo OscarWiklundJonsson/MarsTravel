@@ -65,7 +65,7 @@ public class HytterHemController {
     private Button btnVALJAresedatum;
 
     @FXML
-    private Circle cVarukorgen;
+    private Button btnVarukorg;
 
     @FXML
     private Label lblEcoPris;

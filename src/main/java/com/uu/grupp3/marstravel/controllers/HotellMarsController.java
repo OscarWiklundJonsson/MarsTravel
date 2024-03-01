@@ -77,7 +77,7 @@ public class HotellMarsController {
     private Button btnWeildersInfo;
 
     @FXML
-    private Circle cVarukorgen;
+    private Button btnVarukorg;
 
     @FXML
     private Label lblDeimosDubbelPris;

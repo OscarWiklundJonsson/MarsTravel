@@ -62,7 +62,7 @@ public class EvenemangHemController {
     private Button btnVALJAresedatum;
 
     @FXML
-    private Circle cVarukorgen;
+    private Button btnVarukorg;
 
     @FXML
     private Label lblFilmPris;

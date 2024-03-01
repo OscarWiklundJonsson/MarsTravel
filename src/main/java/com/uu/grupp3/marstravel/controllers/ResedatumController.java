@@ -60,6 +60,9 @@ public class ResedatumController implements Initializable {
     private Button btnNASTA;
 
     @FXML
+    private Button btnVarukorg;
+
+    @FXML
     private Button btnVALJAevenemangdit;
 
     @FXML
