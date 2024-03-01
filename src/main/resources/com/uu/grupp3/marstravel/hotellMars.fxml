@@ -60,17 +60,17 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label fx:id="lblPhobosEnkelPris" layoutX="579.0" layoutY="349.0" text="7500kr" textFill="WHITE">
+        <Label fx:id="lblPhobosEnkelPris" layoutX="579.0" layoutY="349.0" text="7500kr/rum" textFill="WHITE">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label fx:id="lblPhobosDubbelPris" layoutX="579.0" layoutY="384.0" text="12 000kr" textFill="WHITE">
+        <Label fx:id="lblPhobosDubbelPris" layoutX="579.0" layoutY="384.0" text="12 000kr/rum" textFill="WHITE">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label fx:id="lblDeimosEnkelPris" layoutX="579.0" layoutY="442.0" text="7500kr" textFill="WHITE">
+        <Label fx:id="lblDeimosEnkelPris" layoutX="579.0" layoutY="442.0" text="7500kr/rum" textFill="WHITE">
             <font>
                 <Font size="18.0" />
             </font>
@@ -122,7 +122,7 @@
             <Font size="20.0" />
          </font>
       </RadioButton>
-      <Label fx:id="lblDeimosDubbelPris" layoutX="579.0" layoutY="477.0" text="12 00kr" textFill="WHITE">
+      <Label fx:id="lblDeimosDubbelPris" layoutX="579.0" layoutY="477.0" text="12 000kr/rum" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
@@ -142,17 +142,17 @@
             <Font size="20.0" />
          </font>
       </RadioButton>
-      <Label fx:id="lblRoyalEnkelPris" layoutX="579.0" layoutY="534.0" text="20 000kr" textFill="WHITE">
+      <Label fx:id="lblRoyalEnkelPris" layoutX="579.0" layoutY="534.0" text="20 000kr/rum" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblRoyalDubbelPris" layoutX="579.0" layoutY="568.0" text="35 000kr" textFill="WHITE">
+      <Label fx:id="lblRoyalDubbelPris" layoutX="579.0" layoutY="568.0" text="35 000kr/rum" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblRoyalSvitPris" layoutX="579.0" layoutY="602.0" text="50 000kr" textFill="WHITE">
+      <Label fx:id="lblRoyalSvitPris" layoutX="579.0" layoutY="602.0" text="50 000kr/rum" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
