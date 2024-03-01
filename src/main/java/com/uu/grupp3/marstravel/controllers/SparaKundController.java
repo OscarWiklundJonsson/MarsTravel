@@ -83,6 +83,24 @@ public class SparaKundController {
     public void initialize() {
         // Apply character restrictions to text fields
         CharacterRestrictions.applyCharacterRestrictions(tffirstname, tflastname, tfphonenumber, tfemail);
+        btnKASSA.setOnAction(event -> {
+            NextButton nextButton = new NextButton();
+            Stage stage = (Stage) btnKASSA.getScene().getWindow();
+            // Här skulle min metod för att spara kundinformationen till databasen vara
+            // Men någon, som jag inte vet vem det är, har tagit bort den. Tack.
+            nextButton.nextButton("/com/uu/grupp3/marstravel/boka.fxml", stage); //ska skickas till varukorgen sen.
+        });
+
+        // denna beast som visar varukorgen
+        btnVarukorg.setOnAction(event -> {
+            try {
+                checkoutCartService.showCheckoutCart();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        btnVALJAkundinfo.setDisable(true);
+    }
     // Method to save a customer to the database
     /**
      * Method to save a customer to the database
@@ -145,27 +163,8 @@ public class SparaKundController {
         }
     }
     //nästa knapp, skickar vidare till hytterHem sidan.
-    private CheckoutCartService checkoutCartService = new CheckoutCartService();
+    CheckoutCartService checkoutCartService = new CheckoutCartService();
 
-    public void initialize() {
-        btnKASSA.setOnAction(event -> {
-            NextButton nextButton = new NextButton();
-            Stage stage = (Stage) btnKASSA.getScene().getWindow();
-            // Här skulle min metod för att spara kundinformationen till databasen vara
-            // Men någon, som jag inte vet vem det är, har tagit bort den. Tack.
-            nextButton.nextButton("/com/uu/grupp3/marstravel/boka.fxml", stage); //ska skickas till varukorgen sen.
-        });
-
-        // denna beast som visar varukorgen
-        btnVarukorg.setOnAction(event -> {
-            try {
-                checkoutCartService.showCheckoutCart();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-        btnVALJAkundinfo.setDisable(true);
-    }
     private SideBarButtons sideBarButtons = new SideBarButtons();
 
     @FXML
