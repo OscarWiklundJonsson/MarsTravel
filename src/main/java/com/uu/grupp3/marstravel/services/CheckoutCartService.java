@@ -218,23 +218,31 @@ public class CheckoutCartService {
                             //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
                             totalPrice += 5000;
                             break;
-                        case "Enkelrum":
+                        case "Hotel Phobos Enkelrum":
                             //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
                             totalPrice += 7500;
                             break;
-                        case "Dubbelrum":
+                        case "Hotel Phobos Dubbelrum":
                             //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
                             totalPrice += 12000;
                             break;
-                        case "Enkel Lyx":
+                        case "Hotel Deimos Enkelrum":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
+                            totalPrice += 7500;
+                            break;
+                        case "Hotel Deimos Dubbelrum":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
+                            totalPrice += 12000;
+                            break;
+                        case "Royal City Enkel Lyx":
                             //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
                             totalPrice += 20000;
                             break;
-                        case "Dubbel Lyx":
+                        case "Royal City Dubbel Lyx":
                             //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
                             totalPrice += 35000;
                             break;
-                        case "Svit":
+                        case "Royal City Svit":
                             //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
                             totalPrice += 50000;
                             break;
