@@ -14,6 +14,7 @@ public class BokaController {
         @FXML
         private Button btnBoka;
 
+
         public void initialize() {
                 btnBoka.setOnAction(event -> {
                         NextButton nextButton = new NextButton();

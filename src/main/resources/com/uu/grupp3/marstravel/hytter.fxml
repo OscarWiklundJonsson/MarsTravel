@@ -4,10 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uu.grupp3.marstravel.controllers.HytterController">
@@ -20,27 +17,27 @@
             <Font name="Century Gothic" size="36.0" />
          </font>
       </Label>
-      <RadioButton fx:id="rbtnSleep" layoutX="252.0" layoutY="276.0" mnemonicParsing="false" text="Sömnkapsel" textFill="#fbf7f7" styleClass="radioButton" stylesheets="@styles.css">
+      <RadioButton fx:id="rbtnSleep" layoutX="252.0" layoutY="276.0" mnemonicParsing="false" styleClass="radioButton" stylesheets="@styles.css" text="Sömnkapsel" textFill="#fbf7f7">
          <font>
             <Font size="24.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="rbtnSvit" layoutX="252.0" layoutY="342.0" mnemonicParsing="false" text="Svit" textFill="#f2ecec" styleClass="radioButton" stylesheets="@styles.css">
+      <RadioButton fx:id="rbtnSvit" layoutX="252.0" layoutY="342.0" mnemonicParsing="false" styleClass="radioButton" stylesheets="@styles.css" text="Svit" textFill="#f2ecec">
          <font>
             <Font size="24.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="rbtnSpaceside" layoutX="252.0" layoutY="408.0" mnemonicParsing="false" text="Spaceside" textFill="#f2efef" styleClass="radioButton" stylesheets="@styles.css">
+      <RadioButton fx:id="rbtnSpaceside" layoutX="252.0" layoutY="408.0" mnemonicParsing="false" styleClass="radioButton" stylesheets="@styles.css" text="Spaceside" textFill="#f2efef">
          <font>
             <Font size="24.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="rbtnInside" layoutX="252.0" layoutY="474.0" mnemonicParsing="false" text="Inside" textFill="#fbf8f8" styleClass="radioButton" stylesheets="@styles.css">
+      <RadioButton fx:id="rbtnInside" layoutX="252.0" layoutY="474.0" mnemonicParsing="false" styleClass="radioButton" stylesheets="@styles.css" text="Inside" textFill="#fbf8f8">
          <font>
             <Font size="24.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="rbtnEco" layoutX="252.0" layoutY="541.0" mnemonicParsing="false" text="Economy" textFill="#fdfafa" styleClass="radioButton" stylesheets="@styles.css">
+      <RadioButton fx:id="rbtnEco" layoutX="252.0" layoutY="541.0" mnemonicParsing="false" styleClass="radioButton" stylesheets="@styles.css" text="Economy" textFill="#fdfafa">
          <font>
             <Font size="24.0" />
          </font>
@@ -75,37 +72,37 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnSleepInfo" layoutX="804.0" layoutY="281.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
+      <Button fx:id="btnSleepInfo" layoutX="804.0" layoutY="281.0" mnemonicParsing="false" styleClass="buttonInfo" stylesheets="@styles.css" text=" i " textFill="#000000">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnSvitInfo" layoutX="804.0" layoutY="347.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
+      <Button fx:id="btnSvitInfo" layoutX="804.0" layoutY="347.0" mnemonicParsing="false" styleClass="buttonInfo" stylesheets="@styles.css" text=" i " textFill="#000000">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnSpacesideInfo" layoutX="804.0" layoutY="413.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
+      <Button fx:id="btnSpacesideInfo" layoutX="804.0" layoutY="413.0" mnemonicParsing="false" styleClass="buttonInfo" stylesheets="@styles.css" text=" i " textFill="#000000">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnInsideInfo" layoutX="804.0" layoutY="479.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
+      <Button fx:id="btnInsideInfo" layoutX="804.0" layoutY="479.0" mnemonicParsing="false" styleClass="buttonInfo" stylesheets="@styles.css" text=" i " textFill="#000000">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnEcoInfo" layoutX="804.0" layoutY="546.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
+      <Button fx:id="btnEcoInfo" layoutX="804.0" layoutY="546.0" mnemonicParsing="false" styleClass="buttonInfo" stylesheets="@styles.css" text=" i " textFill="#000000">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Circle fx:id="cVarukorgen" fill="WHITE" layoutX="1225.0" layoutY="53.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
       <Button fx:id="btnNASTA" layoutX="1117.0" layoutY="620.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="110.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="buttonNasta" stylesheets="@styles.css" text="NÄSTA" textFill="#eed2a7">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
+      <Button fx:id="btnVarukorg" layoutX="1137.0" layoutY="67.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="67.0" style="-fx-background-radius: 50;" styleClass="buttonVK" stylesheets="@styles.css" textFill="#eed2a7" />
       <Button fx:id="btnVALJAkundinfo" layoutX="46.0" layoutY="632.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="KUNDINFORMATION" textFill="#eed2a7" />
       <Button fx:id="btnVALJAbetalkort" layoutX="46.0" layoutY="585.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="BETALKORT" textFill="#eed2a7" />
       <Button fx:id="btnVALJAhalsoforsakring" layoutX="46.0" layoutY="538.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="HÄLSOFÖRSÄKRING" textFill="#eed2a7" />
@@ -117,10 +114,5 @@
       <Button fx:id="btnVALJAmatpaketdit" layoutX="46.0" layoutY="256.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="MATPAKET" textFill="#eed2a7" />
       <Button fx:id="btnVALJAhyttdit" layoutX="46.0" layoutY="209.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="HYTTER" textFill="#eed2a7" />
       <Button fx:id="btnVALJAresedatum" layoutX="46.0" layoutY="162.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="RESEDATUM" textFill="#eed2a7" />
-      <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="1203.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../image/CartIcon.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>

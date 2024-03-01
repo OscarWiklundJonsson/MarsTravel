@@ -1,6 +1,7 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
+import com.uu.grupp3.marstravel.services.CheckoutCartService;
 import com.uu.grupp3.marstravel.services.NextButton;
 import com.uu.grupp3.marstravel.services.SideBarButtons;
 import com.uu.grupp3.marstravel.services.StoreTravelChoices;
@@ -53,7 +54,7 @@ public class HalsoforsakringController {
         private Button btnhalsofinfo;
 
         @FXML
-        private Circle cVarukorgen;
+        private Button btnVarukorg;
 
         @FXML
         private Label lblHRhalsopris;
@@ -66,6 +67,8 @@ public class HalsoforsakringController {
 
         @FXML
         private RadioButton rbtnhalsof;
+
+    private CheckoutCartService checkoutCartService = new CheckoutCartService();
 
 
     public void initialize() {
@@ -92,6 +95,15 @@ public class HalsoforsakringController {
             nextButton.nextButton("/com/uu/grupp3/marstravel/betalkort.fxml", stage);
         });
         btnVALJAhalsoforsakring.setDisable(true);
+
+        // denna beast som visar varukorgen
+        btnVarukorg.setOnAction(event -> {
+            try {
+                checkoutCartService.showCheckoutCart();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
     private SideBarButtons sideBarButtons = new SideBarButtons();
 

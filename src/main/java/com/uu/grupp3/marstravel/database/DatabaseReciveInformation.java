@@ -49,7 +49,7 @@ public class DatabaseReciveInformation {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         } finally {
-            System.out.println("Something went right or wrong, but it's over now.");
+            System.out.println("Nu hände något, förhoppningsvis inget dåligt.");
         }
 
         alert.showAndWait();

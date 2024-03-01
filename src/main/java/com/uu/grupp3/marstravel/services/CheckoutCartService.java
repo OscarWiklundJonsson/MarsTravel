@@ -2,20 +2,41 @@ package com.uu.grupp3.marstravel.services;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.NumberFormat;
 import java.util.Locale;
+import java.util.concurrent.atomic.AtomicReference;
 
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
-import javafx.scene.control.Alert;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 
-// Akta dig för denna kod, den är skriven av en person som inte kan programmera alls.
+/**
+ * This class is responsible for calculating the total price of the cart and
+ * displaying the cart contents in an info dialog.
 
+ */
 public class CheckoutCartService {
     DatabaseReciveInformation databaseReciveInformation = new DatabaseReciveInformation();
+
+    /**
+     * Calculate the total price of the cart by reading the file "travelChoices.txt"
+     * and summing up the prices of the selected items.
+     *
+     * @return the total price of the cart
+     * @throws IOException if an I/O error occurs
+     */
     public double calculateTotalPrice() throws IOException {
         String fileName = "travelChoices.txt";
         Path path = Paths.get(fileName);
@@ -218,23 +239,31 @@ public class CheckoutCartService {
                             //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
                             totalPrice += 5000;
                             break;
-                        case "Enkelrum":
+                        case "Hotel Phobos Enkelrum":
                             //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
                             totalPrice += 7500;
                             break;
-                        case "Dubbelrum":
+                        case "Hotel Phobos Dubbelrum":
                             //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
                             totalPrice += 12000;
                             break;
-                        case "Enkel Lyx":
+                        case "Hotel Deimos Enkelrum":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
+                            totalPrice += 7500;
+                            break;
+                        case "Hotel Deimos Dubbelrum":
+                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
+                            totalPrice += 12000;
+                            break;
+                        case "Royal City Enkel Lyx":
                             //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
                             totalPrice += 20000;
                             break;
-                        case "Dubbel Lyx":
+                        case "Royal City Dubbel Lyx":
                             //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
                             totalPrice += 35000;
                             break;
-                        case "Svit":
+                        case "Royal City Svit":
                             //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
                             totalPrice += 50000;
                             break;
@@ -255,16 +284,30 @@ public class CheckoutCartService {
         return totalPrice;
     }
 
+    /**
+     * Clears the file "travelChoices.txt" by deleting it.
+     * I.E the cart is cleared.
+     */
     public void checkoutCartClearCart() {
         String fileName = "travelChoices.txt";
         Path path = Paths.get(fileName);
+        // remove all contents from the file "travelChoices.txt"
         try {
-            Files.delete(path);
+            RandomAccessFile file = new RandomAccessFile(String.valueOf(path), "rw");
+            file.setLength(0);
+            file.close();
+            System.out.println("Varukorgen har rensats.");
         } catch (IOException e) {
+            System.out.println("Ett fel uppstod: " + e.getMessage());
             e.printStackTrace();
         }
     }
 
+    /**
+     * Shows the contents of the cart in an info dialog.
+     * The contents are read from the file "travelChoices.txt".
+     * The total price of the cart is calculated using the method calculateTotalPrice().
+     */
     public void showCheckoutCart() {
         // read the file "travelChoices.txt" and collect the contents
         String fileName = "travelChoices.txt";
@@ -291,12 +334,25 @@ public class CheckoutCartService {
         String formattedTotalPrice = numberFormat.format(totalPrice);
 
         contents.append("Totalt pris: ").append(formattedTotalPrice).append(" kr");
-        // create an info dialog and display the contents
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Varukorgen");
-        alert.setHeaderText(null);
-        alert.setContentText(contents.toString());
+        AtomicReference<Stage> stage = new AtomicReference<>(new Stage());
+        TextArea textArea = new TextArea(contents.toString());
+        textArea.setEditable(false);
+        textArea.setWrapText(true);
 
-        alert.showAndWait();
+        // @todo Ändra så att den öppnar boka.fxml
+        Button button = new Button("Rensa varukorg");
+        button.setOnAction(event -> {
+            checkoutCartClearCart();
+            textArea.setText("Varukorgen är rensad.");
+        });
+
+        VBox vbox = new VBox(textArea, button);
+        ScrollPane scrollPane = new ScrollPane(vbox);
+        scrollPane.setFitToWidth(true);
+        scrollPane.setFitToHeight(true);
+        Scene scene = new Scene(scrollPane);
+        stage.get().setScene(scene);
+        stage.get().setTitle("Varukorg");
+        stage.get().show();
     }
 }

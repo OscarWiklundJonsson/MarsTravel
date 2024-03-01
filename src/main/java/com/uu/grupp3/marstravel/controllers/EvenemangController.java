@@ -1,6 +1,7 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
+import com.uu.grupp3.marstravel.services.CheckoutCartService;
 import com.uu.grupp3.marstravel.services.NextButton;
 import com.uu.grupp3.marstravel.services.SideBarButtons;
 import com.uu.grupp3.marstravel.services.StoreTravelChoices;
@@ -62,7 +63,7 @@ public class EvenemangController {
     private Button btnVALJAresedatum;
 
     @FXML
-    private Circle cVarukorgen;
+    private Button btnVarukorg;
 
     @FXML
     private Label lblFilmPris;
@@ -71,22 +72,10 @@ public class EvenemangController {
     private Label lblTheatrePris;
 
     @FXML
-    private Label lblMTheader;
-
-    @FXML
     private Label lblConcertPris;
 
     @FXML
     private Label lblEvenemang;
-
-    @FXML
-    private RadioButton rbtnConcert;
-
-    @FXML
-    private RadioButton rbtnTheatre;
-
-    @FXML
-    private RadioButton rbtnFilm;
 
     @FXML
     private ChoiceBox<String> cboxFilmpremiarer;
@@ -104,6 +93,8 @@ public class EvenemangController {
     private Label lblConcert;
     @FXML
     private Label lblAntal;
+
+    private CheckoutCartService checkoutCartService = new CheckoutCartService();
 
 
     public void initialize() {
@@ -166,8 +157,19 @@ public class EvenemangController {
             nextButton.nextButton("/com/uu/grupp3/marstravel/hotellmars.fxml", stage);
         });
         btnVALJAevenemangdit.setDisable(true);
+
+        // denna beast som visar varukorgen
+        btnVarukorg.setOnAction(event -> {
+            try {
+                checkoutCartService.showCheckoutCart();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
     }
     private SideBarButtons sideBarButtons = new SideBarButtons();
+
 
     @FXML
     private void SideBarButtons(ActionEvent event) {
