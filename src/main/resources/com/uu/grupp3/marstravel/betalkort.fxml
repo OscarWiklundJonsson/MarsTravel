@@ -22,6 +22,7 @@
                 <Font size="24.0" />
             </font>
         </Button>
+        <Button fx:id="btnVarukorg" layoutX="1137.0" layoutY="67.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="67.0" style="-fx-background-radius: 50;" styleClass="buttonVK" stylesheets="@styles.css" textFill="#eed2a7" />
         <Button fx:id="btnVALJAkundinfo" layoutX="46.0" layoutY="632.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="KUNDINFORMATION" textFill="#eed2a7" />
         <Button fx:id="btnVALJAbetalkort" layoutX="46.0" layoutY="585.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="BETALKORT" textFill="#eed2a7" />
         <Button fx:id="btnVALJAhalsoforsakring" layoutX="46.0" layoutY="538.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="HÄLSOFÖRSÄKRING" textFill="#eed2a7" />

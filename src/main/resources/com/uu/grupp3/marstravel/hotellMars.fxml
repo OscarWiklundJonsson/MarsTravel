@@ -77,6 +77,7 @@
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
+        <Button fx:id="btnVarukorg" layoutX="1137.0" layoutY="67.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="67.0" style="-fx-background-radius: 50;" styleClass="buttonVK" stylesheets="@styles.css" textFill="#eed2a7" />
         <Button fx:id="btnWeildersInfo" layoutX="814.0" layoutY="294.0" mnemonicParsing="false" styleClass="buttonInfo" stylesheets="@styles.css" text=" i " textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />

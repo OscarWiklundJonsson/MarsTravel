@@ -27,6 +27,7 @@
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
+        <Button fx:id="btnVarukorg" layoutX="1137.0" layoutY="67.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="67.0" style="-fx-background-radius: 50;" styleClass="buttonVK" stylesheets="@styles.css" textFill="#eed2a7" />
         <Button fx:id="btnNASTA" layoutX="1117.0" layoutY="620.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="110.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="buttonNasta" stylesheets="@styles.css" text="NÄSTA" textFill="#eed2a7">
             <font>
                 <Font size="24.0" />
