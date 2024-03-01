@@ -1,4 +1,4 @@
-package com.uu.grupp3.marstravel.controllers;
+package com.uu.grupp3.marstravel.services;
 
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
