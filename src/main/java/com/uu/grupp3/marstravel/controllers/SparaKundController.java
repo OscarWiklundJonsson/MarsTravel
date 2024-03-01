@@ -80,9 +80,10 @@ public class SparaKundController {
     @FXML
     private Button varukorg;
 
-
+    public void initialize() {
+        // Apply character restrictions to text fields
+        CharacterRestrictions.applyCharacterRestrictions(tffirstname, tflastname, tfphonenumber, tfemail);
     // Method to save a customer to the database
-
     /**
      * Method to save a customer to the database
      * Checks if all fields are filled, if not, an error message is displayed
