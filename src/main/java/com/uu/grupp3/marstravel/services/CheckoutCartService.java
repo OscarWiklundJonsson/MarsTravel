@@ -11,11 +11,21 @@ import java.util.Locale;
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
 import javafx.scene.control.Alert;
 
+/**
+ * This class is responsible for calculating the total price of the cart and
+ * displaying the cart contents in an info dialog.
 
-// Akta dig för denna kod, den är skriven av en person som inte kan programmera alls.
-
+ */
 public class CheckoutCartService {
     DatabaseReciveInformation databaseReciveInformation = new DatabaseReciveInformation();
+
+    /**
+     * Calculate the total price of the cart by reading the file "travelChoices.txt"
+     * and summing up the prices of the selected items.
+     *
+     * @return the total price of the cart
+     * @throws IOException if an I/O error occurs
+     */
     public double calculateTotalPrice() throws IOException {
         String fileName = "travelChoices.txt";
         Path path = Paths.get(fileName);
@@ -263,6 +273,10 @@ public class CheckoutCartService {
         return totalPrice;
     }
 
+    /**
+     * Clears the file "travelChoices.txt" by deleting it.
+     * I.E the cart is cleared.
+     */
     public void checkoutCartClearCart() {
         String fileName = "travelChoices.txt";
         Path path = Paths.get(fileName);
@@ -273,6 +287,11 @@ public class CheckoutCartService {
         }
     }
 
+    /**
+     * Shows the contents of the cart in an info dialog.
+     * The contents are read from the file "travelChoices.txt".
+     * The total price of the cart is calculated using the method calculateTotalPrice().
+     */
     public void showCheckoutCart() {
         // read the file "travelChoices.txt" and collect the contents
         String fileName = "travelChoices.txt";

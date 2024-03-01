@@ -21,6 +21,9 @@ import java.sql.SQLException;
 public class SparaKundController {
 
     @FXML
+    private Button btnVarukorg;
+
+    @FXML
     private Button btnKASSA;
 
     @FXML
@@ -153,7 +156,7 @@ public class SparaKundController {
         });
 
         // denna beast som visar varukorgen
-        varukorg.setOnAction(event -> {
+        btnVarukorg.setOnAction(event -> {
             try {
                 checkoutCartService.showCheckoutCart();
             } catch (Exception e) {
