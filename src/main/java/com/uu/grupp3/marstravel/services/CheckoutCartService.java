@@ -2,14 +2,25 @@ package com.uu.grupp3.marstravel.services;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.NumberFormat;
 import java.util.Locale;
+import java.util.concurrent.atomic.AtomicReference;
 
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
-import javafx.scene.control.Alert;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
 
 /**
  * This class is responsible for calculating the total price of the cart and
@@ -280,9 +291,14 @@ public class CheckoutCartService {
     public void checkoutCartClearCart() {
         String fileName = "travelChoices.txt";
         Path path = Paths.get(fileName);
+        // remove all contents from the file "travelChoices.txt"
         try {
-            Files.delete(path);
+            RandomAccessFile file = new RandomAccessFile(String.valueOf(path), "rw");
+            file.setLength(0);
+            file.close();
+            System.out.println("Varukorgen har rensats.");
         } catch (IOException e) {
+            System.out.println("Ett fel uppstod: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -318,12 +334,25 @@ public class CheckoutCartService {
         String formattedTotalPrice = numberFormat.format(totalPrice);
 
         contents.append("Totalt pris: ").append(formattedTotalPrice).append(" kr");
-        // create an info dialog and display the contents
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Varukorgen");
-        alert.setHeaderText(null);
-        alert.setContentText(contents.toString());
+        AtomicReference<Stage> stage = new AtomicReference<>(new Stage());
+        TextArea textArea = new TextArea(contents.toString());
+        textArea.setEditable(false);
+        textArea.setWrapText(true);
 
-        alert.showAndWait();
+        // @todo Ändra så att den öppnar boka.fxml
+        Button button = new Button("Rensa varukorg");
+        button.setOnAction(event -> {
+            checkoutCartClearCart();
+            textArea.setText("Varukorgen är rensad.");
+        });
+
+        VBox vbox = new VBox(textArea, button);
+        ScrollPane scrollPane = new ScrollPane(vbox);
+        scrollPane.setFitToWidth(true);
+        scrollPane.setFitToHeight(true);
+        Scene scene = new Scene(scrollPane);
+        stage.get().setScene(scene);
+        stage.get().setTitle("Varukorg");
+        stage.get().show();
     }
 }
