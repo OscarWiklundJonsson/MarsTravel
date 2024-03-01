@@ -20,27 +20,27 @@
                 <Font name="Century Gothic" size="36.0" />
             </font>
         </Label>
-        <RadioButton fx:id="rbtnWeilders" layoutX="252.0" layoutY="292.0" mnemonicParsing="false" text="Polar Wielders" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
+        <RadioButton fx:id="rbtnWeilders" layoutX="252.0" layoutY="292.0" mnemonicParsing="false" styleClass="radioButton" stylesheets="@styles.css" text="Polar Wielders" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnLansdorp" layoutX="252.0" layoutY="256.0" mnemonicParsing="false" text="Polar Lansdorp" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
+        <RadioButton fx:id="rbtnLansdorp" layoutX="252.0" layoutY="256.0" mnemonicParsing="false" styleClass="radioButton" stylesheets="@styles.css" text="Polar Lansdorp" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnPhobosDubbel" layoutX="252.0" layoutY="383.0" mnemonicParsing="false" text="Hotel Phobos: Dubbelrum" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
+        <RadioButton fx:id="rbtnPhobosDubbel" layoutX="252.0" layoutY="383.0" mnemonicParsing="false" styleClass="radioButton" stylesheets="@styles.css" text="Hotel Phobos Dubbelrum" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnPhobosEnkel" layoutX="252.0" layoutY="348.0" mnemonicParsing="false" text="Hotel Phobos: Enkelrum" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
+        <RadioButton fx:id="rbtnPhobosEnkel" layoutX="252.0" layoutY="348.0" mnemonicParsing="false" styleClass="radioButton" stylesheets="@styles.css" text="Hotel Phobos Enkelrum" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="rbtnDeimosEnkel" layoutX="252.0" layoutY="441.0" mnemonicParsing="false" text="Hotel Deimos: Enkelrum" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
+        <RadioButton fx:id="rbtnDeimosEnkel" layoutX="252.0" layoutY="441.0" mnemonicParsing="false" styleClass="radioButton" stylesheets="@styles.css" text="Hotel Deimos Enkelrum" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
@@ -60,42 +60,42 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label fx:id="lblPhobosEnkelPris" layoutX="579.0" layoutY="349.0" text="7500kr" textFill="WHITE">
+        <Label fx:id="lblPhobosEnkelPris" layoutX="579.0" layoutY="349.0" text="7500kr/rum" textFill="WHITE">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label fx:id="lblPhobosDubbelPris" layoutX="579.0" layoutY="384.0" text="12 000kr" textFill="WHITE">
+        <Label fx:id="lblPhobosDubbelPris" layoutX="579.0" layoutY="384.0" text="12 000kr/rum" textFill="WHITE">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label fx:id="lblDeimosEnkelPris" layoutX="579.0" layoutY="442.0" text="7500kr" textFill="WHITE">
+        <Label fx:id="lblDeimosEnkelPris" layoutX="579.0" layoutY="442.0" text="7500kr/rum" textFill="WHITE">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Button fx:id="btnLansdorpInfo" layoutX="814.0" layoutY="258.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
+        <Button fx:id="btnLansdorpInfo" layoutX="814.0" layoutY="258.0" mnemonicParsing="false" styleClass="buttonInfo" stylesheets="@styles.css" text=" i " textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnWeildersInfo" layoutX="814.0" layoutY="294.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
+        <Button fx:id="btnWeildersInfo" layoutX="814.0" layoutY="294.0" mnemonicParsing="false" styleClass="buttonInfo" stylesheets="@styles.css" text=" i " textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnPhobosEnkelInfo" layoutX="814.0" layoutY="350.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
+        <Button fx:id="btnPhobosEnkelInfo" layoutX="814.0" layoutY="350.0" mnemonicParsing="false" styleClass="buttonInfo" stylesheets="@styles.css" text=" i " textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnPhobosDubbelInfo" layoutX="814.0" layoutY="385.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
+        <Button fx:id="btnPhobosDubbelInfo" layoutX="814.0" layoutY="385.0" mnemonicParsing="false" styleClass="buttonInfo" stylesheets="@styles.css" text=" i " textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="btnDeimosEnkelInfo" layoutX="814.0" layoutY="443.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
+        <Button fx:id="btnDeimosEnkelInfo" layoutX="814.0" layoutY="443.0" mnemonicParsing="false" styleClass="buttonInfo" stylesheets="@styles.css" text=" i " textFill="#000000">
             <font>
                 <Font name="Book Antiqua" size="13.0" />
             </font>
@@ -117,57 +117,57 @@
         <Button fx:id="btnVALJAmatpaketdit" layoutX="46.0" layoutY="256.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="MATPAKET" textFill="#eed2a7" />
         <Button fx:id="btnVALJAhyttdit" layoutX="46.0" layoutY="209.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="HYTTER" textFill="#eed2a7" />
         <Button fx:id="btnVALJAresedatum" layoutX="46.0" layoutY="162.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="RESEDATUM" textFill="#eed2a7" />
-      <RadioButton fx:id="rbtnDeimosDubbel" layoutX="252.0" layoutY="476.0" mnemonicParsing="false" text="Hotel Deimos: Dubbelrum" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
+      <RadioButton fx:id="rbtnDeimosDubbel" layoutX="252.0" layoutY="476.0" mnemonicParsing="false" styleClass="radioButton" stylesheets="@styles.css" text="Hotel Deimos Dubbelrum" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </RadioButton>
-      <Label fx:id="lblDeimosDubbelPris" layoutX="579.0" layoutY="477.0" text="12 00kr" textFill="WHITE">
+      <Label fx:id="lblDeimosDubbelPris" layoutX="579.0" layoutY="477.0" text="12 000kr/rum" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <RadioButton fx:id="rbtnRoyalEnkel" layoutX="252.0" layoutY="533.0" mnemonicParsing="false" text="Royal City: Enkel Lyx" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
+      <RadioButton fx:id="rbtnRoyalEnkel" layoutX="252.0" layoutY="533.0" mnemonicParsing="false" styleClass="radioButton" stylesheets="@styles.css" text="Royal City Enkel Lyx" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="rbtnRoyalDubbel" layoutX="252.0" layoutY="567.0" mnemonicParsing="false" text="Royal City: Dubbel Lyx" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
+      <RadioButton fx:id="rbtnRoyalDubbel" layoutX="252.0" layoutY="567.0" mnemonicParsing="false" styleClass="radioButton" stylesheets="@styles.css" text="Royal City Dubbel Lyx" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="rbtnRoyalSvit" layoutX="252.0" layoutY="601.0" mnemonicParsing="false" text="Royal City: Svit" textFill="WHITE" styleClass="radioButton" stylesheets="@styles.css">
+      <RadioButton fx:id="rbtnRoyalSvit" layoutX="252.0" layoutY="601.0" mnemonicParsing="false" styleClass="radioButton" stylesheets="@styles.css" text="Royal City Svit" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </RadioButton>
-      <Label fx:id="lblRoyalEnkelPris" layoutX="579.0" layoutY="534.0" text="20 000kr" textFill="WHITE">
+      <Label fx:id="lblRoyalEnkelPris" layoutX="579.0" layoutY="534.0" text="20 000kr/rum" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblRoyalDubbelPris" layoutX="579.0" layoutY="568.0" text="35 000kr" textFill="WHITE">
+      <Label fx:id="lblRoyalDubbelPris" layoutX="579.0" layoutY="568.0" text="35 000kr/rum" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblRoyalSvitPris" layoutX="579.0" layoutY="602.0" text="50 000kr" textFill="WHITE">
+      <Label fx:id="lblRoyalSvitPris" layoutX="579.0" layoutY="602.0" text="50 000kr/rum" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnDeimosDubbelInfo" layoutX="814.0" layoutY="478.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
+      <Button fx:id="btnDeimosDubbelInfo" layoutX="814.0" layoutY="478.0" mnemonicParsing="false" styleClass="buttonInfo" stylesheets="@styles.css" text=" i " textFill="#000000">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnRoyalEnkelInfo" layoutX="814.0" layoutY="535.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
+      <Button fx:id="btnRoyalEnkelInfo" layoutX="814.0" layoutY="535.0" mnemonicParsing="false" styleClass="buttonInfo" stylesheets="@styles.css" text=" i " textFill="#000000">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnRoyalDubbelInfo" layoutX="814.0" layoutY="569.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
+      <Button fx:id="btnRoyalDubbelInfo" layoutX="814.0" layoutY="569.0" mnemonicParsing="false" styleClass="buttonInfo" stylesheets="@styles.css" text=" i " textFill="#000000">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
@@ -177,7 +177,7 @@
                 <Image url="@../../../../image/CartIcon.png" />
             </image>
         </ImageView>
-      <Button fx:id="btnRoyalSvitInfo" layoutX="814.0" layoutY="603.0" mnemonicParsing="false" text=" i " styleClass="buttonInfo" stylesheets="@styles.css" textFill="#000000">
+      <Button fx:id="btnRoyalSvitInfo" layoutX="814.0" layoutY="603.0" mnemonicParsing="false" styleClass="buttonInfo" stylesheets="@styles.css" text=" i " textFill="#000000">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>
