@@ -81,6 +81,8 @@ public class SparaKundController {
     public void initialize() {
         CharacterRestrictions.applyCharacterRestrictions(tffirstname, tflastname, tfphonenumber, tfemail);
         btnKASSA.setOnAction(event -> {
+
+
             String firstName = tffirstname.getText();
             String lastName = tflastname.getText();
             String phone = tfphonenumber.getText();
@@ -93,6 +95,7 @@ public class SparaKundController {
             storeTravelChoices.writeToFile(customerInfo);
 
             NextButton nextButton = new NextButton();
+            checkoutCartService.storeInformation();
             Stage stage = (Stage) btnKASSA.getScene().getWindow();
             // Här skulle min metod för att spara kundinformationen till databasen vara
             // Men någon, som jag inte vet vem det är, har tagit bort den. Tack.

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.nio.file.Paths;
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -350,5 +351,33 @@ public class CheckoutCartService {
         stage.get().setScene(scene);
         stage.get().setTitle("Varukorg - Totalt pris: " + formattedTotalPrice + " kr"); // Ändra?
         stage.get().show();
+    }
+
+    /**
+     * Stores the information in the file "travelChoices.txt" to a new file with a unique name.
+     * The file "travelChoices.txt" is then cleared.
+     * The new file is named "order + uniqueId.txt" where uniqueId is the current timestamp.
+     */
+    public void storeInformation() { // Fullösning, men den duger för nu.
+        String fileName = "travelChoices.txt";
+        Path sourcePath = Paths.get(fileName);
+
+        // Generate a unique ID using the current timestamp
+        String uniqueId = String.valueOf(System.currentTimeMillis());
+
+        // Rename the file "travelChoices.txt" to "order + uniqueId.txt"
+        Path targetPath = Paths.get("order" + uniqueId + ".txt");
+        try {
+            Files.move(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Create a new file "travelChoices.txt"
+        try {
+            Files.createFile(sourcePath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
