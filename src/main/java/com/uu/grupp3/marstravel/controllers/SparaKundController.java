@@ -1,10 +1,7 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.database.DatabaseHandler;
-import com.uu.grupp3.marstravel.services.CharacterRestrictions;
-import com.uu.grupp3.marstravel.services.CheckoutCartService;
-import com.uu.grupp3.marstravel.services.NextButton;
-import com.uu.grupp3.marstravel.services.SideBarButtons;
+import com.uu.grupp3.marstravel.services.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -82,9 +79,19 @@ public class SparaKundController {
     private Button varukorg;
 
     public void initialize() {
-        // Apply character restrictions to text fields
         CharacterRestrictions.applyCharacterRestrictions(tffirstname, tflastname, tfphonenumber, tfemail);
         btnKASSA.setOnAction(event -> {
+            String firstName = tffirstname.getText();
+            String lastName = tflastname.getText();
+            String phone = tfphonenumber.getText();
+            String email = tfemail.getText();
+            String customerInfo = "Förnamn: " + firstName + "\n" +
+                    "Efternamn: " + lastName + "\n" +
+                    "Telefon: " + phone + "\n" +
+                    "Email: " + email + "\n";
+            StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
+            storeTravelChoices.writeToFile(customerInfo);
+
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnKASSA.getScene().getWindow();
             // Här skulle min metod för att spara kundinformationen till databasen vara

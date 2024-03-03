@@ -11,9 +11,6 @@ import java.util.Locale;
 import java.util.concurrent.atomic.AtomicReference;
 
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
@@ -25,7 +22,6 @@ import javafx.stage.Stage;
 /**
  * This class is responsible for calculating the total price of the cart and
  * displaying the cart contents in an info dialog.
-
  */
 public class CheckoutCartService {
     DatabaseReciveInformation databaseReciveInformation = new DatabaseReciveInformation();
@@ -352,7 +348,7 @@ public class CheckoutCartService {
         scrollPane.setFitToHeight(true);
         Scene scene = new Scene(scrollPane);
         stage.get().setScene(scene);
-        stage.get().setTitle("Varukorg");
+        stage.get().setTitle("Varukorg - Totalt pris: " + formattedTotalPrice + " kr"); // Ändra?
         stage.get().show();
     }
 }
