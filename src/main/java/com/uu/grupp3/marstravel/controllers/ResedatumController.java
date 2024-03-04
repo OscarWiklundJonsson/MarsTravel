@@ -127,7 +127,7 @@ public class ResedatumController implements Initializable {
             felAlert.showAndWait();
             return;
         }
-        // check if there is already a date stored, if yes remove the old date
+
         if (storeTravelChoices.getDate() != null) {
             storeTravelChoices.removeDate();
         }

@@ -14,11 +14,6 @@ public class BokaController {
         @FXML
         private Button btnBoka;
 
-
-        /**
-         * Initializes the controller class.
-         * Riktigt bra kod, kort och koncist.hehe
-         */
         public void initialize() {
                 btnBoka.setOnAction(event -> {
                         NextButton nextButton = new NextButton();

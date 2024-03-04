@@ -363,10 +363,8 @@ public class CheckoutCartService {
         String fileName = "travelChoices.txt";
         Path sourcePath = Paths.get(fileName);
 
-        // Generate a unique ID using the current timestamp
         String uniqueId = String.valueOf(System.currentTimeMillis());
 
-        // Rename the file "travelChoices.txt" to "order + uniqueId.txt"
         Path targetPath = Paths.get("order" + uniqueId + ".txt");
         try {
             Files.move(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
@@ -374,7 +372,6 @@ public class CheckoutCartService {
             e.printStackTrace();
         }
 
-        // Create a new file "travelChoices.txt"
         try {
             Files.createFile(sourcePath);
         } catch (IOException e) {

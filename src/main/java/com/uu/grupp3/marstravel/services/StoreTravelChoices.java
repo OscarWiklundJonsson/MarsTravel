@@ -107,9 +107,6 @@ public class StoreTravelChoices {
     }
 
 
-
-    // Måste blivit tappad som barn för att skriva såhär dålig kod, @todo :D
-
     /**
      * Removes all lines containing the search string
      * @param  // får felkod om jag har en param här, så då struntar vi i det :D
