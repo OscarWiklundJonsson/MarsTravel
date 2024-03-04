@@ -1,0 +1,24 @@
+- Välja Antal Resande
+    - Hytter dylikt anpassat efter antalet resenärer
+
+Processen för att söka en bokning:
+     I sökfönstret skriver man in antingen namnet på resenären, personnumret eller
+        bokningsnumret
+        o Hela bokningen ska visas och vara ändringsbar/avbokningsbar
+        o Vid eventuell förändring ska en ny faktura skapas med mellanskillnaden från den
+        ursprungliga fakturan (kan därmed bli en kreditfaktura där resenären ska få pengar
+        tillbaka).
+        o När förändringar är gjorda och sparade kommer man tillbaka till sökningens startsida
+             Vill man inte göra någon förändring så ska man kunna välja att gå tillbaka till startsidan för
+            programmet
+
+
+
+Processen för att se statistik:
+     På statistiksidan ska man kunna välja ett datum och därmed se statistik på
+        o Hur många passagerare är inbokade (och hur många platser som är kvar)
+        o Hur många av de olika boendealternativen som är bokade (och hur många som är
+        lediga) på färjan
+            o Hur många olika matpaket är bokade
+            o Hur många olika evenemangsbiljetter som är bokade
+            o Hur många hotellrum (fördelat på de olika alternativ som finns) som är bokade på Mars under det valda datumet

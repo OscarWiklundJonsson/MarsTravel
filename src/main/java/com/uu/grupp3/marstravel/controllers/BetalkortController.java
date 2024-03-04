@@ -61,6 +61,13 @@ public class BetalkortController {
 
     private CheckoutCartService checkoutCartService = new CheckoutCartService();
 
+    /**
+     * Metoden initialize körs när fönstret öppnas och innehåller all funktionalitet för fönstret.
+     * Här finns funktionalitet för att spara betalkortsinformation och för att visa varukorgen.
+     * Här finns även funktionalitet för att navigera mellan sidorna i applikationen.
+     * Här finns även funktionalitet för att kontrollera att summan som ska laddas på betalkortet är minst 20000.
+     *
+     */
     public void initialize() {
 
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
@@ -94,8 +101,6 @@ public class BetalkortController {
             nextButton.nextButton("/com/uu/grupp3/marstravel/sparaKundInformation.fxml", stage);
         });
         btnVALJAbetalkort.setDisable(true);
-
-
 
         // denna beast som visar varukorgen
         btnVarukorg.setOnAction(event -> {

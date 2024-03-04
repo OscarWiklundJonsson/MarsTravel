@@ -93,12 +93,12 @@ public class SparaKundController {
                     "Email: " + email + "\n";
             StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
             storeTravelChoices.writeToFile(customerInfo);
-
+            // DEN HÄR KODEN ÄR HELT SÄMST. VARFÖR SKRIVER JAG KOD SÅ DÅLIGT? HUH
             NextButton nextButton = new NextButton();
             checkoutCartService.storeInformation();
             Stage stage = (Stage) btnKASSA.getScene().getWindow();
             // Här skulle min metod för att spara kundinformationen till databasen vara
-            // Men någon, som jag inte vet vem det är, har tagit bort den. Tack.
+            // Men någon, som jag inte vet vem det är, har tagit bort den. Tack. (Natalie, tack.)
             nextButton.nextButton("/com/uu/grupp3/marstravel/boka.fxml", stage); //ska skickas till varukorgen sen.
         });
 

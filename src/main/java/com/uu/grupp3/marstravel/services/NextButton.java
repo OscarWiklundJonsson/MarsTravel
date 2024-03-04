@@ -9,6 +9,8 @@ import java.io.IOException;
 
 /**
  * Nästa knapp som tar användaren till nästa fönster
+ * @param pathToNextFXML - sökväg till nästa fönster
+ *
  */
 public class NextButton {
     public void nextButton(String pathToNextFXML, Stage stage) {

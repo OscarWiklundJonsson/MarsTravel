@@ -6,7 +6,7 @@ public class DatabaseHandler {
     private static final String URL = "jdbc:sqlite:src/main/resources/database/mars_travel.db"; // Path to the database
     private static final String DRIVER = "org.sqlite.JDBC";
 
-    // Ifall man vill använda en databas som är online
+    // Ifall man vill använda en databas som är online, borde ju vara mer kod? men det är ett problem för framtiden
     private static final String USER = " ";
     private static final String PASSWORD = " ";
 

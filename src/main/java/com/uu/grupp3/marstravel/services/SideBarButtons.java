@@ -9,6 +9,7 @@ import java.io.IOException;
 
 /**
  * Sidebar knappar som tar användaren till valfritt fönster
+ * @param pathToNextFXML - sökväg till nästa fönster
  */
 public class SideBarButtons {
     public void sideBarButton(String pathToNextFXML, Stage stage) {

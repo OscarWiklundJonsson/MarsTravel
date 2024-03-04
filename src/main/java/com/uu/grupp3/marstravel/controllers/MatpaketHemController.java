@@ -158,7 +158,7 @@ public class MatpaketHemController {
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
         StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
 
-        //Pop-Up for MatpaketInformation, detta borde man ju kunna göra bättre? @todo
+        //Pop-Up for MatpaketInformation, detta borde man ju kunna göra bättre? @todo - någon ???
         btnBudget1.setOnAction(event -> dbInfo.showInfoFromDB("budget1", "Budget 1", "MatpaketInformation", 1));
         btnBudget2.setOnAction(event -> dbInfo.showInfoFromDB("budget2", "Budget 2", "MatpaketInformation", 1));
         btnBudget3.setOnAction(event -> dbInfo.showInfoFromDB("budget3", "Budget 3", "MatpaketInformation", 1));

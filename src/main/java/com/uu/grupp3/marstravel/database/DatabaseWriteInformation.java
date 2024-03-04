@@ -7,6 +7,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+* inte dags för detta än, stay cooooool
+ */
 public class DatabaseWriteInformation {
 
     public void writeTravelChoicesToDB() {
@@ -26,7 +29,7 @@ public class DatabaseWriteInformation {
 
     // Stuff som borde göras om. @todo
     private void writeLineToDB(Connection connection, String line) throws SQLException {
-        String sql = "INSERT INTO your_table (column_name) VALUES (?)"; // ändra detta till korrekt
+        String sql = "INSERT INTO your_table (column_name) VALUES (?)"; // ändra detta till korrekt, duh
 
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, line);

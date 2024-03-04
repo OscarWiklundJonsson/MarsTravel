@@ -23,6 +23,7 @@ import javafx.stage.Stage;
 /**
  * This class is responsible for calculating the total price of the cart and
  * displaying the cart contents in an info dialog.
+ * Wow, skulle inte tro att det var så mycket kod för att räkna ut priset på en varukorg, men det är det.
  */
 public class CheckoutCartService {
     DatabaseReciveInformation databaseReciveInformation = new DatabaseReciveInformation();

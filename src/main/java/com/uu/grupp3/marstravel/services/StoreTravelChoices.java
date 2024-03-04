@@ -16,6 +16,8 @@ import java.util.List;
 
 public class StoreTravelChoices {
     private static final String FILE_NAME = "travelChoices.txt"; // Filnamnet ;)
+    // najs, vi har en fil som heter travelChoices.txt som vi skriver till och läser från, men om filen inte finns så är det kört
+    // kul grej
 
     /**
      * Stores the selected radio button in a file
@@ -103,6 +105,10 @@ public class StoreTravelChoices {
             e.printStackTrace();
         }
     }
+
+
+
+    // Måste blivit tappad som barn för att skriva såhär dålig kod, @todo :D
 
     /**
      * Removes all lines containing the search string
