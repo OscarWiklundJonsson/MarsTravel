@@ -28,7 +28,7 @@ public class CharacterRestrictions {
             } else if (textField.getId().equals("tfphonenumber")) {
                 textField.setTextFormatter(createFormatter("[0-9#]*"));
             } else if (textField.getId().equals("tfemail")) {
-                textField.setTextFormatter(createFormatter("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"));
+                textField.setTextFormatter(createFormatter("[0-9a-zA-Z\\+\\-_~]*"));
             }
         }
     }
