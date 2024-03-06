@@ -8,8 +8,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MarsTravelApplication extends Application {
+    public static Stage mainWindow; // Add this line
+
     @Override
     public void start(Stage stage) throws IOException {
+        mainWindow = stage; // Add this line
+
         FXMLLoader fxmlLoader = new FXMLLoader(MarsTravelApplication.class.getResource("boka.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
         stage.setTitle("Mars Travel MMXXI - Welcome to Mars");
