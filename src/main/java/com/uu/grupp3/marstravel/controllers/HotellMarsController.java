@@ -1,5 +1,6 @@
 package com.uu.grupp3.marstravel.controllers;
 
+import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
 import com.uu.grupp3.marstravel.services.CheckoutCartService;
 import com.uu.grupp3.marstravel.services.NextButton;
 import com.uu.grupp3.marstravel.services.SideBarButtons;
@@ -144,9 +145,30 @@ public class HotellMarsController {
 
     //nästa knapp, skickar vidare till hytterHem sidan.
     public void initialize() {
-        ToggleGroup group = new ToggleGroup();
+        DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
         StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
 
+        //Pop-Up for Polar Lansdorp Information
+        btnLansdorpInfo.setOnAction(event -> dbInfo.showInfoFromDB("Lansdorp", "Polar Lansdorp", "HotellMarsInformation",1));
+        //Pop-Up for Polar Wielders Information
+        btnWeildersInfo.setOnAction(event -> dbInfo.showInfoFromDB("Wielders", "Polar Wielders", "HotellMarsInformation",1));
+        //Pop-Up for Hotel Phobos Enkelrum Information
+        btnPhobosEnkelInfo.setOnAction(event -> dbInfo.showInfoFromDB("PhobosEnkel", "Hotell Phobos Enkel", "HotellMarsInformation",1));
+        //Pop-Up for Hotel Phobos Dubbelrum Information
+        btnPhobosDubbelInfo.setOnAction(event -> dbInfo.showInfoFromDB("PhobosDubbel", "Hotell Phobos Dubbel", "HotellMarsInformation",1));
+        //Pop-Up for Hotel Deimos Enkelrum Information
+        btnDeimosEnkelInfo.setOnAction(event -> dbInfo.showInfoFromDB("DeimosEnkel", "Hotell Deimos Enkel", "HotellMarsInformation",1));
+        //Pop-Up for Hotel Deimos Dubbelrum Information
+        btnDeimosDubbelInfo.setOnAction(event -> dbInfo.showInfoFromDB("DeimosDubbel", "Hotell Deimos Dubbel", "HotellMarsInformation",1));
+        //Pop-Up for Hotel Royal Enkelrum Information
+        btnRoyalEnkelInfo.setOnAction(event -> dbInfo.showInfoFromDB("RoyalEnkel", "Hotell Royal Enkel", "HotellMarsInformation",1));
+        //Pop-Up for Hotel Royal Dubbelrum Information
+        btnRoyalDubbelInfo.setOnAction(event -> dbInfo.showInfoFromDB("RoyalDubbel", "Hotell Royal Dubbel", "HotellMarsInformation",1));
+        //Pop-Up for Hotel Royal Svit Information
+        btnRoyalSvitInfo.setOnAction(event -> dbInfo.showInfoFromDB("RoyalSvit", "Hotell Royal Svit", "HotellMarsInformation",1));
+
+
+        ToggleGroup group = new ToggleGroup();
         rbtnDeimosDubbel.setToggleGroup(group);
         rbtnDeimosEnkel.setToggleGroup(group);
         rbtnLansdorp.setToggleGroup(group);
