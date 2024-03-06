@@ -56,6 +56,8 @@ public class SparaKundController {
 
     @FXML
     private Button btnVALJAresedatum;
+    @FXML
+    private Button btnInfoHalsodetaljer;
 
     @FXML
     private Circle cVarukorgen;
@@ -74,6 +76,22 @@ public class SparaKundController {
 
     @FXML
     private TextField tfphonenumber;
+    @FXML
+    private TextField tfAdress;
+
+    @FXML
+    private TextField tfHalsodetaljer;
+
+    @FXML
+    private TextField tfOrt;
+
+    @FXML
+    private TextField tfPersonnummer;
+
+    @FXML
+    private TextField tfPostnummer;
+
+
 
     @FXML
     private Button varukorg;
