@@ -11,7 +11,10 @@ import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicReference;
 
+import com.uu.grupp3.marstravel.MarsTravelApplication;
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
@@ -342,6 +345,23 @@ public class CheckoutCartService {
         button.setOnAction(event -> {
             checkoutCartClearCart();
             textArea.setText("Varukorgen är rensad.");
+
+            // Create a new FXMLLoader and set its location to boka.fxml
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/com/uu/grupp3/marstravel/boka.fxml"));
+
+
+            try {
+                // Load the FXMLLoader to get the root node
+                Parent root = loader.load();
+
+                // Create a new Scene with the root node and set it to the main window
+                Scene scene = new Scene(root);
+                stage.get().close();
+                MarsTravelApplication.mainWindow.setScene(scene);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
 
         VBox vbox = new VBox(textArea, button);
