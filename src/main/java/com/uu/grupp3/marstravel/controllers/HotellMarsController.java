@@ -157,6 +157,15 @@ public class HotellMarsController {
         rbtnRoyalSvit.setToggleGroup(group);
         rbtnWeilders.setToggleGroup(group);
 
+        if (StoreTravelChoices.selectedRadioButtonId != null) {
+            ((RadioButton) group.getToggles().stream()
+                    .filter(toggle -> ((RadioButton) toggle).getId().equals(StoreTravelChoices.selectedRadioButtonId))
+                    .findFirst()
+                    .orElse(null))
+                    .setSelected(true);
+        }
+
+
         btnNASTA.setDisable(true);
 
         group.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
@@ -169,6 +178,8 @@ public class HotellMarsController {
             if (storeTravelChoices.getHotell() != null) {
                 storeTravelChoices.removeHotell();
             }
+            RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
+            StoreTravelChoices.selectedRadioButtonId = selectedRadioButton.getId();
             storeTravelChoices.storeSelectedRadioButton(group, "Hotell: ");
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnNASTA.getScene().getWindow();

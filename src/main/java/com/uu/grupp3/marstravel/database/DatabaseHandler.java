@@ -42,8 +42,10 @@ public class DatabaseHandler {
         }
     }
 
-    // Den här rackaren får vara här tillsvidare.
 
+
+
+    // Den här rackaren får vara här tillsvidare. @todo flytta till lämplig klass
     /**
      * Validates the user by checking if the username and password exists in the database
      * @param username the username to validate

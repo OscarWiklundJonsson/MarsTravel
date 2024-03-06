@@ -19,6 +19,8 @@ public class StoreTravelChoices {
     // najs, vi har en fil som heter travelChoices.txt som vi skriver till och läser från, men om filen inte finns så är det kört
     // kul grej
 
+    public static String selectedRadioButtonId = null;
+
     /**
      * Stores the selected radio button in a file
      * @param group the toggle group
