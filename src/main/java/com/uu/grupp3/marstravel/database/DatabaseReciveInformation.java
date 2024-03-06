@@ -22,7 +22,7 @@ import java.sql.Statement;
 public class DatabaseReciveInformation {
     public void showInfoFromDB(String type, String title, String tableName, int columnNumber) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
+        alert.getDialogPane().getStylesheets().add(getClass().getResource("/com/uu/grupp3/marstravel/styles3.css").toExternalForm());        alert.setTitle(title);
         alert.setHeaderText(null);
 
         Connection connection;
