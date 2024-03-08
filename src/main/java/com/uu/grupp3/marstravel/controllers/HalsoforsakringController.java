@@ -9,7 +9,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 public class HalsoforsakringController {
@@ -78,7 +77,7 @@ public class HalsoforsakringController {
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
         StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
 
-        //Pop-Up ändra till info on hälsoförsäkring
+        //Pop-Up info om hälsoförsäkring
         btnhalsofinfo.setOnAction(event -> dbInfo.showInfoFromDB("Hälsoförsäkring", "Hälsoförsäkring", "Hälsoförsäkring", 1));
 
         //rbtnhalsof
@@ -151,4 +150,5 @@ public class HalsoforsakringController {
             sideBarButtons.sideBarButton(fxmlPath, stage);
         }
     }
+
 }

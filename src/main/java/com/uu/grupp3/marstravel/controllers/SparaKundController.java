@@ -56,6 +56,8 @@ public class SparaKundController {
 
     @FXML
     private Button btnVALJAresedatum;
+    @FXML
+    private Button btnInfoHalsodetaljer;
 
     @FXML
     private Circle cVarukorgen;
@@ -74,6 +76,22 @@ public class SparaKundController {
 
     @FXML
     private TextField tfphonenumber;
+    @FXML
+    private TextField tfAdress;
+
+    @FXML
+    private TextField tfHalsodetaljer;
+
+    @FXML
+    private TextField tfOrt;
+
+    @FXML
+    private TextField tfPersonnummer;
+
+    @FXML
+    private TextField tfPostnummer;
+
+
 
     @FXML
     private Button varukorg;
@@ -110,6 +128,14 @@ public class SparaKundController {
             }
         });
         btnVALJAkundinfo.setDisable(true);
+
+        btnInfoHalsodetaljer.setOnAction(event -> {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Hälsodetaljer");
+            alert.setHeaderText(null);
+            alert.setContentText("Hälsodetaljerna är att man är fullt frisk, alternativt att man har någon kronisk krämpa (då ska information om det skrivas in), samt om någon medicin tas regelbundet (och då ska den informationen fyllas i).");
+            alert.show();
+        });
     }
     // Method to save a customer to the database
     /**

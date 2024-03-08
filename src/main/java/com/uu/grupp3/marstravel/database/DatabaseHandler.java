@@ -41,4 +41,32 @@ public class DatabaseHandler {
             }
         }
     }
+
+
+
+
+    // Den här rackaren får vara här tillsvidare. @todo flytta till lämplig klass
+    /**
+     * Validates the user by checking if the username and password exists in the database
+     * @param username the username to validate
+     * @param password the password to validate
+     * @return true if the user is validated, false if not
+     */
+    public boolean validateUser(String username, String password) {
+        try {
+            Connection connection = getConnection();
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM loggain WHERE användarnamn = ? AND lösenord = ?");
+            statement.setString(1, username);
+            statement.setString(2, password);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return true;
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            System.out.println(); // @todo Ändra det här till något vettigt
+        }
+        return false;
+    }
 }

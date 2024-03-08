@@ -3,6 +3,7 @@
     -fx-background-repeat: no-repeat;
     -fx-background-size: stretch;
 }
+
 #marsTravelHeader {
     -fx-text-fill: white;
     -fx-font-size: 1px;
@@ -45,7 +46,6 @@
 }
 
 /* SIDEBAR KNAPPARNA */
-
 .sidebuttons{
     -fx-background-color: #2d2e2f;
     -fx-border-color: #EED2A7;
@@ -94,7 +94,7 @@
     -fx-text-fill: #EED2A7;
 }
 
-
+/* VARUKORG KNAPPEN */
 .buttonVK {
     -fx-background-radius: 50;
     -fx-background-image: url("CartIcon.png");
@@ -104,3 +104,32 @@
     -fx-background-repeat: no-repeat;
 }
 
+/* Tabell Vy */
+.table-view {
+    -fx-background-color: #c7511b; /* Background color */
+}
+
+/* Tabell Kolumn Header */
+.table-header-background {
+    -fx-background-color: #EED2A7; /* Header background color */
+}
+
+/* Table Column Text */
+.table-column .label {
+    -fx-text-fill: #363230; /* Text color */
+}
+
+/* Tabell Rad */
+.table-row-cell {
+    -fx-background-color: #ffffff; /* Row background color */
+}
+
+/* Växlande Rad Färg */
+.table-row-cell:odd {
+    -fx-background-color: #F0F0F0; /* Alternate row background color */
+}
+
+/* Vald Rad Färg */
+.table-row-cell:selected {
+    -fx-background-color: #C7511B; /* Selected row background color */
+}

@@ -1,16 +1,13 @@
 package com.uu.grupp3.marstravel.controllers;
 
-import com.uu.grupp3.marstravel.services.CheckoutCartService;
-import com.uu.grupp3.marstravel.services.NextButton;
-import com.uu.grupp3.marstravel.services.SideBarButtons;
+import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
+import com.uu.grupp3.marstravel.services.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
-
-import com.uu.grupp3.marstravel.services.StoreTravelChoices;
 
 public class HotellMarsController {
 
@@ -144,9 +141,75 @@ public class HotellMarsController {
 
     //nästa knapp, skickar vidare till hytterHem sidan.
     public void initialize() {
-        ToggleGroup group = new ToggleGroup();
+        DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
         StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
+        RadioButtonState radioButtonState = RadioButtonState.getInstance();
 
+
+        //Pop-Up for Polar Lansdorp Information
+        btnLansdorpInfo.setOnAction(event -> dbInfo.showInfoFromDB("Lansdorp", "Polar Lansdorp", "HotellMarsInformation",1));
+        //Pop-Up for Polar Wielders Information
+        btnWeildersInfo.setOnAction(event -> dbInfo.showInfoFromDB("Wielders", "Polar Wielders", "HotellMarsInformation",1));
+        //Pop-Up for Hotel Phobos Enkelrum Information
+        btnPhobosEnkelInfo.setOnAction(event -> dbInfo.showInfoFromDB("PhobosEnkel", "Hotell Phobos Enkel", "HotellMarsInformation",1));
+        //Pop-Up for Hotel Phobos Dubbelrum Information
+        btnPhobosDubbelInfo.setOnAction(event -> dbInfo.showInfoFromDB("PhobosDubbel", "Hotell Phobos Dubbel", "HotellMarsInformation",1));
+        //Pop-Up for Hotel Deimos Enkelrum Information
+        btnDeimosEnkelInfo.setOnAction(event -> dbInfo.showInfoFromDB("DeimosEnkel", "Hotell Deimos Enkel", "HotellMarsInformation",1));
+        //Pop-Up for Hotel Deimos Dubbelrum Information
+        btnDeimosDubbelInfo.setOnAction(event -> dbInfo.showInfoFromDB("DeimosDubbel", "Hotell Deimos Dubbel", "HotellMarsInformation",1));
+        //Pop-Up for Hotel Royal Enkelrum Information
+        btnRoyalEnkelInfo.setOnAction(event -> dbInfo.showInfoFromDB("RoyalEnkel", "Hotell Royal Enkel", "HotellMarsInformation",1));
+        //Pop-Up for Hotel Royal Dubbelrum Information
+        btnRoyalDubbelInfo.setOnAction(event -> dbInfo.showInfoFromDB("RoyalDubbel", "Hotell Royal Dubbel", "HotellMarsInformation",1));
+        //Pop-Up for Hotel Royal Svit Information
+        btnRoyalSvitInfo.setOnAction(event -> dbInfo.showInfoFromDB("RoyalSvit", "Hotell Royal Svit", "HotellMarsInformation",1));
+
+
+        rbtnDeimosDubbel.setSelected(radioButtonState.getButtonState("rbtnDeimosDubbel"));
+        rbtnDeimosEnkel.setSelected(radioButtonState.getButtonState("rbtnDeimosEnkel"));
+        rbtnLansdorp.setSelected(radioButtonState.getButtonState("rbtnLansdorp"));
+        rbtnPhobosDubbel.setSelected(radioButtonState.getButtonState("rbtnPhobosDubbel"));
+        rbtnPhobosEnkel.setSelected(radioButtonState.getButtonState("rbtnPhobosEnkel"));
+        rbtnRoyalDubbel.setSelected(radioButtonState.getButtonState("rbtnRoyalDubbel"));
+        rbtnRoyalEnkel.setSelected(radioButtonState.getButtonState("rbtnRoyalEnkel"));
+        rbtnRoyalSvit.setSelected(radioButtonState.getButtonState("rbtnRoyalSvit"));
+        rbtnWeilders.setSelected(radioButtonState.getButtonState("rbtnWeilders"));
+
+        // Store the state of the radio buttons when they are selected
+        rbtnDeimosDubbel.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnDeimosDubbel", newValue);
+        });
+        rbtnDeimosEnkel.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnDeimosEnkel", newValue);
+        });
+        rbtnLansdorp.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnLansdorp", newValue);
+        });
+        rbtnPhobosDubbel.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnPhobosDubbel", newValue);
+        });
+        rbtnPhobosEnkel.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnPhobosEnkel", newValue);
+        });
+        rbtnRoyalDubbel.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnRoyalDubbel", newValue);
+        });
+        rbtnRoyalEnkel.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnRoyalEnkel", newValue);
+        });
+        rbtnRoyalSvit.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnRoyalSvit", newValue);
+        });
+        rbtnWeilders.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnWeilders", newValue);
+        });
+
+
+
+
+
+        ToggleGroup group = new ToggleGroup();
         rbtnDeimosDubbel.setToggleGroup(group);
         rbtnDeimosEnkel.setToggleGroup(group);
         rbtnLansdorp.setToggleGroup(group);
@@ -169,6 +232,8 @@ public class HotellMarsController {
             if (storeTravelChoices.getHotell() != null) {
                 storeTravelChoices.removeHotell();
             }
+            RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
+            StoreTravelChoices.selectedRadioButtonId = selectedRadioButton.getId();
             storeTravelChoices.storeSelectedRadioButton(group, "Hotell: ");
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnNASTA.getScene().getWindow();
