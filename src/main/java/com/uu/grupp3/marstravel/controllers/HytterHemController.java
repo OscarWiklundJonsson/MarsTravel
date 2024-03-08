@@ -87,19 +87,19 @@ public class HytterHemController {
     private Label lblhyttalternativ;
 
     @FXML
-    private RadioButton rbtnEco;
+    private RadioButton rbtnEcoH;
 
     @FXML
-    private RadioButton rbtnInside;
+    private RadioButton rbtnInsideH;
 
     @FXML
-    private RadioButton rbtnSleep;
+    private RadioButton rbtnSleepH;
 
     @FXML
-    private RadioButton rbtnSpaceside;
+    private RadioButton rbtnSpacesideH;
 
     @FXML
-    private RadioButton rbtnSvit;
+    private RadioButton rbtnSvitH;
 
     private CheckoutCartService checkoutCartService = new CheckoutCartService();
 
@@ -123,32 +123,32 @@ public class HytterHemController {
 
         // Funktion för att endast välja en radioknapp
         ToggleGroup group = new ToggleGroup();
-        rbtnEco.setToggleGroup(group);
-        rbtnInside.setToggleGroup(group);
-        rbtnSleep.setToggleGroup(group);
-        rbtnSpaceside.setToggleGroup(group);
-        rbtnSvit.setToggleGroup(group);
+        rbtnEcoH.setToggleGroup(group);
+        rbtnInsideH.setToggleGroup(group);
+        rbtnSleepH.setToggleGroup(group);
+        rbtnSpacesideH.setToggleGroup(group);
+        rbtnSvitH.setToggleGroup(group);
 
-        rbtnEco.setSelected(radioButtonState.getButtonState("rbtnEco"));
-        rbtnInside.setSelected(radioButtonState.getButtonState("rbtnInside"));
-        rbtnSleep.setSelected(radioButtonState.getButtonState("rbtnSleep"));
-        rbtnSpaceside.setSelected(radioButtonState.getButtonState("rbtnSpaceside"));
-        rbtnSvit.setSelected(radioButtonState.getButtonState("rbtnSvit"));
+        rbtnEcoH.setSelected(radioButtonState.getButtonState("rbtnEcoH"));
+        rbtnInsideH.setSelected(radioButtonState.getButtonState("rbtnInsideH"));
+        rbtnSleepH.setSelected(radioButtonState.getButtonState("rbtnSleepH"));
+        rbtnSpacesideH.setSelected(radioButtonState.getButtonState("rbtnSpacesideH"));
+        rbtnSvitH.setSelected(radioButtonState.getButtonState("rbtnSvitH"));
 
-        rbtnEco.selectedProperty().addListener((observable, oldValue, newValue) -> {
-            radioButtonState.setButtonState("rbtnEco", newValue);
+        rbtnEcoH.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnEcoH", newValue);
         });
-        rbtnInside.selectedProperty().addListener((observable, oldValue, newValue) -> {
-            radioButtonState.setButtonState("rbtnInside", newValue);
+        rbtnInsideH.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnInsideH", newValue);
         });
-        rbtnSleep.selectedProperty().addListener((observable, oldValue, newValue) -> {
-            radioButtonState.setButtonState("rbtnSleep", newValue);
+        rbtnSleepH.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnSleepH", newValue);
         });
-        rbtnSpaceside.selectedProperty().addListener((observable, oldValue, newValue) -> {
-            radioButtonState.setButtonState("rbtnSpaceside", newValue);
+        rbtnSpacesideH.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnSpacesideH", newValue);
         });
-        rbtnSvit.selectedProperty().addListener((observable, oldValue, newValue) -> {
-            radioButtonState.setButtonState("rbtnSvit", newValue);
+        rbtnSvitH.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnSvitH", newValue);
         });
 
 
