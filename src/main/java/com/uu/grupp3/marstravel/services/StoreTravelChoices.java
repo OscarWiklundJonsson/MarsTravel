@@ -185,6 +185,10 @@ public class StoreTravelChoices {
         return getLineContaining("Antal resenärer: ");
     }
 
+    public void removeAntalResenarer() {
+        removeLineContaining("Antal resenärer: ");
+    }
+
     public void removeDate() {
         removeLineContaining(" till ");
     }

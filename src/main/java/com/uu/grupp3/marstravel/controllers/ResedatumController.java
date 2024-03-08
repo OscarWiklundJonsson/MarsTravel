@@ -181,6 +181,10 @@ public class ResedatumController implements Initializable {
         if (storeTravelChoices.getDate() != null) {
             storeTravelChoices.removeDate();
         }
+        if(storeTravelChoices.getAntalResenarer() != null){
+            storeTravelChoices.removeAntalResenarer();
+        }
+
         String chosenDate = Avresa_ar.getValue() + "-" + Avresa_manad.getValue() + " till " + Hemresa_ar.getValue() + "-" + HemresaMånad.getValue();
         storeTravelChoices.storeDate(chosenDate);
         storeTravelChoices.storeChoiceBox("Antal resenärer: ", Antal_resenarer);

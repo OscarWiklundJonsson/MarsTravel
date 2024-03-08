@@ -38,7 +38,7 @@ public class CheckoutCartService {
      * @throws IOException if an I/O error occurs
      */
     private int antalResenarer;
-
+    
     public double calculateTotalPrice() throws IOException {
         String fileName = "travelChoices.txt";
         Path path = Paths.get(fileName);
@@ -290,7 +290,6 @@ public class CheckoutCartService {
             antalResenarer = Integer.parseInt(antalResenarerStr);
         }
 
-        //TODO: Fixa så att det totalPrice multipliceras med antalet resenärer
         System.out.println("Antal resenärer: " + antalResenarer);
         totalPrice = totalPrice * antalResenarer;
         System.out.println("Totalt pris:"+ totalPrice);
