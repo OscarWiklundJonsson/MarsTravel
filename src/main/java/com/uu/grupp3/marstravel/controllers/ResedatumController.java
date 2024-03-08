@@ -74,7 +74,6 @@ public class ResedatumController implements Initializable {
         );
         Antal_resenarer.setItems(AntalResenarerAlternativ);
 
-
         btnVALJAresedatum.setDisable(true);
         Avresa_ar.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             updateAvgangTid();
