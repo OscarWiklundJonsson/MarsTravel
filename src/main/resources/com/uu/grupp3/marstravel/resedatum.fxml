@@ -64,7 +64,7 @@
          </font>
       </Text>
       <Line endX="215.33331298828125" endY="509.66668701171875" layoutX="737.0" layoutY="160.0" startX="215.33331298828125" startY="10.66668701171875" />
-      <ChoiceBox fx:id="AntalResenarer" layoutX="229.0" layoutY="314.0" prefHeight="25.0" prefWidth="28.0" />
+      <ChoiceBox fx:id="AntalResenarer" layoutX="229.0" layoutY="314.0" prefHeight="25.0" prefWidth="28.0" styleClass="choiceBox" stylesheets="@styles.css" />
       <Text fx:id="Avresatext1" fill="#c7511b" layoutX="946.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avgångar för hemresa " textAlignment="CENTER" wrappingWidth="297.986328125">
          <font>
             <Font name="Century Gothic" size="36.0" />

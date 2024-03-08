@@ -33,6 +33,9 @@ public class ResedatumController implements Initializable {
     private ChoiceBox<String> Hemresa_ar;
 
     @FXML
+    private ChoiceBox<String> Antal_resenarer;
+
+    @FXML
     private ChoiceBox<String> HemresaMånad;
 
     @FXML
@@ -66,7 +69,12 @@ public class ResedatumController implements Initializable {
         );
         HemresaMånad.setItems(hemresaManadAlternativ);
 
-        // Disable VALJAresedatum button initially
+        ObservableList<String> AntalResenarerAlternativ = FXCollections.observableArrayList(
+                "1", "2", "3", "4","5","6","7","8"
+        );
+        Antal_resenarer.setItems(AntalResenarerAlternativ);
+
+
         btnVALJAresedatum.setDisable(true);
         Avresa_ar.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             updateAvgangTid();
