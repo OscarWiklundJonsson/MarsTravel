@@ -1,9 +1,6 @@
 package com.uu.grupp3.marstravel.services;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
@@ -383,10 +380,14 @@ public class CheckoutCartService {
     public void storeInformation() {
         String fileName = "travelChoices.txt";
         Path sourcePath = Paths.get(fileName);
-        Path targetPath = Paths.get("order" + System.currentTimeMillis() + ".txt");
+        String targetFileName = "order" + System.currentTimeMillis() + ".html";
+        Path targetPath = Paths.get(targetFileName);
 
         try (BufferedReader reader = Files.newBufferedReader(sourcePath);
-             BufferedWriter writer = Files.newBufferedWriter(targetPath)) {
+             BufferedWriter writer = new BufferedWriter(new FileWriter(targetFileName))) {
+
+            // Write HTML header
+            writer.write("<!DOCTYPE html>\n<html>\n<head>\n<title>Order Details</title>\n</head>\n<body>\n");
 
             String line;
             while ((line = reader.readLine()) != null) {
@@ -396,10 +397,18 @@ public class CheckoutCartService {
                 }
                 String[] parts = line.split(": ");
                 if (parts.length == 2) {
-                    writer.write("Produkt: " + parts[0] + "\n");
-                    writer.write("Pris: " + parts[1] + "\n\n");
+                    writer.write("<p><strong>" + parts[0] + ":</strong> " + parts[1] + "</p>\n");
                 }
             }
+
+            // Calculate total price and write it to the HTML
+            double totalPrice = calculateTotalPrice();
+            NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.UK);
+            String formattedTotalPrice = numberFormat.format(totalPrice);
+            writer.write("<p><strong>Totalt pris:</strong> " + formattedTotalPrice + " kr</p>\n");
+
+            // Write HTML footer
+            writer.write("</body>\n</html>");
 
             // Clear the original file
             Files.deleteIfExists(sourcePath);
