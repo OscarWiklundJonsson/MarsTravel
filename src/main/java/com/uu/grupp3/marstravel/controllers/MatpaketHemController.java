@@ -1,16 +1,14 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
-import com.uu.grupp3.marstravel.services.CheckoutCartService;
-import com.uu.grupp3.marstravel.services.NextButton;
-import com.uu.grupp3.marstravel.services.SideBarButtons;
-import com.uu.grupp3.marstravel.services.StoreTravelChoices;
+import com.uu.grupp3.marstravel.services.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import org.w3c.dom.ls.LSOutput;
 
 public class MatpaketHemController {
     @FXML
@@ -106,46 +104,87 @@ public class MatpaketHemController {
     private Label lblSvitPris;
 
     @FXML
-    private RadioButton rbtnBudget1;
+    private RadioButton rbtnBudget1H;
 
     @FXML
-    private RadioButton rbtnBudget2;
+    private RadioButton rbtnBudget2H;
 
     @FXML
-    private RadioButton rbtnBudget3;
+    private RadioButton rbtnBudget3H;
 
     @FXML
-    private RadioButton rbtnLyx1;
+    private RadioButton rbtnLyx1H;
 
     @FXML
-    private RadioButton rbtnLyx2;
+    private RadioButton rbtnLyx2H;
 
     @FXML
-    private RadioButton rbtnLyx3;
+    private RadioButton rbtnLyx3H;
 
     @FXML
-    private RadioButton rbtnMellan1;
+    private RadioButton rbtnMellan1H;
 
     @FXML
-    private RadioButton rbtnMellan2;
+    private RadioButton rbtnMellan2H;
 
     @FXML
-    private RadioButton rbtnMellan3;
+    private RadioButton rbtnMellan3H;
 
     private CheckoutCartService checkoutCartService = new CheckoutCartService();
+    RadioButtonState radioButtonState = RadioButtonState.getInstance();
+
 
     public void initialize() {
         // Funktion för att endast välja en radioknapp för mat ( @TODO gör om till en generell funktion )
         ToggleGroup group = new ToggleGroup();
-        rbtnBudget1.setToggleGroup(group);
-        rbtnBudget2.setToggleGroup(group);
-        rbtnBudget3.setToggleGroup(group);
-        rbtnLyx1.setToggleGroup(group);
-        rbtnLyx2.setToggleGroup(group);
-        rbtnLyx3.setToggleGroup(group);
-        rbtnMellan1.setToggleGroup(group);
-        rbtnMellan2.setToggleGroup(group);
-        rbtnMellan3.setToggleGroup(group);
+        rbtnBudget1H.setToggleGroup(group);
+        rbtnBudget2H.setToggleGroup(group);
+        rbtnBudget3H.setToggleGroup(group);
+        rbtnLyx1H.setToggleGroup(group);
+        rbtnLyx2H.setToggleGroup(group);
+        rbtnLyx3H.setToggleGroup(group);
+        rbtnMellan1H.setToggleGroup(group);
+        rbtnMellan2H.setToggleGroup(group);
+        rbtnMellan3H.setToggleGroup(group);
+
+        rbtnBudget1H.setSelected(radioButtonState.getButtonState("rbtnBudget1H"));
+        rbtnBudget2H.setSelected(radioButtonState.getButtonState("rbtnBudget2H"));
+        rbtnBudget3H.setSelected(radioButtonState.getButtonState("rbtnBudget3H"));
+        rbtnLyx1H.setSelected(radioButtonState.getButtonState("rbtnLyx1H"));
+        rbtnLyx2H.setSelected(radioButtonState.getButtonState("rbtnLyx2H"));
+        rbtnLyx3H.setSelected(radioButtonState.getButtonState("rbtnLyx3H"));
+        rbtnMellan1H.setSelected(radioButtonState.getButtonState("rbtnMellan1H"));
+        rbtnMellan2H.setSelected(radioButtonState.getButtonState("rbtnMellan2H"));
+        rbtnMellan3H.setSelected(radioButtonState.getButtonState("rbtnMellan3H"));
+
+        rbtnBudget1H.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnBudget1H", newValue);
+        });
+        rbtnBudget2H.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnBudget2H", newValue);
+        });
+        rbtnBudget3H.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnBudget3H", newValue);
+        });
+        rbtnLyx1H.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnLyx1H", newValue);
+        });
+        rbtnLyx2H.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnLyx2H", newValue);
+        });
+        rbtnLyx3H.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnLyx3H", newValue);
+        });
+        rbtnMellan1H.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnMellan1H", newValue);
+        });
+        rbtnMellan2H.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnMellan2H", newValue);
+        });
+        rbtnMellan3H.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnMellan3H", newValue);
+        });
+
 
         btnNÄSTA.setDisable(true);
 
@@ -179,7 +218,8 @@ public class MatpaketHemController {
             Stage stage = (Stage) btnNÄSTA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/evenemangHem.fxml", stage);
         });
-btnVALJAmatpakethem.setDisable(true);
+
+        btnVALJAmatpakethem.setDisable(true);
 
         // denna beast som visar varukorgen
         btnVarukorg.setOnAction(event -> {

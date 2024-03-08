@@ -1,10 +1,7 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
-import com.uu.grupp3.marstravel.services.CheckoutCartService;
-import com.uu.grupp3.marstravel.services.SideBarButtons;
-import com.uu.grupp3.marstravel.services.StoreTravelChoices;
-import com.uu.grupp3.marstravel.services.NextButton;
+import com.uu.grupp3.marstravel.services.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -90,19 +87,19 @@ public class HytterHemController {
     private Label lblhyttalternativ;
 
     @FXML
-    private RadioButton rbtnEco;
+    private RadioButton rbtnEcoH;
 
     @FXML
-    private RadioButton rbtnInside;
+    private RadioButton rbtnInsideH;
 
     @FXML
-    private RadioButton rbtnSleep;
+    private RadioButton rbtnSleepH;
 
     @FXML
-    private RadioButton rbtnSpaceside;
+    private RadioButton rbtnSpacesideH;
 
     @FXML
-    private RadioButton rbtnSvit;
+    private RadioButton rbtnSvitH;
 
     private CheckoutCartService checkoutCartService = new CheckoutCartService();
 
@@ -110,6 +107,8 @@ public class HytterHemController {
     public void initialize() {
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
         StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
+        RadioButtonState radioButtonState = RadioButtonState.getInstance();
+
 
         //Pop-Up for EcoInformation
         btnEcoInfo.setOnAction(event -> dbInfo.showInfoFromDB("Economy", "Hytt Economy", "HyttInformation",1));
@@ -124,11 +123,34 @@ public class HytterHemController {
 
         // Funktion för att endast välja en radioknapp
         ToggleGroup group = new ToggleGroup();
-        rbtnEco.setToggleGroup(group);
-        rbtnInside.setToggleGroup(group);
-        rbtnSleep.setToggleGroup(group);
-        rbtnSpaceside.setToggleGroup(group);
-        rbtnSvit.setToggleGroup(group);
+        rbtnEcoH.setToggleGroup(group);
+        rbtnInsideH.setToggleGroup(group);
+        rbtnSleepH.setToggleGroup(group);
+        rbtnSpacesideH.setToggleGroup(group);
+        rbtnSvitH.setToggleGroup(group);
+
+        rbtnEcoH.setSelected(radioButtonState.getButtonState("rbtnEcoH"));
+        rbtnInsideH.setSelected(radioButtonState.getButtonState("rbtnInsideH"));
+        rbtnSleepH.setSelected(radioButtonState.getButtonState("rbtnSleepH"));
+        rbtnSpacesideH.setSelected(radioButtonState.getButtonState("rbtnSpacesideH"));
+        rbtnSvitH.setSelected(radioButtonState.getButtonState("rbtnSvitH"));
+
+        rbtnEcoH.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnEcoH", newValue);
+        });
+        rbtnInsideH.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnInsideH", newValue);
+        });
+        rbtnSleepH.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnSleepH", newValue);
+        });
+        rbtnSpacesideH.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnSpacesideH", newValue);
+        });
+        rbtnSvitH.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnSvitH", newValue);
+        });
+
 
         btnNASTA.setDisable(true);
 
