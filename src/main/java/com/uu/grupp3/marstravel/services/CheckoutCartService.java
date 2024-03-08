@@ -1,6 +1,7 @@
 package com.uu.grupp3.marstravel.services;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.file.Files;
@@ -379,23 +380,33 @@ public class CheckoutCartService {
      * The file "travelChoices.txt" is then cleared.
      * The new file is named "order + uniqueId.txt" where uniqueId is the current timestamp.
      */
-    public void storeInformation() { // Fullösning, men den duger för nu.
+    public void storeInformation() {
         String fileName = "travelChoices.txt";
         Path sourcePath = Paths.get(fileName);
+        Path targetPath = Paths.get("order" + System.currentTimeMillis() + ".txt");
 
-        String uniqueId = String.valueOf(System.currentTimeMillis());
+        try (BufferedReader reader = Files.newBufferedReader(sourcePath);
+             BufferedWriter writer = Files.newBufferedWriter(targetPath)) {
 
-        Path targetPath = Paths.get("order" + uniqueId + ".txt");
-        try {
-            Files.move(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (line.contains("Totalt pris: ")) {
+                    // Skip writing total price line to the new file
+                    continue;
+                }
+                String[] parts = line.split(": ");
+                if (parts.length == 2) {
+                    writer.write("Produkt: " + parts[0] + "\n");
+                    writer.write("Pris: " + parts[1] + "\n\n");
+                }
+            }
 
-        try {
+            // Clear the original file
+            Files.deleteIfExists(sourcePath);
             Files.createFile(sourcePath);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 }
