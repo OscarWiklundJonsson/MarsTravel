@@ -183,6 +183,7 @@ public class ResedatumController implements Initializable {
         }
         String chosenDate = Avresa_ar.getValue() + "-" + Avresa_manad.getValue() + " till " + Hemresa_ar.getValue() + "-" + HemresaMånad.getValue();
         storeTravelChoices.storeDate(chosenDate);
+        storeTravelChoices.storeChoiceBox("Antal resenärer: ", Antal_resenarer);
 
         try {
             FXMLLoader laddare = new FXMLLoader(getClass().getResource("/com/uu/grupp3/marstravel/hytter.fxml"));
@@ -237,6 +238,8 @@ public class ResedatumController implements Initializable {
 
         return true;
     }
+
+
 
     // är bara denna kod som behöver kopieras till andra controllers
     private SideBarButtons sideBarButtons = new SideBarButtons();

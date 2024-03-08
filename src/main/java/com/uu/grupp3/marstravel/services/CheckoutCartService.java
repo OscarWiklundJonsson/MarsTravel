@@ -10,6 +10,7 @@ import java.util.Locale;
 import java.util.concurrent.atomic.AtomicReference;
 
 import com.uu.grupp3.marstravel.MarsTravelApplication;
+import com.uu.grupp3.marstravel.controllers.ResedatumController;
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -36,9 +37,12 @@ public class CheckoutCartService {
      * @return the total price of the cart
      * @throws IOException if an I/O error occurs
      */
+    private int antalResenarer;
+
     public double calculateTotalPrice() throws IOException {
         String fileName = "travelChoices.txt";
         Path path = Paths.get(fileName);
+
         double totalPrice = 0;
 
         try (BufferedReader reader = Files.newBufferedReader(path)) {
@@ -278,13 +282,23 @@ public class CheckoutCartService {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
 
+        String antalResenarerStr = storeTravelChoices.getAntalResenarer();
+        if (antalResenarerStr != null) {
+            antalResenarerStr = antalResenarerStr.replace("Antal resenärer: ", "");
+            antalResenarer = Integer.parseInt(antalResenarerStr);
+        }
+
+        //TODO: Fixa så att det totalPrice multipliceras med antalet resenärer
+        System.out.println("Antal resenärer: " + antalResenarer);
+        totalPrice = totalPrice * antalResenarer;
         System.out.println("Totalt pris:"+ totalPrice);
         return totalPrice;
     }
 
     /**
-     * Clears the file "travelChoices.txt" by deleting it.
+     * Clears the file "travelChoices.txt" by removing all content on it.
      * I.E the cart is cleared.
      */
     public void checkoutCartClearCart() {

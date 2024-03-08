@@ -181,6 +181,10 @@ public class StoreTravelChoices {
         return getLineContaining("Hotell: ");
     }
 
+    public String getAntalResenarer() {
+        return getLineContaining("Antal resenärer: ");
+    }
+
     public void removeDate() {
         removeLineContaining(" till ");
     }
