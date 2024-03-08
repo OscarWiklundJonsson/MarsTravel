@@ -1,8 +1,6 @@
 package com.uu.grupp3.marstravel.services;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
@@ -379,23 +377,45 @@ public class CheckoutCartService {
      * The file "travelChoices.txt" is then cleared.
      * The new file is named "order + uniqueId.txt" where uniqueId is the current timestamp.
      */
-    public void storeInformation() { // Fullösning, men den duger för nu.
+    public void storeInformation() {
         String fileName = "travelChoices.txt";
         Path sourcePath = Paths.get(fileName);
+        String targetFileName = "order" + System.currentTimeMillis() + ".html";
+        Path targetPath = Paths.get(targetFileName);
 
-        String uniqueId = String.valueOf(System.currentTimeMillis());
+        try (BufferedReader reader = Files.newBufferedReader(sourcePath);
+             BufferedWriter writer = new BufferedWriter(new FileWriter(targetFileName))) {
 
-        Path targetPath = Paths.get("order" + uniqueId + ".txt");
-        try {
-            Files.move(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            // Write HTML header
+            writer.write("<!DOCTYPE html>\n<html>\n<head>\n<title>Order Details</title>\n</head>\n<body>\n");
 
-        try {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (line.contains("Totalt pris: ")) {
+                    // Skip writing total price line to the new file
+                    continue;
+                }
+                String[] parts = line.split(": ");
+                if (parts.length == 2) {
+                    writer.write("<p><strong>" + parts[0] + ":</strong> " + parts[1] + "</p>\n");
+                }
+            }
+
+            // Calculate total price and write it to the HTML
+            double totalPrice = calculateTotalPrice();
+            NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.UK);
+            String formattedTotalPrice = numberFormat.format(totalPrice);
+            writer.write("<p><strong>Totalt pris:</strong> " + formattedTotalPrice + " kr</p>\n");
+
+            // Write HTML footer
+            writer.write("</body>\n</html>");
+
+            // Clear the original file
+            Files.deleteIfExists(sourcePath);
             Files.createFile(sourcePath);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 }
