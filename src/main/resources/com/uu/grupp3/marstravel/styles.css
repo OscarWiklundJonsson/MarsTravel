@@ -46,7 +46,6 @@
 }
 
 /* SIDEBAR KNAPPARNA */
-
 .sidebuttons{
     -fx-background-color: #2d2e2f;
     -fx-border-color: #EED2A7;
@@ -95,7 +94,7 @@
     -fx-text-fill: #EED2A7;
 }
 
-
+/* VARUKORG KNAPPEN */
 .buttonVK {
     -fx-background-radius: 50;
     -fx-background-image: url("CartIcon.png");
