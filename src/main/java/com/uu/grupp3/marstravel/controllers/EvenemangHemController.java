@@ -99,20 +99,20 @@ public class EvenemangHemController {
     public void initialize() {
 
         //ChoiceBox Filmpremiarer
-        ObservableList<String> filmpremiarerAlternativ = FXCollections.observableArrayList(
+        ObservableList<String> filmpremiarerAlternativH = FXCollections.observableArrayList(
                 "0","1", "2", "3", "4", "5", "6"
         );
-        cboxFilmpremiarerH.setItems(filmpremiarerAlternativ);
+        cboxFilmpremiarerH.setItems(filmpremiarerAlternativH);
         //ChoiceBox Konsert
-        ObservableList<String> concertAlternativ = FXCollections.observableArrayList(
+        ObservableList<String> concertAlternativH = FXCollections.observableArrayList(
                 "0","1", "2", "3"
         );
-        cboxConcertH.setItems(concertAlternativ);
+        cboxConcertH.setItems(concertAlternativH);
         //ChoiceBox Teater
-        ObservableList<String> theaterpremiarerAlternativ = FXCollections.observableArrayList(
+        ObservableList<String> theaterpremiarerAlternativH = FXCollections.observableArrayList(
                 "0","1", "2", "3"
         );
-        cboxTheaterpremiarerH.setItems(theaterpremiarerAlternativ);
+        cboxTheaterpremiarerH.setItems(theaterpremiarerAlternativH);
 
 
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
