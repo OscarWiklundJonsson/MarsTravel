@@ -110,8 +110,12 @@ public class ResedatumController implements Initializable {
                 returnMonth -= 12;
                 returnYear++;
             }
-
-            String avgangText = "Avgångstid: " + returnYear + "-" + returnMonth + "-" + "01";
+            String avgangText;
+            if (returnMonth < 10) {
+                avgangText = "Avgångstid: " + returnYear + "-0" + returnMonth + "-01";
+            } else {
+                avgangText = "Avgångstid: " + returnYear + "-" + returnMonth + "-01";
+            }
             AvgangTid.setText(avgangText);
         }
     }
@@ -174,16 +178,6 @@ public class ResedatumController implements Initializable {
             felAlert.showAndWait();
             return;
         }
-
-        if (!valideraHemresaDatum()) {
-            Alert felAlert = new Alert(Alert.AlertType.ERROR);
-            felAlert.setTitle("Felaktigt datumval");
-            felAlert.setHeaderText(null);
-            felAlert.setContentText("Hemresa måste vara minst 6 månader efter avresa.");
-            felAlert.showAndWait();
-            return;
-        }
-
         if (storeTravelChoices.getDate() != null) {
             storeTravelChoices.removeDate();
         }
