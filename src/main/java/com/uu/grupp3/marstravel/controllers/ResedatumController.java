@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,7 +22,6 @@ import javafx.scene.Node;
 
 import com.uu.grupp3.marstravel.services.SideBarButtons;
 
-
 public class ResedatumController implements Initializable {
     @FXML
     private ChoiceBox<String> Avresa_ar;
@@ -33,7 +33,16 @@ public class ResedatumController implements Initializable {
     private ChoiceBox<String> Hemresa_ar;
 
     @FXML
+    private ChoiceBox<String> Antal_resenarer;
+
+    @FXML
     private ChoiceBox<String> HemresaMånad;
+
+    @FXML
+    private Button btnVALJAresedatum;
+
+    @FXML
+    private Text AvgangTid;
 
     private CheckoutCartService checkoutCartService = new CheckoutCartService();
 
@@ -51,29 +60,77 @@ public class ResedatumController implements Initializable {
         Avresa_manad.setItems(avresaManadAlternativ);
 
         ObservableList<String> hemresaArAlternativ = FXCollections.observableArrayList(
-                "2024", "2025", "2026", "2027", "2028", "2029", "2030"
+                "0","1", "2", "3", "4", "5", "6", "7","8","9","10","11","12"
         );
         Hemresa_ar.setItems(hemresaArAlternativ);
 
-        HemresaMånad.setItems(avresaManadAlternativ);
-        btnVALJAresedatum.setDisable(true);
+        ObservableList<String> hemresaManadAlternativ = FXCollections.observableArrayList(
+                "1", "2", "3", "4", "5", "6", "7","8","9","10","11","12"
+        );
+        HemresaMånad.setItems(hemresaManadAlternativ);
 
-        // denna beast som visar varukorgen
-        btnVarukorg.setOnAction(event -> {
-            try {
-                checkoutCartService.showCheckoutCart();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        ObservableList<String> AntalResenarerAlternativ = FXCollections.observableArrayList(
+                "1", "2", "3", "4","5","6","7","8"
+        );
+        Antal_resenarer.setItems(AntalResenarerAlternativ);
+
+        btnVALJAresedatum.setDisable(true);
+        Avresa_ar.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            updateAvgangTid();
+        });
+        Avresa_manad.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            updateAvgangTid();
+        });
+        Hemresa_ar.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            updateAvgangTid();
+        });
+        HemresaMånad.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            updateAvgangTid();
         });
     }
 
     @FXML
-    private Button btnNASTA;
+    public void updateAvgangTid() {
+
+        String avresaAr = Avresa_ar.getValue();
+        String avresaManad = Avresa_manad.getValue();
+        String hemresaAr = Hemresa_ar.getValue();
+        String hemresaManad = HemresaMånad.getValue();
+
+        if (avresaAr != null && avresaManad != null && hemresaAr != null && hemresaManad != null) {
+            int avresaYear = Integer.parseInt(avresaAr);
+            int avresaMonth = Avresa_manad.getItems().indexOf(avresaManad) + 1;
+            int hemresaYear = Integer.parseInt(hemresaAr);
+            int hemresaMonth = HemresaMånad.getItems().indexOf(hemresaManad) + 1;
+
+            int returnYear = avresaYear + hemresaYear;
+            int returnMonth = avresaMonth + hemresaMonth + 6;
+
+            if (returnMonth > 12) {
+                returnMonth -= 12;
+                returnYear++;
+            }
+
+            String avgangText = "Avgångstid: " + returnYear + "-" + returnMonth + "-" + "01";
+            AvgangTid.setText(avgangText);
+        }
+    }
+
+    // denna beast som visar varukorgen
+    @FXML
+    private void handleVarukorgButtonClick(ActionEvent event) {
+        try {
+            checkoutCartService.showCheckoutCart();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     private Button btnVarukorg;
 
+    @FXML
+    private Button btnNASTA;
     @FXML
     private Button btnVALJAevenemangdit;
 
@@ -83,8 +140,7 @@ public class ResedatumController implements Initializable {
     @FXML
     private Button btnVALJAhyttdit;
 
-    @FXML
-    private Button btnVALJAresedatum;
+
     @FXML
     private Button btnVALJAkundinfo;
 
@@ -105,9 +161,9 @@ public class ResedatumController implements Initializable {
 
     @FXML
     private Button btnVALJAhotellmars;
+
     @FXML
     private void handleNastaButtonClick() {
-
         StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
 
         if (Avresa_ar.getValue() == null || Avresa_manad.getValue() == null || Hemresa_ar.getValue() == null || HemresaMånad.getValue() == null) {
@@ -149,21 +205,43 @@ public class ResedatumController implements Initializable {
     }
 
     private boolean valideraHemresaDatum() {
-        String valtAvreseår = Avresa_ar.getValue();
-        String valdAvreseMånad = Avresa_manad.getValue();
-        String valtReturår = Hemresa_ar.getValue();
-        String valdReturMånad = HemresaMånad.getValue();
+        String valtAvreseAr = Avresa_ar.getValue();
+        String valdAvreseManad = Avresa_manad.getValue();
+        String valtHemresaAr = Hemresa_ar.getValue();
+        String valdHemresaManad = HemresaMånad.getValue();
 
-        int avreseÅr = Integer.parseInt(valtAvreseår);
-        int returÅr = Integer.parseInt(valtReturår);
+        if (valtAvreseAr == null || valdAvreseManad == null || valtHemresaAr == null || valdHemresaManad == null) {
+            Alert felAlert = new Alert(Alert.AlertType.ERROR);
+            felAlert.setTitle("Felaktigt datumval");
+            felAlert.setHeaderText(null);
+            felAlert.setContentText("Du måste välja både år och månad för avresa och hemresa för att gå vidare.");
+            felAlert.showAndWait();
+            return false;
+        }
 
-        ObservableList<String> avresaManadAlternativ = Avresa_manad.getItems();
-        int avreseMånadsIndex = avresaManadAlternativ.indexOf(valdAvreseMånad);
-        int returMånadsIndex = avresaManadAlternativ.indexOf(valdReturMånad);
+        int avreseAr = Integer.parseInt(valtAvreseAr);
+        int hemresaAr = Integer.parseInt(valtHemresaAr);
+        int avreseManad = Avresa_manad.getSelectionModel().getSelectedIndex() + 1;
+        int hemresaManad = HemresaMånad.getSelectionModel().getSelectedIndex() + 1;
 
-        int månaderSkillnad = (returÅr - avreseÅr) * 12 + (returMånadsIndex - avreseMånadsIndex);
+        // Add 6 months to the return month
+        hemresaManad += 6;
 
-        return månaderSkillnad >= 6;
+        // Adjust year if return month exceeds December
+        if (hemresaManad > 12) {
+            hemresaManad -= 12;
+            hemresaAr += 1;
+        }
+
+        // Update ChoiceBox with adjusted values
+        Hemresa_ar.setValue(String.valueOf(hemresaAr));
+        HemresaMånad.setValue(String.valueOf(hemresaManad));
+
+        // Update departure date text
+        String avgangText = "Text: " + avreseAr + "-" + avreseManad; // Format it according to your needs
+        AvgangTid.setText(avgangText);
+
+        return true;
     }
 
     // är bara denna kod som behöver kopieras till andra controllers
