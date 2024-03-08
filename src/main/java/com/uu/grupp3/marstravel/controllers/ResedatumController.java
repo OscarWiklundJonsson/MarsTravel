@@ -87,6 +87,16 @@ public class ResedatumController implements Initializable {
         HemresaMånad.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             updateAvgangTid();
         });
+
+
+        // denna beast som visar varukorgen
+        btnVarukorg.setOnAction(event -> {
+            try {
+                checkoutCartService.showCheckoutCart();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     @FXML
@@ -160,16 +170,6 @@ public class ResedatumController implements Initializable {
         }
     }
 
-    // denna beast som visar varukorgen
-    @FXML
-    private void handleVarukorgButtonClick(ActionEvent event) {
-        try {
-            checkoutCartService.showCheckoutCart();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     @FXML
     private Button btnVarukorg;
 
@@ -224,6 +224,8 @@ public class ResedatumController implements Initializable {
         if(storeTravelChoices.getAntalResenarer() != null){
             storeTravelChoices.removeAntalResenarer();
         }
+
+        // TODO: Fixa detta så att det står månadens namn istället för siffror
 
         String chosenDate = Avresa_ar.getValue() + "-" + Avresa_manad.getValue() + " till " + Hemresa_ar.getValue() + "-" + HemresaMånad.getValue();
         storeTravelChoices.storeDate(chosenDate);
@@ -282,8 +284,6 @@ public class ResedatumController implements Initializable {
 
         return true;
     }
-
-
 
     // är bara denna kod som behöver kopieras till andra controllers
     private SideBarButtons sideBarButtons = new SideBarButtons();
