@@ -90,7 +90,7 @@
                 <Font size="24.0" />
             </font>
             <graphic>
-                <ChoiceBox fx:id="cboxTheaterpremiareH" prefHeight="33.0" prefWidth="43.0" styleClass="choiceBox" stylesheets="@styles.css" />
+                <ChoiceBox fx:id="cboxTheaterpremiarerH" prefHeight="33.0" prefWidth="43.0" styleClass="choiceBox" stylesheets="@styles.css" />
             </graphic>
         </Label>
         <Label fx:id="lblAntal" layoutX="242.0" layoutY="280.0" text="VÄLJ ANTAL" textFill="WHITE">
