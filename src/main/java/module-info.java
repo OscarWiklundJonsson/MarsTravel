@@ -3,6 +3,7 @@ module com.uu.grupp3.marstravel {
     requires javafx.fxml;
     requires java.sql;
     requires org.xerial.sqlitejdbc;
+    requires java.desktop;
 
 
     opens com.uu.grupp3.marstravel to javafx.fxml;
