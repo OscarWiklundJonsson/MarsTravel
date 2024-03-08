@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uu.grupp3.marstravel.controllers.ResedatumController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uu.grupp3.marstravel.controllers.ResedatumController">
     <stylesheets>
         <URL value="@styles2.css" />
     </stylesheets>
@@ -30,40 +28,58 @@
         <Button fx:id="btnVALJAmatpaketdit" layoutX="46.0" layoutY="256.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="MATPAKET" textFill="#eed2a7" />
         <Button fx:id="btnVALJAhyttdit" layoutX="46.0" layoutY="209.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="HYTTER" textFill="#eed2a7" />
         <Button fx:id="btnVALJAresedatum" layoutX="46.0" layoutY="162.0" mnemonicParsing="false" onAction="#SideBarButtons" prefHeight="47.0" prefWidth="130.0" styleClass="sidebuttons" stylesheets="@styles.css" text="RESEDATUM" textFill="#eed2a7" />
-        <ChoiceBox fx:id="Avresa_ar" layoutX="272.0" layoutY="313.0" prefWidth="150.0" styleClass="choiceBox" stylesheets="@styles.css" />
-        <Text fx:id="Avresatext" fill="#c7511b" layoutX="289.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avresa ">
+        <ChoiceBox fx:id="Avresa_ar" layoutX="366.0" layoutY="314.0" prefWidth="150.0" styleClass="choiceBox" stylesheets="@styles.css" />
+        <Text fx:id="Avresatext" fill="#c7511b" layoutX="394.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avresa ">
             <font>
                 <Font name="Century Gothic" size="36.0" />
             </font>
         </Text>
-        <Line endX="215.33331298828125" endY="509.66668701171875" layoutX="353.0" layoutY="171.0" startX="215.33331298828125" startY="10.66668701171875" />
-        <Text fill="#f2eeee" layoutX="336.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="År:">
+        <Line endX="215.33331298828125" endY="509.66668701171875" layoutX="368.0" layoutY="160.0" startX="215.33331298828125" startY="10.66668701171875" />
+        <Text fill="#f2eeee" layoutX="430.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="År:">
             <font>
                 <Font size="18.0" />
             </font>
         </Text>
-        <Text fill="#f6f4f4" layoutX="315.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månad: ">
+        <Text fill="#f6f4f4" layoutX="408.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månad: ">
             <font>
                 <Font size="18.0" />
             </font>
         </Text>
-        <ChoiceBox fx:id="Avresa_manad" layoutX="272.0" layoutY="489.0" prefWidth="150.0" styleClass="choiceBox" stylesheets="@styles.css" />
-        <Text fx:id="Hemresatext" fill="#c7511b" layoutX="716.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hemresa">
+        <ChoiceBox fx:id="Avresa_manad" layoutX="365.0" layoutY="489.0" prefWidth="150.0" styleClass="choiceBox" stylesheets="@styles.css" />
+        <Text fx:id="Hemresatext" fill="#c7511b" layoutX="640.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hur länge vill du stanna?" wrappingWidth="305.2890625">
             <font>
-                <Font name="Century Gothic" size="36.0" />
+                <Font size="36.0" />
             </font>
         </Text>
-        <Text fill="#f6f2f2" layoutX="783.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="År:">
-            <font>
-                <Font size="18.0" />
-            </font>
-        </Text>
-        <ChoiceBox fx:id="Hemresa_ar" layoutX="718.0" layoutY="313.0" prefWidth="150.0" styleClass="choiceBox" stylesheets="@styles.css" />
-        <Text fill="#f4f2f2" layoutX="763.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månad:">
+        <ChoiceBox fx:id="Hemresa_ar" layoutX="751.0" layoutY="326.0" prefHeight="25.0" prefWidth="59.0" styleClass="choiceBox" stylesheets="@styles.css" />
+        <Text fill="#f4f2f2" layoutX="744.0" layoutY="479.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månader:">
             <font>
                 <Font size="18.0" />
             </font>
         </Text>
-        <ChoiceBox fx:id="HemresaMånad" layoutX="719.0" layoutY="489.0" prefWidth="150.0" styleClass="choiceBox" stylesheets="@styles.css" />
+        <ChoiceBox fx:id="HemresaMånad" layoutX="752.0" layoutY="489.0" prefHeight="25.0" prefWidth="59.0" styleClass="choiceBox" stylesheets="@styles.css" />
+      <Text fill="#f2eeee" layoutX="771.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="År:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Line endX="215.33331298828125" endY="509.66668701171875" layoutX="737.0" layoutY="160.0" startX="215.33331298828125" startY="10.66668701171875" />
+      <ChoiceBox fx:id="AntalResenarer" layoutX="229.0" layoutY="314.0" prefHeight="25.0" prefWidth="28.0" />
+      <Text fx:id="Avresatext1" fill="#c7511b" layoutX="1009.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avgångar ">
+         <font>
+            <Font name="Century Gothic" size="36.0" />
+         </font>
+      </Text>
+      <Line endX="215.33331298828125" endY="509.66668701171875" layoutX="107.0" layoutY="160.0" startX="215.33331298828125" startY="10.66668701171875" />
+      <Text fx:id="Avresatext2" fill="#c7511b" layoutX="193.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Antal resenärer " wrappingWidth="121.541015625">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Text fx:id="AvgangTid" fill="#c7511b" layoutX="1054.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="81.33333333333348">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
     </children>
 </AnchorPane>
