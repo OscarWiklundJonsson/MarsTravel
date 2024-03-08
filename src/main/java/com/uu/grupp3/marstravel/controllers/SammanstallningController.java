@@ -1,23 +1,22 @@
 package com.uu.grupp3.marstravel.controllers;
 
-import javafx.scene.web.WebEngine;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.web.WebView;
 
 import java.io.File;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.ResourceBundle;
 
-public class SammanstallningController {
-    private WebView webView;
+public class SammanstallningController implements Initializable {
+    @FXML
+    private WebView wvSammanstallning;
 
-    // Constructor with WebView parameter
-    public SammanstallningController(WebView webView) {
-        this.webView = webView;
-    }
-
-    // No-argument constructor for FXMLLoader
-    public SammanstallningController() {
-        // Leave empty or provide default initialization if needed
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadMostRecentHtml();
     }
 
     public void loadMostRecentHtml() {
@@ -28,8 +27,7 @@ public class SammanstallningController {
             File mostRecentHtmlFile = htmlFiles[htmlFiles.length - 1];
 
             // Load the most recent HTML file into the WebView
-            WebEngine webEngine = webView.getEngine();
-            webEngine.load(mostRecentHtmlFile.toURI().toString());
+            wvSammanstallning.getEngine().load(mostRecentHtmlFile.toURI().toString());
         }
     }
 }
