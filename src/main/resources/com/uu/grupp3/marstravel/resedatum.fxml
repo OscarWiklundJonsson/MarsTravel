@@ -65,7 +65,7 @@
       </Text>
       <Line endX="215.33331298828125" endY="509.66668701171875" layoutX="737.0" layoutY="160.0" startX="215.33331298828125" startY="10.66668701171875" />
       <ChoiceBox fx:id="AntalResenarer" layoutX="229.0" layoutY="314.0" prefHeight="25.0" prefWidth="28.0" />
-      <Text fx:id="Avresatext1" fill="#c7511b" layoutX="1009.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avgångar ">
+      <Text fx:id="Avresatext1" fill="#c7511b" layoutX="946.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avgångar för hemresa " textAlignment="CENTER" wrappingWidth="297.986328125">
          <font>
             <Font name="Century Gothic" size="36.0" />
          </font>
@@ -76,10 +76,10 @@
             <Font size="25.0" />
          </font>
       </Text>
-      <Text fx:id="AvgangTid" fill="#c7511b" layoutX="1054.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="81.33333333333348">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
+        <Text fx:id="AvgangTid" fill="#c7511b" layoutX="966.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avgång" wrappingWidth="256.3333333333335">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Text>
     </children>
 </AnchorPane>
