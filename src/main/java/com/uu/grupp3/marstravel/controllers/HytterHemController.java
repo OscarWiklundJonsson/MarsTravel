@@ -1,10 +1,7 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
-import com.uu.grupp3.marstravel.services.CheckoutCartService;
-import com.uu.grupp3.marstravel.services.SideBarButtons;
-import com.uu.grupp3.marstravel.services.StoreTravelChoices;
-import com.uu.grupp3.marstravel.services.NextButton;
+import com.uu.grupp3.marstravel.services.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -110,6 +107,8 @@ public class HytterHemController {
     public void initialize() {
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
         StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
+        RadioButtonState radioButtonState = RadioButtonState.getInstance();
+
 
         //Pop-Up for EcoInformation
         btnEcoInfo.setOnAction(event -> dbInfo.showInfoFromDB("Economy", "Hytt Economy", "HyttInformation",1));
@@ -129,6 +128,29 @@ public class HytterHemController {
         rbtnSleep.setToggleGroup(group);
         rbtnSpaceside.setToggleGroup(group);
         rbtnSvit.setToggleGroup(group);
+
+        rbtnEco.setSelected(radioButtonState.getButtonState("rbtnEco"));
+        rbtnInside.setSelected(radioButtonState.getButtonState("rbtnInside"));
+        rbtnSleep.setSelected(radioButtonState.getButtonState("rbtnSleep"));
+        rbtnSpaceside.setSelected(radioButtonState.getButtonState("rbtnSpaceside"));
+        rbtnSvit.setSelected(radioButtonState.getButtonState("rbtnSvit"));
+
+        rbtnEco.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnEco", newValue);
+        });
+        rbtnInside.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnInside", newValue);
+        });
+        rbtnSleep.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnSleep", newValue);
+        });
+        rbtnSpaceside.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnSpaceside", newValue);
+        });
+        rbtnSvit.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnSvit", newValue);
+        });
+
 
         btnNASTA.setDisable(true);
 

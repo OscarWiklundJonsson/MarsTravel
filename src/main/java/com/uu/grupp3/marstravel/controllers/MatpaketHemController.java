@@ -1,10 +1,7 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
-import com.uu.grupp3.marstravel.services.CheckoutCartService;
-import com.uu.grupp3.marstravel.services.NextButton;
-import com.uu.grupp3.marstravel.services.SideBarButtons;
-import com.uu.grupp3.marstravel.services.StoreTravelChoices;
+import com.uu.grupp3.marstravel.services.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -133,6 +130,8 @@ public class MatpaketHemController {
     private RadioButton rbtnMellan3;
 
     private CheckoutCartService checkoutCartService = new CheckoutCartService();
+    RadioButtonState radioButtonState = RadioButtonState.getInstance();
+
 
     public void initialize() {
         // Funktion för att endast välja en radioknapp för mat ( @TODO gör om till en generell funktion )
@@ -146,6 +145,45 @@ public class MatpaketHemController {
         rbtnMellan1.setToggleGroup(group);
         rbtnMellan2.setToggleGroup(group);
         rbtnMellan3.setToggleGroup(group);
+
+        rbtnBudget1.setSelected(radioButtonState.getButtonState("rbtnBudget1"));
+        rbtnBudget2.setSelected(radioButtonState.getButtonState("rbtnBudget2"));
+        rbtnBudget3.setSelected(radioButtonState.getButtonState("rbtnBudget3"));
+        rbtnLyx1.setSelected(radioButtonState.getButtonState("rbtnLyx1"));
+        rbtnLyx2.setSelected(radioButtonState.getButtonState("rbtnLyx2"));
+        rbtnLyx3.setSelected(radioButtonState.getButtonState("rbtnLyx3"));
+        rbtnMellan1.setSelected(radioButtonState.getButtonState("rbtnMellan1"));
+        rbtnMellan2.setSelected(radioButtonState.getButtonState("rbtnMellan2"));
+        rbtnMellan3.setSelected(radioButtonState.getButtonState("rbtnMellan3"));
+
+        rbtnBudget1.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnBudget1", newValue);
+        });
+        rbtnBudget2.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnBudget2", newValue);
+        });
+        rbtnBudget3.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnBudget3", newValue);
+        });
+        rbtnLyx1.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnLyx1", newValue);
+        });
+        rbtnLyx2.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnLyx2", newValue);
+        });
+        rbtnLyx3.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnLyx3", newValue);
+        });
+        rbtnMellan1.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnMellan1", newValue);
+        });
+        rbtnMellan2.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnMellan2", newValue);
+        });
+        rbtnMellan3.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnMellan3", newValue);
+        });
+
 
         btnNÄSTA.setDisable(true);
 
