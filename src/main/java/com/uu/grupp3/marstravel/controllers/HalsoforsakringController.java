@@ -79,10 +79,6 @@ public class HalsoforsakringController {
 
         //Pop-Up info om hälsoförsäkring
         btnhalsofinfo.setOnAction(event -> dbInfo.showInfoFromDB("Hälsoförsäkring", "Hälsoförsäkring", "Hälsoförsäkring", 1));
-
-        //rbtnhalsof
-        rbtnhalsof.setToggleGroup(group);
-
         // Nästa knappen. Skickar användaren till nästa sida. (evenemang). Använder sig av NextButton klassen som är en service klass.
         btnNASTA.setOnAction(event -> {
             if (storeTravelChoices.getHealthIns() != null) {
