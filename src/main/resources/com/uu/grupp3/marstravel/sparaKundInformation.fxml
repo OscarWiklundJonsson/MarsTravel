@@ -37,10 +37,10 @@
       <TextField fx:id="tffirstname" layoutX="360.0" layoutY="270.0" prefHeight="35.0" prefWidth="250.0" promptText="Förnamn" />
       <TextField fx:id="tflastname" layoutX="360.0" layoutY="315.0" prefHeight="35.0" prefWidth="250.0" promptText="Efternamn" />
       <TextField fx:id="tfphonenumber" layoutX="360.0" layoutY="405.0" prefHeight="35.0" prefWidth="250.0" promptText="Telefon" />
-      <TextField fx:id="tfemail" layoutX="360.0" layoutY="495.0" prefHeight="35.0" prefWidth="250.0" promptText="Mail" />
+      <TextField fx:id="tfemail" layoutX="360.0" layoutY="450.0" prefHeight="35.0" prefWidth="250.0" promptText="Mail" />
       <Button fx:id="btnVarukorg" layoutX="1137.0" layoutY="67.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="67.0" style="-fx-background-radius: 50;" styleClass="buttonVK" stylesheets="@styles.css" textFill="#eed2a7" />
         <Button fx:id="btnInfoHalsodetaljer" layoutX="621.0" layoutY="590.0" mnemonicParsing="false" styleClass="buttonInfo" stylesheets="@styles.css" text="i" />
-        <TextField fx:id="tfAdress" layoutX="360.0" layoutY="450.0" prefHeight="35.0" prefWidth="250.0" promptText="Adress" />
+        <TextField fx:id="tfAdress" layoutX="360.0" layoutY="495.0" prefHeight="35.0" prefWidth="250.0" promptText="Adress" />
         <TextField fx:id="tfPersonnummer" layoutX="360.0" layoutY="360.0" prefHeight="35.0" prefWidth="250.0" promptText="Personnummer" />
         <TextField fx:id="tfHalsodetaljer" layoutX="360.0" layoutY="585.0" prefHeight="35.0" prefWidth="250.0" promptText="Hälsodetaljer" />
         <TextField fx:id="tfPostnummer" layoutX="360.0" layoutY="540.0" prefHeight="35.0" prefWidth="137.0" promptText="Postnummer" />
