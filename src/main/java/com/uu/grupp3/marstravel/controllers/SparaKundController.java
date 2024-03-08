@@ -126,7 +126,7 @@ public class SparaKundController {
             checkoutCartService.storeInformation();
             Stage stage = (Stage) btnKASSA.getScene().getWindow();
             // Här skulle min metod för att spara kundinformationen till databasen finnas
-            nextButton.nextButton("/com/uu/grupp3/marstravel/boka.fxml", stage); //ska skickas till varukorgen sen.
+            nextButton.nextButton("/com/uu/grupp3/marstravel/sammanstallningen.fxml", stage); //ska skickas till sammanställningen.
         });
 
         // denna beast som visar varukorgen
