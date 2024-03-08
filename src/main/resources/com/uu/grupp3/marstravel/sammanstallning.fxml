@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uu.grupp3.marstravel.controllers.sammanstallningController">
+    <stylesheets>
+        <URL value="@styles.css" />
+    </stylesheets>
+    <children>
+        <Label fx:id="lblFaktura" layoutX="350.0" layoutY="43.0" prefHeight="111.0" prefWidth="345.0" text="Sammanställning" textFill="WHITE">
+            <font>
+                <Font name="Century Gothic" size="36.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
