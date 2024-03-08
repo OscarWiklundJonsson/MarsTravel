@@ -12,7 +12,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 public class EvenemangHemController {
@@ -78,11 +77,11 @@ public class EvenemangHemController {
     private Label lblEvenemang;
 
     @FXML
-    private ChoiceBox<String> cboxFilmpremiarer;
+    private ChoiceBox<String> cboxFilmpremiarerH;
     @FXML
-    private ChoiceBox<String> cboxConcert;
+    private ChoiceBox<String> cboxConcertH;
     @FXML
-    private ChoiceBox<String> cboxTheaterpremiarer;
+    private ChoiceBox<String> cboxTheaterpremiarerH;
 
 
     @FXML
@@ -99,23 +98,21 @@ public class EvenemangHemController {
 
     public void initialize() {
 
-
-
         //ChoiceBox Filmpremiarer
-        ObservableList<String> filmpremiarerAlternativ = FXCollections.observableArrayList(
+        ObservableList<String> filmpremiarerAlternativH = FXCollections.observableArrayList(
                 "0","1", "2", "3", "4", "5", "6"
         );
-        cboxFilmpremiarer.setItems(filmpremiarerAlternativ);
+        cboxFilmpremiarerH.setItems(filmpremiarerAlternativH);
         //ChoiceBox Konsert
-        ObservableList<String> concertAlternativ = FXCollections.observableArrayList(
+        ObservableList<String> concertAlternativH = FXCollections.observableArrayList(
                 "0","1", "2", "3"
         );
-        cboxConcert.setItems(concertAlternativ);
+        cboxConcertH.setItems(concertAlternativH);
         //ChoiceBox Teater
-        ObservableList<String> theaterpremiarerAlternativ = FXCollections.observableArrayList(
+        ObservableList<String> theaterpremiarerAlternativH = FXCollections.observableArrayList(
                 "0","1", "2", "3"
         );
-        cboxTheaterpremiarer.setItems(theaterpremiarerAlternativ);
+        cboxTheaterpremiarerH.setItems(theaterpremiarerAlternativH);
 
 
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
@@ -129,16 +126,16 @@ public class EvenemangHemController {
 
         // Add listeners to the ChoiceBoxes
         ChangeListener<String> choiceBoxListener = (observable, oldValue, newValue) -> {
-            if (cboxFilmpremiarer.getValue() != null && cboxConcert.getValue() != null && cboxTheaterpremiarer.getValue() != null) {
+            if (cboxFilmpremiarerH.getValue() != null && cboxConcertH.getValue() != null && cboxTheaterpremiarerH.getValue() != null) {
                 btnNASTA.setDisable(false);
             } else {
                 btnNASTA.setDisable(true);
             }
         };
 
-        cboxFilmpremiarer.getSelectionModel().selectedItemProperty().addListener(choiceBoxListener);
-        cboxConcert.getSelectionModel().selectedItemProperty().addListener(choiceBoxListener);
-        cboxTheaterpremiarer.getSelectionModel().selectedItemProperty().addListener(choiceBoxListener);
+        cboxFilmpremiarerH.getSelectionModel().selectedItemProperty().addListener(choiceBoxListener);
+        cboxConcertH.getSelectionModel().selectedItemProperty().addListener(choiceBoxListener);
+        cboxTheaterpremiarerH.getSelectionModel().selectedItemProperty().addListener(choiceBoxListener);
 
         // Initially disable the "Nästa" button
         btnNASTA.setDisable(true);
@@ -149,9 +146,9 @@ public class EvenemangHemController {
             if (storeTravelChoices.getEvenemangHem() != null) {
                 storeTravelChoices.removeEvenemangHem   ();
             }
-            storeTravelChoices.storeChoiceBox("Filmpremiarer: ", cboxFilmpremiarer);
-            storeTravelChoices.storeChoiceBox("Teaterpremiarer: ", cboxTheaterpremiarer);
-            storeTravelChoices.storeChoiceBox("Konserter: ", cboxConcert);
+            storeTravelChoices.storeChoiceBox("Filmpremiarer: ", cboxFilmpremiarerH);
+            storeTravelChoices.storeChoiceBox("Teaterpremiarer: ", cboxTheaterpremiarerH);
+            storeTravelChoices.storeChoiceBox("Konserter: ", cboxConcertH);
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnNASTA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/halsoforsakring.fxml", stage);

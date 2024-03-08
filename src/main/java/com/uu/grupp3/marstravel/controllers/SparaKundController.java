@@ -97,7 +97,7 @@ public class SparaKundController {
     private Button varukorg;
 
     public void initialize() {
-        CharacterRestrictions.applyCharacterRestrictions(tffirstname, tflastname, tfphonenumber, tfemail);
+        CharacterRestrictions.applyCharacterRestrictions(tffirstname, tflastname, tfphonenumber, tfemail, tfOrt, tfPersonnummer, tfPostnummer, tfAdress);
         btnKASSA.setOnAction(event -> {
 
 
@@ -105,10 +105,20 @@ public class SparaKundController {
             String lastName = tflastname.getText();
             String phone = tfphonenumber.getText();
             String email = tfemail.getText();
+            String pnumber = tfPersonnummer.getText();
+            String address = tfAdress.getText();
+            String city = tfOrt.getText();
+            String zipCode = tfPostnummer.getText();
+            String healthDetails = tfHalsodetaljer.getText();
             String customerInfo = "Förnamn: " + firstName + "\n" +
                     "Efternamn: " + lastName + "\n" +
+                    "Personnummer" + pnumber + "\n" +
                     "Telefon: " + phone + "\n" +
-                    "Email: " + email + "\n";
+                    "Email: " + email + "\n" +
+                    "Adress" + address + "\n" +
+                    "Postnummer" + zipCode + "\n" +
+                    "Ort" + city + "\n" +
+                    "Hälsodetaljer" + healthDetails + "\n";
             StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
             storeTravelChoices.writeToFile(customerInfo);
 
@@ -116,7 +126,7 @@ public class SparaKundController {
             checkoutCartService.storeInformation();
             Stage stage = (Stage) btnKASSA.getScene().getWindow();
             // Här skulle min metod för att spara kundinformationen till databasen finnas
-            nextButton.nextButton("/com/uu/grupp3/marstravel/boka.fxml", stage); //ska skickas till varukorgen sen.
+            nextButton.nextButton("/com/uu/grupp3/marstravel/sammanstallningen.fxml", stage); //ska skickas till sammanställningen.
         });
 
         // denna beast som visar varukorgen
@@ -150,9 +160,15 @@ public class SparaKundController {
         String lastName = tflastname.getText();
         String phone = tfphonenumber.getText();
         String email = tfemail.getText();
+        String pnumber = tfPersonnummer.getText();
+        String address = tfAdress.getText();
+        String city = tfOrt.getText();
+        String zipCode = tfPostnummer.getText();
+        String healthDetails = tfHalsodetaljer.getText();
 
         // Check if all fields are filled
-        if (firstName.isEmpty() || lastName.isEmpty() || phone.isEmpty() || email.isEmpty()) {
+        if (firstName.isEmpty() || lastName.isEmpty() || phone.isEmpty() || email.isEmpty() || pnumber.isEmpty() || address.isEmpty() || city.isEmpty()
+                || zipCode.isEmpty() || healthDetails.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("AJ AJ AJ");
             alert.setHeaderText(null);
@@ -161,7 +177,7 @@ public class SparaKundController {
             return;
         }
 
-        String sql = "INSERT INTO KundInformation (Förnamn, Efternamn, Telefonnummer, Mail) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO KundInformation (Förnamn, Efternamn, Personnummer, Telefonnummer, Mail, Adress, Postnummer, Ort, Hälsodetaljer) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         // Try to connect to the database and save the customer
         try (Connection conn = DatabaseHandler.getConnection();
@@ -171,6 +187,11 @@ public class SparaKundController {
             pstmt.setString(2, lastName);
             pstmt.setString(3, phone);
             pstmt.setString(4, email);
+            pstmt.setString(5, pnumber);
+            pstmt.setString(6, address);
+            pstmt.setString(7, zipCode);
+            pstmt.setString(8, city);
+            pstmt.setString(9, healthDetails);
             pstmt.executeUpdate();
 
             // Display success message
@@ -185,6 +206,11 @@ public class SparaKundController {
             tflastname.clear();
             tfphonenumber.clear();
             tfemail.clear();
+            tfPersonnummer.clear();
+            tfAdress.clear();
+            tfPostnummer.clear();
+            tfPostnummer.clear();
+            tfHalsodetaljer.clear();
 
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
