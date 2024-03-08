@@ -111,12 +111,52 @@ public class ResedatumController implements Initializable {
                 returnYear++;
             }
             String avgangText;
-            if (returnMonth < 10) {
-                avgangText = "Avgångstid: " + returnYear + "-0" + returnMonth + "-01";
-            } else {
-                avgangText = "Avgångstid: " + returnYear + "-" + returnMonth + "-01";
+            String monthName;
+
+            switch (returnMonth) {
+                case 1:
+                    monthName = "Januari";
+                    break;
+                case 2:
+                    monthName = "Februari";
+                    break;
+                case 3:
+                    monthName = "Mars";
+                    break;
+                case 4:
+                    monthName = "April";
+                    break;
+                case 5:
+                    monthName = "Maj";
+                    break;
+                case 6:
+                    monthName = "Juni";
+                    break;
+                case 7:
+                    monthName = "Juli";
+                    break;
+                case 8:
+                    monthName = "Augusti";
+                    break;
+                case 9:
+                    monthName = "September";
+                    break;
+                case 10:
+                    monthName = "Oktober";
+                    break;
+                case 11:
+                    monthName = "November";
+                    break;
+                case 12:
+                    monthName = "December";
+                    break;
+                default:
+                    monthName = ""; // Default value if returnMonth is not in range 1-12
             }
+
+            avgangText = "Avgångstid: " + returnYear + "-" + monthName + "-01";
             AvgangTid.setText(avgangText);
+
         }
     }
 
@@ -218,21 +258,21 @@ public class ResedatumController implements Initializable {
         int avreseManad = Avresa_manad.getSelectionModel().getSelectedIndex() + 1;
         int hemresaManad = HemresaMånad.getSelectionModel().getSelectedIndex() + 1;
 
-        // Add 6 months to the return month
+
         hemresaManad += 6;
 
-        // Adjust year if return month exceeds December
+
         if (hemresaManad > 12) {
             hemresaManad -= 12;
             hemresaAr += 1;
         }
 
-        // Update ChoiceBox with adjusted values
+
         Hemresa_ar.setValue(String.valueOf(hemresaAr));
         HemresaMånad.setValue(String.valueOf(hemresaManad));
 
-        // Update departure date text
-        String avgangText = "Text: " + avreseAr + "-" + avreseManad; // Format it according to your needs
+
+        String avgangText = "Text: " + avreseAr + "-" + avreseManad;
         AvgangTid.setText(avgangText);
 
         return true;
