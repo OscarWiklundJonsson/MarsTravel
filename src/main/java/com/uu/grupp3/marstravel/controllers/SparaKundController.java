@@ -100,8 +100,8 @@ public class SparaKundController {
             String lastName = tflastname.getText();
             String pnumber = tfPersonnummer.getText();
             String phone = tfphonenumber.getText();
-            String email = tfemail.getText();// Set the email
-            UserData.getInstance().setEmail(email);
+            String email = tfemail.getText();
+            UserData.getInstance().setEmail(email); // Sparar email i UserData singleton klassen
             String address = tfAdress.getText();
             String zipCode = tfPostnummer.getText();
             String city = tfOrt.getText();
