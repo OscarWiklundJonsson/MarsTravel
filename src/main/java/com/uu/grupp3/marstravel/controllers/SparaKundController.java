@@ -104,7 +104,8 @@ public class SparaKundController {
             String lastName = tflastname.getText();
             String pnumber = tfPersonnummer.getText();
             String phone = tfphonenumber.getText();
-            String email = tfemail.getText();
+            String email = tfemail.getText();// Set the email
+            UserData.getInstance().setEmail(email);
             String address = tfAdress.getText();
             String zipCode = tfPostnummer.getText();
             String city = tfOrt.getText();
@@ -159,7 +160,7 @@ public class SparaKundController {
         String lastName = tflastname.getText();
         String pnumber = tfPersonnummer.getText();
         String phone = tfphonenumber.getText();
-        String email = tfemail.getText();
+        String email = tfemail.getText();// Set the email
         String address = tfAdress.getText();
         String zipCode = tfPostnummer.getText();
         String city = tfOrt.getText();

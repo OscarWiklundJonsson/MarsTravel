@@ -2,6 +2,7 @@ package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.services.NextButton;
 import com.uu.grupp3.marstravel.services.SendMail;
+import com.uu.grupp3.marstravel.services.UserData;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -63,8 +64,8 @@ public class SammanstallningController implements Initializable {
 
             alert.showAndWait().ifPresent(response -> {
                 if (response == buttonTypeOne) {
-                    //TODO: Ändra till kundens mejladress
-                    sendMail.sendEmail("mail@mail.com", "Faktura - MarsTravel", "Hej, här är din faktura från MarsTravel", mostRecentHtmlFile);
+                    String email = UserData.getInstance().getEmail();  // Get the email
+                    sendMail.sendEmail(email, "Faktura - MarsTravel", "Hej, här är din faktura från MarsTravel", mostRecentHtmlFile);
                     System.out.println("Skickat e-post till kund");
                 } else if (response == buttonTypeTwo) {
                     System.out.println("Skriv ut");
