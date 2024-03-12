@@ -115,6 +115,7 @@ public class SparaKundController {
             String firstName = tffirstname.getText();
             String lastName = tflastname.getText();
             String pnumber = tfPersonnummer.getText();
+            UserData.getInstance().setPersonnummer(pnumber); // Sparar personnummer i UserData singleton klassen
             String phone = tfphonenumber.getText();
             String email = tfemail.getText();
             UserData.getInstance().setEmail(email);
