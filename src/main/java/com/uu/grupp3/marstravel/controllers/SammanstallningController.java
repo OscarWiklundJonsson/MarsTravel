@@ -33,10 +33,15 @@ public class SammanstallningController implements Initializable {
     @FXML
     private Button btnTILLBAKA;
 
+
+    private File mostRecentHtmlFile;
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadMostRecentHtml();
         SendMail sendMail = new SendMail();
+
 
         btnAVBRYT.setOnAction(event -> {
             NextButton nextButton = new NextButton();
@@ -53,7 +58,7 @@ public class SammanstallningController implements Initializable {
         btnGODKANN.setOnAction(event -> {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Spara faktura");
-            alert.setHeaderText("Faktura");
+            alert.setHeaderText("Ahooga");
             alert.setContentText("Vad vill du göra?");
 
             ButtonType buttonTypeOne = new ButtonType("Skicka e-post");
@@ -63,24 +68,24 @@ public class SammanstallningController implements Initializable {
 
             alert.showAndWait().ifPresent(response -> {
                 if (response == buttonTypeOne) {
-                    // Call your method here
-                    sendMail.sendEmail("wiklundoscar45@gmail.com", "Faktura - MarsTravel", "Hej, här är din faktura från MarsTravel");
+                    sendMail.sendEmail("wiklundoscar45@gmail.com","Faktura","Här är din faktura",mostRecentHtmlFile);
                 } else if (response == buttonTypeTwo) {
-                    System.out.println("Skriv ut");
+                    // Handle the second button click
                 }
             });
         });
     }
-
-        public void loadMostRecentHtml() {
-            // Find the most recent HTML file
-            File[] htmlFiles = new File(".").listFiles((dir, name) -> name.startsWith("order") && name.endsWith(".html"));
-            if (htmlFiles != null && htmlFiles.length > 0) {
-                Arrays.sort(htmlFiles, Comparator.comparingLong(f -> Long.parseLong(f.getName().replaceAll("[^\\d]", ""))));
-                File mostRecentHtmlFile = htmlFiles[htmlFiles.length - 1];
-
-                // Load the most recent HTML file into the WebView
-                wvSammanstallning.getEngine().load(mostRecentHtmlFile.toURI().toString());
-            }
+    public void loadMostRecentHtml() {
+        // Find the most recent HTML file
+        File[] htmlFiles = new File(".").listFiles((dir, name) -> name.startsWith("order") && name.endsWith(".html"));
+        if (htmlFiles != null && htmlFiles.length > 0) {
+            Arrays.sort(htmlFiles, Comparator.comparingLong(f -> {
+                String digits = f.getName().replaceAll("[^\\d]", "");
+                return digits.isEmpty() ? 0 : Long.parseLong(digits);
+            }));
+            mostRecentHtmlFile = htmlFiles[htmlFiles.length - 1];
+            wvSammanstallning.getEngine().load(mostRecentHtmlFile.toURI().toString());
         }
+
+    }
 }
