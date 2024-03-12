@@ -13,6 +13,8 @@ public class BokaController {
 
         @FXML
         private Button btnBoka;
+        @FXML
+        private Button btnVisaBokning;
 
         /**
          * Hanterar Next knappens funkiton att gå till nästa sida
@@ -22,6 +24,11 @@ public class BokaController {
                         NextButton nextButton = new NextButton();
                         Stage stage = (Stage) btnBoka.getScene().getWindow();
                         nextButton.nextButton("/com/uu/grupp3/marstravel/resedatum.fxml", stage);
+                });
+                btnVisaBokning.setOnAction(event -> {
+                        NextButton nextButton = new NextButton();
+                        Stage stage = (Stage) btnVisaBokning.getScene().getWindow();
+                        nextButton.nextButton("/com/uu/grupp3/marstravel/visaBokning.fxml", stage);
                 });
         }
 }

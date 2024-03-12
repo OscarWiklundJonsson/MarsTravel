@@ -1,5 +1,6 @@
 package com.uu.grupp3.marstravel.controllers;
 
+import com.uu.grupp3.marstravel.services.CheckoutCartService;
 import com.uu.grupp3.marstravel.services.NextButton;
 import com.uu.grupp3.marstravel.services.SendMail;
 import com.uu.grupp3.marstravel.services.UserData;
@@ -11,7 +12,9 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
@@ -39,7 +42,10 @@ public class SammanstallningController implements Initializable {
         loadMostRecentHtml();
         SendMail sendMail = new SendMail();
 
+        CheckoutCartService checkoutCartService = new CheckoutCartService();
+
         btnAVBRYT.setOnAction(event -> {
+            checkoutCartService.checkoutCartClearCart();
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnAVBRYT.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/boka.fxml", stage);
@@ -52,6 +58,7 @@ public class SammanstallningController implements Initializable {
         });
 
         btnGODKANN.setOnAction(event -> {
+            checkoutCartService.storeInformation();
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Spara faktura");
             alert.setHeaderText("Faktura");
@@ -69,6 +76,11 @@ public class SammanstallningController implements Initializable {
                     System.out.println("Skickat e-post till kund");
                 } else if (response == buttonTypeTwo) {
                     System.out.println("Skriv ut");
+                    try {
+                        Desktop.getDesktop().print(mostRecentHtmlFile);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             });
         });

@@ -350,7 +350,7 @@ public class CheckoutCartService {
         textArea.setEditable(false);
         textArea.setWrapText(true);
 
-        // @todo Ändra så att den öppnar boka.fxml
+
         Button button = new Button("Rensa varukorg");
         button.setOnAction(event -> {
             checkoutCartClearCart();
@@ -431,6 +431,4 @@ public class CheckoutCartService {
             e.printStackTrace();
         }
     }
-
-
 }
