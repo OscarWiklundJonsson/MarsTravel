@@ -53,7 +53,7 @@ public class SammanstallningController implements Initializable {
         btnGODKANN.setOnAction(event -> {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Spara faktura");
-            alert.setHeaderText("Ahooga");
+            alert.setHeaderText("Faktura");
             alert.setContentText("Vad vill du göra?");
 
             ButtonType buttonTypeOne = new ButtonType("Skicka e-post");
