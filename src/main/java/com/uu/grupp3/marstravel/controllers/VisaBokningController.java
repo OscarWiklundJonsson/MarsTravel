@@ -1,13 +1,17 @@
 package com.uu.grupp3.marstravel.controllers;
 
+import com.uu.grupp3.marstravel.services.CharacterRestrictions;
+import com.uu.grupp3.marstravel.services.NextButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
+import javafx.stage.Stage;
 
 public class VisaBokningController {
+    public Button btnTillbaka;
     @FXML
     private TextField tfBokningsnummer;
     @FXML
@@ -27,5 +31,18 @@ public class VisaBokningController {
 
         alert.showAndWait();
     }
+
+    public void initialize() {
+        CharacterRestrictions.applyCharacterRestrictions(tfBokningsnummer);
+
+
+        btnTillbaka.setOnAction(event -> {
+            NextButton nextButton = new NextButton();
+            Stage stage = (Stage) btnTillbaka.getScene().getWindow();
+            nextButton.nextButton("/com/uu/grupp3/marstravel/boka.fxml", stage);
+        });
+    }
+
+
 }
 

@@ -119,6 +119,7 @@ public class SparaKundController {
             storeTravelChoices.writeToFile(customerInfo);
 
             NextButton nextButton = new NextButton();
+            checkoutCartService.storeInformation();
             Stage stage = (Stage) btnKASSA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/sammanstallning.fxml", stage); //ska skickas till sammanställningen.
         });
