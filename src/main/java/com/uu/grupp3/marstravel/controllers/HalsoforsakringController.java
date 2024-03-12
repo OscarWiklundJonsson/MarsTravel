@@ -69,7 +69,6 @@ public class HalsoforsakringController {
 
     private CheckoutCartService checkoutCartService = new CheckoutCartService();
 
-
     public void initialize() {
         //Funktion för att endast välja radioknapp
         ToggleGroup group = new ToggleGroup();
@@ -150,5 +149,4 @@ public class HalsoforsakringController {
             sideBarButtons.sideBarButton(fxmlPath, stage);
         }
     }
-
 }

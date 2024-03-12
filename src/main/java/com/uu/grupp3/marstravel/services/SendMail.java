@@ -1,13 +1,20 @@
 package com.uu.grupp3.marstravel.services;
 
+import javax.activation.DataSource;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.io.File;
 import java.util.Properties;
+
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMultipart;
+import javax.activation.DataHandler;
+import javax.activation.FileDataSource;
 
 public class SendMail {
 
-    public void sendEmail(String recipient, String subject, String content) {
+    public void sendEmail(String recipient, String subject, String content, File attachmentFile) {
         final String username = "marstravelg3@gmail.com";
         final String password = "pwjj ifkb xdnp llkn";
 
@@ -34,7 +41,33 @@ public class SendMail {
                     InternetAddress.parse(recipient)
             );
             message.setSubject(subject);
-            message.setText(content);
+
+            // Create a multipart message
+            Multipart multipart = new MimeMultipart();
+
+            // Create the message part
+            BodyPart messageBodyPart = new MimeBodyPart();
+
+            // Now set the actual message
+            messageBodyPart.setText(content);
+
+            // Set text message part
+            multipart.addBodyPart(messageBodyPart);
+
+
+
+            
+            // Part two is attachment
+            messageBodyPart = new MimeBodyPart();
+            String filename = attachmentFile.getAbsolutePath();
+            DataSource source = new FileDataSource(filename);
+            messageBodyPart.setDataHandler(new DataHandler(source));
+            messageBodyPart.setFileName(filename);
+            multipart.addBodyPart(messageBodyPart);
+
+
+            // Send the complete message parts
+            message.setContent(multipart);
 
             Transport.send(message);
 

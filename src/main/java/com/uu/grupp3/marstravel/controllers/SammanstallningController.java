@@ -7,14 +7,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
+<<<<<<< HEAD
+=======
+import javafx.scene.web.WebView;
+>>>>>>> bee0e290f41c195b072995e63582b9d5a07f2ceb
 import javafx.stage.Stage;
 
-
-import javafx.scene.web.WebView;
-
-
 import java.io.File;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -74,15 +74,21 @@ public class SammanstallningController implements Initializable {
 
     }
 
-        public void loadMostRecentHtml() {
-            // Find the most recent HTML file
-            File[] htmlFiles = new File(".").listFiles((dir, name) -> name.startsWith("order") && name.endsWith(".html"));
-            if (htmlFiles != null && htmlFiles.length > 0) {
-                Arrays.sort(htmlFiles, Comparator.comparingLong(f -> Long.parseLong(f.getName().replaceAll("[^\\d]", ""))));
-                File mostRecentHtmlFile = htmlFiles[htmlFiles.length - 1];
+    public void loadMostRecentHtml() {
+        // Find the most recent HTML file
+        File[] htmlFiles = new File(".").listFiles((dir, name) -> name.startsWith("order") && name.endsWith(".html"));
+        if (htmlFiles != null && htmlFiles.length > 0) {
+            Arrays.sort(htmlFiles, Comparator.comparingLong(f -> Long.parseLong(f.getName().replaceAll("[^\\d]", ""))));
+            File mostRecentHtmlFile = htmlFiles[htmlFiles.length - 1];
 
-                // Load the most recent HTML file into the WebView
-                wvSammanstallning.getEngine().load(mostRecentHtmlFile.toURI().toString());
+            // Load the most recent HTML file into the WebView with UTF-8 encoding
+            try {
+                String url = mostRecentHtmlFile.toURI().toURL().toString();
+                url += "?encoding=UTF-8"; // Add encoding information to the URL
+                wvSammanstallning.getEngine().load(url);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
             }
         }
+    }
 }
