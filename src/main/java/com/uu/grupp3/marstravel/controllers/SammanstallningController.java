@@ -1,5 +1,6 @@
 package com.uu.grupp3.marstravel.controllers;
 
+import com.uu.grupp3.marstravel.services.CheckoutCartService;
 import com.uu.grupp3.marstravel.services.NextButton;
 import com.uu.grupp3.marstravel.services.SendMail;
 import com.uu.grupp3.marstravel.services.UserData;
@@ -41,6 +42,8 @@ public class SammanstallningController implements Initializable {
         loadMostRecentHtml();
         SendMail sendMail = new SendMail();
 
+        CheckoutCartService checkoutCartService = new CheckoutCartService();
+
         btnAVBRYT.setOnAction(event -> {
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnAVBRYT.getScene().getWindow();
@@ -54,6 +57,7 @@ public class SammanstallningController implements Initializable {
         });
 
         btnGODKANN.setOnAction(event -> {
+            checkoutCartService.storeInformation();
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Spara faktura");
             alert.setHeaderText("Faktura");
