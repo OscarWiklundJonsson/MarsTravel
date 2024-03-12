@@ -3,6 +3,7 @@ package com.uu.grupp3.marstravel.controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.web.WebView;
+import javafx.scene.control.Button;
 
 import java.io.File;
 import java.net.URL;
@@ -13,6 +14,15 @@ import java.util.ResourceBundle;
 public class SammanstallningController implements Initializable {
     @FXML
     private WebView wvSammanstallning;
+
+    @FXML
+    private Button btnAVBRYT;
+
+    @FXML
+    private Button btnGODKANN;
+
+    @FXML
+    private Button btnTILLBAKA;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -30,4 +40,6 @@ public class SammanstallningController implements Initializable {
             wvSammanstallning.getEngine().load(mostRecentHtmlFile.toURI().toString());
         }
     }
+
+
 }
