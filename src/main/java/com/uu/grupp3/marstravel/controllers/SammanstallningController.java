@@ -11,7 +11,9 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
@@ -69,6 +71,11 @@ public class SammanstallningController implements Initializable {
                     System.out.println("Skickat e-post till kund");
                 } else if (response == buttonTypeTwo) {
                     System.out.println("Skriv ut");
+                    try {
+                        Desktop.getDesktop().print(mostRecentHtmlFile);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             });
         });

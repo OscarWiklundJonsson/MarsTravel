@@ -14,9 +14,17 @@ import javax.activation.FileDataSource;
 
 public class SendMail {
 
+
+    /**
+     * Skickar e-post med faktura som bifogad fil.
+     * @param recipient E-postadressen som fakturan ska skickas till.
+     * @param subject Ämnesraden i e-posten.
+     * @param content Innehållet i e-posten.
+     * @param attachmentFile Fakturafil som ska bifogas e-posten.
+     */
     public void sendEmail(String recipient, String subject, String content, File attachmentFile) {
         final String username = "marstravelg3@gmail.com";
-        final String password = "pwjj ifkb xdnp llkn";
+        final String password = "pwjj ifkb xdnp llkn"; // Tyvärr är detta lösenord det rätta, men orkar inte lägga det i en separat fil just nu.
 
         Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp.gmail.com");
@@ -41,23 +49,14 @@ public class SendMail {
                     InternetAddress.parse(recipient)
             );
             message.setSubject(subject);
-
-            // Create a multipart message
             Multipart multipart = new MimeMultipart();
-
-            // Create the message part
             BodyPart messageBodyPart = new MimeBodyPart();
-
-            // Now set the actual message
             messageBodyPart.setText(content);
 
-            // Set text message part
             multipart.addBodyPart(messageBodyPart);
 
-
-
             
-            // Part two is attachment
+            // Bifoga fil (faktura)
             messageBodyPart = new MimeBodyPart();
             String filename = attachmentFile.getAbsolutePath();
             DataSource source = new FileDataSource(filename);
@@ -66,13 +65,9 @@ public class SendMail {
             multipart.addBodyPart(messageBodyPart);
 
 
-            // Send the complete message parts
             message.setContent(multipart);
-
             Transport.send(message);
-
-            System.out.println("Done");
-
+            System.out.println("Mail skickat!");
         } catch (MessagingException e) {
             e.printStackTrace();
         }
