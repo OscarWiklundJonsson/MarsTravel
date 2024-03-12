@@ -7,10 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-<<<<<<< HEAD
-=======
 import javafx.scene.web.WebView;
->>>>>>> bee0e290f41c195b072995e63582b9d5a07f2ceb
 import javafx.stage.Stage;
 
 import java.io.File;
