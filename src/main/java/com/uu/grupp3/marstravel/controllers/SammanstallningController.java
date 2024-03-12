@@ -1,9 +1,12 @@
 package com.uu.grupp3.marstravel.controllers;
 
 import com.uu.grupp3.marstravel.services.NextButton;
+import com.uu.grupp3.marstravel.services.SendMail;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
@@ -33,6 +36,7 @@ public class SammanstallningController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadMostRecentHtml();
+        SendMail sendMail = new SendMail();
 
         btnAVBRYT.setOnAction(event -> {
             NextButton nextButton = new NextButton();
@@ -44,6 +48,27 @@ public class SammanstallningController implements Initializable {
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnTILLBAKA.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/resedatum.fxml", stage);
+        });
+
+        btnGODKANN.setOnAction(event -> {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Spara faktura");
+            alert.setHeaderText("Ahooga");
+            alert.setContentText("Vad vill du göra?");
+
+            ButtonType buttonTypeOne = new ButtonType("Skicka e-post");
+            ButtonType buttonTypeTwo = new ButtonType("Skriv ut");
+
+            alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo);
+
+            alert.showAndWait().ifPresent(response -> {
+                if (response == buttonTypeOne) {
+                    // Call your method here
+                    sendMail.sendEmail("wiklundoscar45@gmail.com", "Faktura - MarsTravel", "Hej, här är din faktura från MarsTravel");
+                } else if (response == buttonTypeTwo) {
+                    System.out.println("Skriv ut");
+                }
+            });
         });
 
 
