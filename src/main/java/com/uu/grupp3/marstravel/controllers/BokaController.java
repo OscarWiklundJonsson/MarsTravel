@@ -13,12 +13,19 @@ public class BokaController {
 
         @FXML
         private Button btnBoka;
+        @FXML
+        private Button btnVisaBokning;
 
         public void initialize() {
                 btnBoka.setOnAction(event -> {
                         NextButton nextButton = new NextButton();
                         Stage stage = (Stage) btnBoka.getScene().getWindow();
-                        nextButton.nextButton("/com/uu/grupp3/marstravel/resedatum.fxml", stage); // @todo detta ska egentligen vara en sida för att välja antalet resenärer
+                        nextButton.nextButton("/com/uu/grupp3/marstravel/resedatum.fxml", stage);
+                });
+                btnVisaBokning.setOnAction(event -> {
+                        NextButton nextButton = new NextButton();
+                        Stage stage = (Stage) btnVisaBokning.getScene().getWindow();
+                        nextButton.nextButton("com/uu/grupp3/marstravel/visaBokning.fxml", stage);
                 });
         }
 }
