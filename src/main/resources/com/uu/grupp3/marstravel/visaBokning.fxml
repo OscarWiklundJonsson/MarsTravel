@@ -10,9 +10,21 @@
         <URL value="@styles2.css" />
     </stylesheets>
     <children>
-        <TextField fx:id="tfBokningsnummer" layoutX="640.0" layoutY="425.0" promptText="Bokningsnummer" />
         <Button fx:id="btnSök" layoutX="1117.0" layoutY="620.0" mnemonicParsing="false" text="SÖK" onAction="#handleSokButtonClick" prefHeight="51.0" prefWidth="110.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="buttonSok" stylesheets="@styles.css" textFill="#eed2a7">
-        </Button>/>
-        <Label fx:id="lblSokBokningsinformation" layoutX="479.0" layoutY="429.0" text="Sök Bokningsinformation" textFill="#f0e9e9" />
+        <font>
+            <Font size="24.0" />
+        </font>
+        </Button>
+        <Button fx:id="btnTillbaka" layoutX="55.0" layoutY="620.0" mnemonicParsing="false" text="TILLBAKA" prefHeight="51.0" prefWidth="140.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="buttonTillbaka" stylesheets="@styles.css" textFill="#eed2a7">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Button>
+        <TextField fx:id="tfBokningsnummer" layoutX="680.0" layoutY="445.0" prefHeight="30.0" prefWidth="200.0" promptText="Bokningsnummer" />
+        <Label fx:id="lblSokBokningsinformation" layoutX="370.0" layoutY="440.0" text="Sök Bokningsinformation" textFill="#f0e9e9" >
+        <font>
+            <Font size="24.0" />
+        </font>
+        </Label>
     </children>
 </AnchorPane>

@@ -139,7 +139,12 @@ public class HotellMarsController {
 
     private CheckoutCartService checkoutCartService = new CheckoutCartService();
 
-    //nästa knapp, skickar vidare till hytterHem sidan.
+    /**
+     * Hanterar infoknappar
+     * Hanterar val av hotell
+     * Hanterar Next knappen
+     * Hanterar varukorg knappen
+     */
     public void initialize() {
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
         StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
@@ -246,6 +251,10 @@ public class HotellMarsController {
     }
     private SideBarButtons sideBarButtons = new SideBarButtons();
 
+    /**
+     * Här hanteras sidoknapparnas funktion att navigera mellan de olika kategorierna
+     * @param event Triggar Action Eventet när man klickar på knapparna
+     */
     @FXML
     private void SideBarButtons(ActionEvent event) {
         String fxmlPath = null;

@@ -39,6 +39,8 @@ public class CharacterRestrictions {
                 textField.setTextFormatter(createFormatter("[0-9]*"));
             } else if (textField.getId().equals("tfHalsodetaljer")) {
                 textField.setTextFormatter(createFormatter("[a-öA-Ö]*"));
+            } else if (textField.getId().equals("tfBokningsnummer")) {
+                textField.setTextFormatter(createFormatter("[0-9]*"));
             }
         }
     }

@@ -69,6 +69,12 @@ public class HalsoforsakringController {
 
     private CheckoutCartService checkoutCartService = new CheckoutCartService();
 
+    /**
+     * Hanterar val av hälsoförsäkring
+     * Hanterar infoknapp
+     * Hanterar Next knappen
+     * Hanterar varukorg knappen
+     */
     public void initialize() {
         //Funktion för att endast välja radioknapp
         ToggleGroup group = new ToggleGroup();
@@ -105,6 +111,10 @@ public class HalsoforsakringController {
     }
     private SideBarButtons sideBarButtons = new SideBarButtons();
 
+    /**
+     * Här hanteras sidoknapparnas funktion att navigera mellan de olika kategorierna
+     * @param event Triggar Action Eventet när man klickar på knapparna
+     */
     @FXML
     private void SideBarButtons(ActionEvent event) {
         String fxmlPath = null;

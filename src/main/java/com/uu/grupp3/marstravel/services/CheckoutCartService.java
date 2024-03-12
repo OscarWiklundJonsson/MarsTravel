@@ -425,8 +425,8 @@ public class CheckoutCartService {
             writer.write("</body>\n</html>");
 
             // Clear the original file
-            Files.deleteIfExists(sourcePath);
-            Files.createFile(sourcePath);
+            //Files.deleteIfExists(sourcePath);
+            //Files.createFile(sourcePath);
         } catch (IOException e) {
             e.printStackTrace();
         }

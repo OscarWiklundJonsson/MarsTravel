@@ -72,6 +72,16 @@ public class StoreTravelChoices {
         }
     }
 
+    public void writeToFileCustomer(String content) {
+        Path path = Paths.get("customerInfo.txt");
+
+        try (BufferedWriter writer = Files.newBufferedWriter(path, StandardOpenOption.APPEND)) {
+            writer.write(content + "\n");
+        } catch (IOException e) {
+            e.printStackTrace(); // Robust logging? nej tack
+        }
+    }
+
     /**
      * Reads the file and returns the first line containing the search string
      * @param searchString
