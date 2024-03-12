@@ -45,6 +45,7 @@ public class SammanstallningController implements Initializable {
         CheckoutCartService checkoutCartService = new CheckoutCartService();
 
         btnAVBRYT.setOnAction(event -> {
+            checkoutCartService.checkoutCartClearCart();
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnAVBRYT.getScene().getWindow();
             nextButton.nextButton("/com/uu/grupp3/marstravel/boka.fxml", stage);
