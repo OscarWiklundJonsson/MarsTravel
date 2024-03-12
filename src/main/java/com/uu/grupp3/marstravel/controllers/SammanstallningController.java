@@ -30,6 +30,9 @@ public class SammanstallningController implements Initializable {
     @FXML
     private Button btnTILLBAKA;
 
+
+    private File mostRecentHtmlFile;  // Add this line
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadMostRecentHtml();
@@ -60,8 +63,9 @@ public class SammanstallningController implements Initializable {
 
             alert.showAndWait().ifPresent(response -> {
                 if (response == buttonTypeOne) {
-                    // Call your method here
-                    sendMail.sendEmail("wiklundoscar45@gmail.com", "Faktura - MarsTravel", "Hej, här är din faktura från MarsTravel");
+                    //TODO: Ändra till kundens mejladress
+                    sendMail.sendEmail("mail@mail.com", "Faktura - MarsTravel", "Hej, här är din faktura från MarsTravel", mostRecentHtmlFile);
+                    System.out.println("Skickat e-post till kund");
                 } else if (response == buttonTypeTwo) {
                     System.out.println("Skriv ut");
                 }
@@ -76,7 +80,7 @@ public class SammanstallningController implements Initializable {
         File[] htmlFiles = new File(".").listFiles((dir, name) -> name.startsWith("order") && name.endsWith(".html"));
         if (htmlFiles != null && htmlFiles.length > 0) {
             Arrays.sort(htmlFiles, Comparator.comparingLong(f -> Long.parseLong(f.getName().replaceAll("[^\\d]", ""))));
-            File mostRecentHtmlFile = htmlFiles[htmlFiles.length - 1];
+            mostRecentHtmlFile = htmlFiles[htmlFiles.length - 1];
 
             // Load the most recent HTML file into the WebView with UTF-8 encoding
             try {
