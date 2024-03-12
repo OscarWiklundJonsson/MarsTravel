@@ -87,4 +87,5 @@ public class SammanstallningController implements Initializable {
                 e.printStackTrace();
             }
         }
+    }
 }
