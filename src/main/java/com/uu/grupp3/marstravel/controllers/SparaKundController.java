@@ -89,19 +89,35 @@ public class SparaKundController {
     @FXML
     private TextField tfPostnummer;
 
+    private void clearFields() {
+        tffirstname.clear();
+        tflastname.clear();
+        tfPersonnummer.clear();
+        tfphonenumber.clear();
+        tfemail.clear();
+        tfAdress.clear();
+        tfPostnummer.clear();
+        tfOrt.clear();
+        tfHalsodetaljer.clear();
+    }
+
+    StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
+    private int antalResenarerStr;
+
+    private int currentResenarIndex = 0;
     @FXML
     private Button varukorg;
 
     public void initialize() {
-        CharacterRestrictions.applyCharacterRestrictions(tffirstname, tflastname, tfPersonnummer, tfphonenumber, tfemail, tfAdress, tfPostnummer, tfOrt );
-        btnKASSA.setOnAction(event -> {
+        CharacterRestrictions.applyCharacterRestrictions(tffirstname, tflastname, tfPersonnummer, tfphonenumber, tfemail, tfAdress, tfPostnummer, tfOrt);
 
+        btnKASSA.setOnAction(event -> {
             String firstName = tffirstname.getText();
             String lastName = tflastname.getText();
             String pnumber = tfPersonnummer.getText();
             String phone = tfphonenumber.getText();
             String email = tfemail.getText();
-            UserData.getInstance().setEmail(email); // Sparar email i UserData singleton klassen
+            UserData.getInstance().setEmail(email);
             String address = tfAdress.getText();
             String zipCode = tfPostnummer.getText();
             String city = tfOrt.getText();
@@ -118,10 +134,20 @@ public class SparaKundController {
             StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
             storeTravelChoices.writeToFile(customerInfo);
 
-            NextButton nextButton = new NextButton();
-            Stage stage = (Stage) btnKASSA.getScene().getWindow();
-            nextButton.nextButton("/com/uu/grupp3/marstravel/sammanstallning.fxml", stage); //ska skickas till sammanställningen.
+            currentResenarIndex++;
+
+            int antalResenarer = 2;
+            antalResenarerStr = Integer.parseInt(String.valueOf(antalResenarer));
+            if (currentResenarIndex >= antalResenarer) {
+                NextButton nextButton = new NextButton();
+                Stage stage = (Stage) btnKASSA.getScene().getWindow();
+                nextButton.nextButton("/com/uu/grupp3/marstravel/sammanstallning.fxml", stage);
+            } else {
+                clearFields();
+            }
         });
+
+
 
         // denna beast som visar varukorgen
         btnVarukorg.setOnAction(event -> {
