@@ -65,7 +65,7 @@ public class DatabaseHandler {
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         } finally {
-            System.out.println(); // @todo Ändra det här till något vettigt
+            System.out.println();
         }
         return false;
     }
