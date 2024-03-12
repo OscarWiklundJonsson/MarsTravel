@@ -45,6 +45,18 @@
     -fx-border-color: #EED2A7;
 }
 
+/* TILLBAKA KNAPPAR */
+.buttonTillbaka{
+    -fx-background-color: #C7511B;
+    -fx-border-color: #EED2A7;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+.buttonTillbaka:hover{
+    -fx-background-color: #363230;
+    -fx-border-color: #EED2A7;
+}
+
 /* LOGGA IN KNAPPEN */
 .buttonLoggainNasta{
     -fx-background-color: #C7511B;

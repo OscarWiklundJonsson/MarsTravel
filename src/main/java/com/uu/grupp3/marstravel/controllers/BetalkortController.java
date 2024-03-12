@@ -66,7 +66,6 @@ public class BetalkortController {
      * Här finns funktionalitet för att spara betalkortsinformation och för att visa varukorgen.
      * Här finns även funktionalitet för att navigera mellan sidorna i applikationen.
      * Här finns även funktionalitet för att kontrollera att summan som ska laddas på betalkortet är minst 20000.
-     *
      */
     public void initialize() {
 
@@ -111,8 +110,13 @@ public class BetalkortController {
             }
         });
     }
+
     private SideBarButtons sideBarButtons = new SideBarButtons();
 
+    /**
+     * Här hanteras sidoknapparnas funktion att navigera mellan de olika kategorierna
+     * @param event Triggar Action Eventet när man klickar på knapparna
+     */
     @FXML
     private void SideBarButtons(ActionEvent event) {
         String fxmlPath = null;

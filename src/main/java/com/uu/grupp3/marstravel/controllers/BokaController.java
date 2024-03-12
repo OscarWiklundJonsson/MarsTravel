@@ -16,6 +16,9 @@ public class BokaController {
         @FXML
         private Button btnVisaBokning;
 
+        /**
+         * Hanterar Next knappens funkiton att gå till nästa sida
+         */
         public void initialize() {
                 btnBoka.setOnAction(event -> {
                         NextButton nextButton = new NextButton();
