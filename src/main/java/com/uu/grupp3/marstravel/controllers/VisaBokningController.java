@@ -1,5 +1,6 @@
 package com.uu.grupp3.marstravel.controllers;
 
+import com.uu.grupp3.marstravel.services.CharacterRestrictions;
 import com.uu.grupp3.marstravel.services.NextButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,6 +33,9 @@ public class VisaBokningController {
     }
 
     public void initialize() {
+        CharacterRestrictions.applyCharacterRestrictions(tfBokningsnummer);
+
+
         btnTillbaka.setOnAction(event -> {
             NextButton nextButton = new NextButton();
             Stage stage = (Stage) btnTillbaka.getScene().getWindow();
