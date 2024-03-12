@@ -145,7 +145,6 @@ public class HotellMarsController {
         StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
         RadioButtonState radioButtonState = RadioButtonState.getInstance();
 
-
         //Pop-Up for Polar Lansdorp Information
         btnLansdorpInfo.setOnAction(event -> dbInfo.showInfoFromDB("Lansdorp", "Polar Lansdorp", "HotellMarsInformation",1));
         //Pop-Up for Polar Wielders Information
@@ -164,7 +163,6 @@ public class HotellMarsController {
         btnRoyalDubbelInfo.setOnAction(event -> dbInfo.showInfoFromDB("RoyalDubbel", "Hotell Royal Dubbel", "HotellMarsInformation",1));
         //Pop-Up for Hotel Royal Svit Information
         btnRoyalSvitInfo.setOnAction(event -> dbInfo.showInfoFromDB("RoyalSvit", "Hotell Royal Svit", "HotellMarsInformation",1));
-
 
         rbtnDeimosDubbel.setSelected(radioButtonState.getButtonState("rbtnDeimosDubbel"));
         rbtnDeimosEnkel.setSelected(radioButtonState.getButtonState("rbtnDeimosEnkel"));
@@ -204,10 +202,6 @@ public class HotellMarsController {
         rbtnWeilders.selectedProperty().addListener((observable, oldValue, newValue) -> {
             radioButtonState.setButtonState("rbtnWeilders", newValue);
         });
-
-
-
-
 
         ToggleGroup group = new ToggleGroup();
         rbtnDeimosDubbel.setToggleGroup(group);

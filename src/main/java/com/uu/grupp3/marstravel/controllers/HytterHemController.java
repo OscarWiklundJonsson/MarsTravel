@@ -103,12 +103,10 @@ public class HytterHemController {
 
     private CheckoutCartService checkoutCartService = new CheckoutCartService();
 
-
     public void initialize() {
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
         StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
         RadioButtonState radioButtonState = RadioButtonState.getInstance();
-
 
         //Pop-Up for EcoInformation
         btnEcoInfo.setOnAction(event -> dbInfo.showInfoFromDB("Economy", "Hytt Economy", "HyttInformation",1));
@@ -150,7 +148,6 @@ public class HytterHemController {
         rbtnSvitH.selectedProperty().addListener((observable, oldValue, newValue) -> {
             radioButtonState.setButtonState("rbtnSvitH", newValue);
         });
-
 
         btnNASTA.setDisable(true);
 

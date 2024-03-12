@@ -83,7 +83,6 @@ public class EvenemangHemController {
     @FXML
     private ChoiceBox<String> cboxTheaterpremiarerH;
 
-
     @FXML
     private Label lblFilmpremiarer;
     @FXML
@@ -94,7 +93,6 @@ public class EvenemangHemController {
     private Label lblAntal;
 
     private CheckoutCartService checkoutCartService = new CheckoutCartService();
-
 
     public void initialize() {
 
@@ -113,7 +111,6 @@ public class EvenemangHemController {
                 "0","1", "2", "3"
         );
         cboxTheaterpremiarerH.setItems(theaterpremiarerAlternativH);
-
 
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
 

@@ -4,9 +4,11 @@ import com.uu.grupp3.marstravel.services.NextButton;
 import com.uu.grupp3.marstravel.services.SendMail;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.web.WebView;
-
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -85,5 +87,4 @@ public class SammanstallningController implements Initializable {
                 e.printStackTrace();
             }
         }
-    }
 }
