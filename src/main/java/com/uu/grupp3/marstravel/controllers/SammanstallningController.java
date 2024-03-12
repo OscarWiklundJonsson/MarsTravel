@@ -70,8 +70,6 @@ public class SammanstallningController implements Initializable {
                 }
             });
         });
-
-
     }
 
         public void loadMostRecentHtml() {

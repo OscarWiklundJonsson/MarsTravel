@@ -56,6 +56,7 @@ public class SparaKundController {
 
     @FXML
     private Button btnVALJAresedatum;
+
     @FXML
     private Button btnInfoHalsodetaljer;
 
@@ -76,6 +77,7 @@ public class SparaKundController {
 
     @FXML
     private TextField tfphonenumber;
+
     @FXML
     private TextField tfAdress;
 
@@ -91,15 +93,12 @@ public class SparaKundController {
     @FXML
     private TextField tfPostnummer;
 
-
-
     @FXML
     private Button varukorg;
 
     public void initialize() {
         CharacterRestrictions.applyCharacterRestrictions(tffirstname, tflastname, tfPersonnummer, tfphonenumber, tfemail, tfAdress, tfPostnummer, tfOrt );
         btnKASSA.setOnAction(event -> {
-
 
             String firstName = tffirstname.getText();
             String lastName = tflastname.getText();
