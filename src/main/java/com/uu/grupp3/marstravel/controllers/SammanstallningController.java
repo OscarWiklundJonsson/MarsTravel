@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.web.WebView;
 
 import java.io.File;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -26,8 +27,15 @@ public class SammanstallningController implements Initializable {
             Arrays.sort(htmlFiles, Comparator.comparingLong(f -> Long.parseLong(f.getName().replaceAll("[^\\d]", ""))));
             File mostRecentHtmlFile = htmlFiles[htmlFiles.length - 1];
 
-            // Load the most recent HTML file into the WebView
-            wvSammanstallning.getEngine().load(mostRecentHtmlFile.toURI().toString());
+            // Load the most recent HTML file into the WebView with UTF-8 encoding
+            try {
+                String url = mostRecentHtmlFile.toURI().toURL().toString();
+                url += "?encoding=UTF-8"; // Add encoding information to the URL
+                wvSammanstallning.getEngine().load(url);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
         }
     }
+
 }
