@@ -97,18 +97,18 @@ public class SparaKundController {
     private Button varukorg;
 
     public void initialize() {
-        CharacterRestrictions.applyCharacterRestrictions(tffirstname, tflastname, tfphonenumber, tfemail, tfOrt, tfPersonnummer, tfPostnummer, tfAdress);
+        CharacterRestrictions.applyCharacterRestrictions(tffirstname, tflastname, tfPersonnummer, tfphonenumber, tfemail, tfAdress, tfPostnummer, tfOrt );
         btnKASSA.setOnAction(event -> {
 
 
             String firstName = tffirstname.getText();
             String lastName = tflastname.getText();
+            String pnumber = tfPersonnummer.getText();
             String phone = tfphonenumber.getText();
             String email = tfemail.getText();
-            String pnumber = tfPersonnummer.getText();
             String address = tfAdress.getText();
-            String city = tfOrt.getText();
             String zipCode = tfPostnummer.getText();
+            String city = tfOrt.getText();
             String healthDetails = tfHalsodetaljer.getText();
             String customerInfo = "Förnamn: " + firstName + "\n" +
                     "Efternamn: " + lastName + "\n" +
@@ -158,17 +158,17 @@ public class SparaKundController {
     public void saveCustomer() {
         String firstName = tffirstname.getText();
         String lastName = tflastname.getText();
+        String pnumber = tfPersonnummer.getText();
         String phone = tfphonenumber.getText();
         String email = tfemail.getText();
-        String pnumber = tfPersonnummer.getText();
         String address = tfAdress.getText();
-        String city = tfOrt.getText();
         String zipCode = tfPostnummer.getText();
+        String city = tfOrt.getText();
         String healthDetails = tfHalsodetaljer.getText();
 
         // Check if all fields are filled
-        if (firstName.isEmpty() || lastName.isEmpty() || phone.isEmpty() || email.isEmpty() || pnumber.isEmpty() || address.isEmpty() || city.isEmpty()
-                || zipCode.isEmpty() || healthDetails.isEmpty()) {
+        if (firstName.isEmpty() || lastName.isEmpty() || pnumber.isEmpty() || phone.isEmpty() || email.isEmpty() || address.isEmpty() ||
+                zipCode.isEmpty() ||city.isEmpty() || healthDetails.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("AJ AJ AJ");
             alert.setHeaderText(null);
@@ -177,7 +177,7 @@ public class SparaKundController {
             return;
         }
 
-        String sql = "INSERT INTO KundInformation (Förnamn, Efternamn, Personnummer, Telefonnummer, Mail, Adress, Postnummer, Ort, Hälsodetaljer) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO KundInformation (Förnamn, Efternamn, Personnummer, Telefonnummer, Mail, Adress, Postnummer, Ort, HalsoInformation) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         // Try to connect to the database and save the customer
         try (Connection conn = DatabaseHandler.getConnection();
@@ -185,9 +185,9 @@ public class SparaKundController {
 
             pstmt.setString(1, firstName);
             pstmt.setString(2, lastName);
-            pstmt.setString(3, phone);
-            pstmt.setString(4, email);
-            pstmt.setString(5, pnumber);
+            pstmt.setString(3, pnumber);
+            pstmt.setString(4, phone);
+            pstmt.setString(5, email);
             pstmt.setString(6, address);
             pstmt.setString(7, zipCode);
             pstmt.setString(8, city);
@@ -204,12 +204,12 @@ public class SparaKundController {
             // Clear the text fields
             tffirstname.clear();
             tflastname.clear();
+            tfPersonnummer.clear();
             tfphonenumber.clear();
             tfemail.clear();
-            tfPersonnummer.clear();
             tfAdress.clear();
             tfPostnummer.clear();
-            tfPostnummer.clear();
+            tfOrt.clear();
             tfHalsodetaljer.clear();
 
         } catch (SQLException | ClassNotFoundException e) {
