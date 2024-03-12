@@ -78,24 +78,33 @@ public class EvenemangHemController {
 
     @FXML
     private ChoiceBox<String> cboxFilmpremiarerH;
+
     @FXML
     private ChoiceBox<String> cboxConcertH;
+
     @FXML
     private ChoiceBox<String> cboxTheaterpremiarerH;
 
     @FXML
     private Label lblFilmpremiarer;
+
     @FXML
     private Label lblTheaterpremiarer;
+
     @FXML
     private Label lblConcert;
+
     @FXML
     private Label lblAntal;
 
     private CheckoutCartService checkoutCartService = new CheckoutCartService();
 
+    /**
+     * Hanterar valen av events
+     * Hanterar Next knappens funktion
+     * Hanterar varukorg knappen
+     */
     public void initialize() {
-
         //ChoiceBox Filmpremiarer
         ObservableList<String> filmpremiarerAlternativH = FXCollections.observableArrayList(
                 "0","1", "2", "3", "4", "5", "6"
@@ -163,6 +172,10 @@ public class EvenemangHemController {
     }
     private SideBarButtons sideBarButtons = new SideBarButtons();
 
+    /**
+     * Här hanteras sidoknapparnas funktion att navigera mellan de olika kategorierna
+     * @param event Triggar Action Eventet när man klickar på knapparna
+     */
     @FXML
     private void SideBarButtons(ActionEvent event) {
         String fxmlPath = null;
