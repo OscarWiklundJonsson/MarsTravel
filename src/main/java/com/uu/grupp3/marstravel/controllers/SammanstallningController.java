@@ -7,14 +7,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
-
-import javafx.scene.web.WebView;
-
-
 import java.io.File;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -33,15 +30,10 @@ public class SammanstallningController implements Initializable {
     @FXML
     private Button btnTILLBAKA;
 
-
-    private File mostRecentHtmlFile;
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadMostRecentHtml();
         SendMail sendMail = new SendMail();
-
 
         btnAVBRYT.setOnAction(event -> {
             NextButton nextButton = new NextButton();
@@ -58,7 +50,7 @@ public class SammanstallningController implements Initializable {
         btnGODKANN.setOnAction(event -> {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Spara faktura");
-            alert.setHeaderText("Ahooga");
+            alert.setHeaderText("Faktura");
             alert.setContentText("Vad vill du göra?");
 
             ButtonType buttonTypeOne = new ButtonType("Skicka e-post");
@@ -68,24 +60,32 @@ public class SammanstallningController implements Initializable {
 
             alert.showAndWait().ifPresent(response -> {
                 if (response == buttonTypeOne) {
-                    sendMail.sendEmail("wiklundoscar45@gmail.com","Faktura","Här är din faktura",mostRecentHtmlFile);
+                    // Call your method here
+                    sendMail.sendEmail("wiklundoscar45@gmail.com", "Faktura - MarsTravel", "Hej, här är din faktura från MarsTravel");
                 } else if (response == buttonTypeTwo) {
-                    // Handle the second button click
+                    System.out.println("Skriv ut");
                 }
             });
         });
+
+
     }
+
     public void loadMostRecentHtml() {
         // Find the most recent HTML file
         File[] htmlFiles = new File(".").listFiles((dir, name) -> name.startsWith("order") && name.endsWith(".html"));
         if (htmlFiles != null && htmlFiles.length > 0) {
-            Arrays.sort(htmlFiles, Comparator.comparingLong(f -> {
-                String digits = f.getName().replaceAll("[^\\d]", "");
-                return digits.isEmpty() ? 0 : Long.parseLong(digits);
-            }));
-            mostRecentHtmlFile = htmlFiles[htmlFiles.length - 1];
-            wvSammanstallning.getEngine().load(mostRecentHtmlFile.toURI().toString());
-        }
+            Arrays.sort(htmlFiles, Comparator.comparingLong(f -> Long.parseLong(f.getName().replaceAll("[^\\d]", ""))));
+            File mostRecentHtmlFile = htmlFiles[htmlFiles.length - 1];
 
+            // Load the most recent HTML file into the WebView with UTF-8 encoding
+            try {
+                String url = mostRecentHtmlFile.toURI().toURL().toString();
+                url += "?encoding=UTF-8"; // Add encoding information to the URL
+                wvSammanstallning.getEngine().load(url);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
