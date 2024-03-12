@@ -12,7 +12,7 @@
     <children>
         <TextField fx:id="tfBokningsnummer" layoutX="640.0" layoutY="425.0" promptText="Bokningsnummer" />
         <Button fx:id="btnSök" layoutX="1117.0" layoutY="620.0" mnemonicParsing="false" text="SÖK" onAction="#handleSokButtonClick" prefHeight="51.0" prefWidth="110.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="buttonSok" stylesheets="@styles.css" textFill="#eed2a7">
-        </Button>/>
+        </Button>
         <Label fx:id="lblSokBokningsinformation" layoutX="479.0" layoutY="429.0" text="Sök Bokningsinformation" textFill="#f0e9e9" />
     </children>
 </AnchorPane>

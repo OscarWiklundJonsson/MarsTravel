@@ -25,7 +25,7 @@ public class BokaController {
                 btnVisaBokning.setOnAction(event -> {
                         NextButton nextButton = new NextButton();
                         Stage stage = (Stage) btnVisaBokning.getScene().getWindow();
-                        nextButton.nextButton("com/uu/grupp3/marstravel/visaBokning.fxml", stage);
+                        nextButton.nextButton("/com/uu/grupp3/marstravel/visaBokning.fxml", stage);
                 });
         }
 }
