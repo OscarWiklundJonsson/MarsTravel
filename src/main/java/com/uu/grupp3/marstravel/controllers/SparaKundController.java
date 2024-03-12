@@ -113,9 +113,10 @@ public class SparaKundController {
                     "Email: " + email + "\n" +
                     "Adress" + address + "\n" +
                     "Postnummer" + zipCode + "\n" +
-                    "Ort" + city + "\n" +
-                    "Hälsodetaljer" + healthDetails + "\n";
+                    "Ort:" + city + "\n" +
+                    "Hälsodetaljer:" + healthDetails + "\n";
             StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
+            //storeTravelChoices.writeToFileCustomer(customerInfo); TODO: Fixa så att denna skriver till filen
             storeTravelChoices.writeToFile(customerInfo);
 
             NextButton nextButton = new NextButton();
