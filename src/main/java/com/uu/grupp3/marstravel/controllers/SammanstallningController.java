@@ -58,7 +58,7 @@ public class SammanstallningController implements Initializable {
         });
 
         btnGODKANN.setOnAction(event -> {
-            //checkoutCartService.storeInformation();
+            checkoutCartService.checkoutCartClearCart();
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Spara faktura");
             alert.setHeaderText("Faktura");
