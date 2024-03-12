@@ -103,6 +103,11 @@ public class HytterHemController {
 
     private CheckoutCartService checkoutCartService = new CheckoutCartService();
 
+    /**
+     * Hanterar infoknappar
+     * Hanterar att man endast kan välja ett val
+     * Hanterar varukorg knappen
+     */
     public void initialize() {
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
         StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
@@ -177,7 +182,7 @@ public class HytterHemController {
                 nextButton.nextButton("/com/uu/grupp3/marstravel/matpaketHem.fxml", stage);
             }
         });
-btnVALJAhytthem.setDisable(true);
+        btnVALJAhytthem.setDisable(true);
 
         // denna beast som visar varukorgen
         btnVarukorg.setOnAction(event -> {
@@ -187,10 +192,13 @@ btnVALJAhytthem.setDisable(true);
                 e.printStackTrace();
             }
         });
-
     }
     private final SideBarButtons sideBarButtons = new SideBarButtons();
 
+    /**
+     * Här hanteras sidoknapparnas funktion att navigera mellan de olika kategorierna
+     * @param event Triggar Action Eventet när man klickar på knapparna
+     */
     @FXML
     private void SideBarButtons(ActionEvent event) {
         String fxmlPath = null;

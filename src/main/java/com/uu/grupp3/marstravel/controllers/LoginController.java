@@ -24,6 +24,10 @@ public class LoginController {
     @FXML
     private TextField tflosenord;
 
+    /**
+     * Hanterar inloggning
+     * @param event Triggar ActionEvent när man klickar på Login knappen
+     */
     @FXML
     void handleLoginButtonAction(ActionEvent event) {
         String username = tfanvandarnamn.getText();
@@ -36,7 +40,6 @@ public class LoginController {
                 alert.setTitle("Du är inloggad!");
                 alert.setHeaderText(null);
                 alert.setContentText("Välkommen till Mars Travel " + username + "!");
-
                 alert.showAndWait();
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/uu/grupp3/marstravel/boka.fxml"));
                 Parent root = loader.load();

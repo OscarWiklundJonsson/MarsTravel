@@ -103,93 +103,103 @@ public class HytterController {
 
     private CheckoutCartService checkoutCartService = new CheckoutCartService();
 
-public void initialize() {
-    DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
-    StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
-    RadioButtonState radioButtonState = RadioButtonState.getInstance();
+    /**
+     * Hanterar infoknappar
+     * Hanterar att man endast kan välja ett val
+     * Hanterar varukorg knappen
+     */
+    public void initialize() {
+        DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
+        StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
+        RadioButtonState radioButtonState = RadioButtonState.getInstance();
 
-    //Pop-Up for EcoInformation
-    btnEcoInfo.setOnAction(event -> dbInfo.showInfoFromDB("Economy", "Hytt Economy", "HyttInformation",1));
-    //Pop-Up for InsideInformation
-    btnInsideInfo.setOnAction(event -> dbInfo.showInfoFromDB("Inside", "Hytt Inside", "HyttInformation",1));
-    //Pop-Up for SleepInformation, Sömnkapsel
-    btnSleepInfo.setOnAction(event -> dbInfo.showInfoFromDB("Sömnkapsel", "Sömnkapsel", "HyttInformation",1));
-    //Pop-Up for hytt Inside
-    btnSpacesideInfo.setOnAction(event -> dbInfo.showInfoFromDB("Spaceside", "Hytt Spaceside", "HyttInformation",1));
-    //Pop-Up for hytt Svit
-    btnSvitInfo.setOnAction(event -> dbInfo.showInfoFromDB("Svit", "Hytt Svit", "HyttInformation",1));
+        //Pop-Up for EcoInformation
+        btnEcoInfo.setOnAction(event -> dbInfo.showInfoFromDB("Economy", "Hytt Economy", "HyttInformation",1));
+        //Pop-Up for InsideInformation
+        btnInsideInfo.setOnAction(event -> dbInfo.showInfoFromDB("Inside", "Hytt Inside", "HyttInformation",1));
+        //Pop-Up for SleepInformation, Sömnkapsel
+        btnSleepInfo.setOnAction(event -> dbInfo.showInfoFromDB("Sömnkapsel", "Sömnkapsel", "HyttInformation",1));
+        //Pop-Up for hytt Inside
+        btnSpacesideInfo.setOnAction(event -> dbInfo.showInfoFromDB("Spaceside", "Hytt Spaceside", "HyttInformation",1));
+        //Pop-Up for hytt Svit
+        btnSvitInfo.setOnAction(event -> dbInfo.showInfoFromDB("Svit", "Hytt Svit", "HyttInformation",1));
 
-    // Funktion för att endast välja en radioknapp
-    ToggleGroup group = new ToggleGroup();
-    rbtnEco.setToggleGroup(group);
-    rbtnInside.setToggleGroup(group);
-    rbtnSleep.setToggleGroup(group);
-    rbtnSpaceside.setToggleGroup(group);
-    rbtnSvit.setToggleGroup(group);
+        // Funktion för att endast välja en radioknapp
+        ToggleGroup group = new ToggleGroup();
+        rbtnEco.setToggleGroup(group);
+        rbtnInside.setToggleGroup(group);
+        rbtnSleep.setToggleGroup(group);
+        rbtnSpaceside.setToggleGroup(group);
+        rbtnSvit.setToggleGroup(group);
 
-    rbtnEco.setSelected(radioButtonState.getButtonState("rbtnEco"));
-    rbtnInside.setSelected(radioButtonState.getButtonState("rbtnInside"));
-    rbtnSleep.setSelected(radioButtonState.getButtonState("rbtnSleep"));
-    rbtnSpaceside.setSelected(radioButtonState.getButtonState("rbtnSpaceside"));
-    rbtnSvit.setSelected(radioButtonState.getButtonState("rbtnSvit"));
+        rbtnEco.setSelected(radioButtonState.getButtonState("rbtnEco"));
+        rbtnInside.setSelected(radioButtonState.getButtonState("rbtnInside"));
+        rbtnSleep.setSelected(radioButtonState.getButtonState("rbtnSleep"));
+        rbtnSpaceside.setSelected(radioButtonState.getButtonState("rbtnSpaceside"));
+        rbtnSvit.setSelected(radioButtonState.getButtonState("rbtnSvit"));
 
-    rbtnEco.selectedProperty().addListener((observable, oldValue, newValue) -> {
-        radioButtonState.setButtonState("rbtnEco", newValue);
-    });
-    rbtnInside.selectedProperty().addListener((observable, oldValue, newValue) -> {
-        radioButtonState.setButtonState("rbtnInside", newValue);
-    });
-    rbtnSleep.selectedProperty().addListener((observable, oldValue, newValue) -> {
-        radioButtonState.setButtonState("rbtnSleep", newValue);
-    });
-    rbtnSpaceside.selectedProperty().addListener((observable, oldValue, newValue) -> {
-        radioButtonState.setButtonState("rbtnSpaceside", newValue);
-    });
-    rbtnSvit.selectedProperty().addListener((observable, oldValue, newValue) -> {
-        radioButtonState.setButtonState("rbtnSvit", newValue);
-    });
+        rbtnEco.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnEco", newValue);
+        });
+        rbtnInside.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnInside", newValue);
+        });
+        rbtnSleep.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnSleep", newValue);
+        });
+        rbtnSpaceside.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnSpaceside", newValue);
+        });
+        rbtnSvit.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            radioButtonState.setButtonState("rbtnSvit", newValue);
+        });
 
-    btnNASTA.setDisable(true);
+        btnNASTA.setDisable(true);
 
-    group.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
-        if (group.getSelectedToggle() != null) {
-            btnNASTA.setDisable(false);
-        }
-    });
-    btnNASTA.setOnAction(event -> {
-        if (storeTravelChoices.getHytt() != null) {
-            storeTravelChoices.removeHytt();
-        }
-        storeTravelChoices.storeSelectedRadioButton(group, "Hytt: "); // Spara valt alternativ till fil.
-        NextButton nextButton = new NextButton();
-        Stage stage = (Stage) btnNASTA.getScene().getWindow();
-
-        RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
-        if (selectedRadioButton != null && "Sömnkapsel".equals(selectedRadioButton.getText())) {
-            if (storeTravelChoices.getMat() != null) {
-                storeTravelChoices.removeMat();
+        group.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            if (group.getSelectedToggle() != null) {
+                btnNASTA.setDisable(false);
             }
-            if (storeTravelChoices.getEvenemang() != null) {
-                storeTravelChoices.removeEvenemang();
+        });
+        btnNASTA.setOnAction(event -> {
+            if (storeTravelChoices.getHytt() != null) {
+                storeTravelChoices.removeHytt();
             }
-            nextButton.nextButton("/com/uu/grupp3/marstravel/hotellMars.fxml", stage); // Ändra till nästa sida
-        } else {
-            nextButton.nextButton("/com/uu/grupp3/marstravel/matpaket.fxml", stage);
-        }
-    });
-    btnVALJAhyttdit.setDisable(true);
+            storeTravelChoices.storeSelectedRadioButton(group, "Hytt: "); // Spara valt alternativ till fil.
+            NextButton nextButton = new NextButton();
+            Stage stage = (Stage) btnNASTA.getScene().getWindow();
 
-    // denna beast som visar varukorgen
-    btnVarukorg.setOnAction(event -> {
-        try {
-            checkoutCartService.showCheckoutCart();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    });
+            RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
+            if (selectedRadioButton != null && "Sömnkapsel".equals(selectedRadioButton.getText())) {
+                if (storeTravelChoices.getMat() != null) {
+                    storeTravelChoices.removeMat();
+                }
+                if (storeTravelChoices.getEvenemang() != null) {
+                    storeTravelChoices.removeEvenemang();
+                }
+                nextButton.nextButton("/com/uu/grupp3/marstravel/hotellMars.fxml", stage); // Ändra till nästa sida
+            } else {
+                nextButton.nextButton("/com/uu/grupp3/marstravel/matpaket.fxml", stage);
+            }
+        });
+        btnVALJAhyttdit.setDisable(true);
+
+        // denna beast som visar varukorgen
+        btnVarukorg.setOnAction(event -> {
+            try {
+                checkoutCartService.showCheckoutCart();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
+
     private final SideBarButtons sideBarButtons = new SideBarButtons();
 
+    /**
+     * Här hanteras sidoknapparnas funktion att navigera mellan de olika kategorierna
+     * @param event Triggar Action Eventet när man klickar på knapparna
+     */
     @FXML
     private void SideBarButtons(ActionEvent event) {
         String fxmlPath = null;
