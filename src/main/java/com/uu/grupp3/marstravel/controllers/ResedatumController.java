@@ -19,7 +19,6 @@ import java.util.ResourceBundle;
 import javafx.scene.control.Alert;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
-
 import com.uu.grupp3.marstravel.services.SideBarButtons;
 
 public class ResedatumController implements Initializable {
@@ -87,7 +86,6 @@ public class ResedatumController implements Initializable {
         HemresaMånad.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             updateAvgangTid();
         });
-
 
         // denna beast som visar varukorgen
         btnVarukorg.setOnAction(event -> {
@@ -166,7 +164,6 @@ public class ResedatumController implements Initializable {
 
             avgangText = "Avgångstid: " + returnYear + "-" + monthName + "-01";
             AvgangTid.setText(avgangText);
-
         }
     }
 
@@ -183,7 +180,6 @@ public class ResedatumController implements Initializable {
 
     @FXML
     private Button btnVALJAhyttdit;
-
 
     @FXML
     private Button btnVALJAkundinfo;
@@ -265,19 +261,15 @@ public class ResedatumController implements Initializable {
         int avreseManad = Avresa_manad.getSelectionModel().getSelectedIndex() + 1;
         int hemresaManad = HemresaMånad.getSelectionModel().getSelectedIndex() + 1;
 
-
         hemresaManad += 6;
-
 
         if (hemresaManad > 12) {
             hemresaManad -= 12;
             hemresaAr += 1;
         }
 
-
         Hemresa_ar.setValue(String.valueOf(hemresaAr));
         HemresaMånad.setValue(String.valueOf(hemresaManad));
-
 
         String avgangText = "Text: " + avreseAr + "-" + avreseManad;
         AvgangTid.setText(avgangText);

@@ -83,8 +83,6 @@ public class EvenemangController {
     private ChoiceBox<String> cboxConcert;
     @FXML
     private ChoiceBox<String> cboxTheaterpremiarer;
-
-
     @FXML
     private Label lblFilmpremiarer;
     @FXML
@@ -96,10 +94,7 @@ public class EvenemangController {
 
     private CheckoutCartService checkoutCartService = new CheckoutCartService();
 
-
     public void initialize() {
-
-
 
         //ChoiceBox Filmpremiarer
         ObservableList<String> filmpremiarerAlternativ = FXCollections.observableArrayList(
@@ -116,7 +111,6 @@ public class EvenemangController {
                 "0","1", "2", "3"
         );
         cboxTheaterpremiarer.setItems(theaterpremiarerAlternativ);
-
 
         DatabaseReciveInformation dbInfo = new DatabaseReciveInformation();
 
@@ -166,10 +160,8 @@ public class EvenemangController {
                 e.printStackTrace();
             }
         });
-
     }
     private SideBarButtons sideBarButtons = new SideBarButtons();
-
 
     @FXML
     private void SideBarButtons(ActionEvent event) {

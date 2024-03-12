@@ -133,7 +133,6 @@ public class MatpaketHemController {
     private CheckoutCartService checkoutCartService = new CheckoutCartService();
     RadioButtonState radioButtonState = RadioButtonState.getInstance();
 
-
     public void initialize() {
         // Funktion för att endast välja en radioknapp för mat ( @TODO gör om till en generell funktion )
         ToggleGroup group = new ToggleGroup();
@@ -184,7 +183,6 @@ public class MatpaketHemController {
         rbtnMellan3H.selectedProperty().addListener((observable, oldValue, newValue) -> {
             radioButtonState.setButtonState("rbtnMellan3H", newValue);
         });
-
 
         btnNÄSTA.setDisable(true);
 

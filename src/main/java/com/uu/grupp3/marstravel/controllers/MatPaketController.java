@@ -9,7 +9,6 @@ import javafx.scene.control.*;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-
 public class MatPaketController {
     @FXML
     private Button btnBudget1;
@@ -139,7 +138,6 @@ public class MatPaketController {
     private CheckoutCartService checkoutCartService = new CheckoutCartService();
     RadioButtonState radioButtonState = RadioButtonState.getInstance();
 
-
     public void initialize() {
         // Funktion för att endast välja en radioknapp för mat ( @TODO gör om till en generell funktion)
         ToggleGroup group = new ToggleGroup();
@@ -190,7 +188,6 @@ public class MatPaketController {
         rbtnMellan3.selectedProperty().addListener((observable, oldValue, newValue) -> {
             radioButtonState.setButtonState("rbtnMellan3", newValue);
         });
-
 
         btnNÄSTA.setDisable(true);
 

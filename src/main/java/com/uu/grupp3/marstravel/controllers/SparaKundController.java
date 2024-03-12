@@ -9,7 +9,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.sql.Connection;
@@ -56,11 +55,9 @@ public class SparaKundController {
 
     @FXML
     private Button btnVALJAresedatum;
-    @FXML
-    private Button btnInfoHalsodetaljer;
 
     @FXML
-    private Circle cVarukorgen;
+    private Button btnInfoHalsodetaljer;
 
     @FXML
     private Label lblkundinfo;
@@ -76,6 +73,7 @@ public class SparaKundController {
 
     @FXML
     private TextField tfphonenumber;
+
     @FXML
     private TextField tfAdress;
 
@@ -91,8 +89,6 @@ public class SparaKundController {
     @FXML
     private TextField tfPostnummer;
 
-
-
     @FXML
     private Button varukorg;
 
@@ -100,12 +96,12 @@ public class SparaKundController {
         CharacterRestrictions.applyCharacterRestrictions(tffirstname, tflastname, tfPersonnummer, tfphonenumber, tfemail, tfAdress, tfPostnummer, tfOrt );
         btnKASSA.setOnAction(event -> {
 
-
             String firstName = tffirstname.getText();
             String lastName = tflastname.getText();
             String pnumber = tfPersonnummer.getText();
             String phone = tfphonenumber.getText();
-            String email = tfemail.getText();
+            String email = tfemail.getText();// Set the email
+            UserData.getInstance().setEmail(email);
             String address = tfAdress.getText();
             String zipCode = tfPostnummer.getText();
             String city = tfOrt.getText();
@@ -123,9 +119,7 @@ public class SparaKundController {
             storeTravelChoices.writeToFile(customerInfo);
 
             NextButton nextButton = new NextButton();
-            checkoutCartService.storeInformation();
             Stage stage = (Stage) btnKASSA.getScene().getWindow();
-            // Här skulle min metod för att spara kundinformationen till databasen finnas
             nextButton.nextButton("/com/uu/grupp3/marstravel/sammanstallning.fxml", stage); //ska skickas till sammanställningen.
         });
 
@@ -160,7 +154,7 @@ public class SparaKundController {
         String lastName = tflastname.getText();
         String pnumber = tfPersonnummer.getText();
         String phone = tfphonenumber.getText();
-        String email = tfemail.getText();
+        String email = tfemail.getText();// Set the email
         String address = tfAdress.getText();
         String zipCode = tfPostnummer.getText();
         String city = tfOrt.getText();
@@ -224,7 +218,7 @@ public class SparaKundController {
             alert.showAndWait();
         }
     }
-    //nästa knapp, skickar vidare till hytterHem sidan.
+    //nästa knapp.
     CheckoutCartService checkoutCartService = new CheckoutCartService();
 
     private SideBarButtons sideBarButtons = new SideBarButtons();

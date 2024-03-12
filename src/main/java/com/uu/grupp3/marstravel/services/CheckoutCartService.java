@@ -1,16 +1,6 @@
 package com.uu.grupp3.marstravel.services;
 
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
-import java.nio.file.Paths;
-import java.text.NumberFormat;
-import java.util.Locale;
-import java.util.concurrent.atomic.AtomicReference;
-
 import com.uu.grupp3.marstravel.MarsTravelApplication;
-import com.uu.grupp3.marstravel.controllers.ResedatumController;
 import com.uu.grupp3.marstravel.database.DatabaseReciveInformation;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,6 +10,15 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.text.NumberFormat;
+import java.util.Locale;
+import java.util.concurrent.atomic.AtomicReference;
 
 
 /**
@@ -387,7 +386,7 @@ public class CheckoutCartService {
 
     /**
      * Stores the information in the file "travelChoices.txt" to a new file with a unique name.
-     * The file "travelChoices.txt" is then cleared.
+     * The file "travelChoices.txt" is then cleared (NOT DELETED, CLEARED OF DATA).
      * The new file is named "order + uniqueId.txt" where uniqueId is the current timestamp.
      */
     public void storeInformation() {
@@ -396,11 +395,11 @@ public class CheckoutCartService {
         String targetFileName = "order" + System.currentTimeMillis() + ".html";
         Path targetPath = Paths.get(targetFileName);
 
-        try (BufferedReader reader = Files.newBufferedReader(sourcePath);
-             BufferedWriter writer = new BufferedWriter(new FileWriter(targetFileName))) {
+        try (BufferedReader reader = Files.newBufferedReader(sourcePath, StandardCharsets.UTF_8);
+             BufferedWriter writer = Files.newBufferedWriter(targetPath, StandardCharsets.UTF_8)) {
 
             // Write HTML header
-            writer.write("<!DOCTYPE html>\n<html>\n<head>\n<title>Order Details</title>\n</head>\n<body>\n");
+            writer.write("<!DOCTYPE html>\n\"<html lang=\\\"sv\\\">\n\"<head>\n<meta charset=UTF-8>\n<title>Order Details</title>\n</head>\n<body>\n");
 
             String line;
             while ((line = reader.readLine()) != null) {
@@ -410,7 +409,9 @@ public class CheckoutCartService {
                 }
                 String[] parts = line.split(": ");
                 if (parts.length == 2) {
-                    writer.write("<p><strong>" + parts[0] + ":</strong> " + parts[1] + "</p>\n");
+                    // Replace special characters with HTML entity codes
+                    String content = parts[1].replaceAll("Å", "&Aring;").replaceAll("Ä", "&Auml;").replaceAll("Ö", "&Ouml;");
+                    writer.write("<p><strong>" + parts[0] + ":</strong> " + content + "</p>\n");
                 }
             }
 
@@ -430,5 +431,6 @@ public class CheckoutCartService {
             e.printStackTrace();
         }
     }
+
 
 }
