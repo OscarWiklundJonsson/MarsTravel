@@ -15,7 +15,7 @@
             <Font size="24.0" />
         </font>
         </Button>
-        <Button fx:id="btnTillbaka" layoutX="100.0" layoutY="620.0" mnemonicParsing="false" text="TILLBAKA" prefHeight="51.0" prefWidth="140.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="buttonTillbaka" stylesheets="@styles.css" textFill="#eed2a7">
+        <Button fx:id="btnTillbaka" layoutX="55.0" layoutY="620.0" mnemonicParsing="false" text="TILLBAKA" prefHeight="51.0" prefWidth="140.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="buttonTillbaka" stylesheets="@styles.css" textFill="#eed2a7">
             <font>
                 <Font size="24.0" />
             </font>
