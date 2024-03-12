@@ -177,7 +177,7 @@ public class SparaKundController {
             return;
         }
 
-        String sql = "INSERT INTO KundInformation (Förnamn, Efternamn, Personnummer, Telefonnummer, Mail, Adress, Postnummer, Ort, Hälsodetaljer) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO KundInformation (Förnamn, Efternamn, Personnummer, Telefonnummer, Mail, Adress, Postnummer, Ort, HalsoInformation) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         // Try to connect to the database and save the customer
         try (Connection conn = DatabaseHandler.getConnection();
