@@ -395,7 +395,7 @@ public class CheckoutCartService {
         Path sourcePath = Paths.get(fileName);
         String pnumber = UserData.getInstance().getPersonnummer();
         // random number between 0-9999
-        int random = (int) (Math.random() * 10000);
+        int random = (int) (Math.random() * 10000); // Borde inte vara random, borde vara ett unikt id
         String targetFileName = "order" + pnumber + "-"+ random + ".html";
         Path targetPath = Paths.get(targetFileName);
 
@@ -403,7 +403,7 @@ public class CheckoutCartService {
              BufferedWriter writer = Files.newBufferedWriter(targetPath, StandardCharsets.UTF_8)) {
 
             // Write HTML header
-            writer.write("<!DOCTYPE html>\n\"<html lang=\\\"sv\\\">\n\"<head>\n<meta charset=UTF-8>\n<title>Order Details</title>\n</head>\n<body>\n");
+            writer.write("<!DOCTYPE html>\n<html lang=\"sv\">\n<head>\n<meta charset=UTF-8>\n<title>Faktura MarsTravel</title>\n</head>\n<body>\n");
 
             String line;
             while ((line = reader.readLine()) != null) {

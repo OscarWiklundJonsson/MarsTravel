@@ -137,13 +137,18 @@ public class SparaKundController {
 
             currentResenarIndex++;
 
-            int antalResenarer = 2;
-            antalResenarerStr = Integer.parseInt(String.valueOf(antalResenarer));
+            String antalResenarerStr = storeTravelChoices.getAntalResenarer();
+            int antalResenarer = 0;
+            if (antalResenarerStr != null) {
+                antalResenarerStr = antalResenarerStr.replaceAll("[^0-9]", ""); // Remove non-numeric characters
+                antalResenarer = Integer.parseInt(antalResenarerStr);
+            }
             if (currentResenarIndex >= antalResenarer) {
                 NextButton nextButton = new NextButton();
                 Stage stage = (Stage) btnKASSA.getScene().getWindow();
                 nextButton.nextButton("/com/uu/grupp3/marstravel/sammanstallning.fxml", stage);
             } else {
+                // Den borde väl spara också?
                 clearFields();
             }
         });
