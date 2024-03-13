@@ -134,6 +134,7 @@ public class SparaKundController {
                     "Hälsodetaljer" + healthDetails + "\n";
             StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
             storeTravelChoices.writeToFile(customerInfo);
+            checkoutCartService.storeInformation();
 
             currentResenarIndex++;
 
