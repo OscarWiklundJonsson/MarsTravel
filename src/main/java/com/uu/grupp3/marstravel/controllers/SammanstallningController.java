@@ -62,18 +62,19 @@ public class SammanstallningController implements Initializable {
             alert.setHeaderText("Faktura");
             alert.setContentText("Vad vill du göra?");
 
-            ButtonType buttonTypeOne = new ButtonType("Skicka e-post");
-            ButtonType buttonTypeTwo = new ButtonType("Skriv ut");
+            ButtonType buttonEmail = new ButtonType("Skicka e-post");
+            ButtonType buttonPrint = new ButtonType("Skriv ut");
 
-            alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo);
+            alert.getButtonTypes().setAll(buttonEmail, buttonPrint);
 
             alert.showAndWait().ifPresent(response -> {
-                if (response == buttonTypeOne) {
+                if (response == buttonEmail) {
                     String email = UserData.getInstance().getEmail();  // Get the email
                     String pnummer = UserData.getInstance().getPersonnummer();  // Get the personal number
-                    sendMail.sendEmail(email, "Faktura - MarsTravel", "Hej, här är din faktura från MarsTravel.", mostRecentHtmlFile);
+                    String fnamn = UserData.getInstance().getFörnamn(); // Get the first name
+                    sendMail.sendEmail(email, "Faktura - MarsTravel", "Hej " + fnamn + ", här är din faktura från MarsTravel.", mostRecentHtmlFile);
                     System.out.println("Skickat e-post till kund: " + pnummer);
-                } else if (response == buttonTypeTwo) {
+                } else if (response == buttonPrint) {
                     System.out.println("Skriv ut");
                     try {
                         Desktop.getDesktop().print(mostRecentHtmlFile);
@@ -83,12 +84,11 @@ public class SammanstallningController implements Initializable {
                 }
             });
         });
-
-
     }
 
-
-
+    /**
+     * ???
+     */
     public void loadMostRecentHtml() {
         try {
             // Find the most recent HTML file

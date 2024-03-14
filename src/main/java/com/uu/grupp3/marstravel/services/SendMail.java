@@ -30,8 +30,8 @@ public class SendMail {
         prop.put("mail.smtp.host", "smtp.gmail.com");
         prop.put("mail.smtp.port", "587");
         prop.put("mail.smtp.auth", "true");
-        prop.put("mail.smtp.starttls.enable", "true"); // Enable STARTTLS
-        prop.put("mail.smtp.ssl.protocols", "TLSv1.2 TLSv1.3"); // Specify the SSL protocols
+        prop.put("mail.smtp.starttls.enable", "true");
+        prop.put("mail.smtp.ssl.protocols", "TLSv1.2 TLSv1.3");
 
         Session session = Session.getInstance(prop,
                 new javax.mail.Authenticator() {

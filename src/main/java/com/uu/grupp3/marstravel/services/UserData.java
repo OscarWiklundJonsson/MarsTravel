@@ -9,6 +9,7 @@ public class UserData {
     private static UserData instance = null;
     private String email;
     private String personnummer;
+    private String förnamn;
 
     private UserData() {}
 
@@ -27,6 +28,8 @@ public class UserData {
         return personnummer;
     }
 
+    public String getFörnamn(){return  förnamn;}
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -34,4 +37,6 @@ public class UserData {
     public void setPersonnummer(String personnummer) {
         this.personnummer = personnummer;
     }
+
+    public void setFörnamn(String förnamn){this.förnamn = förnamn;}
 }
