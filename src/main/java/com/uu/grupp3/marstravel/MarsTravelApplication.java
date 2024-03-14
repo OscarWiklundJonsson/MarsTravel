@@ -7,6 +7,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import com.uu.grupp3.marstravel.services.BackgroundTasks;
+
 public class MarsTravelApplication extends Application {
     public static Stage mainWindow;
 
@@ -22,6 +24,8 @@ public class MarsTravelApplication extends Application {
 
     public static void main(String[] args) {
         System.out.println("Även ful kod kan vara vacker.");
+        BackgroundTasks.fileCheck("travelChoices.txt"); // Kontrollerar så att travelChoices.txt finns, finns inte den så är det kört
+        //BackgroundTasks.applicationHealthCheck(); - Debug stuff
         launch();
     }
 }
