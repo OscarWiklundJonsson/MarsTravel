@@ -45,6 +45,16 @@ public class ResedatumController implements Initializable {
 
     private CheckoutCartService checkoutCartService = new CheckoutCartService();
 
+    /**
+     *
+     * @param url
+     * The location used to resolve relative paths for the root object, or
+     * {@code null} if the location is not known.
+     *
+     * @param resourceBundle
+     * The resources used to localize the root object, or {@code null} if
+     * the root object was not localized.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ObservableList<String> avresaArAlternativ = FXCollections.observableArrayList(
@@ -172,6 +182,7 @@ public class ResedatumController implements Initializable {
 
     @FXML
     private Button btnNASTA;
+
     @FXML
     private Button btnVALJAevenemangdit;
 
@@ -202,6 +213,11 @@ public class ResedatumController implements Initializable {
     @FXML
     private Button btnVALJAhotellmars;
 
+    /**
+     * Hanterar val av datum
+     * Hanterar mängd resenärer
+     *
+     */
     @FXML
     private void handleNastaButtonClick() {
         StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
@@ -230,9 +246,7 @@ public class ResedatumController implements Initializable {
         try {
             FXMLLoader laddare = new FXMLLoader(getClass().getResource("/com/uu/grupp3/marstravel/hytter.fxml"));
             Parent rot = laddare.load();
-
             Scene scen = new Scene(rot);
-
             Stage scenVarde = (Stage) btnNASTA.getScene().getWindow();
             scenVarde.setScene(scen);
             scenVarde.show();
@@ -280,6 +294,10 @@ public class ResedatumController implements Initializable {
     // är bara denna kod som behöver kopieras till andra controllers
     private SideBarButtons sideBarButtons = new SideBarButtons();
 
+    /**
+     * Här hanteras sidoknapparnas funktion att navigera mellan de olika kategorierna
+     * @param event Triggar Action Eventet när man klickar på knapparna
+     */
     @FXML
     private void SideBarButtons(ActionEvent event) {
         String fxmlPath = null;

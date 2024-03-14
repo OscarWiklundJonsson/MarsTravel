@@ -133,6 +133,13 @@ public class MatpaketHemController {
     private CheckoutCartService checkoutCartService = new CheckoutCartService();
     RadioButtonState radioButtonState = RadioButtonState.getInstance();
 
+    /**
+     * Hanterar val av matpaket
+     * Hanterar att endast en knapp kan väljas åt gången
+     * Hanterar infoknappar
+     * Hanterar nästa knappen
+     * Hanterar varukorg knappen
+     */
     public void initialize() {
         // Funktion för att endast välja en radioknapp för mat ( @TODO gör om till en generell funktion )
         ToggleGroup group = new ToggleGroup();
@@ -227,11 +234,14 @@ public class MatpaketHemController {
                 e.printStackTrace();
             }
         });
-
     }
 
     private SideBarButtons sideBarButtons = new SideBarButtons();
 
+    /**
+     * Här hanteras sidoknapparnas funktion att navigera mellan de olika kategorierna
+     * @param event Triggar Action Eventet när man klickar på knapparna
+     */
     @FXML
     private void SideBarButtons(ActionEvent event) {
         String fxmlPath = null;

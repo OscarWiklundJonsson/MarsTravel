@@ -34,14 +34,22 @@ public class SammanstallningController implements Initializable {
     @FXML
     private Button btnTILLBAKA;
 
-
     private File mostRecentHtmlFile;  // Add this line
 
+    /**
+     *
+     * @param url
+     * The location used to resolve relative paths for the root object, or
+     * {@code null} if the location is not known.
+     *
+     * @param resourceBundle
+     * The resources used to localize the root object, or {@code null} if
+     * the root object was not localized.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadMostRecentHtml();
         SendMail sendMail = new SendMail();
-
         CheckoutCartService checkoutCartService = new CheckoutCartService();
 
         btnAVBRYT.setOnAction(event -> {
@@ -83,10 +91,11 @@ public class SammanstallningController implements Initializable {
                 }
             });
         });
-
-
     }
 
+    /**
+     *
+     */
     public void loadMostRecentHtml() {
         // Find the most recent HTML file
         File[] htmlFiles = new File(".").listFiles((dir, name) -> name.startsWith("order") && name.endsWith(".html"));

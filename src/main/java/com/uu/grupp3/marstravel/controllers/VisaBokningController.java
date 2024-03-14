@@ -19,9 +19,12 @@ public class VisaBokningController {
     @FXML
     private Label lblSokBokningsinformation;
 
+    /**
+     *
+     * @param actionEvent
+     */
     public void handleSokButtonClick(ActionEvent actionEvent) {
         //Kod för att söka på bokningsnummer från textfältet
-
         // Pop-Up för informationen
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Bokningsinformation");
@@ -42,7 +45,5 @@ public class VisaBokningController {
             nextButton.nextButton("/com/uu/grupp3/marstravel/boka.fxml", stage);
         });
     }
-
-
 }
 
