@@ -150,7 +150,7 @@ public class SparaKundController {
                 Stage stage = (Stage) btnKASSA.getScene().getWindow();
                 nextButton.nextButton("/com/uu/grupp3/marstravel/sammanstallning.fxml", stage);
             } else {
-                // Den borde väl spara också?
+                storeTravelChoices.writeToFile(customerInfo);
                 clearFields();
             }
         });
@@ -175,6 +175,7 @@ public class SparaKundController {
             alert.show();
         });
     }
+
     // Method to save a customer to the database
     /**
      * Method to save a customer to the database
@@ -257,6 +258,10 @@ public class SparaKundController {
 
     private SideBarButtons sideBarButtons = new SideBarButtons();
 
+    /**
+     * Här hanteras sidoknapparnas funktion att navigera mellan de olika kategorierna
+     * @param event Triggar Action Eventet när man klickar på knapparna
+     */
     @FXML
     private void SideBarButtons(ActionEvent event) { // Snälla gör detta till en egen klass, jag ber er.
         String fxmlPath = null;

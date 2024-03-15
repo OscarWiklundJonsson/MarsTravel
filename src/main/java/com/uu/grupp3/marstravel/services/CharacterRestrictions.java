@@ -8,7 +8,6 @@ import java.util.function.UnaryOperator;
 
 public class CharacterRestrictions {
 
-
     // Method to create a text formatter with character restrictions
     public static TextFormatter<String> createFormatter(String pattern) {
         UnaryOperator<Change> filter = change -> {

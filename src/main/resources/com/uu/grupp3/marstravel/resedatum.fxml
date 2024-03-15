@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uu.grupp3.marstravel.controllers.ResedatumController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uu.grupp3.marstravel.controllers.ResedatumController">
     <stylesheets>
         <URL value="@styles2.css" />
     </stylesheets>
@@ -53,18 +51,13 @@
                 <Font name="Century Gothic" size="24.0" />
             </font>
         </Text>
-        <ChoiceBox fx:id="Hemresa_ar" layoutX="751.0" layoutY="338.0" prefHeight="25.0" prefWidth="59.0" styleClass="choiceBox" stylesheets="@styles.css" />
-        <Text fill="#f4f2f2" layoutX="744.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månader:">
+        <ChoiceBox fx:id="Hemresa_ar" layoutX="751.0" layoutY="338.0" mouseTransparent="true" prefHeight="25.0" prefWidth="59.0" styleClass="choiceBox" stylesheets="@styles.css" />
+        <Text fill="#f4f2f2" layoutX="743.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månader:">
             <font>
                 <Font size="18.0" />
             </font>
         </Text>
-        <ChoiceBox fx:id="HemresaMånad" layoutX="751.0" layoutY="478.0" prefHeight="25.0" prefWidth="59.0" styleClass="choiceBox" stylesheets="@styles.css" />
-      <Text fill="#f2eeee" layoutX="770.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="År:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
+        <ChoiceBox fx:id="HemresaMånad" layoutX="706.0" layoutY="337.0" prefHeight="25.0" prefWidth="150.0" styleClass="choiceBox" stylesheets="@styles.css" />
       <Line endX="215.33331298828125" endY="509.66668701171875" layoutX="728.0" layoutY="160.0" startX="215.33331298828125" startY="10.66668701171875" />
       <ChoiceBox fx:id="Antal_resenarer" layoutX="225.0" layoutY="338.0" prefHeight="25.0" prefWidth="28.0" styleClass="choiceBox" stylesheets="@styles.css" />
       <Text fx:id="Avresatext1" fill="#c7511b" layoutX="945.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avgångar för hemresa " textAlignment="CENTER" wrappingWidth="297.986328125">
