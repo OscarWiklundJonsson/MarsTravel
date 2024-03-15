@@ -81,7 +81,7 @@ public class SammanstallningController implements Initializable {
                     String pnummer = UserData.getInstance().getPersonnummer();  // Get the personal number
                     String fnamn = UserData.getInstance().getFörnamn(); // Get the first name
                     sendMail.sendEmail(email, "Faktura - MarsTravel", "Hej " + fnamn + ", här är din faktura från MarsTravel.", mostRecentHtmlFile);
-                    System.out.println("Skickat e-post till kund: " + pnummer);
+                    System.out.println("Skickat e-post till kund: " + pnummer + "Via mejl: " + email);
                 } else if (response == buttonPrint) {
                     System.out.println("Skriv ut");
                     try {

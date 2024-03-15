@@ -140,8 +140,8 @@ public class SparaKundController {
                     "Ort" + city + "\n" +
                     "Hälsodetaljer" + healthDetails + "\n";
             StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
-            storeTravelChoices.writeToFile(customerInfo);
-            checkoutCartService.storeInformation();
+
+
 
             currentResenarIndex++;
             currentResenarIndex2++;
@@ -155,6 +155,8 @@ public class SparaKundController {
                 antalResenarer = Integer.parseInt(antalResenarerStr);
             }
             if (currentResenarIndex >= antalResenarer) {
+                storeTravelChoices.writeToFile(customerInfo);
+                checkoutCartService.storeInformation();
                 NextButton nextButton = new NextButton();
                 Stage stage = (Stage) btnKASSA.getScene().getWindow();
                 nextButton.nextButton("/com/uu/grupp3/marstravel/sammanstallning.fxml", stage);
