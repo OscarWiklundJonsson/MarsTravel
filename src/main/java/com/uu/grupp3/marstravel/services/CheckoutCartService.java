@@ -396,6 +396,10 @@ public class CheckoutCartService {
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(": ");
                 double price = 0;
+
+                /**
+                 * de här är knas, och det får de vara
+                 */
                 if (parts.length == 2) {
                     if (parts[0].contains("Förnamn") || parts[0].contains("Efternamn") || parts[0].contains("Telefon") || parts[0].contains("Email")|| parts[0].contains("Personnummer")|| parts[0].contains("Adress")|| parts[0].contains("Postnummer")|| parts[0].contains("Ort")|| parts[0].contains("Antal resenärer")) {
                         // Write the line without price to the HTML

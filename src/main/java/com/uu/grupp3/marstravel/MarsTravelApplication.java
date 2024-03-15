@@ -15,7 +15,7 @@ public class MarsTravelApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         mainWindow = stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(MarsTravelApplication.class.getResource("boka.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MarsTravelApplication.class.getResource("login.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
         stage.setTitle("Mars Travel MMXXI - Welcome to Mars");
         stage.setScene(scene);
