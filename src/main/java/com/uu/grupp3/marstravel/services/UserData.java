@@ -1,6 +1,5 @@
 package com.uu.grupp3.marstravel.services;
 
-
 /**
  * Singleton class to store user data
  Black magic - do not touch

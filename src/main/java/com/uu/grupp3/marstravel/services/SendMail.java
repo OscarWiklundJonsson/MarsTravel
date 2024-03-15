@@ -14,7 +14,6 @@ import javax.activation.FileDataSource;
 
 public class SendMail {
 
-
     /**
      * Skickar e-post med faktura som bifogad fil.
      * @param recipient E-postadressen som fakturan ska skickas till.
@@ -39,9 +38,7 @@ public class SendMail {
                         return new PasswordAuthentication(username, password);
                     }
                 });
-
         try {
-
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(username));
             message.setRecipients(
@@ -54,7 +51,6 @@ public class SendMail {
             messageBodyPart.setText(content);
 
             multipart.addBodyPart(messageBodyPart);
-
             
             // Bifoga fil (faktura)
             messageBodyPart = new MimeBodyPart();
@@ -63,7 +59,6 @@ public class SendMail {
             messageBodyPart.setDataHandler(new DataHandler(source));
             messageBodyPart.setFileName(filename);
             multipart.addBodyPart(messageBodyPart);
-
 
             message.setContent(multipart);
             Transport.send(message);

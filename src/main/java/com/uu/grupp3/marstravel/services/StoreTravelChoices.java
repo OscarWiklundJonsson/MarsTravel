@@ -13,7 +13,6 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.List;
 
-
 public class StoreTravelChoices {
     private static final String FILE_NAME = "travelChoices.txt"; // Filnamnet ;)
     // najs, vi har en fil som heter travelChoices.txt som vi skriver till och läser från, men om filen inte finns så är det kört
@@ -58,13 +57,13 @@ public class StoreTravelChoices {
     public void storeTextFieldValue(String value, String label) {
         writeToFile(label + value);
     }
+
     /**
      * Stores the selected check box in a file
      * @param content the content to be written to the file ( e.g. "Hälsoförsäkring: Hälsoförsäkring" )
      */
     public void writeToFile(String content) {
         Path path = Paths.get(FILE_NAME);
-
         try (BufferedWriter writer = Files.newBufferedWriter(path, StandardOpenOption.APPEND)) {
             writer.write(content + "\n");
         } catch (IOException e) {
@@ -74,7 +73,6 @@ public class StoreTravelChoices {
 
     public void writeToFileCustomer(String content) {
         Path path = Paths.get("customerInfo.txt");
-
         try (BufferedWriter writer = Files.newBufferedWriter(path, StandardOpenOption.APPEND)) {
             writer.write(content + "\n");
         } catch (IOException e) {
@@ -89,7 +87,6 @@ public class StoreTravelChoices {
      */
     public String getLineContaining(String searchString) {
         Path path = Paths.get(FILE_NAME);
-
         try (BufferedReader reader = Files.newBufferedReader(path)) {
             return reader.lines()
                     .filter(line -> line.contains(searchString))
@@ -98,7 +95,6 @@ public class StoreTravelChoices {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return null;
     }
 
@@ -108,7 +104,6 @@ public class StoreTravelChoices {
      */
     public void removeLineContaining(String searchString) {
         Path path = Paths.get(FILE_NAME);
-
         try {
             List<String> lines = Files.readAllLines(path);
             lines.removeIf(line -> line.contains(searchString));
@@ -117,7 +112,6 @@ public class StoreTravelChoices {
             e.printStackTrace();
         }
     }
-
 
     /**
      * Removes all lines containing the search string
@@ -158,6 +152,7 @@ public class StoreTravelChoices {
     public String getHyttHem() {
         return getLineContaining("HyttHem: ");
     }
+
     /**
      * Returns the evenemang
      * @return the evenemang
@@ -242,6 +237,4 @@ public class StoreTravelChoices {
     public void removeBetalkort() {
         removeLineContaining("Betalkort: ");
     }
-
-
 }

@@ -10,7 +10,6 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -19,7 +18,6 @@ import java.nio.file.Paths;
 import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicReference;
-
 
 /**
  * This class is responsible for calculating the total price of the cart and
@@ -191,7 +189,6 @@ public class CheckoutCartService {
                             totalPrice += 0;
                             break;
                     }
-
                     // Evenemang
                 } else if (line.contains("Konserter: ")) {
                     String[] parts = line.split(": ");
@@ -214,7 +211,6 @@ public class CheckoutCartService {
                         int numberOfTickets = Integer.parseInt(parts[1].trim());
                         totalPrice += numberOfTickets * 25000;
                     }
-
                 } else if (line.contains("Hälsoförsäkring: ")) {
                     String[] parts = line.split(": ");
                     String healthIns = parts[1];
@@ -227,7 +223,6 @@ public class CheckoutCartService {
                             //totalPrice += databaseReciveInformation.getPriceFromDatabase("budget2", "MatpaketInformation");
                             totalPrice += 50000;
                             break;
-
                     }
                 } else if (line.contains("Hotell: ")) {
                     String[] parts = line.split(": ");
@@ -270,7 +265,6 @@ public class CheckoutCartService {
                             totalPrice += 50000;
                             break;
                     }
-
                 } else if (line.contains("Betalkort: ")) {
                     String[] parts = line.split(": ");
                     String betalKortAmount = parts[1].trim(); // this is the text after "Betalkort: "
@@ -282,13 +276,11 @@ public class CheckoutCartService {
             e.printStackTrace();
         }
         StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
-
         String antalResenarerStr = storeTravelChoices.getAntalResenarer();
         if (antalResenarerStr != null) {
             antalResenarerStr = antalResenarerStr.replace("Antal resenärer: ", "");
             antalResenarer = Integer.parseInt(antalResenarerStr);
         }
-
         System.out.println("Antal resenärer: " + antalResenarer);
         totalPrice = totalPrice * antalResenarer;
         System.out.println("Totalt pris:" + totalPrice);
@@ -344,14 +336,11 @@ public class CheckoutCartService {
 
         NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.UK);
         String formattedTotalPrice = numberFormat.format(totalPrice);
-
         contents.append("Totalt pris: ").append(formattedTotalPrice).append(" kr");
         AtomicReference<Stage> stage = new AtomicReference<>(new Stage());
         TextArea textArea = new TextArea(contents.toString());
         textArea.setEditable(false);
         textArea.setWrapText(true);
-
-
         Button button = new Button("Rensa varukorg");
         button.setOnAction(event -> {
             checkoutCartClearCart();
@@ -361,11 +350,9 @@ public class CheckoutCartService {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/com/uu/grupp3/marstravel/boka.fxml"));
 
-
             try {
                 // Load the FXMLLoader to get the root node
                 Parent root = loader.load();
-
                 // Create a new Scene with the root node and set it to the main window
                 Scene scene = new Scene(root);
                 stage.get().close();
