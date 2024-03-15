@@ -268,7 +268,7 @@ public class ResedatumController implements Initializable {
             Alert felAlert = new Alert(Alert.AlertType.ERROR);
             felAlert.setTitle("Felaktigt datumval");
             felAlert.setHeaderText(null);
-            felAlert.setContentText("Du måste välja både år och månad för avresa och hemresa för att gå vidare.");
+            felAlert.setContentText("Du måste välja både år och månad för avresa, och antal månader du vill stanna för att gå vidare.");
             felAlert.showAndWait();
             return false;
         }
