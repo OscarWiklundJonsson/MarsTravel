@@ -381,8 +381,7 @@ public class CheckoutCartService {
         String fileName = "travelChoices.txt";
         Path sourcePath = Paths.get(fileName);
         String pnumber = UserData.getInstance().getPersonnummer();
-        // random number between 0-9999
-        int random = (int) (Math.random() * 10000); // Borde inte vara random, borde vara ett unikt id
+        int random = (int) (Math.random() * 10000);
         String targetFileName = "order" + pnumber + "-" + random + ".html";
         Path targetPath = Paths.get(targetFileName);
 
@@ -393,21 +392,131 @@ public class CheckoutCartService {
             writer.write("<!DOCTYPE html>\n<html lang=\"sv\">\n<head>\n<meta charset=UTF-8>\n<title>Faktura MarsTravel</title>\n</head>\n<body>\n");
 
             String line;
+            double totalPrice = 0;
             while ((line = reader.readLine()) != null) {
-                if (line.contains("Totalt pris: ")) {
-                    // Skip writing total price line to the new file
-                    continue;
-                }
                 String[] parts = line.split(": ");
+                double price = 0;
                 if (parts.length == 2) {
-                    // Replace special characters with HTML entity codes
+                    if (parts[0].contains("Förnamn") || parts[0].contains("Efternamn") || parts[0].contains("Telefon") || parts[0].contains("Email")|| parts[0].contains("Personnummer")|| parts[0].contains("Adress")|| parts[0].contains("Postnummer")|| parts[0].contains("Ort")|| parts[0].contains("Antal resenärer")) {
+                        // Write the line without price to the HTML
+                        writer.write("<p><strong>" + parts[0] + ":</strong> " + parts[1] + "</p>\n");
+                        continue;
+                    }
+                    if (parts[0].contains("Hytt") || parts[0].contains("HyttHem")) {
+                        switch (parts[1]) {
+                            case "Economy":
+                                price = 180000;
+                                break;
+                            case "Inside":
+                                price = 300000;
+                                break;
+                            case "Spaceside":
+                                price = 700000;
+                                break;
+                            case "Svit":
+                                price = 1200000;
+                                break;
+                            case "Sömnkapsel":
+                                price = 2500000;
+                                break;
+                            default:
+                                price = 0;
+                                break;
+                        }
+                    } else if (parts[0].contains("Matpaket") || parts[0].contains("MatpaketHem")) {
+                        switch (parts[1]) {
+                            case "Budget 1":
+                                price = 27000;
+                                break;
+                            case "Budget 2":
+                                price = 40000;
+                                break;
+                            case "Budget 3":
+                                price = 54000;
+                                break;
+                            case "Mellan 1":
+                                price = 76000;
+                                break;
+                            case "Mellan 2":
+                                price = 90000;
+                                break;
+                            case "Mellan 3":
+                                price = 108000;
+                                break;
+                            case "Lyx 1":
+                                price = 120000;
+                                break;
+                            case "Lyx 2":
+                                price = 150000;
+                                break;
+                            case "Lyx 3":
+                                price = 200000;
+                                break;
+                            default:
+                                price = 0;
+                                break;
+                        }
+                    } else if (parts[0].contains("Konserter") || parts[0].contains("Teaterpremiarer") || parts[0].contains("Filmpremiarer")) {
+                        int numberOfTickets = Integer.parseInt(parts[1].trim());
+                        if (parts[0].contains("Konserter")) {
+                            price = numberOfTickets * 30000;
+                        } else if (parts[0].contains("Teaterpremiarer")) {
+                            price = numberOfTickets * 28000;
+                        } else if (parts[0].contains("Filmpremiarer")) {
+                            price = numberOfTickets * 25000;
+                        }
+                    } else if (parts[0].contains("Hälsoförsäkring")) {
+                        if (parts[1].equals("Hälsoförsäkring")) {
+                            price = 50000;
+                        } else {
+                            price = 0;
+                        }
+                    } else if (parts[0].contains("Hotell")) {
+                        switch (parts[1]) {
+                            case "Polar Lansdorp":
+                                price = 3500;
+                                break;
+                            case "Polar Wielders":
+                                price = 5000;
+                                break;
+                            case "Hotel Deimos Enkelrum":
+                                price = 7500;
+                                break;
+                            case "Hotel Deimos Dubbelrum":
+                                price = 12000;
+                                break;
+                            case "Hotel Phobos Enkelrum":
+                                price = 7500;
+                                break;
+                            case "Hotel Phobos Dubbelrum":
+                                price = 12000;
+                                break;
+                            case "Royal City Enkel Lyx":
+                                price = 20000;
+                                break;
+                            case "Royal City Dubbel Lyx":
+                                price = 35000;
+                                break;
+                            case "Royal City Svit":
+                                price = 50000;
+                                break;
+                            default:
+                                price = 0;
+                                break;
+                        }
+                    } else if (parts[0].contains("Betalkort")) {
+                        price = Integer.parseInt(parts[1].trim());
+                    }
+
+                    // Write the line and its price to the HTML
                     String content = parts[1].replaceAll("Å", "&Aring;").replaceAll("Ä", "&Auml;").replaceAll("Ö", "&Ouml;");
-                    writer.write("<p><strong>" + parts[0] + ":</strong> " + content + "</p>\n");
+                    writer.write("<p><strong>" + parts[0] + ":</strong> " + content + " (" + price + " kr)</p>\n");
+
+                    totalPrice += price;
                 }
             }
 
-            // Calculate total price and write it to the HTML
-            double totalPrice = calculateTotalPrice();
+            // Write total price to the HTML
             NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.UK);
             String formattedTotalPrice = numberFormat.format(totalPrice);
             writer.write("<p><strong>Totalt pris:</strong> " + formattedTotalPrice + " kr</p>\n");
@@ -415,9 +524,6 @@ public class CheckoutCartService {
             // Write HTML footer
             writer.write("</body>\n</html>");
 
-            // Clear the original file
-            //Files.deleteIfExists(sourcePath);
-            //Files.createFile(sourcePath);
         } catch (IOException e) {
             e.printStackTrace();
         }
