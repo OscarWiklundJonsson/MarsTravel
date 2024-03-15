@@ -37,7 +37,7 @@ public class CheckoutCartService {
      * @throws IOException if an I/O error occurs
      */
     private int antalResenarer;
-    
+
     public double calculateTotalPrice() throws IOException {
         String fileName = "travelChoices.txt";
         Path path = Paths.get(fileName);
@@ -120,11 +120,11 @@ public class CheckoutCartService {
                             totalPrice += 54000;
                             break;
                         case "Mellan 1":
-                           // totalPrice += databaseReciveInformation.getPriceFromDatabase("mellan1", "MatpaketInformation");
+                            // totalPrice += databaseReciveInformation.getPriceFromDatabase("mellan1", "MatpaketInformation");
                             totalPrice += 76000;
                             break;
                         case "Mellan 2":
-                           // totalPrice += databaseReciveInformation.getPriceFromDatabase("mellan2", "MatpaketInformation");
+                            // totalPrice += databaseReciveInformation.getPriceFromDatabase("mellan2", "MatpaketInformation");
                             totalPrice += 90000;
                             break;
                         case "Mellan 3":
@@ -142,11 +142,11 @@ public class CheckoutCartService {
                         case "Lyx 3":
                             totalPrice += 200000;
                             break;
-                            //totalPrice += databaseReciveInformation.getPriceFromDatabase("lyx3", "MatpaketInformation");
+                        //totalPrice += databaseReciveInformation.getPriceFromDatabase("lyx3", "MatpaketInformation");
                         default:
                             totalPrice += 0; // replace with actual price for unknown hytt types
                             break;
-                }
+                    }
                 } else if (line.contains("MatpaketHem: ")) {
                     String[] parts = line.split(": ");
                     String matType = parts[1];
@@ -193,7 +193,7 @@ public class CheckoutCartService {
                     }
 
                     // Evenemang
-                }else if (line.contains("Konserter: ")) {
+                } else if (line.contains("Konserter: ")) {
                     String[] parts = line.split(": ");
                     if (parts.length > 1) {
                         String evenemangType = parts[1].split(" ")[0];
@@ -229,7 +229,7 @@ public class CheckoutCartService {
                             break;
 
                     }
-                }else if (line.contains("Hotell: ")) {
+                } else if (line.contains("Hotell: ")) {
                     String[] parts = line.split(": ");
                     String hotellType = parts[1]; // this is the text after "Matpaket: "
                     switch (hotellType) {
@@ -271,7 +271,7 @@ public class CheckoutCartService {
                             break;
                     }
 
-                }else if (line.contains("Betalkort: ")) {
+                } else if (line.contains("Betalkort: ")) {
                     String[] parts = line.split(": ");
                     String betalKortAmount = parts[1].trim(); // this is the text after "Betalkort: "
                     int betalKortAmountInt = Integer.parseInt(betalKortAmount);
@@ -291,7 +291,7 @@ public class CheckoutCartService {
 
         System.out.println("Antal resenärer: " + antalResenarer);
         totalPrice = totalPrice * antalResenarer;
-        System.out.println("Totalt pris:"+ totalPrice);
+        System.out.println("Totalt pris:" + totalPrice);
         return totalPrice;
     }
 
@@ -396,7 +396,7 @@ public class CheckoutCartService {
         String pnumber = UserData.getInstance().getPersonnummer();
         // random number between 0-9999
         int random = (int) (Math.random() * 10000); // Borde inte vara random, borde vara ett unikt id
-        String targetFileName = "order" + pnumber + "-"+ random + ".html";
+        String targetFileName = "order" + pnumber + "-" + random + ".html";
         Path targetPath = Paths.get(targetFileName);
 
         try (BufferedReader reader = Files.newBufferedReader(sourcePath, StandardCharsets.UTF_8);

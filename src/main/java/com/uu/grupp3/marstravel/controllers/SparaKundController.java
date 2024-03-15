@@ -113,6 +113,7 @@ public class SparaKundController {
 
         btnKASSA.setOnAction(event -> {
             String firstName = tffirstname.getText();
+            UserData.getInstance().setFörnamn(firstName);
             String lastName = tflastname.getText();
             String pnumber = tfPersonnummer.getText();
             UserData.getInstance().setPersonnummer(pnumber); // Sparar personnummer i UserData singleton klassen
