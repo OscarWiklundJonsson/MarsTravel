@@ -9,6 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.sql.Connection;
@@ -89,6 +90,9 @@ public class SparaKundController {
     @FXML
     private TextField tfPostnummer;
 
+    @FXML
+    private Text AntalKundResenar;
+
     private void clearFields() {
         tffirstname.clear();
         tflastname.clear();
@@ -105,8 +109,10 @@ public class SparaKundController {
     private int antalResenarerStr;
 
     private int currentResenarIndex = 0;
+    int currentResenarIndex2 = 1;
     @FXML
     private Button varukorg;
+
 
     public void initialize() {
         CharacterRestrictions.applyCharacterRestrictions(tffirstname, tflastname, tfPersonnummer, tfphonenumber, tfemail, tfAdress, tfPostnummer, tfOrt);
@@ -138,9 +144,12 @@ public class SparaKundController {
             checkoutCartService.storeInformation();
 
             currentResenarIndex++;
+            currentResenarIndex2++;
+
 
             String antalResenarerStr = storeTravelChoices.getAntalResenarer();
             int antalResenarer = 0;
+            String test = "0";
             if (antalResenarerStr != null) {
                 antalResenarerStr = antalResenarerStr.replaceAll("[^0-9]", ""); // Remove non-numeric characters
                 antalResenarer = Integer.parseInt(antalResenarerStr);
@@ -151,6 +160,7 @@ public class SparaKundController {
                 nextButton.nextButton("/com/uu/grupp3/marstravel/sammanstallning.fxml", stage);
             } else {
                 storeTravelChoices.writeToFile(customerInfo);
+                AntalKundResenar.setText(String.valueOf(currentResenarIndex2));
                 clearFields();
             }
         });
