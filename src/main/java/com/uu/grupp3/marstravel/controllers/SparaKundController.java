@@ -150,7 +150,7 @@ public class SparaKundController {
                 Stage stage = (Stage) btnKASSA.getScene().getWindow();
                 nextButton.nextButton("/com/uu/grupp3/marstravel/sammanstallning.fxml", stage);
             } else {
-                // Den borde väl spara också?
+                storeTravelChoices.writeToFile(customerInfo);
                 clearFields();
             }
         });

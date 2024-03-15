@@ -31,6 +31,7 @@ public class ResedatumController implements Initializable {
     @FXML
     private ChoiceBox<String> Hemresa_ar;
 
+
     @FXML
     private ChoiceBox<String> Antal_resenarer;
 
@@ -57,6 +58,7 @@ public class ResedatumController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Hemresa_ar.setVisible(false);
         ObservableList<String> avresaArAlternativ = FXCollections.observableArrayList(
                 "2024", "2025", "2026", "2027", "2028", "2029", "2030"
         );
@@ -115,10 +117,10 @@ public class ResedatumController implements Initializable {
         String hemresaAr = Hemresa_ar.getValue();
         String hemresaManad = HemresaMånad.getValue();
 
-        if (avresaAr != null && avresaManad != null && hemresaAr != null && hemresaManad != null) {
+        if (avresaAr != null && avresaManad != null && hemresaManad != null) {
             int avresaYear = Integer.parseInt(avresaAr);
             int avresaMonth = Avresa_manad.getItems().indexOf(avresaManad) + 1;
-            int hemresaYear = Integer.parseInt(hemresaAr);
+            int hemresaYear = 0;
             int hemresaMonth = HemresaMånad.getItems().indexOf(hemresaManad) + 1;
 
             int returnYear = avresaYear + hemresaYear;
@@ -133,40 +135,40 @@ public class ResedatumController implements Initializable {
 
             switch (returnMonth) {
                 case 1:
-                    monthName = "Januari";
+                    monthName = "01";
                     break;
                 case 2:
-                    monthName = "Februari";
+                    monthName = "02";
                     break;
                 case 3:
-                    monthName = "Mars";
+                    monthName = "03";
                     break;
                 case 4:
-                    monthName = "April";
+                    monthName = "04";
                     break;
                 case 5:
-                    monthName = "Maj";
+                    monthName = "05";
                     break;
                 case 6:
-                    monthName = "Juni";
+                    monthName = "06";
                     break;
                 case 7:
-                    monthName = "Juli";
+                    monthName = "07";
                     break;
                 case 8:
-                    monthName = "Augusti";
+                    monthName = "08";
                     break;
                 case 9:
-                    monthName = "September";
+                    monthName = "09";
                     break;
                 case 10:
-                    monthName = "Oktober";
+                    monthName = "10";
                     break;
                 case 11:
-                    monthName = "November";
+                    monthName = "11";
                     break;
                 case 12:
-                    monthName = "December";
+                    monthName = "12";
                     break;
                 default:
                     monthName = ""; // Default value if returnMonth is not in range 1-12
@@ -222,7 +224,7 @@ public class ResedatumController implements Initializable {
     private void handleNastaButtonClick() {
         StoreTravelChoices storeTravelChoices = new StoreTravelChoices();
 
-        if (Avresa_ar.getValue() == null || Avresa_manad.getValue() == null || Hemresa_ar.getValue() == null || HemresaMånad.getValue() == null) {
+        if (Avresa_ar.getValue() == null || Avresa_manad.getValue() == null || HemresaMånad.getValue() == null) {
             Alert felAlert = new Alert(Alert.AlertType.ERROR);
             felAlert.setTitle("Felaktigt datumval");
             felAlert.setHeaderText(null);
@@ -237,9 +239,10 @@ public class ResedatumController implements Initializable {
             storeTravelChoices.removeAntalResenarer();
         }
 
-        // TODO: Fixa detta så att det står månadens namn istället för siffror
+        String avgangTidText = AvgangTid.getText();
+        avgangTidText = avgangTidText.replace("Avgångstid: ", "");
+        String chosenDate = Avresa_ar.getValue() + "-" + Avresa_manad.getValue() + " till "  + avgangTidText;
 
-        String chosenDate = Avresa_ar.getValue() + "-" + Avresa_manad.getValue() + " till " + Hemresa_ar.getValue() + "-" + HemresaMånad.getValue();
         storeTravelChoices.storeDate(chosenDate);
         storeTravelChoices.storeChoiceBox("Antal resenärer: ", Antal_resenarer);
 
