@@ -90,6 +90,12 @@ public class SammanstallningController implements Initializable {
                         throw new RuntimeException(e);
                     }
                 }
+
+                // Navigate back to the "boka" page
+                NextButton nextButton = new NextButton();
+                Stage stage = (Stage) btnGODKANN.getScene().getWindow();
+                nextButton.nextButton("/com/uu/grupp3/marstravel/boka.fxml", stage);
+
             });
         });
     }
