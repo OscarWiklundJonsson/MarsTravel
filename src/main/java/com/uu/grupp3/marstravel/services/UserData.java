@@ -8,6 +8,7 @@ package com.uu.grupp3.marstravel.services;
 public class UserData {
     private static UserData instance = null;
     private String email;
+    private String personnummer;
 
     private UserData() {}
 
@@ -22,7 +23,15 @@ public class UserData {
         return email;
     }
 
+    public String getPersonnummer() {
+        return personnummer;
+    }
+
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setPersonnummer(String personnummer) {
+        this.personnummer = personnummer;
     }
 }

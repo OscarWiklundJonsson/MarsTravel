@@ -322,6 +322,7 @@ public class CheckoutCartService {
     public void showCheckoutCart() {
         // read the file "travelChoices.txt" and collect the contents
         String fileName = "travelChoices.txt";
+        String fileNameCustomer = "customerInfo.txt"; //TODO:
         Path path = Paths.get(fileName);
         StringBuilder contents = new StringBuilder();
         try (BufferedReader reader = Files.newBufferedReader(path)) {
@@ -392,14 +393,17 @@ public class CheckoutCartService {
     public void storeInformation() {
         String fileName = "travelChoices.txt";
         Path sourcePath = Paths.get(fileName);
-        String targetFileName = "order" + System.currentTimeMillis() + ".html";
+        String pnumber = UserData.getInstance().getPersonnummer();
+        // random number between 0-9999
+        int random = (int) (Math.random() * 10000); // Borde inte vara random, borde vara ett unikt id
+        String targetFileName = "order" + pnumber + "-"+ random + ".html";
         Path targetPath = Paths.get(targetFileName);
 
         try (BufferedReader reader = Files.newBufferedReader(sourcePath, StandardCharsets.UTF_8);
              BufferedWriter writer = Files.newBufferedWriter(targetPath, StandardCharsets.UTF_8)) {
 
             // Write HTML header
-            writer.write("<!DOCTYPE html>\n\"<html lang=\\\"sv\\\">\n\"<head>\n<meta charset=UTF-8>\n<title>Order Details</title>\n</head>\n<body>\n");
+            writer.write("<!DOCTYPE html>\n<html lang=\"sv\">\n<head>\n<meta charset=UTF-8>\n<title>Faktura MarsTravel</title>\n</head>\n<body>\n");
 
             String line;
             while ((line = reader.readLine()) != null) {
@@ -425,8 +429,8 @@ public class CheckoutCartService {
             writer.write("</body>\n</html>");
 
             // Clear the original file
-            Files.deleteIfExists(sourcePath);
-            Files.createFile(sourcePath);
+            //Files.deleteIfExists(sourcePath);
+            //Files.createFile(sourcePath);
         } catch (IOException e) {
             e.printStackTrace();
         }

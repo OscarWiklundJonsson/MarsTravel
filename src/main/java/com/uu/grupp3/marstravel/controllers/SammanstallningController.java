@@ -17,9 +17,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class SammanstallningController implements Initializable {
     @FXML
@@ -66,6 +64,7 @@ public class SammanstallningController implements Initializable {
         });
 
         btnGODKANN.setOnAction(event -> {
+            checkoutCartService.checkoutCartClearCart();
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Spara faktura");
             alert.setHeaderText("Faktura");
@@ -79,8 +78,9 @@ public class SammanstallningController implements Initializable {
             alert.showAndWait().ifPresent(response -> {
                 if (response == buttonTypeOne) {
                     String email = UserData.getInstance().getEmail();  // Get the email
-                    sendMail.sendEmail(email, "Faktura - MarsTravel", "Hej, här är din faktura från MarsTravel", mostRecentHtmlFile);
-                    System.out.println("Skickat e-post till kund");
+                    String pnummer = UserData.getInstance().getPersonnummer();  // Get the personal number
+                    sendMail.sendEmail(email, "Faktura - MarsTravel", "Hej, här är din faktura från MarsTravel.", mostRecentHtmlFile);
+                    System.out.println("Skickat e-post till kund: " + pnummer);
                 } else if (response == buttonTypeTwo) {
                     System.out.println("Skriv ut");
                     try {
@@ -93,24 +93,29 @@ public class SammanstallningController implements Initializable {
         });
     }
 
-    /**
-     *
-     */
+
     public void loadMostRecentHtml() {
-        // Find the most recent HTML file
-        File[] htmlFiles = new File(".").listFiles((dir, name) -> name.startsWith("order") && name.endsWith(".html"));
-        if (htmlFiles != null && htmlFiles.length > 0) {
-            Arrays.sort(htmlFiles, Comparator.comparingLong(f -> Long.parseLong(f.getName().replaceAll("[^\\d]", ""))));
-            mostRecentHtmlFile = htmlFiles[htmlFiles.length - 1];
+        try {
+            // Find the most recent HTML file
+            mostRecentHtmlFile = Arrays.stream(new File(".").listFiles((dir, name) -> name.startsWith("order") && name.endsWith(".html")))
+                    .filter(Objects::nonNull)
+                    .max(Comparator.comparingLong(f -> f.lastModified()))
+                    .orElse(null);
 
             // Load the most recent HTML file into the WebView with UTF-8 encoding
-            try {
+            if (mostRecentHtmlFile != null) {
                 String url = mostRecentHtmlFile.toURI().toURL().toString();
                 url += "?encoding=UTF-8"; // Add encoding information to the URL
+                System.out.println("Loading URL: " + url); // Print the URL to the console
                 wvSammanstallning.getEngine().load(url);
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
+                wvSammanstallning.getEngine().getLoadWorker().exceptionProperty().addListener((o, old, value) -> {
+                    if (value != null) {
+                        System.out.println("Caught exception: " + value);
+                    }
+                });
             }
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
         }
     }
 }
